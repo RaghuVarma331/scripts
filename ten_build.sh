@@ -977,6 +977,7 @@ OXYGEN-SOURCE()
     cd output 
     cp -r OxygenOS-10.0-OP6-Stable-HMD-SDM660-$(date +"%Y%m%d").zip /var/lib/jenkins/workspace/Raghu/OxygenOS
     cd ..
+    cd ..
     rm -r tool
     wget https://github.com/RaghuVarma331/scripts/raw/master/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/oxygenos.png
