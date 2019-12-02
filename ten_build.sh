@@ -163,7 +163,8 @@ LINEAGE-SOURCE()
     
     👤 By: Raghu Varma
     
-    Follow: @Nokia7plusOfficial ✅"      
+    Follow: @Nokia7plusOfficial ✅"    
+    rm -r *
 }
 
 PE-SOURCE()
@@ -297,6 +298,7 @@ PE-SOURCE()
     👤 By: Raghu Varma
     
     Follow: @Nokia6plusofficial ✅"        
+    rm -r *
 }
 
 EVOX-SOURCE()
@@ -433,6 +435,7 @@ EVOX-SOURCE()
     👤 By: Raghu Varma
     
     Follow: @Nokia6plusofficial ✅"        
+    rm -r *
 }
 
 HAVOC-SOURCE()
@@ -566,6 +569,7 @@ HAVOC-SOURCE()
     👤 By: Raghu Varma
     
     Follow: @Nokia6plusofficial ✅"        
+    rm -r *
 }
 
 TWRP-P-SOURCE()
@@ -905,8 +909,8 @@ TWRP-P-INSTALLER()
     
     👤 By: Raghu Varma
     
-    Follow:  @Nokia7262 ✅"   
-
+    Follow:  @Nokia7262 ✅"  
+    rm -r *
 }
 
 KIWIS-SOURCE()
@@ -948,7 +952,8 @@ KIWIS-SOURCE()
     
     👤 By: Raghu Varma
     
-    Follow:  @Nokia6plusofficial ✅"     
+    Follow:  @Nokia6plusofficial ✅"   
+    rm -r *
 }    
 
 OXYGEN-SOURCE()
@@ -1086,6 +1091,7 @@ OXYGEN-SOURCE()
     👤 By: Raghu Varma
     
     Follow: @Nokia7262 ✅"
+    rm -r *
 }    
 
 
