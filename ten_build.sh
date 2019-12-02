@@ -27,6 +27,7 @@ securitypatch=2019-11-05
 twrpsp='2019-11-05'
 evoxversion=3.3
 oxversion=v-2
+password=
 
 # Init Methods
 
@@ -54,12 +55,9 @@ LINEAGE-SOURCE()
     build's progress at $jenkinsurl"  
     . build/envsetup.sh && lunch lineage_Dragon-eng && make -j32 bacon
     cd out/target/product/Dragon
-    rm -r android-info.txt  dex_bootjars obj_arm  product_copy_files_ignored.txt  symbols boot.img fake_packages ramdisk.img system build_fingerprint.txt gen ramdisk-recovery.img userdata.img build_thumbprint.txt install recovery clean_steps.mk kernel recovery.id data obj previous_build_config.mk  root vendor
-    cd ..
-    cp -r Dragon /var/lib/jenkins/workspace/Raghu
+    sshpass -p $password rsync -avP -e ssh lineage-17.0*     raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/LineageOS
     cd 
     cd /var/lib/jenkins/workspace/Raghu
-    mv Dragon drglos
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
     *
     New LineageOS 17.0 Build is up 
@@ -98,12 +96,9 @@ LINEAGE-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch lineage_Onyx-eng && make -j32 bacon
     cd out/target/product/Onyx
-    rm -r android-info.txt  dex_bootjars obj_arm  product_copy_files_ignored.txt  symbols boot.img fake_packages ramdisk.img system build_fingerprint.txt gen ramdisk-recovery.img userdata.img build_thumbprint.txt install recovery clean_steps.mk kernel recovery.id data obj previous_build_config.mk  root vendor
-    cd ..
-    cp -r Onyx /var/lib/jenkins/workspace/Raghu
+    sshpass -p $password rsync -avP -e ssh lineage-17.0*     raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/LineageOS
     cd 
     cd /var/lib/jenkins/workspace/Raghu
-    mv Onyx onlos
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
     *
     New LineageOS 17.0 Build is up 
@@ -144,12 +139,9 @@ LINEAGE-SOURCE()
     build's progress at $jenkinsurl"    
     . build/envsetup.sh && lunch lineage_whyred-eng && make -j32 bacon
     cd out/target/product/whyred
-    rm -r android-info.txt  dex_bootjars obj_arm  product_copy_files_ignored.txt  symbols boot.img fake_packages ramdisk.img system build_fingerprint.txt gen ramdisk-recovery.img userdata.img build_thumbprint.txt install recovery clean_steps.mk kernel recovery.id data obj previous_build_config.mk  root vendor
-    cd ..
-    cp -r whyred /var/lib/jenkins/workspace/Raghu
+    sshpass -p $password rsync -avP -e ssh lineage-17.0*     raghuvarma331@frs.sourceforge.net:/home/frs/project/whyred-rv/LineageOS
     cd 
     cd /var/lib/jenkins/workspace/Raghu
-    mv whyred whyredlos	 
     rm -r los
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
     *
@@ -198,12 +190,9 @@ PE-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch aosp_Dragon-eng && make -j32 bacon
     cd out/target/product/Dragon
-    rm -r android-info.txt  dex_bootjars obj_arm  product_copy_files_ignored.txt  symbols boot.img fake_packages ramdisk.img system build_fingerprint.txt gen ramdisk-recovery.img userdata.img build_thumbprint.txt install recovery clean_steps.mk kernel recovery.id data obj previous_build_config.mk  root vendor
-    cd ..
-    cp -r Dragon /var/lib/jenkins/workspace/Raghu
+    sshpass -p $password rsync -avP -e ssh PixelExperience*     raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/PixelExperience
     cd 
     cd /var/lib/jenkins/workspace/Raghu
-    mv Dragon drgpe
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
     *
     New Pixel-Experience Build is up 
@@ -242,12 +231,9 @@ PE-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch aosp_Onyx-eng && make -j32 bacon
     cd out/target/product/Onyx
-    rm -r android-info.txt  dex_bootjars obj_arm  product_copy_files_ignored.txt  symbols boot.img fake_packages ramdisk.img system build_fingerprint.txt gen ramdisk-recovery.img userdata.img build_thumbprint.txt install recovery clean_steps.mk kernel recovery.id data obj previous_build_config.mk  root vendor
-    cd ..
-    cp -r Onyx /var/lib/jenkins/workspace/Raghu
+    sshpass -p $password rsync -avP -e ssh PixelExperience*     raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/PixelExperience
     cd 
     cd /var/lib/jenkins/workspace/Raghu
-    mv Onyx onpe
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
     *
     New Pixel-Experience Build is up 
@@ -286,12 +272,9 @@ PE-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch aosp_Plate2-eng && make -j32 bacon
     cd out/target/product/Plate2
-    rm -r android-info.txt  dex_bootjars obj_arm  product_copy_files_ignored.txt  symbols boot.img fake_packages ramdisk.img system build_fingerprint.txt gen ramdisk-recovery.img userdata.img build_thumbprint.txt install recovery clean_steps.mk kernel recovery.id data obj previous_build_config.mk  root vendor
-    cd ..
-    cp -r Plate2 /var/lib/jenkins/workspace/Raghu
+    sshpass -p $password rsync -avP -e ssh PixelExperience*     raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/PixelExperience
     cd 
     cd /var/lib/jenkins/workspace/Raghu
-    mv Plate2 pl2pe
     rm -r pe
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
     *
@@ -341,12 +324,9 @@ EVOX-SOURCE()
     export SKIP_ABI_CHECKS=true
     . build/envsetup.sh && lunch aosp_Dragon-eng && make -j32 bacon
     cd out/target/product/Dragon
-    rm -r android-info.txt  dex_bootjars obj_arm  product_copy_files_ignored.txt  symbols boot.img fake_packages ramdisk.img system build_fingerprint.txt gen ramdisk-recovery.img userdata.img build_thumbprint.txt install recovery clean_steps.mk kernel recovery.id data obj previous_build_config.mk  root vendor
-    cd ..
-    cp -r Dragon /var/lib/jenkins/workspace/Raghu
+    sshpass -p $password rsync -avP -e ssh EvolutionX*       raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/EvolutionX
     cd 
     cd /var/lib/jenkins/workspace/Raghu
-    mv Dragon drgevo
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P evox.png -C "
     *
     New Evolution X Build is up 
@@ -386,12 +366,9 @@ EVOX-SOURCE()
     export SKIP_ABI_CHECKS=true
     . build/envsetup.sh && lunch aosp_Onyx-eng && make -j32 bacon
     cd out/target/product/Onyx
-    rm -r android-info.txt  dex_bootjars obj_arm  product_copy_files_ignored.txt  symbols boot.img fake_packages ramdisk.img system build_fingerprint.txt gen ramdisk-recovery.img userdata.img build_thumbprint.txt install recovery clean_steps.mk kernel recovery.id data obj previous_build_config.mk  root vendor
-    cd ..
-    cp -r Onyx /var/lib/jenkins/workspace/Raghu
+    sshpass -p $password rsync -avP -e ssh EvolutionX*       raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/EvolutionX
     cd 
     cd /var/lib/jenkins/workspace/Raghu
-    mv Onyx onevo
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P evox.png -C "
     *
     New Evolution X Build is up 
@@ -431,12 +408,9 @@ EVOX-SOURCE()
     export SKIP_ABI_CHECKS=true
     . build/envsetup.sh && lunch aosp_Plate2-eng && make -j32 bacon
     cd out/target/product/Plate2
-    rm -r android-info.txt  dex_bootjars obj_arm  product_copy_files_ignored.txt  symbols boot.img fake_packages ramdisk.img system build_fingerprint.txt gen ramdisk-recovery.img userdata.img build_thumbprint.txt install recovery clean_steps.mk kernel recovery.id data obj previous_build_config.mk  root vendor
-    cd ..
-    cp -r Plate2 /var/lib/jenkins/workspace/Raghu
+    sshpass -p $password rsync -avP -e ssh EvolutionX*       raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/EvolutionX
     cd 
     cd /var/lib/jenkins/workspace/Raghu
-    mv Plate2 pl2evo
     rm -r evo
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P evox.png -C "
     *
@@ -485,12 +459,9 @@ HAVOC-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch havoc_Dragon-eng && make -j32 bacon
     cd out/target/product/Dragon
-    rm -r android-info.txt  dex_bootjars obj_arm  product_copy_files_ignored.txt  symbols boot.img fake_packages ramdisk.img system build_fingerprint.txt gen ramdisk-recovery.img userdata.img build_thumbprint.txt install recovery clean_steps.mk kernel recovery.id data obj previous_build_config.mk  root vendor
-    cd ..
-    cp -r Dragon /var/lib/jenkins/workspace/Raghu
+    sshpass -p $password rsync -avP -e ssh Havoc-OS*         raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/Havoc-OS
     cd 
     cd /var/lib/jenkins/workspace/Raghu
-    mv Dragon drghavoc
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P havoc.jpg -C "
     *
     New Havoc-OS Build is up 
@@ -529,12 +500,9 @@ HAVOC-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch havoc_Onyx-eng && make -j32 bacon
     cd out/target/product/Onyx
-    rm -r android-info.txt  dex_bootjars obj_arm  product_copy_files_ignored.txt  symbols boot.img fake_packages ramdisk.img system build_fingerprint.txt gen ramdisk-recovery.img userdata.img build_thumbprint.txt install recovery clean_steps.mk kernel recovery.id data obj previous_build_config.mk  root vendor
-    cd ..
-    cp -r Onyx /var/lib/jenkins/workspace/Raghu
+    sshpass -p $password rsync -avP -e ssh Havoc-OS*         raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/Havoc-OS
     cd 
     cd /var/lib/jenkins/workspace/Raghu
-    mv Onyx onhavoc
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P havoc.jpg -C "
     *
     New Havoc-OS Build is up 
@@ -573,12 +541,9 @@ HAVOC-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch havoc_Plate2-eng && make -j32 bacon
     cd out/target/product/Plate2
-    rm -r android-info.txt  dex_bootjars obj_arm  product_copy_files_ignored.txt  symbols boot.img fake_packages ramdisk.img system build_fingerprint.txt gen ramdisk-recovery.img userdata.img build_thumbprint.txt install recovery clean_steps.mk kernel recovery.id data obj previous_build_config.mk  root vendor
-    cd ..
-    cp -r Plate2 /var/lib/jenkins/workspace/Raghu
+    sshpass -p $password rsync -avP -e ssh Havoc-OS*         raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/Havoc-OS
     cd 
     cd /var/lib/jenkins/workspace/Raghu
-    mv Plate2 pl2havoc
     rm -r havoc
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P havoc.jpg -C "
     *
@@ -778,6 +743,22 @@ TWRP-P-INSTALLER()
     cd
     cd /var/lib/jenkins/workspace/Raghu     
     rm -r twrp
+    cd DRG_sprout
+    sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-DRG_sprout-9.0* twrp-installer-3.3.1-0-DRG_sprout-9.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/TWRP/PIE
+    sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-DRG_sprout-10.0* twrp-installer-3.3.1-0-DRG_sprout-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/TWRP/TEN
+    cd ..
+    cd B2N_sprout
+    sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-B2N_sprout-OOB-9.0* twrp-installer-3.3.1-0-B2N_sprout-OOB-9.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/TWRP-PIE/OOB
+    sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-B2N_sprout-POB-9.0* twrp-installer-3.3.1-0-B2N_sprout-POB-9.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/TWRP-PIE/POB
+    sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-B2N_sprout-OOB-10.0* twrp-installer-3.3.1-0-B2N_sprout-OOB-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/TWRP-TEN/OOB
+    sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-B2N_sprout-POB-10.0* twrp-installer-3.3.1-0-B2N_sprout-POB-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/TWRP-TEN/POB
+    cd ..
+    cd SLD_sprout 
+    sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-SLD_sprout-9.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/sld-sprout/TWRP/PIE/2019-11-05
+    cd ..
+    cd DDV_sprout
+    sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-DDV_sprout-9.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/ddv-sprout/TWRP/PIE/2019-11-05
+    cd .. 
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
     *
     New Android 10.0 Twrp-3.3.1-0 Build is up 
@@ -948,6 +929,9 @@ KIWIS-SOURCE()
     cd
     cd /var/lib/jenkins/workspace/Raghu
     rm -r drg
+    cd kiwis-kernel
+    sshpass -p $password rsync -avP -e ssh Kiwis-kernel* raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/Kiwis-kernel
+    cd ..
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P kiwis.jpg -C "
     *
     New Android 10 Kiwis Kernel Build is up 
@@ -975,10 +959,13 @@ OXYGEN-SOURCE()
     chmod a+x rv.sh
     ./rv.sh
     cd output 
-    cp -r OxygenOS-10.0-OP6-Stable-HMD-SDM660-$(date +"%Y%m%d").zip /var/lib/jenkins/workspace/Raghu/OxygenOS
+    cp -r OxygenOS-10.0* /var/lib/jenkins/workspace/Raghu/OxygenOS
     cd ..
     cd ..
     rm -r tool
+    cd OxygenOS
+    sshpass -p $password rsync -avP -e ssh OxygenOS-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/nokia-sdm660/OxygenOS
+    cd ..
     wget https://github.com/RaghuVarma331/scripts/raw/master/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/oxygenos.png
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P oxygenos.png -C "
@@ -1104,9 +1091,10 @@ OXYGEN-SOURCE()
 
 TOOLS_SETUP() 
 {
+        mkdir -p ~/.ssh  &&  echo "Host *" > ~/.ssh/config && echo " StrictHostKeyChecking no" >> ~/.ssh/config
         sudo apt-get update 
         echo -ne '\n' | sudo apt-get upgrade
-        echo -ne '\n' | sudo apt-get install git ccache schedtool lzop bison gperf build-essential zip curl zlib1g-dev g++-multilib python-networkx libxml2-utils bzip2 libbz2-dev libghc-bzlib-dev squashfs-tools pngcrush liblz4-tool optipng libc6-dev-i386 gcc-multilib libssl-dev gnupg flex lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev xsltproc unzip python-pip python-dev libffi-dev libxml2-dev libxslt1-dev libjpeg8-dev openjdk-8-jdk imagemagick device-tree-compiler repo mailutils-mh expect python3-requests python-requests android-tools-fsutils
+        echo -ne '\n' | sudo apt-get install git ccache schedtool lzop bison gperf build-essential zip curl zlib1g-dev g++-multilib python-networkx libxml2-utils bzip2 libbz2-dev libghc-bzlib-dev squashfs-tools pngcrush liblz4-tool optipng libc6-dev-i386 gcc-multilib libssl-dev gnupg flex lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev xsltproc unzip python-pip python-dev libffi-dev libxml2-dev libxslt1-dev libjpeg8-dev openjdk-8-jdk imagemagick device-tree-compiler repo mailutils-mh expect python3-requests python-requests android-tools-fsutils sshpass
         sudo swapon --show
         sudo fallocate -l 20G /swapfile
         ls -lh /swapfile
