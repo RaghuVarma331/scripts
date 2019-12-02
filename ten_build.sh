@@ -164,7 +164,7 @@ LINEAGE-SOURCE()
     👤 By: Raghu Varma
     
     Follow: @Nokia7plusOfficial ✅"    
-    rm -r *
+    
 }
 
 PE-SOURCE()
@@ -298,7 +298,7 @@ PE-SOURCE()
     👤 By: Raghu Varma
     
     Follow: @Nokia6plusofficial ✅"        
-    rm -r *
+    
 }
 
 EVOX-SOURCE()
@@ -435,7 +435,7 @@ EVOX-SOURCE()
     👤 By: Raghu Varma
     
     Follow: @Nokia6plusofficial ✅"        
-    rm -r *
+    
 }
 
 HAVOC-SOURCE()
@@ -569,7 +569,7 @@ HAVOC-SOURCE()
     👤 By: Raghu Varma
     
     Follow: @Nokia6plusofficial ✅"        
-    rm -r *
+    
 }
 
 TWRP-P-SOURCE()
@@ -910,7 +910,7 @@ TWRP-P-INSTALLER()
     👤 By: Raghu Varma
     
     Follow:  @Nokia7262 ✅"  
-    rm -r *
+    
 }
 
 KIWIS-SOURCE()
@@ -953,7 +953,7 @@ KIWIS-SOURCE()
     👤 By: Raghu Varma
     
     Follow:  @Nokia6plusofficial ✅"   
-    rm -r *
+    
 }    
 
 OXYGEN-SOURCE()
@@ -964,7 +964,7 @@ OXYGEN-SOURCE()
     chmod a+x rv.sh
     ./rv.sh
     cd output 
-    cp -r OxygenOS-10.0* /var/lib/jenkins/workspace/Raghu/OxygenOS
+    cp -r OxygenOS-10.0-OP6-Stable-HMD-SDM660-$(date +"%Y%m%d").zip /var/lib/jenkins/workspace/Raghu/OxygenOS
     cd ..
     cd ..
     rm -r tool
@@ -1091,7 +1091,7 @@ OXYGEN-SOURCE()
     👤 By: Raghu Varma
     
     Follow: @Nokia7262 ✅"
-    rm -r *
+    
 }    
 
 
