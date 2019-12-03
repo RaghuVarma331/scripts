@@ -28,6 +28,11 @@
    
    just add command like this in  YourProject/Configure/BuildEnvironment/Execute Shell
    
+<p align="center">
+<img src="https://raw.githubusercontent.com/RaghuVarma331/scripts/master/jenkinsdemo.jpg" > 
+</p>   
+   
+   
    echo yourserial number | ./ten_build.sh
    
    Example 
