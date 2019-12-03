@@ -6,9 +6,13 @@
    Fill these Blanks
    
    Telegram_Api_code=xxxxxxxxx
+   
    chat_id=xxxxxxxx
+   
    jenkinsurl=xxxxxxx
+   
    password=xxxxxxxxxxxx
+   
    path=xxxxxxx
    
    Now Run the shell script using below commands
