@@ -23,8 +23,8 @@ clear
 Telegram_Api_code=
 chat_id=
 jenkinsurl=
-securitypatch=2019-11-05
-twrpsp='2019-11-05'
+securitypatch=2019-12-05
+twrpsp='2019-12-05'
 evoxversion=3.3
 havocversion=3.0
 oxversion=v-2
@@ -760,10 +760,10 @@ TWRP-P-INSTALLER()
     sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-B2N_sprout-POB-10.0* twrp-installer-3.3.1-0-B2N_sprout-POB-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/TWRP-TEN/POB
     cd ..
     cd SLD_sprout 
-    sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-SLD_sprout-9.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/sld-sprout/TWRP/PIE/2019-11-05
+    sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-SLD_sprout-9.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/sld-sprout/TWRP/PIE/2019-12-05
     cd ..
     cd DDV_sprout
-    sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-DDV_sprout-9.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/ddv-sprout/TWRP/PIE/2019-11-05
+    sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-DDV_sprout-9.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/ddv-sprout/TWRP/PIE/2019-12-05
     cd .. 
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
     *
