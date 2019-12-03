@@ -962,7 +962,7 @@ OXYGEN-SOURCE()
     git clone https://github.com/RaghuVarma331/Gsi-Porter-Tool.git tool
     cd tool
     chmod a+x rv.sh
-    ./rv.sh
+    sudo ./rv.sh
     cd output 
     cp -r OxygenOS-10.0-OP6-Stable-HMD-SDM660-$(date +"%Y%m%d").zip /var/lib/jenkins/workspace/Raghu/OxygenOS
     cd ..
