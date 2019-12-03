@@ -26,6 +26,7 @@ jenkinsurl=
 securitypatch=2019-11-05
 twrpsp='2019-11-05'
 evoxversion=3.3
+havocversion=3.0
 oxversion=v-2
 password=
 
@@ -477,7 +478,7 @@ HAVOC-SOURCE()
     
     📱Device: Nokia 6.1 Plus
     
-    ⚡Build Version: 3.0
+    ⚡Build Version: $havocversion
     
     ⚡Android Version: 10.0.0
     
@@ -518,7 +519,7 @@ HAVOC-SOURCE()
     
     📱Device: Nokia 7 Plus
     
-    ⚡Build Version: 3.0
+    ⚡Build Version: $havocversion
     
     ⚡Android Version: 10.0.0
     
@@ -560,7 +561,7 @@ HAVOC-SOURCE()
     
     📱Device: Nokia 6.1
     
-    ⚡Build Version: 3.0
+    ⚡Build Version: $havocversion
     
     ⚡Android Version: 10.0.0
     
