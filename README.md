@@ -3,7 +3,7 @@
 
 ## How to use?
    
-   echo 1 | sudo ./ten_build.sh    
+   echo 1 | ./ten_build.sh    
 
     
 
