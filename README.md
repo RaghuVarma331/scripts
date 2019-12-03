@@ -9,9 +9,7 @@
    
    chat_id=xxxxxxxx
    
-   jenkinsurl=xxxxxxx
-   
-   password=xxxxxxxxxxxx
+   jenkinsurl=xxxxxxx  
    
    path=xxxxxxx
    
