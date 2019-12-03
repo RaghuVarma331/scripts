@@ -59,7 +59,7 @@ LINEAGE-SOURCE()
     cd out/target/product/Dragon
     sshpass -p $password rsync -avP -e ssh lineage-17.0*     raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/LineageOS
     cd 
-    cd /var/lib/jenkins/workspace/Raghu
+    cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
     *
     New LineageOS 17.0 Build is up 
@@ -100,7 +100,7 @@ LINEAGE-SOURCE()
     cd out/target/product/Onyx
     sshpass -p $password rsync -avP -e ssh lineage-17.0*     raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/LineageOS
     cd 
-    cd /var/lib/jenkins/workspace/Raghu
+    cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
     *
     New LineageOS 17.0 Build is up 
@@ -143,7 +143,7 @@ LINEAGE-SOURCE()
     cd out/target/product/whyred
     sshpass -p $password rsync -avP -e ssh lineage-17.0*     raghuvarma331@frs.sourceforge.net:/home/frs/project/whyred-rv/LineageOS
     cd 
-    cd /var/lib/jenkins/workspace/Raghu
+    cd $path
     rm -r los
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
     *
@@ -195,7 +195,7 @@ PE-SOURCE()
     cd out/target/product/Dragon
     sshpass -p $password rsync -avP -e ssh PixelExperience*     raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/PixelExperience
     cd 
-    cd /var/lib/jenkins/workspace/Raghu
+    cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
     *
     New Pixel-Experience Build is up 
@@ -236,7 +236,7 @@ PE-SOURCE()
     cd out/target/product/Onyx
     sshpass -p $password rsync -avP -e ssh PixelExperience*     raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/PixelExperience
     cd 
-    cd /var/lib/jenkins/workspace/Raghu
+    cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
     *
     New Pixel-Experience Build is up 
@@ -277,7 +277,7 @@ PE-SOURCE()
     cd out/target/product/Plate2
     sshpass -p $password rsync -avP -e ssh PixelExperience*     raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/PixelExperience
     cd 
-    cd /var/lib/jenkins/workspace/Raghu
+    cd $path
     rm -r pe
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
     *
@@ -330,7 +330,7 @@ EVOX-SOURCE()
     cd out/target/product/Dragon
     sshpass -p $password rsync -avP -e ssh EvolutionX*       raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/EvolutionX
     cd 
-    cd /var/lib/jenkins/workspace/Raghu
+    cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P evox.png -C "
     *
     New Evolution X Build is up 
@@ -372,7 +372,7 @@ EVOX-SOURCE()
     cd out/target/product/Onyx
     sshpass -p $password rsync -avP -e ssh EvolutionX*       raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/EvolutionX
     cd 
-    cd /var/lib/jenkins/workspace/Raghu
+    cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P evox.png -C "
     *
     New Evolution X Build is up 
@@ -414,7 +414,7 @@ EVOX-SOURCE()
     cd out/target/product/Plate2
     sshpass -p $password rsync -avP -e ssh EvolutionX*       raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/EvolutionX
     cd 
-    cd /var/lib/jenkins/workspace/Raghu
+    cd $path
     rm -r evo
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P evox.png -C "
     *
@@ -466,7 +466,7 @@ HAVOC-SOURCE()
     cd out/target/product/Dragon
     sshpass -p $password rsync -avP -e ssh Havoc-OS*         raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/Havoc-OS
     cd 
-    cd /var/lib/jenkins/workspace/Raghu
+    cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P havoc.jpg -C "
     *
     New Havoc-OS Build is up 
@@ -507,7 +507,7 @@ HAVOC-SOURCE()
     cd out/target/product/Onyx
     sshpass -p $password rsync -avP -e ssh Havoc-OS*         raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/Havoc-OS
     cd 
-    cd /var/lib/jenkins/workspace/Raghu
+    cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P havoc.jpg -C "
     *
     New Havoc-OS Build is up 
@@ -548,7 +548,7 @@ HAVOC-SOURCE()
     cd out/target/product/Plate2
     sshpass -p $password rsync -avP -e ssh Havoc-OS*         raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/Havoc-OS
     cd 
-    cd /var/lib/jenkins/workspace/Raghu
+    cd $path
     rm -r havoc
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P havoc.jpg -C "
     *
@@ -604,33 +604,33 @@ TWRP-P-SOURCE()
     . build/envsetup.sh && lunch omni_DDV_sprout-eng && make -j32 recoveryimage
     cd out/target/product/DRG_sprout
     mv recovery.img twrp-3.3.1-0-DRG_sprout-9.0-$(date +"%Y%m%d").img
-    cp -r twrp-3.3.1-0-DRG_sprout-9.0-$(date +"%Y%m%d").img /var/lib/jenkins/workspace/Raghu/DRG_sprout
+    cp -r twrp-3.3.1-0-DRG_sprout-9.0-$(date +"%Y%m%d").img $path/DRG_sprout
     cd
-    cd /var/lib/jenkins/workspace/Raghu/twrp	
+    cd $path/twrp	
     cd out/target/product/B2N_sprout
     mv recovery.img twrp-3.3.1-0-B2N_sprout-OOB-9.0-$(date +"%Y%m%d").img
-    cp -r twrp-3.3.1-0-B2N_sprout-OOB-9.0-$(date +"%Y%m%d").img /var/lib/jenkins/workspace/Raghu/B2N_sprout
+    cp -r twrp-3.3.1-0-B2N_sprout-OOB-9.0-$(date +"%Y%m%d").img $path/B2N_sprout
     cd
-    cd /var/lib/jenkins/workspace/Raghu/twrp	
+    cd $path/twrp	
     cd out/target/product/SLD_sprout
     mv recovery.img twrp-3.3.1-0-SLD_sprout-9.0-$(date +"%Y%m%d").img
-    cp -r twrp-3.3.1-0-SLD_sprout-9.0-$(date +"%Y%m%d").img /var/lib/jenkins/workspace/Raghu/SLD_sprout
+    cp -r twrp-3.3.1-0-SLD_sprout-9.0-$(date +"%Y%m%d").img $path/SLD_sprout
     cd
-    cd /var/lib/jenkins/workspace/Raghu/twrp	
+    cd $path/twrp	
     cd out/target/product/DDV_sprout
     mv recovery.img twrp-3.3.1-0-DDV_sprout-9.0-$(date +"%Y%m%d").img
-    cp -r twrp-3.3.1-0-DDV_sprout-9.0-$(date +"%Y%m%d").img /var/lib/jenkins/workspace/Raghu/DDV_sprout
+    cp -r twrp-3.3.1-0-DDV_sprout-9.0-$(date +"%Y%m%d").img $path/DDV_sprout
     cd
-    cd /var/lib/jenkins/workspace/Raghu/twrp
+    cd $path/twrp
     rm -r device/nokia
     rm -r out
     git clone https://github.com/RaghuVarma331/android_device_nokia_B2N_sprout-TWRP.git -b android-9.0-NB device/nokia/B2N_sprout
     . build/envsetup.sh && lunch omni_B2N_sprout-eng && make -j32 recoveryimage	
     cd out/target/product/B2N_sprout
     mv recovery.img twrp-3.3.1-0-B2N_sprout-POB-9.0-$(date +"%Y%m%d").img
-    cp -r twrp-3.3.1-0-B2N_sprout-POB-9.0-$(date +"%Y%m%d").img /var/lib/jenkins/workspace/Raghu/B2N_sprout
+    cp -r twrp-3.3.1-0-B2N_sprout-POB-9.0-$(date +"%Y%m%d").img $path/B2N_sprout
     cd
-    cd /var/lib/jenkins/workspace/Raghu    	
+    cd $path    	
 }	
 
 
@@ -645,23 +645,23 @@ TWRP-Q-SOURCE()
     . build/envsetup.sh && lunch omni_B2N_sprout-eng && make -j32 recoveryimage
     cd out/target/product/DRG_sprout
     mv recovery.img twrp-3.3.1-0-DRG_sprout-10.0-$(date +"%Y%m%d").img
-    cp -r twrp-3.3.1-0-DRG_sprout-10.0-$(date +"%Y%m%d").img /var/lib/jenkins/workspace/Raghu/DRG_sprout
+    cp -r twrp-3.3.1-0-DRG_sprout-10.0-$(date +"%Y%m%d").img $path/DRG_sprout
     cd
-    cd /var/lib/jenkins/workspace/Raghu/twrp	
+    cd $path/twrp	
     cd out/target/product/B2N_sprout
     mv recovery.img twrp-3.3.1-0-B2N_sprout-OOB-10.0-$(date +"%Y%m%d").img
-    cp -r twrp-3.3.1-0-B2N_sprout-OOB-10.0-$(date +"%Y%m%d").img /var/lib/jenkins/workspace/Raghu/B2N_sprout
+    cp -r twrp-3.3.1-0-B2N_sprout-OOB-10.0-$(date +"%Y%m%d").img $path/B2N_sprout
     cd
-    cd /var/lib/jenkins/workspace/Raghu/twrp
+    cd $path/twrp
     rm -r device/nokia
     rm -r out
     git clone https://github.com/RaghuVarma331/android_device_nokia_B2N_sprout-TWRP.git -b android-10.0-NB device/nokia/B2N_sprout
     . build/envsetup.sh && lunch omni_B2N_sprout-eng && make -j32 recoveryimage	
     cd out/target/product/B2N_sprout
     mv recovery.img twrp-3.3.1-0-B2N_sprout-POB-10.0-$(date +"%Y%m%d").img
-    cp -r twrp-3.3.1-0-B2N_sprout-POB-10.0-$(date +"%Y%m%d").img /var/lib/jenkins/workspace/Raghu/B2N_sprout
+    cp -r twrp-3.3.1-0-B2N_sprout-POB-10.0-$(date +"%Y%m%d").img $path/B2N_sprout
     cd
-    cd /var/lib/jenkins/workspace/Raghu  
+    cd $path  
 
 }
 
@@ -677,35 +677,35 @@ TWRP-Q-INSTALLER()
     . build/envsetup.sh && lunch omni_B2N_sprout-eng && make -j32 recoveryimage
     cd out/target/product/DRG_sprout
     mv ramdisk-recovery.cpio ramdisk-twrp.cpio
-    cp -r ramdisk-twrp.cpio /var/lib/jenkins/workspace/Raghu/twrp/device/nokia/DRG_sprout/installer
+    cp -r ramdisk-twrp.cpio $path/twrp/device/nokia/DRG_sprout/installer
     cd
-    cd /var/lib/jenkins/workspace/Raghu/twrp/device/nokia/DRG_sprout/installer
+    cd $path/twrp/device/nokia/DRG_sprout/installer
     zip -r twrp-installer-3.3.1-0-DRG_sprout-10.0-$(date +"%Y%m%d").zip magiskboot  META-INF ramdisk-twrp.cpio
-    cp -r twrp-installer-3.3.1-0-DRG_sprout-10.0-$(date +"%Y%m%d").zip /var/lib/jenkins/workspace/Raghu/DRG_sprout  
+    cp -r twrp-installer-3.3.1-0-DRG_sprout-10.0-$(date +"%Y%m%d").zip $path/DRG_sprout  
     cd
-    cd /var/lib/jenkins/workspace/Raghu/twrp	
+    cd $path/twrp	
     cd out/target/product/B2N_sprout
     mv ramdisk-recovery.cpio ramdisk-twrp.cpio
-    cp -r ramdisk-twrp.cpio /var/lib/jenkins/workspace/Raghu/twrp/device/nokia/B2N_sprout/installer
+    cp -r ramdisk-twrp.cpio $path/twrp/device/nokia/B2N_sprout/installer
     cd
-    cd /var/lib/jenkins/workspace/Raghu/twrp/device/nokia/B2N_sprout/installer
+    cd $path/twrp/device/nokia/B2N_sprout/installer
     zip -r twrp-installer-3.3.1-0-B2N_sprout-OOB-10.0-$(date +"%Y%m%d").zip magiskboot  META-INF ramdisk-twrp.cpio
-    cp -r twrp-installer-3.3.1-0-B2N_sprout-OOB-10.0-$(date +"%Y%m%d").zip /var/lib/jenkins/workspace/Raghu/B2N_sprout  
+    cp -r twrp-installer-3.3.1-0-B2N_sprout-OOB-10.0-$(date +"%Y%m%d").zip $path/B2N_sprout  
     cd
-    cd /var/lib/jenkins/workspace/Raghu/twrp
+    cd $path/twrp
     rm -r out
     rm -r device/nokia
     git clone https://github.com/RaghuVarma331/android_device_nokia_B2N_sprout-TWRP.git -b android-10.0-NB device/nokia/B2N_sprout	
     . build/envsetup.sh && lunch omni_B2N_sprout-eng && make -j32 recoveryimage  
     cd out/target/product/B2N_sprout
     mv ramdisk-recovery.cpio ramdisk-twrp.cpio
-    cp -r ramdisk-twrp.cpio /var/lib/jenkins/workspace/Raghu/twrp/device/nokia/B2N_sprout/installer
+    cp -r ramdisk-twrp.cpio $path/twrp/device/nokia/B2N_sprout/installer
     cd
-    cd /var/lib/jenkins/workspace/Raghu/twrp/device/nokia/B2N_sprout/installer
+    cd $path/twrp/device/nokia/B2N_sprout/installer
     zip -r twrp-installer-3.3.1-0-B2N_sprout-POB-10.0-$(date +"%Y%m%d").zip magiskboot  META-INF ramdisk-twrp.cpio
-    cp -r twrp-installer-3.3.1-0-B2N_sprout-POB-10.0-$(date +"%Y%m%d").zip /var/lib/jenkins/workspace/Raghu/B2N_sprout  
+    cp -r twrp-installer-3.3.1-0-B2N_sprout-POB-10.0-$(date +"%Y%m%d").zip $path/B2N_sprout  
     cd
-    cd /var/lib/jenkins/workspace/Raghu    
+    cd $path    
 }
 
 TWRP-P-INSTALLER()
@@ -719,35 +719,35 @@ TWRP-P-INSTALLER()
     . build/envsetup.sh && lunch omni_B2N_sprout-eng && make -j32 recoveryimage
     cd out/target/product/DRG_sprout
     mv ramdisk-recovery.cpio ramdisk-twrp.cpio
-    cp -r ramdisk-twrp.cpio /var/lib/jenkins/workspace/Raghu/twrp/device/nokia/DRG_sprout/installer
+    cp -r ramdisk-twrp.cpio $path/twrp/device/nokia/DRG_sprout/installer
     cd
-    cd /var/lib/jenkins/workspace/Raghu/twrp/device/nokia/DRG_sprout/installer
+    cd $path/twrp/device/nokia/DRG_sprout/installer
     zip -r twrp-installer-3.3.1-0-DRG_sprout-9.0-$(date +"%Y%m%d").zip magiskboot  META-INF ramdisk-twrp.cpio
-    cp -r twrp-installer-3.3.1-0-DRG_sprout-9.0-$(date +"%Y%m%d").zip /var/lib/jenkins/workspace/Raghu/DRG_sprout  
+    cp -r twrp-installer-3.3.1-0-DRG_sprout-9.0-$(date +"%Y%m%d").zip $path/DRG_sprout  
     cd
-    cd /var/lib/jenkins/workspace/Raghu/twrp	
+    cd $path/twrp	
     cd out/target/product/B2N_sprout
     mv ramdisk-recovery.cpio ramdisk-twrp.cpio
-    cp -r ramdisk-twrp.cpio /var/lib/jenkins/workspace/Raghu/twrp/device/nokia/B2N_sprout/installer
+    cp -r ramdisk-twrp.cpio $path/twrp/device/nokia/B2N_sprout/installer
     cd
-    cd /var/lib/jenkins/workspace/Raghu/twrp/device/nokia/B2N_sprout/installer
+    cd $path/twrp/device/nokia/B2N_sprout/installer
     zip -r twrp-installer-3.3.1-0-B2N_sprout-OOB-9.0-$(date +"%Y%m%d").zip magiskboot  META-INF ramdisk-twrp.cpio
-    cp -r twrp-installer-3.3.1-0-B2N_sprout-OOB-9.0-$(date +"%Y%m%d").zip /var/lib/jenkins/workspace/Raghu/B2N_sprout  
+    cp -r twrp-installer-3.3.1-0-B2N_sprout-OOB-9.0-$(date +"%Y%m%d").zip $path/B2N_sprout  
     cd
-    cd /var/lib/jenkins/workspace/Raghu/twrp
+    cd $path/twrp
     rm -r out
     rm -r device/nokia
     git clone https://github.com/RaghuVarma331/android_device_nokia_B2N_sprout-TWRP.git -b android-9.0-NB device/nokia/B2N_sprout	
     . build/envsetup.sh && lunch omni_B2N_sprout-eng && make -j32 recoveryimage     
     cd out/target/product/B2N_sprout
     mv ramdisk-recovery.cpio ramdisk-twrp.cpio
-    cp -r ramdisk-twrp.cpio /var/lib/jenkins/workspace/Raghu/twrp/device/nokia/B2N_sprout/installer
+    cp -r ramdisk-twrp.cpio $path/twrp/device/nokia/B2N_sprout/installer
     cd
-    cd /var/lib/jenkins/workspace/Raghu/twrp/device/nokia/B2N_sprout/installer
+    cd $path/twrp/device/nokia/B2N_sprout/installer
     zip -r twrp-installer-3.3.1-0-B2N_sprout-POB-9.0-$(date +"%Y%m%d").zip magiskboot  META-INF ramdisk-twrp.cpio
-    cp -r twrp-installer-3.3.1-0-B2N_sprout-POB-9.0-$(date +"%Y%m%d").zip /var/lib/jenkins/workspace/Raghu/B2N_sprout  
+    cp -r twrp-installer-3.3.1-0-B2N_sprout-POB-9.0-$(date +"%Y%m%d").zip $path/B2N_sprout  
     cd
-    cd /var/lib/jenkins/workspace/Raghu     
+    cd $path     
     rm -r twrp
     cd DRG_sprout
     sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-DRG_sprout-9.0* twrp-installer-3.3.1-0-DRG_sprout-9.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/TWRP/PIE
@@ -924,16 +924,16 @@ KIWIS-SOURCE()
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 drg
     cd drg
     export ARCH=arm64
-    export CROSS_COMPILE=/var/lib/jenkins/workspace/Raghu/aarch64-linux-android-4.9/bin/aarch64-linux-android-
+    export CROSS_COMPILE=$path/aarch64-linux-android-4.9/bin/aarch64-linux-android-
     mkdir output
     make -C $(pwd) O=output SAT-perf_defconfig
     make -j32 -C $(pwd) O=output
-    cp -r output/arch/arm64/boot/Image.gz-dtb /var/lib/jenkins/workspace/Raghu/drg/DRG_sprout
+    cp -r output/arch/arm64/boot/Image.gz-dtb $path/drg/DRG_sprout
     cd DRG_sprout
     zip -r Kiwis-kernel-10.0-DRG_sprout-$(date +"%Y%m%d").zip META-INF patch tools Image.gz-dtb anykernel.sh   
-    cp -r Kiwis-kernel-10.0-DRG_sprout-$(date +"%Y%m%d").zip /var/lib/jenkins/workspace/Raghu/kiwis-kernel
+    cp -r Kiwis-kernel-10.0-DRG_sprout-$(date +"%Y%m%d").zip $path/kiwis-kernel
     cd
-    cd /var/lib/jenkins/workspace/Raghu
+    cd $path
     rm -r drg
     cd kiwis-kernel
     sshpass -p $password rsync -avP -e ssh Kiwis-kernel* raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/Kiwis-kernel
@@ -966,7 +966,7 @@ OXYGEN-SOURCE()
     chmod a+x rv.sh
     sudo ./rv.sh
     cd output 
-    cp -r OxygenOS-10.0-OP6-Stable-HMD-SDM660-$(date +"%Y%m%d").zip /var/lib/jenkins/workspace/Raghu/OxygenOS
+    cp -r OxygenOS-10.0-OP6-Stable-HMD-SDM660-$(date +"%Y%m%d").zip $path/OxygenOS
     cd ..
     cd ..
     sudo rm -r tool
