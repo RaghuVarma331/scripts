@@ -968,7 +968,7 @@ OXYGEN-SOURCE()
     cp -r OxygenOS-10.0-OP6-Stable-HMD-SDM660-$(date +"%Y%m%d").zip /var/lib/jenkins/workspace/Raghu/OxygenOS
     cd ..
     cd ..
-    rm -r tool
+    sudo rm -r tool
     cd OxygenOS
     sshpass -p $password rsync -avP -e ssh OxygenOS-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/nokia-sdm660/OxygenOS
     cd ..
