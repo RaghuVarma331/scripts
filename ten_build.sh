@@ -29,6 +29,7 @@ evoxversion=3.3
 havocversion=3.0
 oxversion=v-2
 password=
+path=/var/lib/jenkins/workspace/Raghu
 
 # Init Methods
 
