@@ -17,14 +17,9 @@
    
    $./ten_build.sh    
    
-   ------------------------------------------------
-   A simple remote script to compile custom Stuff
-   Coded By Raghu Varma.G 
-   ------------------------------------------------
-   1) BasicSetup	   4) havoc	     7) twrp	      10) Exit
-   2) pe		   5) evox	     8) kiwis-kernel
-   3) lineageos	   6) oxygen	     9) all_roms
-   Please select your option (1-9):
+<p align="center">
+<img src="https://raw.githubusercontent.com/RaghuVarma331/scripts/master/demo.jpg" > 
+</p>
    
    Now select any number and hit enter if you are running on linux terminal
 
