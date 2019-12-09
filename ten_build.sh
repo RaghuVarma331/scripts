@@ -59,8 +59,29 @@ LINEAGE-SOURCE()
     build's progress at $jenkinsurl"  
     . build/envsetup.sh && lunch lineage_Dragon-eng && make -j32 bacon
     cd out/target/product/Dragon
+    Changelog=lineage-17.0-Dragon.txt
+
+
+    echo "Generating changelog..."
+
+    for i in $(seq 14);
+    do
+    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
+    k=$(expr $i - 1)
+    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
+
+    # Line with after --- until was too long for a small ListView
+    echo '=======================' >> $Changelog;
+    echo  "     "$Until_Date       >> $Changelog;
+    echo '=======================' >> $Changelog;
+    echo >> $Changelog;
+
+    # Cycle through every repo to find commits between 2 dates
+    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
+    echo >> $Changelog;
+    done
     cat lineage-17.0**.txt > $path/changelog/Dragon/LineageOS.txt
-    sshpass -p $password rsync -avP -e ssh lineage-17.0*     raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/LineageOS
+    sshpass -p $password rsync -avP -e ssh lineage-17.0**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/LineageOS
     cd 
     cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
@@ -106,8 +127,29 @@ LINEAGE-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch lineage_Onyx-eng && make -j32 bacon
     cd out/target/product/Onyx
+    Changelog=lineage-17.0-Onyx.txt
+
+
+    echo "Generating changelog..."
+
+    for i in $(seq 14);
+    do
+    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
+    k=$(expr $i - 1)
+    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
+
+    # Line with after --- until was too long for a small ListView
+    echo '=======================' >> $Changelog;
+    echo  "     "$Until_Date       >> $Changelog;
+    echo '=======================' >> $Changelog;
+    echo >> $Changelog;
+
+    # Cycle through every repo to find commits between 2 dates
+    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
+    echo >> $Changelog;
+    done    
     cat lineage-17.0**.txt > $path/changelog/Onyx/LineageOS.txt
-    sshpass -p $password rsync -avP -e ssh lineage-17.0*     raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/LineageOS
+    sshpass -p $password rsync -avP -e ssh lineage-17.0**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/LineageOS
     cd 
     cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
@@ -155,8 +197,29 @@ LINEAGE-SOURCE()
     build's progress at $jenkinsurl"    
     . build/envsetup.sh && lunch lineage_whyred-eng && make -j32 bacon
     cd out/target/product/whyred
+    Changelog=lineage-17.0-whyred.txt
+
+
+    echo "Generating changelog..."
+
+    for i in $(seq 14);
+    do
+    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
+    k=$(expr $i - 1)
+    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
+
+    # Line with after --- until was too long for a small ListView
+    echo '=======================' >> $Changelog;
+    echo  "     "$Until_Date       >> $Changelog;
+    echo '=======================' >> $Changelog;
+    echo >> $Changelog;
+
+    # Cycle through every repo to find commits between 2 dates
+    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
+    echo >> $Changelog;
+    done    
     cat lineage-17.0**.txt > $path/changelog/whyred/LineageOS.txt
-    sshpass -p $password rsync -avP -e ssh lineage-17.0*     raghuvarma331@frs.sourceforge.net:/home/frs/project/whyred-rv/LineageOS
+    sshpass -p $password rsync -avP -e ssh lineage-17.0**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/whyred-rv/LineageOS
     cd 
     cd $path
     rm -r los
@@ -214,7 +277,7 @@ PE-SOURCE()
     . build/envsetup.sh && lunch aosp_Dragon-eng && make -j32 bacon
     cd out/target/product/Dragon
     cat PixelExperience**.txt > $path/changelog/Dragon/PixelExperience.txt
-    sshpass -p $password rsync -avP -e ssh PixelExperience*     raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/PixelExperience
+    sshpass -p $password rsync -avP -e ssh PixelExperience**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/PixelExperience
     cd 
     cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
@@ -261,7 +324,7 @@ PE-SOURCE()
     . build/envsetup.sh && lunch aosp_Onyx-eng && make -j32 bacon
     cd out/target/product/Onyx
     cat PixelExperience**.txt > $path/changelog/Onyx/PixelExperience.txt
-    sshpass -p $password rsync -avP -e ssh PixelExperience*     raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/PixelExperience
+    sshpass -p $password rsync -avP -e ssh PixelExperience**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/PixelExperience
     cd 
     cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
@@ -308,7 +371,7 @@ PE-SOURCE()
     . build/envsetup.sh && lunch aosp_Plate2-eng && make -j32 bacon
     cd out/target/product/Plate2
     cat PixelExperience**.txt > $path/changelog/Plate2/PixelExperience.txt
-    sshpass -p $password rsync -avP -e ssh PixelExperience*     raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/PixelExperience
+    sshpass -p $password rsync -avP -e ssh PixelExperience**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/PixelExperience
     cd 
     cd $path
     rm -r pe
@@ -367,7 +430,7 @@ EVOX-SOURCE()
     . build/envsetup.sh && lunch aosp_Dragon-eng && make -j32 bacon
     cd out/target/product/Dragon
     cat EvolutionX**.txt > $path/changelog/Dragon/evolutionx.txt
-    sshpass -p $password rsync -avP -e ssh EvolutionX*       raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/EvolutionX
+    sshpass -p $password rsync -avP -e ssh EvolutionX**.zip       raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/EvolutionX
     cd 
     cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P evox.png -C "
@@ -415,7 +478,7 @@ EVOX-SOURCE()
     . build/envsetup.sh && lunch aosp_Onyx-eng && make -j32 bacon
     cd out/target/product/Onyx
     cat EvolutionX**.txt > $path/changelog/Onyx/evolutionx.txt
-    sshpass -p $password rsync -avP -e ssh EvolutionX*       raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/EvolutionX
+    sshpass -p $password rsync -avP -e ssh EvolutionX**.zip       raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/EvolutionX
     cd 
     cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P evox.png -C "
@@ -463,7 +526,7 @@ EVOX-SOURCE()
     . build/envsetup.sh && lunch aosp_Plate2-eng && make -j32 bacon
     cd out/target/product/Plate2
     cat EvolutionX**.txt > $path/changelog/Plate2/evolutionx.txt
-    sshpass -p $password rsync -avP -e ssh EvolutionX*       raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/EvolutionX
+    sshpass -p $password rsync -avP -e ssh EvolutionX**.zip  raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/EvolutionX
     cd 
     cd $path
     rm -r evo
@@ -521,7 +584,7 @@ HAVOC-SOURCE()
     . build/envsetup.sh && lunch havoc_Dragon-eng && make -j32 bacon
     cd out/target/product/Dragon
     cat Havoc-OS**.txt > $path/changelog/Dragon/HavocOS.txt
-    sshpass -p $password rsync -avP -e ssh Havoc-OS*         raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/Havoc-OS
+    sshpass -p $password rsync -avP -e ssh Havoc-OS**.zip   raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/Havoc-OS
     cd 
     cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P havoc.jpg -C "
@@ -568,7 +631,7 @@ HAVOC-SOURCE()
     . build/envsetup.sh && lunch havoc_Onyx-eng && make -j32 bacon
     cd out/target/product/Onyx
     cat Havoc-OS**.txt > $path/changelog/Onyx/HavocOS.txt
-    sshpass -p $password rsync -avP -e ssh Havoc-OS*         raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/Havoc-OS
+    sshpass -p $password rsync -avP -e ssh Havoc-OS**.zip   raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/Havoc-OS
     cd 
     cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P havoc.jpg -C "
@@ -615,7 +678,7 @@ HAVOC-SOURCE()
     . build/envsetup.sh && lunch havoc_Plate2-eng && make -j32 bacon
     cd out/target/product/Plate2
     cat Havoc-OS**.txt > $path/changelog/Plate2/HavocOS.txt
-    sshpass -p $password rsync -avP -e ssh Havoc-OS*         raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/Havoc-OS
+    sshpass -p $password rsync -avP -e ssh Havoc-OS**.zip raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/Havoc-OS
     cd 
     cd $path
     rm -r havoc
@@ -1009,7 +1072,7 @@ KIWIS-SOURCE()
     cd $path
     rm -r drg
     cd kiwis-kernel
-    sshpass -p $password rsync -avP -e ssh Kiwis-kernel* raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/Kiwis-kernel
+    sshpass -p $password rsync -avP -e ssh Kiwis-kernel**.zip raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/Kiwis-kernel
     cd ..
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P kiwis.jpg -C "
     *
@@ -1044,7 +1107,7 @@ OXYGEN-SOURCE()
     cd ..
     sudo rm -r tool
     cd OxygenOS
-    sshpass -p $password rsync -avP -e ssh OxygenOS-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/nokia-sdm660/OxygenOS
+    sshpass -p $password rsync -avP -e ssh OxygenOS-10.0**.zip raghuvarma331@frs.sourceforge.net:/home/frs/project/nokia-sdm660/OxygenOS
     cd ..
     wget https://github.com/RaghuVarma331/scripts/raw/master/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/oxygenos.png
