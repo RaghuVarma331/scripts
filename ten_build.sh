@@ -27,7 +27,7 @@ securitypatch=2019-12-05
 twrpsp='2019-12-05'
 evoxversion=3.4
 havocversion=3.0
-oxversion=v-2
+oxversion=v-3
 password=
 path=/var/lib/jenkins/workspace/Raghu
 
