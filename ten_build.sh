@@ -29,6 +29,7 @@ evoxversion=3.4
 havocversion=3.0
 oxversion=v-3
 password=
+gitpassword=username:password
 path=/var/lib/jenkins/workspace/Raghu
 
 # Init Methods
@@ -37,6 +38,7 @@ LINEAGE-SOURCE()
 {
     wget https://github.com/RaghuVarma331/scripts/raw/master/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/lineage.jpg
+    git clone https://$gitpassword@github.com//RaghuVarma331/changelogs.git changelog
     mkdir los
     cd los
     echo -ne '\n' | repo init -u git://github.com/LineageOS/android.git -b lineage-17.0 --depth=1
@@ -57,6 +59,7 @@ LINEAGE-SOURCE()
     build's progress at $jenkinsurl"  
     . build/envsetup.sh && lunch lineage_Dragon-eng && make -j32 bacon
     cd out/target/product/Dragon
+    cat lineage-17.0**.txt > $path/changelog/Dragon/LineageOS.txt
     sshpass -p $password rsync -avP -e ssh lineage-17.0*     raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/LineageOS
     cd 
     cd $path
@@ -81,6 +84,11 @@ LINEAGE-SOURCE()
     👤 By: Raghu Varma
     
     Follow:  @Nokia6plusofficial ✅"  
+    cd changelog
+    git add .
+    git commit -m "build $(date)"
+    git push -u origin master
+    cd ..
     cd los
     rm -r device/nokia
     rm -r vendor/nokia
@@ -98,6 +106,7 @@ LINEAGE-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch lineage_Onyx-eng && make -j32 bacon
     cd out/target/product/Onyx
+    cat lineage-17.0**.txt > $path/changelog/Onyx/LineageOS.txt
     sshpass -p $password rsync -avP -e ssh lineage-17.0*     raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/LineageOS
     cd 
     cd $path
@@ -122,6 +131,11 @@ LINEAGE-SOURCE()
     👤 By: Raghu Varma
     
     Follow: @Nokia7plusOfficial ✅"  
+    cd changelog
+    git add .
+    git commit -m "build $(date)"
+    git push -u origin master
+    cd ..    
     cd los
     rm -r device/nokia
     rm -r kernel/nokia
@@ -141,6 +155,7 @@ LINEAGE-SOURCE()
     build's progress at $jenkinsurl"    
     . build/envsetup.sh && lunch lineage_whyred-eng && make -j32 bacon
     cd out/target/product/whyred
+    cat lineage-17.0**.txt > $path/changelog/whyred/LineageOS.txt
     sshpass -p $password rsync -avP -e ssh lineage-17.0*     raghuvarma331@frs.sourceforge.net:/home/frs/project/whyred-rv/LineageOS
     cd 
     cd $path
@@ -166,13 +181,18 @@ LINEAGE-SOURCE()
     👤 By: Raghu Varma
     
     Follow: @Nokia7plusOfficial ✅"    
-    
+    cd changelog
+    git add .
+    git commit -m "build $(date)"
+    git push -u origin master
+    cd ..    
 }
 
 PE-SOURCE()
 {
     wget https://github.com/RaghuVarma331/scripts/raw/master/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/pixel.jpg
+    git clone https://$gitpassword@github.com//RaghuVarma331/changelogs.git changelog    
     mkdir pe
     cd pe
     echo -ne '\n' | repo init -u https://github.com/PixelExperience/manifest -b ten --depth=1
@@ -193,6 +213,7 @@ PE-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch aosp_Dragon-eng && make -j32 bacon
     cd out/target/product/Dragon
+    cat PixelExperience**.txt > $path/changelog/Dragon/PixelExperience.txt
     sshpass -p $password rsync -avP -e ssh PixelExperience*     raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/PixelExperience
     cd 
     cd $path
@@ -217,6 +238,11 @@ PE-SOURCE()
     👤 By: Raghu Varma
     
     Follow:  @Nokia6plusofficial ✅" 
+    cd changelog
+    git add .
+    git commit -m "build $(date)"
+    git push -u origin master
+    cd ..
     cd pe
     rm -r device/nokia
     rm -r vendor/nokia
@@ -234,6 +260,7 @@ PE-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch aosp_Onyx-eng && make -j32 bacon
     cd out/target/product/Onyx
+    cat PixelExperience**.txt > $path/changelog/Onyx/PixelExperience.txt
     sshpass -p $password rsync -avP -e ssh PixelExperience*     raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/PixelExperience
     cd 
     cd $path
@@ -258,6 +285,11 @@ PE-SOURCE()
     👤 By: Raghu Varma
     
     Follow: @Nokia7plusOfficial ✅"     
+    cd changelog
+    git add .
+    git commit -m "build $(date)"
+    git push -u origin master
+    cd ..
     cd pe
     rm -r device/nokia
     rm -r vendor/nokia
@@ -275,6 +307,7 @@ PE-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch aosp_Plate2-eng && make -j32 bacon
     cd out/target/product/Plate2
+    cat PixelExperience**.txt > $path/changelog/Plate2/PixelExperience.txt
     sshpass -p $password rsync -avP -e ssh PixelExperience*     raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/PixelExperience
     cd 
     cd $path
@@ -300,13 +333,18 @@ PE-SOURCE()
     👤 By: Raghu Varma
     
     Follow: @Nokia6plusofficial ✅"        
-    
+    cd changelog
+    git add .
+    git commit -m "build $(date)"
+    git push -u origin master
+    cd ..    
 }
 
 EVOX-SOURCE()
 {
     wget https://github.com/RaghuVarma331/scripts/raw/master/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/evox.png
+    git clone https://$gitpassword@github.com//RaghuVarma331/changelogs.git changelog    
     mkdir evo
     cd evo
     echo -ne '\n' | repo init -u https://github.com/Evolution-X/manifest -b ten --depth=1
@@ -328,6 +366,7 @@ EVOX-SOURCE()
     export SKIP_ABI_CHECKS=true
     . build/envsetup.sh && lunch aosp_Dragon-eng && make -j32 bacon
     cd out/target/product/Dragon
+    cat EvolutionX**.txt > $path/changelog/Dragon/evolutionx.txt
     sshpass -p $password rsync -avP -e ssh EvolutionX*       raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/EvolutionX
     cd 
     cd $path
@@ -352,6 +391,11 @@ EVOX-SOURCE()
     👤 By: Raghu Varma
     
     Follow:  @Nokia6plusofficial ✅" 
+    cd changelog
+    git add .
+    git commit -m "build $(date)"
+    git push -u origin master
+    cd ..    
     cd evo
     rm -r device/nokia
     rm -r vendor/nokia
@@ -370,6 +414,7 @@ EVOX-SOURCE()
     export SKIP_ABI_CHECKS=true
     . build/envsetup.sh && lunch aosp_Onyx-eng && make -j32 bacon
     cd out/target/product/Onyx
+    cat EvolutionX**.txt > $path/changelog/Onyx/evolutionx.txt
     sshpass -p $password rsync -avP -e ssh EvolutionX*       raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/EvolutionX
     cd 
     cd $path
@@ -393,7 +438,12 @@ EVOX-SOURCE()
     
     👤 By: Raghu Varma
     
-    Follow: @Nokia7plusOfficial ✅"     
+    Follow: @Nokia7plusOfficial ✅"  
+    cd changelog
+    git add .
+    git commit -m "build $(date)"
+    git push -u origin master
+    cd ..    
     cd evo
     rm -r device/nokia
     rm -r vendor/nokia
@@ -412,6 +462,7 @@ EVOX-SOURCE()
     export SKIP_ABI_CHECKS=true
     . build/envsetup.sh && lunch aosp_Plate2-eng && make -j32 bacon
     cd out/target/product/Plate2
+    cat EvolutionX**.txt > $path/changelog/Plate2/evolutionx.txt
     sshpass -p $password rsync -avP -e ssh EvolutionX*       raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/EvolutionX
     cd 
     cd $path
@@ -437,13 +488,18 @@ EVOX-SOURCE()
     👤 By: Raghu Varma
     
     Follow: @Nokia6plusofficial ✅"        
-    
+    cd changelog
+    git add .
+    git commit -m "build $(date)"
+    git push -u origin master
+    cd ..    
 }
 
 HAVOC-SOURCE()
 {
     wget https://github.com/RaghuVarma331/scripts/raw/master/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/havoc.jpg
+    git clone https://$gitpassword@github.com//RaghuVarma331/changelogs.git changelog    
     mkdir havoc
     cd havoc
     echo -ne '\n' | repo init -u https://github.com/Havoc-OS/android_manifest.git -b ten --depth=1
@@ -464,6 +520,7 @@ HAVOC-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch havoc_Dragon-eng && make -j32 bacon
     cd out/target/product/Dragon
+    cat Havoc-OS**.txt > $path/changelog/Dragon/HavocOS.txt
     sshpass -p $password rsync -avP -e ssh Havoc-OS*         raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/Havoc-OS
     cd 
     cd $path
@@ -488,6 +545,11 @@ HAVOC-SOURCE()
     👤 By: Raghu Varma
     
     Follow:  @Nokia6plusofficial ✅" 
+    cd changelog
+    git add .
+    git commit -m "build $(date)"
+    git push -u origin master
+    cd ..
     cd havoc
     rm -r device/nokia
     rm -r vendor/nokia
@@ -505,6 +567,7 @@ HAVOC-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch havoc_Onyx-eng && make -j32 bacon
     cd out/target/product/Onyx
+    cat Havoc-OS**.txt > $path/changelog/Onyx/HavocOS.txt
     sshpass -p $password rsync -avP -e ssh Havoc-OS*         raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/Havoc-OS
     cd 
     cd $path
@@ -529,6 +592,11 @@ HAVOC-SOURCE()
     👤 By: Raghu Varma
     
     Follow: @Nokia7plusOfficial ✅"     
+    cd changelog
+    git add .
+    git commit -m "build $(date)"
+    git push -u origin master
+    cd ..    
     cd havoc
     rm -r device/nokia
     rm -r vendor/nokia
@@ -546,6 +614,7 @@ HAVOC-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch havoc_Plate2-eng && make -j32 bacon
     cd out/target/product/Plate2
+    cat Havoc-OS**.txt > $path/changelog/Plate2/HavocOS.txt
     sshpass -p $password rsync -avP -e ssh Havoc-OS*         raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/Havoc-OS
     cd 
     cd $path
@@ -571,7 +640,11 @@ HAVOC-SOURCE()
     👤 By: Raghu Varma
     
     Follow: @Nokia6plusofficial ✅"        
-    
+    cd changelog
+    git add .
+    git commit -m "build $(date)"
+    git push -u origin master
+    cd ..    
 }
 
 TWRP-P-SOURCE()
