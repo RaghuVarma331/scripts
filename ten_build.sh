@@ -38,7 +38,7 @@ LINEAGE-SOURCE()
 {
     wget https://github.com/RaghuVarma331/scripts/raw/master/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/lineage.jpg
-    git clone https://$gitpassword@github.com//RaghuVarma331/changelogs.git changelog
+    git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog
     mkdir los
     cd los
     echo -ne '\n' | repo init -u git://github.com/LineageOS/android.git -b lineage-17.0 --depth=1
@@ -192,7 +192,7 @@ PE-SOURCE()
 {
     wget https://github.com/RaghuVarma331/scripts/raw/master/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/pixel.jpg
-    git clone https://$gitpassword@github.com//RaghuVarma331/changelogs.git changelog    
+    git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog    
     mkdir pe
     cd pe
     echo -ne '\n' | repo init -u https://github.com/PixelExperience/manifest -b ten --depth=1
@@ -344,7 +344,7 @@ EVOX-SOURCE()
 {
     wget https://github.com/RaghuVarma331/scripts/raw/master/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/evox.png
-    git clone https://$gitpassword@github.com//RaghuVarma331/changelogs.git changelog    
+    git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog    
     mkdir evo
     cd evo
     echo -ne '\n' | repo init -u https://github.com/Evolution-X/manifest -b ten --depth=1
@@ -499,7 +499,7 @@ HAVOC-SOURCE()
 {
     wget https://github.com/RaghuVarma331/scripts/raw/master/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/havoc.jpg
-    git clone https://$gitpassword@github.com//RaghuVarma331/changelogs.git changelog    
+    git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog    
     mkdir havoc
     cd havoc
     echo -ne '\n' | repo init -u https://github.com/Havoc-OS/android_manifest.git -b ten --depth=1
