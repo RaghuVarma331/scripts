@@ -1,6 +1,6 @@
 ## What is this?
 
-    A simple automated script to build roms,kernels & twrps.builds will be automatically push to sourceforge. script also commit the         changelog of that particular rom source and device source changelogs  with the build respective date & time and finally script will     post the update notification in telegram channel & This is designed according to my infrastructure
+    A simple automated script to build roms,kernels & twrps.builds will be automatically push to sourceforge. script also commit the   changelog of that particular rom source and device source changelogs  with the build respective date & time and finally script will    post the update notification in telegram channel & This is designed according to my infrastructure
 
 ## Note
 
