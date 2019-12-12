@@ -904,6 +904,9 @@ TWRP-P-INSTALLER()
     cd
     cd $path     
     rm -r twrp
+    cd CTL_sprout
+    sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-CTL_sprout-10.0* twrp-installer-3.3.1-0-CTL_sprout-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/TWRP/TEN
+    cd ..
     cd DRG_sprout
     sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-DRG_sprout-9.0* twrp-installer-3.3.1-0-DRG_sprout-9.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/TWRP/PIE
     sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-DRG_sprout-10.0* twrp-installer-3.3.1-0-DRG_sprout-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/TWRP/TEN
@@ -937,6 +940,24 @@ TWRP-P-INSTALLER()
     👤 By: Raghu Varma
     
     Follow:  @Nokia6plusofficial ✅"  
+    
+    python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
+    *
+    New Android 10.0 Twrp-3.3.1-0 Build is up 
+    
+    $(date)*
+    
+    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-1/development/twrp-3-2-3-0-team-win-recovery-project-t3935859)
+    
+    📱Device: Nokia 7.1
+    
+    ⚡Build Version: 3.3.1-0
+    
+    ⚡Android Version: 10.0.0
+    
+    👤 By: Raghu Varma
+    
+    Follow:  @Nokia6plusofficial ✅"      
     
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
     *
