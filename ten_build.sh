@@ -395,7 +395,7 @@ PE-SOURCE()
     
     👤 By: Raghu Varma
     
-    Follow: @Nokia6plusofficial ✅"        
+    Follow: @nokia7161 ✅"        
     cd changelog
     git add .
     git commit -m "build $(date)"
@@ -550,7 +550,7 @@ EVOX-SOURCE()
     
     👤 By: Raghu Varma
     
-    Follow: @Nokia6plusofficial ✅"        
+    Follow: @nokia7161 ✅"        
     cd changelog
     git add .
     git commit -m "build $(date)"
@@ -702,7 +702,7 @@ HAVOC-SOURCE()
     
     👤 By: Raghu Varma
     
-    Follow: @Nokia6plusofficial ✅"        
+    Follow: @nokia7161 ✅"        
     cd changelog
     git add .
     git commit -m "build $(date)"
@@ -957,7 +957,7 @@ TWRP-P-INSTALLER()
     
     👤 By: Raghu Varma
     
-    Follow:  @Nokia6plusofficial ✅"      
+    Follow: @nokia7161 ✅"      
     
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
     *
@@ -1220,7 +1220,7 @@ OXYGEN-SOURCE()
     
     👤 By: Raghu Varma
     
-    Follow:  @Nokia6plusofficial ✅"     
+    Follow: @nokia7161 ✅"     
     
     
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P oxygenos.png -C "
@@ -1244,7 +1244,7 @@ OXYGEN-SOURCE()
     
     👤 By: Raghu Varma
     
-    Follow:  @Nokia6plusofficial ✅"       
+    Follow: @nokia7161 ✅"       
     
     
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P oxygenos.png -C "
