@@ -1234,6 +1234,30 @@ OXYGEN-SOURCE()
     
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/crossdevelopment/oxygenos.txt)
     
+    📱Device: Nokia 7.1
+    
+    ⚡Build Version: $oxversion
+    
+    ⚡Android Version: 10.0
+    
+    ⚡Security Patch : $securitypatch
+    
+    👤 By: Raghu Varma
+    
+    Follow:  @Nokia6plusofficial ✅"       
+    
+    
+    python telegram.py -t $Telegram_Api_code -c $chat_id  -P oxygenos.png -C "
+    *
+    New Android 10.0  Oxygen OS Port 
+    Build is up 
+    
+    $(date)*
+    
+    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-2/nokia-616162777172-cross-device-development/rom-oxygen-os-t4008971)
+    
+    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/crossdevelopment/oxygenos.txt)
+    
     📱Device: Nokia 7.2
     
     ⚡Build Version: $oxversion
