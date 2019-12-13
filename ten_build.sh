@@ -1290,6 +1290,7 @@ TOOLS_SETUP()
 	git config --global user.email "raghuvarma331@gmail.com"
 	git config --global user.name "RaghuVarma331"
 	mkdir -p ~/.ssh  &&  echo "Host *" > ~/.ssh/config && echo " StrictHostKeyChecking no" >> ~/.ssh/config
+	echo "# Allow Jenkins" >> /etc/sudoers && echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 }
 
 		
