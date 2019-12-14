@@ -191,7 +191,7 @@ LINEAGE-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch lineage_Crystal-eng && make -j32 bacon
     cd out/target/product/Crystal
-    Changelog=lineage-17.0-Onyx.txt
+    Changelog=lineage-17.0-Crystal.txt
 
 
     echo "Generating changelog..."
@@ -236,7 +236,7 @@ LINEAGE-SOURCE()
     
     👤 By: Raghu Varma
     
-    Follow: @Nokia7161 ✅"  
+    Follow: @nokia7161 ✅"  
     cd changelog
     git add .
     git commit -m "build $(date)"
@@ -454,7 +454,7 @@ PE-SOURCE()
     
     👤 By: Raghu Varma
     
-    Follow: @nokia7162 ✅"     
+    Follow: @nokia7161 ✅"     
     cd changelog
     git add .
     git commit -m "build $(date)"
@@ -650,7 +650,7 @@ EVOX-SOURCE()
     
     👤 By: Raghu Varma
     
-    Follow: @Nokia7plusOfficial ✅"  
+    Follow: @nokia7161 ✅"  
     cd changelog
     git add .
     git commit -m "build $(date)"
