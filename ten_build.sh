@@ -178,9 +178,75 @@ LINEAGE-SOURCE()
     cd ..    
     cd los
     rm -r device/nokia
+    rm -r out/target/product/Onyx
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Crystal.git -b ten device/nokia/Crystal
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    
+    New LineageOS 17.0 for Nokia 7.1 build started 
+    
+    $(date)
+    
+    👤 By: Raghu Varma
+
+    build's progress at $jenkinsurl"      
+    . build/envsetup.sh && lunch lineage_Crystal-eng && make -j32 bacon
+    cd out/target/product/Crystal
+    Changelog=lineage-17.0-Onyx.txt
+
+
+    echo "Generating changelog..."
+
+    for i in $(seq 14);
+    do
+    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
+    k=$(expr $i - 1)
+    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
+
+    # Line with after --- until was too long for a small ListView
+    echo '=======================' >> $Changelog;
+    echo  "     "$Until_Date       >> $Changelog;
+    echo '=======================' >> $Changelog;
+    echo >> $Changelog;
+
+    # Cycle through every repo to find commits between 2 dates
+    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
+    echo >> $Changelog;
+    done    
+    cat lineage-17.0**.txt > $path/changelog/Crystal/LineageOS.txt
+    sshpass -p $password rsync -avP -e ssh lineage-17.0**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/LineageOS
+    cd 
+    cd $path
+    python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
+    *
+    New LineageOS 17.0 Build is up 
+    
+    $(date)*
+    
+    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/rom-lineageos-17-0-t3993445)
+    
+    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Crystal/LineageOS.txt)
+    
+    📱Device: Nokia 7.1
+    
+    ⚡Build Version: 17.0
+    
+    ⚡Android Version: 10.0.0
+    
+    ⚡Security Patch : $securitypatch
+    
+    👤 By: Raghu Varma
+    
+    Follow: @Nokia7161 ✅"  
+    cd changelog
+    git add .
+    git commit -m "build $(date)"
+    git push -u origin master
+    cd ..    
+    cd los
+    rm -r device/nokia
     rm -r kernel/nokia
     rm -r vendor/nokia
-    rm -r out/target/product/Onyx
+    rm -r out/target/product/Crystal
     git clone https://github.com/RaghuVarma331/android_device_xiaomi_whyred.git -b lineage-17.0 device/xiaomi/whyred
     git clone https://github.com/RaghuVarma331/android_kernel_xiaomi_whyred.git -b ten --depth=1 kernel/xiaomi/whyred
     git clone https://github.com/RaghuVarma331/vendor_MiuiCamera.git -b ten vendor/MiuiCamera
@@ -348,10 +414,55 @@ PE-SOURCE()
     git add .
     git commit -m "build $(date)"
     git push -u origin master
-    cd ..
+    cd ..    
     cd pe
     rm -r device/nokia
     rm -r out/target/product/Onyx
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Crystal.git -b ten device/nokia/Crystal
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    
+    New Pixel-Experience for Nokia 7.1 build started 
+    
+    $(date)
+    
+    👤 By: Raghu Varma
+
+    build's progress at $jenkinsurl"      
+    . build/envsetup.sh && lunch aosp_Crystal-eng && make -j32 bacon
+    cd out/target/product/Crystal
+    cat PixelExperience**.txt > $path/changelog/Crystal/PixelExperience.txt
+    sshpass -p $password rsync -avP -e ssh PixelExperience**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/PixelExperience
+    cd 
+    cd $path
+    python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
+    *
+    New Pixel-Experience Build is up 
+    
+    $(date)*
+     
+    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/rom-pixel-experience-t3992063)
+    
+    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Crystal/PixelExperience.txt)
+    
+    📱Device: Nokia 7.1
+    
+    ⚡Build Version: Ten
+    
+    ⚡Android Version: 10.0.0
+    
+    ⚡Security Patch : $securitypatch
+    
+    👤 By: Raghu Varma
+    
+    Follow: @nokia7162 ✅"     
+    cd changelog
+    git add .
+    git commit -m "build $(date)"
+    git push -u origin master
+    cd .. 
+    cd pe
+    rm -r device/nokia
+    rm -r out/target/product/Crystal
     git clone https://github.com/RaghuVarma331/android_device_nokia_Plate2.git -b ten device/nokia/Plate2
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
@@ -498,10 +609,56 @@ EVOX-SOURCE()
     git add .
     git commit -m "build $(date)"
     git push -u origin master
-    cd ..    
+    cd ..        
     cd evo
     rm -r device/nokia
     rm -r out/target/product/Onyx
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Crystal.git -b ten device/nokia/Crystal
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    
+    New Evolution X for Nokia 7.1 build started 
+    
+    $(date)
+    
+    👤 By: Raghu Varma
+
+    build's progress at $jenkinsurl"      
+    export SKIP_ABI_CHECKS=true
+    . build/envsetup.sh && lunch aosp_Crystal-eng && make -j32 bacon
+    cd out/target/product/Crystal
+    cat EvolutionX**.txt > $path/changelog/Crystal/evolutionx.txt
+    sshpass -p $password rsync -avP -e ssh EvolutionX**.zip       raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/EvolutionX
+    cd 
+    cd $path
+    python telegram.py -t $Telegram_Api_code -c $chat_id  -P evox.png -C "
+    *
+    New Evolution X Build is up 
+    
+    $(date)*
+     
+    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/rom-evolution-x-3-3-t4011603)
+    
+    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Crystal/evolutionx.txt)
+    
+    📱Device: Nokia 7.1
+    
+    ⚡Build Version: $evoxversion
+    
+    ⚡Android Version: 10.0.0
+    
+    ⚡Security Patch : $securitypatch
+    
+    👤 By: Raghu Varma
+    
+    Follow: @Nokia7plusOfficial ✅"  
+    cd changelog
+    git add .
+    git commit -m "build $(date)"
+    git push -u origin master
+    cd ..            
+    cd evo
+    rm -r device/nokia
+    rm -r out/target/product/Crystal
     git clone https://github.com/RaghuVarma331/android_device_nokia_Plate2.git -b ten device/nokia/Plate2
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
@@ -651,6 +808,51 @@ HAVOC-SOURCE()
     cd havoc
     rm -r device/nokia
     rm -r out/target/product/Onyx
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Crystal.git -b ten device/nokia/Crystal
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    
+    New Havoc-OS for Nokia 7.1 build started 
+    
+    $(date)
+    
+    👤 By: Raghu Varma
+
+    build's progress at $jenkinsurl"      
+    . build/envsetup.sh && lunch havoc_Crystal-eng && make -j32 bacon
+    cd out/target/product/Crystal
+    cat Havoc-OS**.txt > $path/changelog/Crystal/HavocOS.txt
+    sshpass -p $password rsync -avP -e ssh Havoc-OS**.zip   raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/Havoc-OS
+    cd 
+    cd $path
+    python telegram.py -t $Telegram_Api_code -c $chat_id  -P havoc.jpg -C "
+    *
+    New Havoc-OS Build is up 
+    
+    $(date)*
+    
+    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/rom-havoc-os-v3-0-t3998287)
+    
+    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Crystal/HavocOS.txt)
+    
+    📱Device: Nokia 7.1
+    
+    ⚡Build Version: $havocversion
+    
+    ⚡Android Version: 10.0.0
+    
+    ⚡Security Patch : $securitypatch
+    
+    👤 By: Raghu Varma
+    
+    Follow: @nokia7161 ✅"     
+    cd changelog
+    git add .
+    git commit -m "build $(date)"
+    git push -u origin master
+    cd ..          
+    cd havoc
+    rm -r device/nokia
+    rm -r out/target/product/Crystal
     git clone https://github.com/RaghuVarma331/android_device_nokia_Plate2.git -b ten device/nokia/Plate2
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
