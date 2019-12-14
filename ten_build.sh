@@ -46,7 +46,6 @@ LINEAGE-SOURCE()
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/lineage/config/common.mk
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.0 packages/resources/devicesettings
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660	
-    git clone https://gitlab.com/RaghuVarma331/vendor_nokia_dragon.git -b ten vendor/nokia/Dragon
     git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
@@ -112,10 +111,8 @@ LINEAGE-SOURCE()
     cd ..
     cd los
     rm -r device/nokia
-    rm -r vendor/nokia
     rm -r out/target/product/Dragon
     git clone https://github.com/RaghuVarma331/android_device_nokia_Onyx.git -b ten device/nokia/Onyx
-    git clone https://gitlab.com/RaghuVarma331/vendor_nokia_onyx.git -b ten vendor/nokia/Onyx
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New LineageOS 17.0 for Nokia 7 Plus build started 
@@ -264,7 +261,6 @@ PE-SOURCE()
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.0 packages/resources/devicesettings
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660	
     git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon    
-    git clone https://gitlab.com/RaghuVarma331/vendor_nokia_dragon.git -b ten vendor/nokia/Dragon
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Pixel-Experience for Nokia 6.1 Plus build started 
@@ -308,10 +304,8 @@ PE-SOURCE()
     cd ..
     cd pe
     rm -r device/nokia
-    rm -r vendor/nokia
     rm -r out/target/product/Dragon
     git clone https://github.com/RaghuVarma331/android_device_nokia_Onyx.git -b ten device/nokia/Onyx
-    git clone https://gitlab.com/RaghuVarma331/vendor_nokia_onyx.git -b ten vendor/nokia/Onyx
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Pixel-Experience for Nokia 7 Plus build started 
@@ -355,10 +349,8 @@ PE-SOURCE()
     cd ..
     cd pe
     rm -r device/nokia
-    rm -r vendor/nokia
     rm -r out/target/product/Onyx
     git clone https://github.com/RaghuVarma331/android_device_nokia_Plate2.git -b ten device/nokia/Plate2
-    git clone https://gitlab.com/RaghuVarma331/vendor_nokia_plate2.git -b ten vendor/nokia/Plate2
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Pixel-Experience for Nokia 6.1 build started 
@@ -416,7 +408,6 @@ EVOX-SOURCE()
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.0 packages/resources/devicesettings
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660	
     git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon    
-    git clone https://gitlab.com/RaghuVarma331/vendor_nokia_dragon.git -b ten vendor/nokia/Dragon
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Evolution X for Nokia 6.1 Plus build started 
@@ -461,10 +452,8 @@ EVOX-SOURCE()
     cd ..    
     cd evo
     rm -r device/nokia
-    rm -r vendor/nokia
     rm -r out/target/product/Dragon
     git clone https://github.com/RaghuVarma331/android_device_nokia_Onyx.git -b ten device/nokia/Onyx
-    git clone https://gitlab.com/RaghuVarma331/vendor_nokia_onyx.git -b ten vendor/nokia/Onyx
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Evolution X for Nokia 7 Plus build started 
@@ -509,10 +498,8 @@ EVOX-SOURCE()
     cd ..    
     cd evo
     rm -r device/nokia
-    rm -r vendor/nokia
     rm -r out/target/product/Onyx
     git clone https://github.com/RaghuVarma331/android_device_nokia_Plate2.git -b ten device/nokia/Plate2
-    git clone https://gitlab.com/RaghuVarma331/vendor_nokia_plate2.git -b ten vendor/nokia/Plate2
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Evolution X for Nokia 6.1 build started 
@@ -571,7 +558,6 @@ HAVOC-SOURCE()
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.0 packages/resources/devicesettings
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660	
     git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon    
-    git clone https://gitlab.com/RaghuVarma331/vendor_nokia_dragon.git -b ten vendor/nokia/Dragon
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Havoc-OS for Nokia 6.1 Plus build started 
@@ -615,10 +601,8 @@ HAVOC-SOURCE()
     cd ..
     cd havoc
     rm -r device/nokia
-    rm -r vendor/nokia
     rm -r out/target/product/Dragon
     git clone https://github.com/RaghuVarma331/android_device_nokia_Onyx.git -b ten device/nokia/Onyx
-    git clone https://gitlab.com/RaghuVarma331/vendor_nokia_onyx.git -b ten vendor/nokia/Onyx
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Havoc-OS for Nokia 7 Plus build started 
@@ -662,10 +646,8 @@ HAVOC-SOURCE()
     cd ..    
     cd havoc
     rm -r device/nokia
-    rm -r vendor/nokia
     rm -r out/target/product/Onyx
     git clone https://github.com/RaghuVarma331/android_device_nokia_Plate2.git -b ten device/nokia/Plate2
-    git clone https://gitlab.com/RaghuVarma331/vendor_nokia_plate2.git -b ten vendor/nokia/Plate2
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Havoc-OS for Nokia 6.1 build started 
