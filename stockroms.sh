@@ -12,26 +12,19 @@ buildnumber=
 androidversion=
 path=/root
 password=
-device=
+device=Nokia 6.1 Plus
 securitypatch=
 
 git clone https://github.com/RaghuVarma331/OTA2HB-Tool.git tool
 cd tool
-sed -i "/url/d" make.sh
-sed -i "/code/d" make.sh
-sed -i "/buildnumber/d" make.sh
-sed -i "/androidversion/d" make.sh
-sed -i "/path/d" make.sh
-sed -i "/password/d" make.sh
-
-echo url=$url >> make.sh
-echo code=$code >> make.sh
-echo buildnumber=$buildnumber >> make.sh
-echo androidversion=$androidversion >> make.sh
-echo path=$path >> make.sh
-echo password=$password >> make.sh
-chmod a+x make.sh
-./make.sh
+echo url=$url >> rv.sh
+echo code=$code >> rv.sh
+echo buildnumber=$buildnumber >> rv.sh
+echo androidversion=$androidversion >> rv.sh
+echo path=$path >> rv.sh
+echo password=$password >> rv.sh
+chmod a+x rv.sh
+./rv.sh
 cd 
 cd $path
 rm -r tool
