@@ -830,7 +830,7 @@ HAVOC-SOURCE()
     
     $(date)*
     
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/rom-havoc-os-v3-0-t3998287)
+    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-1/development/rom-havoc-os-v3-0-t4020097)
     
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Crystal/HavocOS.txt)
     
