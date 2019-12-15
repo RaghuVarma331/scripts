@@ -19,13 +19,13 @@ channel=@Nokia6plusofficial
 
 git clone https://github.com/RaghuVarma331/OTA2HB-Tool.git tool
 cd tool
-echo url=$url >> rv.sh
-echo code=$code >> rv.sh
-echo buildnumber=$buildnumber >> rv.sh
-echo androidversion=$androidversion >> rv.sh
-echo path=$path >> rv.sh
-echo password=$password >> rv.sh
 chmod a+x rv.sh
+sed -i "1i url=$url" rv.sh
+sed -i "2i code=$code" rv.sh
+sed -i "3i buildnumber=$buildnumber" rv.sh
+sed -i "4i androidversion=$androidversion" rv.sh
+sed -i "5i path=$path" rv.sh
+sed -i "6i password=$password" rv.sh
 ./rv.sh
 cd 
 cd $path
