@@ -236,7 +236,7 @@ LINEAGE-SOURCE()
     
     👤 By: Raghu Varma
     
-    Follow: @@nokia7161  ✅"    
+    Follow: @nokia7161  ✅"    
     cd changelog
     git add .
     git commit -m "build $(date)"
