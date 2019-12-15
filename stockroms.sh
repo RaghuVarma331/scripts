@@ -12,7 +12,6 @@ buildnumber=
 androidversion=
 path=/root
 password=
-chain=$$code
 device=
 securitypatch=
 
