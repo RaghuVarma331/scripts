@@ -13,10 +13,7 @@ androidversion=
 path=/root
 password=
 chain=$$code
-DRG=Nokia 6.1 Plus
-CTL=Nokia 7.1
-B2N=Nokia 7 Plus
-PL2=Nokia 6.1
+device=
 securitypatch=
 
 git clone https://github.com/RaghuVarma331/OTA2HB-Tool.git tool
@@ -51,7 +48,7 @@ $(date)*
     
 💬 [Flashing procedure](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/crossdevelopment/installation.txt)
     
-📱Device: $chain
+📱Device: $device
     
 ⚡Build Version: $buildnumber
     
