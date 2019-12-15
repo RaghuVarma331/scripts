@@ -4,6 +4,8 @@ echo "A simple remote script to create your own stock rom"
 echo "Coded By Raghu Varma.G "
 echo "----------------------------------------------------"
 
+Telegram_Api_code=
+chat_id=
 url=
 code=
 buildnumber=
