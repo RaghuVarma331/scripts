@@ -440,7 +440,7 @@ PE-SOURCE()
     
     $(date)*
      
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/rom-pixel-experience-t3992063)
+    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-1/development/rom-pixel-experience-t4019933)
     
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Crystal/PixelExperience.txt)
     
