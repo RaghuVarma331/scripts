@@ -108,7 +108,7 @@ LINEAGE-SOURCE()
     cd changelog
     git add .
     git commit -m "build $(date)"
-    git push -u origin master
+    git push -u -f origin master
     cd ..
     cd los
     rm -r device/nokia
@@ -174,7 +174,7 @@ LINEAGE-SOURCE()
     cd changelog
     git add .
     git commit -m "build $(date)"
-    git push -u origin master
+    git push -u -f origin master
     cd ..    
     cd los
     rm -r device/nokia
@@ -240,7 +240,7 @@ LINEAGE-SOURCE()
     cd changelog
     git add .
     git commit -m "build $(date)"
-    git push -u origin master
+    git push -u -f origin master
     cd ..    
     cd los
     rm -r device/nokia
@@ -311,7 +311,7 @@ LINEAGE-SOURCE()
     cd changelog
     git add .
     git commit -m "build $(date)"
-    git push -u origin master
+    git push -u -f origin master
     cd ..    
 }
 
@@ -368,7 +368,7 @@ PE-SOURCE()
     cd changelog
     git add .
     git commit -m "build $(date)"
-    git push -u origin master
+    git push -u -f origin master
     cd ..
     cd pe
     rm -r device/nokia
@@ -413,7 +413,7 @@ PE-SOURCE()
     cd changelog
     git add .
     git commit -m "build $(date)"
-    git push -u origin master
+    git push -u -f origin master
     cd ..    
     cd pe
     rm -r device/nokia
@@ -458,7 +458,7 @@ PE-SOURCE()
     cd changelog
     git add .
     git commit -m "build $(date)"
-    git push -u origin master
+    git push -u -f origin master
     cd .. 
     cd pe
     rm -r device/nokia
@@ -504,7 +504,7 @@ PE-SOURCE()
     cd changelog
     git add .
     git commit -m "build $(date)"
-    git push -u origin master
+    git push -u -f origin master
     cd ..    
 }
 
@@ -562,7 +562,7 @@ EVOX-SOURCE()
     cd changelog
     git add .
     git commit -m "build $(date)"
-    git push -u origin master
+    git push -u -f origin master
     cd ..    
     cd evo
     rm -r device/nokia
@@ -608,7 +608,7 @@ EVOX-SOURCE()
     cd changelog
     git add .
     git commit -m "build $(date)"
-    git push -u origin master
+    git push -u -f origin master
     cd ..        
     cd evo
     rm -r device/nokia
@@ -654,7 +654,7 @@ EVOX-SOURCE()
     cd changelog
     git add .
     git commit -m "build $(date)"
-    git push -u origin master
+    git push -u -f origin master
     cd ..            
     cd evo
     rm -r device/nokia
@@ -701,7 +701,7 @@ EVOX-SOURCE()
     cd changelog
     git add .
     git commit -m "build $(date)"
-    git push -u origin master
+    git push -u -f origin master
     cd ..    
 }
 
@@ -758,7 +758,7 @@ HAVOC-SOURCE()
     cd changelog
     git add .
     git commit -m "build $(date)"
-    git push -u origin master
+    git push -u -f origin master
     cd ..
     cd havoc
     rm -r device/nokia
@@ -803,7 +803,7 @@ HAVOC-SOURCE()
     cd changelog
     git add .
     git commit -m "build $(date)"
-    git push -u origin master
+    git push -u -f origin master
     cd ..    
     cd havoc
     rm -r device/nokia
@@ -848,7 +848,7 @@ HAVOC-SOURCE()
     cd changelog
     git add .
     git commit -m "build $(date)"
-    git push -u origin master
+    git push -u -f origin master
     cd ..          
     cd havoc
     rm -r device/nokia
@@ -894,7 +894,7 @@ HAVOC-SOURCE()
     cd changelog
     git add .
     git commit -m "build $(date)"
-    git push -u origin master
+    git push -u -f origin master
     cd ..    
 }
 
