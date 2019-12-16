@@ -17,10 +17,10 @@
 #
 
 Telegram_Api_code=
-chat_id=
 
 wget https://github.com/RaghuVarma331/scripts/raw/master/telegram.py
-python telegram.py -t $Telegram_Api_code -c $chat_id -M "
+
+python telegram.py -t $Telegram_Api_code -c @Nokia6plusofficial -M "
 *
 Do you like my contribution towards Nokia 6.1 Plus?
 
@@ -32,7 +32,7 @@ Thank you all for your massive support again 👍
 *
 "
 
-python telegram.py -t $Telegram_Api_code -c $chat_id -M "
+python telegram.py -t $Telegram_Api_code -c @Nokia7plusOfficial -M "
 *
 Do you like my contribution towards Nokia 7 Plus?
 
@@ -45,9 +45,21 @@ Thank you all for your massive support again 👍
 "
 
 
-python telegram.py -t $Telegram_Api_code -c $chat_id -M "
+python telegram.py -t $Telegram_Api_code -c @Nokia7262 -M "
 *
 Do you like my contribution towards Nokia 7.2 & Nokia 6.2?
+
+Show your support here 😊
+
+https://www.paypal.me/Raghu107
+
+Thank you all for your massive support again 👍
+*
+"
+
+python telegram.py -t $Telegram_Api_code -c @nokia7161 -M "
+*
+Do you like my contribution towards Nokia 6.1 & Nokia 7.1?
 
 Show your support here 😊
 
