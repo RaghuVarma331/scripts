@@ -636,7 +636,7 @@ EVOX-SOURCE()
     
     $(date)*
      
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/rom-evolution-x-3-3-t4011603)
+    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-1/development/rom-evolution-x-3-5-t4020515)
     
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Crystal/evolutionx.txt)
     
