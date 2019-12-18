@@ -714,7 +714,15 @@ HAVOC-SOURCE()
     cd havoc
     echo -ne '\n' | repo init -u https://github.com/Havoc-OS/android_manifest.git -b ten --depth=1
     repo sync -c --no-tags --no-clone-bundle -f --force-sync -j16
-    sed -i "/ro.control_privapp_permissions=enforce/d" vendor/havoc/config/common.mk
+    rm -r vendor/havoc
+    git clone https://github.com/Havoc-OS/android_vendor_havoc.git -b ten vendor/havoc
+    cd vendor/havoc
+    git remote add prebuilt https://github.com/RaghuVarma331/vendor_havoc.git
+    git fetch prebuilt
+    git cherry-pick 0e72dd40c7e9a1fce2f3b0e112967fc03625edd9
+    cd
+    cd $path/havoc
+    sed -i "/ro.control_privapp_permissions=enforce/d" vendor/havoc/config/common.mk    
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.0 packages/resources/devicesettings
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
