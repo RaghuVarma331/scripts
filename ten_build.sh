@@ -44,6 +44,7 @@ LINEAGE-SOURCE()
     echo -ne '\n' | repo init -u git://github.com/LineageOS/android.git -b lineage-17.0 --depth=1
     repo sync -c --no-tags --no-clone-bundle -f --force-sync -j16
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/lineage/config/common.mk
+    git clone https://gitlab.com/PixelExperience/vendor_gapps.git -b ten --depth=1 vendor/gapps
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.0 packages/resources/devicesettings
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
@@ -723,6 +724,7 @@ HAVOC-SOURCE()
     cd
     cd $path/havoc
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/havoc/config/common.mk    
+    git clone https://gitlab.com/PixelExperience/vendor_gapps.git -b ten --depth=1 vendor/gapps
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.0 packages/resources/devicesettings
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
