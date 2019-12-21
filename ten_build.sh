@@ -93,11 +93,12 @@ LINEAGE-SOURCE()
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-6-1-plus/development/beta-lineageos-17-0-t3985367)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Dragon/LineageOS.txt)
-    📱Device: Nokia 6.1 Plus
-    ⚡Build Version: 17.0 
-    ⚡Android Version: 10.0.0
-    ⚡Security Patch : $securitypatch
-    👤 By: Raghu Varma
+    📱Device: *Nokia 6.1 Plus*
+    ⚡Build Version: *17.0* 
+    ⚡Android Version: *10.0.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #drg #nokia #los #update
     Follow:  @Nokia6plusofficial ✅"  
     cd changelog
     git add .
@@ -152,11 +153,12 @@ LINEAGE-SOURCE()
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/rom-lineageos-17-0-t3993445)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Onyx/LineageOS.txt)
-    📱Device: Nokia 7 Plus
-    ⚡Build Version: 17.0
-    ⚡Android Version: 10.0.0
-    ⚡Security Patch : $securitypatch
-    👤 By: Raghu Varma
+    📱Device: *Nokia 7 Plus*
+    ⚡Build Version: *17.0*
+    ⚡Android Version: *10.0.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #b2n #nokia #los #update
     Follow: @Nokia7plusOfficial ✅"  
     cd changelog
     git add .
@@ -211,11 +213,12 @@ LINEAGE-SOURCE()
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-1/development/rom-lineageos-17-0-t4019915)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Crystal/LineageOS.txt)
-    📱Device: Nokia 7.1
-    ⚡Build Version: 17.0
-    ⚡Android Version: 10.0.0
-    ⚡Security Patch : $securitypatch
-    👤 By: Raghu Varma
+    📱Device: *Nokia 7.1*
+    ⚡Build Version: *17.0*
+    ⚡Android Version: *10.0.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #ctl #nokia #los #update
     Follow: @nokia7161  ✅"    
     cd changelog
     git add .
@@ -275,11 +278,12 @@ LINEAGE-SOURCE()
     
     ⬇️ [Download](https://forum.xda-developers.com/redmi-note-5-pro/development/rom-lineageos-16-0-t3882431)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/whyred/LineageOS.txt)
-    📱Device: Redmi Note 5 Pro
-    ⚡Build Version: 17.0
-    ⚡Android Version: 10.0.0
-    ⚡Security Patch : $securitypatch
-    👤 By: Raghu Varma
+    📱Device: *Redmi Note 5 Pro*
+    ⚡Build Version: *17.0*
+    ⚡Android Version: *10.0.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #whyred #nokia #los #update
     Follow: @Nokia7plusOfficial ✅"    
     cd changelog
     git add .
@@ -325,11 +329,12 @@ PE-SOURCE()
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-6-1-plus/development/rom-pixel-experience-t3985853)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Dragon/PixelExperience.txt)
-    📱Device: Nokia 6.1 Plus
-    ⚡Build Version: Ten
-    ⚡Android Version: 10.0.0
-    ⚡Security Patch : $securitypatch
-    👤 By: Raghu Varma
+    📱Device: *Nokia 6.1 Plus*
+    ⚡Build Version: *Ten*
+    ⚡Android Version: *10.0.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #drg #nokia #pe #update
     Follow:  @Nokia6plusofficial ✅" 
     cd changelog
     git add .
@@ -363,11 +368,12 @@ PE-SOURCE()
      
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/rom-pixel-experience-t3992063)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Onyx/PixelExperience.txt)
-    📱Device: Nokia 7 Plus
-    ⚡Build Version: Ten
-    ⚡Android Version: 10.0.0
-    ⚡Security Patch : $securitypatch
-    👤 By: Raghu Varma
+    📱Device: *Nokia 7 Plus*
+    ⚡Build Version: *Ten*
+    ⚡Android Version: *10.0.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #b2n #nokia #pe #update
     Follow: @Nokia7plusOfficial ✅"     
     cd changelog
     git add .
@@ -401,11 +407,12 @@ PE-SOURCE()
      
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-1/development/rom-pixel-experience-t4019933)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Crystal/PixelExperience.txt)
-    📱Device: Nokia 7.1
-    ⚡Build Version: Ten
-    ⚡Android Version: 10.0.0
-    ⚡Security Patch : $securitypatch
-    👤 By: Raghu Varma
+    📱Device: *Nokia 7.1*
+    ⚡Build Version: *Ten*
+    ⚡Android Version: *10.0.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #ctl #nokia #pe #update
     Follow: @nokia7161 ✅"     
     cd changelog
     git add .
@@ -440,11 +447,12 @@ PE-SOURCE()
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-6-2018/development/rom-pixel-experience-t3994591)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Plate2/PixelExperience.txt)
-    📱Device: Nokia 6.1
-    ⚡Build Version: Ten
-    ⚡Android Version: 10.0.0
-    ⚡Security Patch : $securitypatch
-    👤 By: Raghu Varma
+    📱Device: *Nokia 6.1*
+    ⚡Build Version: *Ten*
+    ⚡Android Version: *10.0.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #pl2 #nokia #pe #update
     Follow: @nokia7161 ✅"        
     cd changelog
     git add .
@@ -491,11 +499,12 @@ EVOX-SOURCE()
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-6-1-plus/development/rom-evolution-x-3-3-t4011589)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Dragon/evolutionx.txt)
-    📱Device: Nokia 6.1 Plus
-    ⚡Build Version: $evoxversion
-    ⚡Android Version: 10.0.0
-    ⚡Security Patch : $securitypatch
-    👤 By: Raghu Varma
+    📱Device: *Nokia 6.1 Plus*
+    ⚡Build Version: *$evoxversion*
+    ⚡Android Version: *10.0.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #drg #nokia #evox #update
     Follow:  @Nokia6plusofficial ✅" 
     cd changelog
     git add .
@@ -530,11 +539,12 @@ EVOX-SOURCE()
      
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/rom-evolution-x-3-3-t4011603)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Onyx/evolutionx.txt)
-    📱Device: Nokia 7 Plus
-    ⚡Build Version: $evoxversion
-    ⚡Android Version: 10.0.0
-    ⚡Security Patch : $securitypatch
-    👤 By: Raghu Varma
+    📱Device: *Nokia 7 Plus*
+    ⚡Build Version: *$evoxversion*
+    ⚡Android Version: *10.0.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #b2n #nokia #evox #update
     Follow: @Nokia7plusOfficial ✅"  
     cd changelog
     git add .
@@ -569,11 +579,12 @@ EVOX-SOURCE()
      
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-1/development/rom-evolution-x-3-5-t4020515)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Crystal/evolutionx.txt)
-    📱Device: Nokia 7.1
-    ⚡Build Version: $evoxversion
-    ⚡Android Version: 10.0.0
-    ⚡Security Patch : $securitypatch
-    👤 By: Raghu Varma
+    📱Device: *Nokia 7.1*
+    ⚡Build Version: *$evoxversion*
+    ⚡Android Version: *10.0.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #ctl #nokia #evox #update
     Follow: @nokia7161 ✅"  
     cd changelog
     git add .
@@ -609,11 +620,12 @@ EVOX-SOURCE()
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-6-2018/development/rom-evolution-x-3-3-t4011611)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Plate2/evolutionx.txt)
-    📱Device: Nokia 6.1
-    ⚡Build Version: $evoxversion
-    ⚡Android Version: 10.0.0
-    ⚡Security Patch : $securitypatch
-    👤 By: Raghu Varma
+    📱Device: *Nokia 6.1*
+    ⚡Build Version: *$evoxversion*
+    ⚡Android Version: *10.0.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #pl2 #nokia #evox #update
     Follow: @nokia7161 ✅"        
     cd changelog
     git add .
@@ -668,11 +680,12 @@ HAVOC-SOURCE()
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-6-1-plus/development/rom-havoc-os-v3-0-t3997651)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Dragon/HavocOS.txt)
-    📱Device: Nokia 6.1 Plus
-    ⚡Build Version: $havocversion
-    ⚡Android Version: 10.0.0
-    ⚡Security Patch : $securitypatch
-    👤 By: Raghu Varma
+    📱Device: *Nokia 6.1 Plus*
+    ⚡Build Version: *$havocversion*
+    ⚡Android Version: *10.0.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #drg #nokia #havoc #update
     Follow:  @Nokia6plusofficial ✅" 
     cd changelog
     git add .
@@ -706,11 +719,12 @@ HAVOC-SOURCE()
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/rom-havoc-os-v3-0-t3998287)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Onyx/HavocOS.txt)
-    📱Device: Nokia 7 Plus
-    ⚡Build Version: $havocversion
-    ⚡Android Version: 10.0.0
-    ⚡Security Patch : $securitypatch
-    👤 By: Raghu Varma
+    📱Device: *Nokia 7 Plus*
+    ⚡Build Version: *$havocversion*
+    ⚡Android Version: *10.0.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #b2n #nokia #havoc #update
     Follow: @Nokia7plusOfficial ✅"     
     cd changelog
     git add .
@@ -744,11 +758,12 @@ HAVOC-SOURCE()
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-1/development/rom-havoc-os-v3-0-t4020097)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Crystal/HavocOS.txt)
-    📱Device: Nokia 7.1
-    ⚡Build Version: $havocversion
-    ⚡Android Version: 10.0.0
-    ⚡Security Patch : $securitypatch
-    👤 By: Raghu Varma
+    📱Device: *Nokia 7.1*
+    ⚡Build Version: *$havocversion*
+    ⚡Android Version: *10.0.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #ctl #nokia #havoc #update
     Follow: @nokia7161 ✅"     
     cd changelog
     git add .
@@ -783,11 +798,12 @@ HAVOC-SOURCE()
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-6-2018/development/rom-havoc-os-v3-0-t3998283)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Plate2/HavocOS.txt)
-    📱Device: Nokia 6.1
-    ⚡Build Version: $havocversion
-    ⚡Android Version: 10.0.0
-    ⚡Security Patch : $securitypatch
-    👤 By: Raghu Varma
+    📱Device: *Nokia 6.1*
+    ⚡Build Version: *$havocversion*
+    ⚡Android Version: *10.0.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #pl2 #nokia #havoc #update
     Follow: @nokia7161 ✅"        
     cd changelog
     git add .
@@ -1016,10 +1032,11 @@ TWRP-P-INSTALLER()
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-6-1-plus/development/recovery-twrp-3-2-3-0-team-win-recovery-t3893909)
-    📱Device: Nokia 6.1 Plus
-    ⚡Build Version: 3.3.1-0
-    ⚡Android Version: 10.0.0
-    👤 By: Raghu Varma
+    📱Device: *Nokia 6.1 Plus*
+    ⚡Build Version: *3.3.1-0*
+    ⚡Android Version: *10.0.0*
+    👤 By: *Raghu Varma*
+    #drg #nokia #twrp #update
     Follow:  @Nokia6plusofficial ✅"  
 
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
@@ -1029,10 +1046,11 @@ TWRP-P-INSTALLER()
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-1/development/twrp-3-2-3-0-team-win-recovery-project-t3935859)
-    📱Device: Nokia 7.1
-    ⚡Build Version: 3.3.1-0
-    ⚡Android Version: 10.0.0
-    👤 By: Raghu Varma
+    📱Device: *Nokia 7.1*
+    ⚡Build Version: *3.3.1-0*
+    ⚡Android Version: *10.0.0*
+    👤 By: *Raghu Varma*
+    #ctl #nokia #twrp #update
     Follow: @nokia7161 ✅"      
     
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
@@ -1042,10 +1060,11 @@ TWRP-P-INSTALLER()
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/twrp-3-3-1-0-team-win-recovery-project-t3940223)
-    📱Device: Nokia 7 Plus (OOB)
-    ⚡Build Version: 3.3.1-0
-    ⚡Android Version: 10.0.0
-    👤 By: Raghu Varma
+    📱Device: *Nokia 7 Plus (OOB)*
+    ⚡Build Version: *3.3.1-0*
+    ⚡Android Version: *10.0.0*
+    👤 By: *Raghu Varma*
+    #b2n #nokia #twrp #update
     Follow:  @Nokia7plusOfficial ✅" 
     
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
@@ -1055,10 +1074,11 @@ TWRP-P-INSTALLER()
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/twrp-3-3-1-0-team-win-recovery-project-t3940223)
-    📱Device: Nokia 7 Plus (POB)
-    ⚡Build Version: 3.3.1-0
-    ⚡Android Version: 10.0.0
-    👤 By: Raghu Varma
+    📱Device: *Nokia 7 Plus (POB)*
+    ⚡Build Version: *3.3.1-0*
+    ⚡Android Version: *10.0.0*
+    👤 By: *Raghu Varma*
+    #b2n #nokia #twrp #update
     Follow:  @Nokia7plusOfficial ✅" 
     
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "    
@@ -1068,10 +1088,11 @@ TWRP-P-INSTALLER()
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-6-1-plus/development/recovery-twrp-3-2-3-0-team-win-recovery-t3893909)
-    📱Device: Nokia 6.1 Plus
-    ⚡Build Version: 3.3.1-0
-    ⚡Android Version: 9.0.0
-    👤 By: Raghu Varma
+    📱Device: *Nokia 6.1 Plus*
+    ⚡Build Version: *3.3.1-0*
+    ⚡Android Version: *9.0.0*
+    👤 By: *Raghu Varma*
+    #drg #nokia #twrp #update
     Follow:  @Nokia6plusofficial ✅"  
     
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
@@ -1081,10 +1102,11 @@ TWRP-P-INSTALLER()
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/twrp-3-3-1-0-team-win-recovery-project-t3940223)
-    📱Device: Nokia 7 Plus (OOB)
-    ⚡Build Version: 3.3.1-0
-    ⚡Android Version: 9.0.0
-    👤 By: Raghu Varma
+    📱Device: *Nokia 7 Plus (OOB)*
+    ⚡Build Version: *3.3.1-0*
+    ⚡Android Version: *9.0.0*
+    👤 By: *Raghu Varma*
+    #b2n #nokia #twrp #update
     Follow:  @Nokia7plusOfficial ✅" 
     
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
@@ -1094,10 +1116,11 @@ TWRP-P-INSTALLER()
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/twrp-3-3-1-0-team-win-recovery-project-t3940223)
-    📱Device: Nokia 7 Plus (POB)
-    ⚡Build Version: 3.3.1-0
-    ⚡Android Version: 9.0.0
-    👤 By: Raghu Varma
+    📱Device: *Nokia 7 Plus (POB)*
+    ⚡Build Version: *3.3.1-0*
+    ⚡Android Version: *9.0.0*
+    👤 By: *Raghu Varma*
+    #b2n #nokia #twrp #update
     Follow:  @Nokia7plusOfficial ✅"  
 
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
@@ -1107,11 +1130,12 @@ TWRP-P-INSTALLER()
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-6-2/development/unofficial-twrp-3-3-1-0-team-win-t3999433)
-    📱Device: Nokia 6.2
-    ⚡Build Version: 3.3.1-0
-    ⚡Android Version: 9.0.0
-    ⚡Android Security Patch : $twrpsp
-    👤 By: Raghu Varma
+    📱Device: *Nokia 6.2*
+    ⚡Build Version: *3.3.1-0*
+    ⚡Android Version: *9.0.0*
+    ⚡Android Security Patch : *$twrpsp*
+    👤 By: *Raghu Varma*
+    #sld #nokia #twrp #update
     Follow:  @Nokia7262 ✅"     
     
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
@@ -1121,11 +1145,12 @@ TWRP-P-INSTALLER()
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-2/development/unofficial-twrp-3-3-1-0-team-win-t3999325)
-    📱Device: Nokia 7.2
-    ⚡Build Version: 3.3.1-0
-    ⚡Android Version: 9.0.0
-    ⚡Android Security Patch : $twrpsp
-    👤 By: Raghu Varma
+    📱Device: *Nokia 7.2*
+    ⚡Build Version: *3.3.1-0*
+    ⚡Android Version: *9.0.0*
+    ⚡Android Security Patch : *$twrpsp*
+    👤 By: *Raghu Varma*
+    #ddv #nokia #twrp #update
     Follow:  @Nokia7262 ✅"  
     
 }
@@ -1160,10 +1185,11 @@ KIWIS-SOURCE()
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-6-1-plus/development/kernel-kiwis-kernel-9-0-0-nokia-6-1-t3963473)
-    📱Device: Nokia 6.1 Plus
-    ⚡Build Version: 4.4.165
-    ⚡Android Version: 10.0.0
-    👤 By: Raghu Varma
+    📱Device: *Nokia 6.1 Plus*
+    ⚡Build Version: *4.4.165*
+    ⚡Android Version: *10.0.0*
+    👤 By: *Raghu Varma*
+    #drg #nokia #kernel #update
     Follow:  @Nokia6plusofficial ✅"   
     
 }    
@@ -1194,11 +1220,12 @@ OXYGEN-SOURCE()
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-2/nokia-616162777172-cross-device-development/rom-oxygen-os-t4008971)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/crossdevelopment/oxygenos.txt)
-    📱Device: Nokia 6.1 Plus
-    ⚡Build Version: $oxversion
-    ⚡Android Version: 10.0
-    ⚡Security Patch : $securitypatch
-    👤 By: Raghu Varma
+    📱Device: *Nokia 6.1 Plus*
+    ⚡Build Version: *$oxversion*
+    ⚡Android Version: *10.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #drg #nokia #oos #update
     Follow:  @Nokia6plusofficial ✅" 
     
     
@@ -1211,11 +1238,12 @@ OXYGEN-SOURCE()
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-2/nokia-616162777172-cross-device-development/rom-oxygen-os-t4008971)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/crossdevelopment/oxygenos.txt)
-    📱Device: Nokia 7 Plus
-    ⚡Build Version: $oxversion
-    ⚡Android Version: 10.0
-    ⚡Security Patch : $securitypatch
-    👤 By: Raghu Varma
+    📱Device: *Nokia 7 Plus*
+    ⚡Build Version: *$oxversion*
+    ⚡Android Version: *10.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #b2n #nokia #oos #update
     Follow: @Nokia7plusOfficial ✅"  
     
     
@@ -1228,11 +1256,12 @@ OXYGEN-SOURCE()
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-2/nokia-616162777172-cross-device-development/rom-oxygen-os-t4008971)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/crossdevelopment/oxygenos.txt)
-    📱Device: Nokia 6.1
-    ⚡Build Version: $oxversion
-    ⚡Android Version: 10.0
-    ⚡Security Patch : $securitypatch
-    👤 By: Raghu Varma
+    📱Device: *Nokia 6.1*
+    ⚡Build Version: *$oxversion*
+    ⚡Android Version: *10.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #pl2 #nokia #oos #update
     Follow: @nokia7161 ✅"     
     
     
@@ -1245,11 +1274,12 @@ OXYGEN-SOURCE()
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-2/nokia-616162777172-cross-device-development/rom-oxygen-os-t4008971)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/crossdevelopment/oxygenos.txt)
-    📱Device: Nokia 7.1
-    ⚡Build Version: $oxversion
-    ⚡Android Version: 10.0
-    ⚡Security Patch : $securitypatch
-    👤 By: Raghu Varma
+    📱Device: *Nokia 7.1*
+    ⚡Build Version: *$oxversion*
+    ⚡Android Version: *10.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #ctl #nokia #oos #update
     Follow: @nokia7161 ✅"       
     
     
@@ -1262,11 +1292,12 @@ OXYGEN-SOURCE()
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-2/nokia-616162777172-cross-device-development/rom-oxygen-os-t4008971)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/crossdevelopment/oxygenos.txt)
-    📱Device: Nokia 7.2
-    ⚡Build Version: $oxversion
-    ⚡Android Version: 10.0
-    ⚡Security Patch : $securitypatch
-    👤 By: Raghu Varma
+    📱Device: *Nokia 7.2*
+    ⚡Build Version: *$oxversion*
+    ⚡Android Version: *10.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #ddv #nokia #oos #update
     Follow: @Nokia7262 ✅"
     
     
@@ -1279,11 +1310,12 @@ OXYGEN-SOURCE()
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-2/nokia-616162777172-cross-device-development/rom-oxygen-os-t4008971)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/crossdevelopment/oxygenos.txt)
-    📱Device: Nokia 6.2
-    ⚡Build Version: $oxversion
-    ⚡Android Version: 10.0
-    ⚡Security Patch : $securitypatch
-    👤 By: Raghu Varma
+    📱Device: *Nokia 6.2*
+    ⚡Build Version: *$oxversion*
+    ⚡Android Version: *10.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #sld #nokia #oos #update
     Follow: @Nokia7262 ✅"
 }    
 
