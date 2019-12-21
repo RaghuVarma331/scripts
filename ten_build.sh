@@ -1186,7 +1186,7 @@ KIWIS-SOURCE()
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-6-1-plus/development/kernel-kiwis-kernel-9-0-0-nokia-6-1-t3963473)
     📱Device: *Nokia 6.1 Plus*
-    ⚡Build Version: *4.4.165*
+    ⚡Build Version: *4.4.207*
     ⚡Android Version: *10.0.0*
     👤 By: *Raghu Varma*
     #drg #nokia #kernel #update
