@@ -30,7 +30,7 @@ havocversion=3.0
 oxversion=v-3
 password=
 gitpassword=username:password
-path=/var/lib/jenkins/workspace/Raghu
+path=$(pwd)
 
 # Init Methods
 
