@@ -45,6 +45,17 @@ LINEAGE-SOURCE()
     repo sync -c --no-tags --no-clone-bundle -f --force-sync -j16
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/lineage/config/common.mk
     git clone https://gitlab.com/RaghuVarma331/vendor_gapps.git -b ten --depth=1 vendor/gapps
+    rm -r packages/apps/Settings
+    git clone https://github.com/LineageOS/android_packages_apps_Settings.git -b lineage-17.0 packages/apps/Settings
+    cd packages/apps/Settings
+    git remote add main https://github.com/RaghuVarma331/settings.git
+    git fetch main
+    git cherry-pick bbc67f641de4fd4daf747bf3c8f578ad7ff14c26
+    sed -i "/<<<<<<< HEAD/d" res/xml/firmware_version.xml
+    sed -i "/=======/d" res/xml/firmware_version.xml
+    sed -i "/>>>>>>>/d" res/xml/firmware_version.xml
+    cd
+    cd $path/los
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.0 packages/resources/devicesettings
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
@@ -302,6 +313,17 @@ PE-SOURCE()
     echo -ne '\n' | repo init -u https://github.com/PixelExperience/manifest -b ten --depth=1
     repo sync -c --no-tags --no-clone-bundle -f --force-sync -j16
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/aosp/config/common.mk
+    rm -r packages/apps/Settings
+    git clone https://github.com/PixelExperience/packages_apps_Settings.git -b ten packages/apps/Settings
+    cd packages/apps/Settings
+    git remote add main https://github.com/RaghuVarma331/settings.git
+    git fetch main
+    git cherry-pick bbc67f641de4fd4daf747bf3c8f578ad7ff14c26
+    sed -i "/<<<<<<< HEAD/d" res/xml/firmware_version.xml
+    sed -i "/=======/d" res/xml/firmware_version.xml
+    sed -i "/>>>>>>>/d" res/xml/firmware_version.xml
+    cd
+    cd $path/pe    
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.0 packages/resources/devicesettings
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660	
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
@@ -554,6 +576,17 @@ EVOX-SOURCE()
     echo -ne '\n' | repo init -u https://github.com/Evolution-X/manifest -b ten --depth=1
     repo sync -c --no-tags --no-clone-bundle -f --force-sync -j16
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/aosp/config/common.mk
+    rm -r packages/apps/Settings
+    git clone https://github.com/Evolution-X/packages_apps_Settings.git -b ten packages/apps/Settings
+    cd packages/apps/Settings
+    git remote add main https://github.com/RaghuVarma331/settings.git
+    git fetch main
+    git cherry-pick bbc67f641de4fd4daf747bf3c8f578ad7ff14c26
+    sed -i "/<<<<<<< HEAD/d" res/xml/firmware_version.xml
+    sed -i "/=======/d" res/xml/firmware_version.xml
+    sed -i "/>>>>>>>/d" res/xml/firmware_version.xml
+    cd
+    cd $path/evo
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.0 packages/resources/devicesettings
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660	
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
@@ -816,8 +849,19 @@ HAVOC-SOURCE()
     git cherry-pick 0e72dd40c7e9a1fce2f3b0e112967fc03625edd9
     cd
     cd $path/havoc
-    sed -i "/ro.control_privapp_permissions=enforce/d" vendor/havoc/config/common.mk    
+    sed -i "/ro.control_privapp_permissions=enforce/d" vendor/havoc/config/common.mk     
     git clone https://gitlab.com/RaghuVarma331/vendor_gapps.git -b ten --depth=1 vendor/gapps
+    rm -r packages/apps/Settings
+    git clone https://github.com/Havoc-OS/android_packages_apps_Settings.git -b ten packages/apps/Settings
+    cd packages/apps/Settings
+    git remote add main https://github.com/RaghuVarma331/settings.git
+    git fetch main
+    git cherry-pick bbc67f641de4fd4daf747bf3c8f578ad7ff14c26
+    sed -i "/<<<<<<< HEAD/d" res/xml/firmware_version.xml
+    sed -i "/=======/d" res/xml/firmware_version.xml
+    sed -i "/>>>>>>>/d" res/xml/firmware_version.xml
+    cd
+    cd $path/havoc    
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.0 packages/resources/devicesettings
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
