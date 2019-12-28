@@ -81,7 +81,7 @@ LINEAGE-SOURCE()
     repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
     echo >> $Changelog;
     done
-    cat lineage-17.0**.txt > $path/changelog/Dragon/LineageOS.txt
+    cat lineage-17.0-Dragon.txt > $path/changelog/Dragon/LineageOS.txt
     sshpass -p $password rsync -avP -e ssh lineage-17.0**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/LineageOS
     cd 
     cd $path
@@ -141,7 +141,7 @@ LINEAGE-SOURCE()
     repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
     echo >> $Changelog;
     done    
-    cat lineage-17.0**.txt > $path/changelog/Onyx/LineageOS.txt
+    cat lineage-17.0-Onyx.txt > $path/changelog/Onyx/LineageOS.txt
     sshpass -p $password rsync -avP -e ssh lineage-17.0**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/LineageOS
     cd 
     cd $path
@@ -201,7 +201,7 @@ LINEAGE-SOURCE()
     repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
     echo >> $Changelog;
     done    
-    cat lineage-17.0**.txt > $path/changelog/Crystal/LineageOS.txt
+    cat lineage-17.0-Crystal.txt > $path/changelog/Crystal/LineageOS.txt
     sshpass -p $password rsync -avP -e ssh lineage-17.0**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/LineageOS
     cd 
     cd $path
@@ -265,7 +265,7 @@ LINEAGE-SOURCE()
     repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
     echo >> $Changelog;
     done    
-    cat lineage-17.0**.txt > $path/changelog/whyred/LineageOS.txt
+    cat lineage-17.0-whyred.txt > $path/changelog/whyred/LineageOS.txt
     sshpass -p $password rsync -avP -e ssh lineage-17.0**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/whyred-rv/LineageOS
     cd 
     cd $path
@@ -317,7 +317,28 @@ PE-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch aosp_Dragon-eng && make -j32 bacon
     cd out/target/product/Dragon
-    cat PixelExperience**.txt > $path/changelog/Dragon/PixelExperience.txt
+    Changelog=Pixel-Dragon.txt
+
+
+    echo "Generating changelog..."
+
+    for i in $(seq 14);
+    do
+    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
+    k=$(expr $i - 1)
+    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
+
+    # Line with after --- until was too long for a small ListView
+    echo '=======================' >> $Changelog;
+    echo  "     "$Until_Date       >> $Changelog;
+    echo '=======================' >> $Changelog;
+    echo >> $Changelog;
+
+    # Cycle through every repo to find commits between 2 dates
+    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
+    echo >> $Changelog;
+    done
+    cat Pixel-Dragon.txt > $path/changelog/Dragon/PixelExperience.txt
     sshpass -p $password rsync -avP -e ssh PixelExperience**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/PixelExperience
     cd 
     cd $path
@@ -356,7 +377,28 @@ PE-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch aosp_Onyx-eng && make -j32 bacon
     cd out/target/product/Onyx
-    cat PixelExperience**.txt > $path/changelog/Onyx/PixelExperience.txt
+    Changelog=Pixel-Onyx.txt
+
+
+    echo "Generating changelog..."
+
+    for i in $(seq 14);
+    do
+    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
+    k=$(expr $i - 1)
+    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
+
+    # Line with after --- until was too long for a small ListView
+    echo '=======================' >> $Changelog;
+    echo  "     "$Until_Date       >> $Changelog;
+    echo '=======================' >> $Changelog;
+    echo >> $Changelog;
+
+    # Cycle through every repo to find commits between 2 dates
+    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
+    echo >> $Changelog;
+    done
+    cat Pixel-Onyx.txt > $path/changelog/Onyx/PixelExperience.txt
     sshpass -p $password rsync -avP -e ssh PixelExperience**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/PixelExperience
     cd 
     cd $path
@@ -395,7 +437,28 @@ PE-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch aosp_Crystal-eng && make -j32 bacon
     cd out/target/product/Crystal
-    cat PixelExperience**.txt > $path/changelog/Crystal/PixelExperience.txt
+    Changelog=Pixel-Crystal.txt
+
+
+    echo "Generating changelog..."
+
+    for i in $(seq 14);
+    do
+    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
+    k=$(expr $i - 1)
+    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
+
+    # Line with after --- until was too long for a small ListView
+    echo '=======================' >> $Changelog;
+    echo  "     "$Until_Date       >> $Changelog;
+    echo '=======================' >> $Changelog;
+    echo >> $Changelog;
+
+    # Cycle through every repo to find commits between 2 dates
+    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
+    echo >> $Changelog;
+    done
+    cat Pixel-Crystal.txt > $path/changelog/Crystal/PixelExperience.txt
     sshpass -p $password rsync -avP -e ssh PixelExperience**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/PixelExperience
     cd 
     cd $path
@@ -434,7 +497,27 @@ PE-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch aosp_Plate2-eng && make -j32 bacon
     cd out/target/product/Plate2
-    cat PixelExperience**.txt > $path/changelog/Plate2/PixelExperience.txt
+    Changelog=Pixel-Plate2.txt
+
+    echo "Generating changelog..."
+
+    for i in $(seq 14);
+    do
+    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
+    k=$(expr $i - 1)
+    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
+
+    # Line with after --- until was too long for a small ListView
+    echo '=======================' >> $Changelog;
+    echo  "     "$Until_Date       >> $Changelog;
+    echo '=======================' >> $Changelog;
+    echo >> $Changelog;
+
+    # Cycle through every repo to find commits between 2 dates
+    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
+    echo >> $Changelog;
+    done
+    cat Pixel-Plate2.txt > $path/changelog/Plate2/PixelExperience.txt
     sshpass -p $password rsync -avP -e ssh PixelExperience**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/PixelExperience
     cd 
     cd $path
@@ -487,7 +570,28 @@ EVOX-SOURCE()
     export SKIP_ABI_CHECKS=true
     . build/envsetup.sh && lunch aosp_Dragon-eng && make -j32 bacon
     cd out/target/product/Dragon
-    cat EvolutionX**.txt > $path/changelog/Dragon/evolutionx.txt
+    Changelog=Evox-Dragon.txt
+
+
+    echo "Generating changelog..."
+
+    for i in $(seq 14);
+    do
+    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
+    k=$(expr $i - 1)
+    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
+
+    # Line with after --- until was too long for a small ListView
+    echo '=======================' >> $Changelog;
+    echo  "     "$Until_Date       >> $Changelog;
+    echo '=======================' >> $Changelog;
+    echo >> $Changelog;
+
+    # Cycle through every repo to find commits between 2 dates
+    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
+    echo >> $Changelog;
+    done
+    cat Evox-Dragon.txt > $path/changelog/Dragon/evolutionx.txt
     sshpass -p $password rsync -avP -e ssh EvolutionX**.zip       raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/EvolutionX
     cd 
     cd $path
@@ -527,7 +631,27 @@ EVOX-SOURCE()
     export SKIP_ABI_CHECKS=true
     . build/envsetup.sh && lunch aosp_Onyx-eng && make -j32 bacon
     cd out/target/product/Onyx
-    cat EvolutionX**.txt > $path/changelog/Onyx/evolutionx.txt
+    Changelog=Evox-Onyx.txt
+
+    echo "Generating changelog..."
+
+    for i in $(seq 14);
+    do
+    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
+    k=$(expr $i - 1)
+    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
+
+    # Line with after --- until was too long for a small ListView
+    echo '=======================' >> $Changelog;
+    echo  "     "$Until_Date       >> $Changelog;
+    echo '=======================' >> $Changelog;
+    echo >> $Changelog;
+
+    # Cycle through every repo to find commits between 2 dates
+    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
+    echo >> $Changelog;
+    done
+    cat Evox-Onyx.txt > $path/changelog/Onyx/evolutionx.txt
     sshpass -p $password rsync -avP -e ssh EvolutionX**.zip       raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/EvolutionX
     cd 
     cd $path
@@ -567,7 +691,28 @@ EVOX-SOURCE()
     export SKIP_ABI_CHECKS=true
     . build/envsetup.sh && lunch aosp_Crystal-eng && make -j32 bacon
     cd out/target/product/Crystal
-    cat EvolutionX**.txt > $path/changelog/Crystal/evolutionx.txt
+    Changelog=Evox-Crystal.txt
+
+
+    echo "Generating changelog..."
+
+    for i in $(seq 14);
+    do
+    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
+    k=$(expr $i - 1)
+    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
+
+    # Line with after --- until was too long for a small ListView
+    echo '=======================' >> $Changelog;
+    echo  "     "$Until_Date       >> $Changelog;
+    echo '=======================' >> $Changelog;
+    echo >> $Changelog;
+
+    # Cycle through every repo to find commits between 2 dates
+    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
+    echo >> $Changelog;
+    done
+    cat Evox-Crystal.txt > $path/changelog/Crystal/evolutionx.txt
     sshpass -p $password rsync -avP -e ssh EvolutionX**.zip       raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/EvolutionX
     cd 
     cd $path
@@ -607,7 +752,27 @@ EVOX-SOURCE()
     export SKIP_ABI_CHECKS=true
     . build/envsetup.sh && lunch aosp_Plate2-eng && make -j32 bacon
     cd out/target/product/Plate2
-    cat EvolutionX**.txt > $path/changelog/Plate2/evolutionx.txt
+    Changelog=Evox-Plate2.txt
+
+    echo "Generating changelog..."
+
+    for i in $(seq 14);
+    do
+    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
+    k=$(expr $i - 1)
+    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
+
+    # Line with after --- until was too long for a small ListView
+    echo '=======================' >> $Changelog;
+    echo  "     "$Until_Date       >> $Changelog;
+    echo '=======================' >> $Changelog;
+    echo >> $Changelog;
+
+    # Cycle through every repo to find commits between 2 dates
+    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
+    echo >> $Changelog;
+    done
+    cat Evox-Plate2.txt > $path/changelog/Plate2/evolutionx.txt
     sshpass -p $password rsync -avP -e ssh EvolutionX**.zip  raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/EvolutionX
     cd 
     cd $path
@@ -668,7 +833,28 @@ HAVOC-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch havoc_Dragon-eng && make -j32 bacon
     cd out/target/product/Dragon
-    cat Havoc-OS**.txt > $path/changelog/Dragon/HavocOS.txt
+    Changelog=Havoc-Dragon.txt
+
+
+    echo "Generating changelog..."
+
+    for i in $(seq 14);
+    do
+    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
+    k=$(expr $i - 1)
+    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
+
+    # Line with after --- until was too long for a small ListView
+    echo '=======================' >> $Changelog;
+    echo  "     "$Until_Date       >> $Changelog;
+    echo '=======================' >> $Changelog;
+    echo >> $Changelog;
+
+    # Cycle through every repo to find commits between 2 dates
+    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
+    echo >> $Changelog;
+    done
+    cat Havoc-Dragon.txt > $path/changelog/Dragon/HavocOS.txt
     sshpass -p $password rsync -avP -e ssh Havoc-OS**.zip   raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/Havoc-OS
     cd 
     cd $path
@@ -707,7 +893,28 @@ HAVOC-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch havoc_Onyx-eng && make -j32 bacon
     cd out/target/product/Onyx
-    cat Havoc-OS**.txt > $path/changelog/Onyx/HavocOS.txt
+    Changelog=Havoc-Onyx.txt
+
+
+    echo "Generating changelog..."
+
+    for i in $(seq 14);
+    do
+    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
+    k=$(expr $i - 1)
+    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
+
+    # Line with after --- until was too long for a small ListView
+    echo '=======================' >> $Changelog;
+    echo  "     "$Until_Date       >> $Changelog;
+    echo '=======================' >> $Changelog;
+    echo >> $Changelog;
+
+    # Cycle through every repo to find commits between 2 dates
+    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
+    echo >> $Changelog;
+    done
+    cat Havoc-Onyx.txt > $path/changelog/Onyx/HavocOS.txt
     sshpass -p $password rsync -avP -e ssh Havoc-OS**.zip   raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/Havoc-OS
     cd 
     cd $path
@@ -746,7 +953,28 @@ HAVOC-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch havoc_Crystal-eng && make -j32 bacon
     cd out/target/product/Crystal
-    cat Havoc-OS**.txt > $path/changelog/Crystal/HavocOS.txt
+    Changelog=Havoc-Crystal.txt
+
+
+    echo "Generating changelog..."
+
+    for i in $(seq 14);
+    do
+    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
+    k=$(expr $i - 1)
+    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
+
+    # Line with after --- until was too long for a small ListView
+    echo '=======================' >> $Changelog;
+    echo  "     "$Until_Date       >> $Changelog;
+    echo '=======================' >> $Changelog;
+    echo >> $Changelog;
+
+    # Cycle through every repo to find commits between 2 dates
+    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
+    echo >> $Changelog;
+    done
+    cat Havoc-Crystal.txt > $path/changelog/Crystal/HavocOS.txt
     sshpass -p $password rsync -avP -e ssh Havoc-OS**.zip   raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/Havoc-OS
     cd 
     cd $path
@@ -785,7 +1013,28 @@ HAVOC-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch havoc_Plate2-eng && make -j32 bacon
     cd out/target/product/Plate2
-    cat Havoc-OS**.txt > $path/changelog/Plate2/HavocOS.txt
+    Changelog=Havoc-Plate2.txt
+
+
+    echo "Generating changelog..."
+
+    for i in $(seq 14);
+    do
+    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
+    k=$(expr $i - 1)
+    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
+
+    # Line with after --- until was too long for a small ListView
+    echo '=======================' >> $Changelog;
+    echo  "     "$Until_Date       >> $Changelog;
+    echo '=======================' >> $Changelog;
+    echo >> $Changelog;
+
+    # Cycle through every repo to find commits between 2 dates
+    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
+    echo >> $Changelog;
+    done
+    cat Havoc-Plate2.txt > $path/changelog/Plate2/HavocOS.txt
     sshpass -p $password rsync -avP -e ssh Havoc-OS**.zip raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/Havoc-OS
     cd 
     cd $path
