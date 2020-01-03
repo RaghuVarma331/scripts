@@ -1,0 +1,2 @@
+ sudo systemctl start jenkins
+
