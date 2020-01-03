@@ -36,7 +36,7 @@ path=/var/lib/jenkins/workspace/Raghu
 
 LINEAGE-SOURCE()
 {
-    wget https://github.com/RaghuVarma331/scripts/raw/master/telegram.py
+    wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/lineage.jpg
     git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog
     mkdir los
@@ -305,7 +305,7 @@ LINEAGE-SOURCE()
 
 PE-SOURCE()
 {
-    wget https://github.com/RaghuVarma331/scripts/raw/master/telegram.py
+    wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/pixel.jpg
     git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog    
     mkdir pe
@@ -568,7 +568,7 @@ PE-SOURCE()
 
 EVOX-SOURCE()
 {
-    wget https://github.com/RaghuVarma331/scripts/raw/master/telegram.py
+    wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/evox.png
     git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog    
     mkdir evo
@@ -834,7 +834,7 @@ EVOX-SOURCE()
 
 HAVOC-SOURCE()
 {
-    wget https://github.com/RaghuVarma331/scripts/raw/master/telegram.py
+    wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/havoc.jpg
     git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog    
     mkdir havoc
@@ -1107,7 +1107,7 @@ HAVOC-SOURCE()
 
 TWRP-P-SOURCE()
 {
-    wget https://github.com/RaghuVarma331/scripts/raw/master/telegram.py
+    wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/twrp.jpg
     mkdir DRG_sprout
     mkdir B2N_sprout	
@@ -1451,7 +1451,7 @@ TWRP-P-INSTALLER()
 KIWIS-SOURCE()
 {   
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/kiwis.jpg
-    wget https://github.com/RaghuVarma331/scripts/raw/master/telegram.py
+    wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     mkdir kiwis-kernel
     git clone https://github.com/RaghuVarma331/aarch64-linux-android-4.9.git -b master aarch64-linux-android-4.9
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 drg
@@ -1502,7 +1502,7 @@ OXYGEN-SOURCE()
     cd OxygenOS
     sshpass -p $password rsync -avP -e ssh OxygenOS-10.0**.zip raghuvarma331@frs.sourceforge.net:/home/frs/project/nokia-sdm660/OxygenOS
     cd ..
-    wget https://github.com/RaghuVarma331/scripts/raw/master/telegram.py
+    wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/oxygenos.png
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P oxygenos.png -C "
     *

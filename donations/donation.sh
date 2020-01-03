@@ -18,7 +18,7 @@
 
 Telegram_Api_code=
 
-wget https://github.com/RaghuVarma331/scripts/raw/master/telegram.py
+wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
 
 python telegram.py -t $Telegram_Api_code -c @Nokia6plusofficial -M "
 *
