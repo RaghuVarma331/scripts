@@ -41,12 +41,12 @@ LINEAGE-SOURCE()
     git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog
     mkdir los
     cd los
-    echo -ne '\n' | repo init -u git://github.com/LineageOS/android.git -b lineage-17.0 --depth=1
+    echo -ne '\n' | repo init -u git://github.com/LineageOS/android.git -b lineage-17.1 --depth=1
     repo sync -c --no-tags --no-clone-bundle -f --force-sync -j16
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/lineage/config/common.mk
     git clone https://gitlab.com/RaghuVarma331/vendor_gapps.git -b ten --depth=1 vendor/gapps
     rm -r packages/apps/Settings
-    git clone https://github.com/LineageOS/android_packages_apps_Settings.git -b lineage-17.0 packages/apps/Settings
+    git clone https://github.com/LineageOS/android_packages_apps_Settings.git -b lineage-17.1 packages/apps/Settings
     cd packages/apps/Settings
     git remote add main https://github.com/RaghuVarma331/settings.git
     git fetch main
@@ -56,7 +56,7 @@ LINEAGE-SOURCE()
     sed -i "/>>>>>>>/d" res/xml/firmware_version.xml
     cd
     cd $path/los
-    git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.0 packages/resources/devicesettings
+    git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
     git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon
@@ -71,7 +71,7 @@ LINEAGE-SOURCE()
     build's progress at $jenkinsurl"  
     . build/envsetup.sh && lunch lineage_Dragon-eng && make -j32 bacon
     cd out/target/product/Dragon
-    Changelog=lineage-17.0-Dragon.txt
+    Changelog=lineage-17.1-Dragon.txt
 
 
     echo "Generating changelog..."
@@ -92,8 +92,8 @@ LINEAGE-SOURCE()
     repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
     echo >> $Changelog;
     done
-    cat lineage-17.0-Dragon.txt > $path/changelog/Dragon/LineageOS.txt
-    sshpass -p $password rsync -avP -e ssh lineage-17.0**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/LineageOS
+    cat lineage-17.1-Dragon.txt > $path/changelog/Dragon/LineageOS.txt
+    sshpass -p $password rsync -avP -e ssh lineage-17.1**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/LineageOS
     cd 
     cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
@@ -131,7 +131,7 @@ LINEAGE-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch lineage_Onyx-eng && make -j32 bacon
     cd out/target/product/Onyx
-    Changelog=lineage-17.0-Onyx.txt
+    Changelog=lineage-17.1-Onyx.txt
 
 
     echo "Generating changelog..."
@@ -152,8 +152,8 @@ LINEAGE-SOURCE()
     repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
     echo >> $Changelog;
     done    
-    cat lineage-17.0-Onyx.txt > $path/changelog/Onyx/LineageOS.txt
-    sshpass -p $password rsync -avP -e ssh lineage-17.0**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/LineageOS
+    cat lineage-17.1-Onyx.txt > $path/changelog/Onyx/LineageOS.txt
+    sshpass -p $password rsync -avP -e ssh lineage-17.1**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/LineageOS
     cd 
     cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
@@ -191,7 +191,7 @@ LINEAGE-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch lineage_Crystal-eng && make -j32 bacon
     cd out/target/product/Crystal
-    Changelog=lineage-17.0-Crystal.txt
+    Changelog=lineage-17.1-Crystal.txt
 
 
     echo "Generating changelog..."
@@ -212,8 +212,8 @@ LINEAGE-SOURCE()
     repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
     echo >> $Changelog;
     done    
-    cat lineage-17.0-Crystal.txt > $path/changelog/Crystal/LineageOS.txt
-    sshpass -p $password rsync -avP -e ssh lineage-17.0**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/LineageOS
+    cat lineage-17.1-Crystal.txt > $path/changelog/Crystal/LineageOS.txt
+    sshpass -p $password rsync -avP -e ssh lineage-17.1**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/LineageOS
     cd 
     cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
@@ -241,7 +241,7 @@ LINEAGE-SOURCE()
     rm -r kernel/nokia
     rm -r vendor/nokia
     rm -r out/target/product/Crystal
-    git clone https://github.com/RaghuVarma331/android_device_xiaomi_whyred.git -b lineage-17.0 device/xiaomi/whyred
+    git clone https://github.com/RaghuVarma331/android_device_xiaomi_whyred.git -b lineage-17.1 device/xiaomi/whyred
     git clone https://github.com/RaghuVarma331/android_kernel_xiaomi_whyred.git -b ten --depth=1 kernel/xiaomi/whyred
     git clone https://github.com/RaghuVarma331/vendor_MiuiCamera.git -b ten vendor/MiuiCamera
     git clone https://github.com/RaghuVarma331/vendor_xiaomi_whyred.git -b ten vendor/xiaomi/whyred
@@ -255,7 +255,7 @@ LINEAGE-SOURCE()
     build's progress at $jenkinsurl"    
     . build/envsetup.sh && lunch lineage_whyred-eng && make -j32 bacon
     cd out/target/product/whyred
-    Changelog=lineage-17.0-whyred.txt
+    Changelog=lineage-17.1-whyred.txt
 
 
     echo "Generating changelog..."
@@ -276,8 +276,8 @@ LINEAGE-SOURCE()
     repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
     echo >> $Changelog;
     done    
-    cat lineage-17.0-whyred.txt > $path/changelog/whyred/LineageOS.txt
-    sshpass -p $password rsync -avP -e ssh lineage-17.0**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/whyred-rv/LineageOS
+    cat lineage-17.1-whyred.txt > $path/changelog/whyred/LineageOS.txt
+    sshpass -p $password rsync -avP -e ssh lineage-17.1**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/whyred-rv/LineageOS
     cd 
     cd $path
     rm -r los
@@ -324,7 +324,7 @@ PE-SOURCE()
     sed -i "/>>>>>>>/d" res/xml/firmware_version.xml
     cd
     cd $path/pe    
-    git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.0 packages/resources/devicesettings
+    git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660	
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
     git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon    
@@ -587,7 +587,7 @@ EVOX-SOURCE()
     sed -i "/>>>>>>>/d" res/xml/firmware_version.xml
     cd
     cd $path/evo
-    git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.0 packages/resources/devicesettings
+    git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660	
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
     git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon    
@@ -862,7 +862,7 @@ HAVOC-SOURCE()
     sed -i "/>>>>>>>/d" res/xml/firmware_version.xml
     cd
     cd $path/havoc    
-    git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.0 packages/resources/devicesettings
+    git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
     git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon    
