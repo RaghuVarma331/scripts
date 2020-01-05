@@ -62,7 +62,7 @@ LINEAGE-SOURCE()
     git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
-    New LineageOS 17.0 for Nokia 6.1 Plus build started 
+    New LineageOS 17.1 for Nokia 6.1 Plus build started 
     
     $(date)
     
@@ -98,14 +98,14 @@ LINEAGE-SOURCE()
     cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
     *
-    New LineageOS 17.0 Build is up 
+    New LineageOS 17.1 Build is up 
     
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-6-1-plus/development/beta-lineageos-17-0-t3985367)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Dragon/LineageOS.txt)
     📱Device: *Nokia 6.1 Plus*
-    ⚡Build Version: *17.0* 
+    ⚡Build Version: *17.1* 
     ⚡Android Version: *10.0.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *Raghu Varma*
@@ -122,7 +122,7 @@ LINEAGE-SOURCE()
     git clone https://github.com/RaghuVarma331/android_device_nokia_Onyx.git -b ten device/nokia/Onyx
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
-    New LineageOS 17.0 for Nokia 7 Plus build started 
+    New LineageOS 17.1 for Nokia 7 Plus build started 
     
     $(date)
     
@@ -158,14 +158,14 @@ LINEAGE-SOURCE()
     cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
     *
-    New LineageOS 17.0 Build is up 
+    New LineageOS 17.1 Build is up 
     
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/rom-lineageos-17-0-t3993445)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Onyx/LineageOS.txt)
     📱Device: *Nokia 7 Plus*
-    ⚡Build Version: *17.0*
+    ⚡Build Version: *17.1*
     ⚡Android Version: *10.0.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *Raghu Varma*
@@ -182,7 +182,7 @@ LINEAGE-SOURCE()
     git clone https://github.com/RaghuVarma331/android_device_nokia_Crystal.git -b ten device/nokia/Crystal
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
-    New LineageOS 17.0 for Nokia 7.1 build started 
+    New LineageOS 17.1 for Nokia 7.1 build started 
     
     $(date)
     
@@ -218,14 +218,14 @@ LINEAGE-SOURCE()
     cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
     *
-    New LineageOS 17.0 Build is up 
+    New LineageOS 17.1 Build is up 
     
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-1/development/rom-lineageos-17-0-t4019915)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Crystal/LineageOS.txt)
     📱Device: *Nokia 7.1*
-    ⚡Build Version: *17.0*
+    ⚡Build Version: *17.1*
     ⚡Android Version: *10.0.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *Raghu Varma*
@@ -247,7 +247,7 @@ LINEAGE-SOURCE()
     git clone https://github.com/RaghuVarma331/vendor_xiaomi_whyred.git -b ten vendor/xiaomi/whyred
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
-    New LineageOS 17.0 for Redmi Note 5 Pro build started 
+    New LineageOS 17.1 for Redmi Note 5 Pro build started 
     
     $(date)
     
@@ -283,14 +283,14 @@ LINEAGE-SOURCE()
     rm -r los
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
     *
-    New LineageOS 17.0 Build is up 
+    New LineageOS 17.1 Build is up 
     
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/redmi-note-5-pro/development/rom-lineageos-16-0-t3882431)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/whyred/LineageOS.txt)
     📱Device: *Redmi Note 5 Pro*
-    ⚡Build Version: *17.0*
+    ⚡Build Version: *17.1*
     ⚡Android Version: *10.0.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *Raghu Varma*
@@ -1758,7 +1758,7 @@ do
         "lineageos")
             clear
             echo "----------------------------------------------"
-            echo "Started Building LineageOS 17.0 for Nokia 6.1 Plus , 7 Plus  ."
+            echo "Started Building LineageOS 17.1 for Nokia 6.1 Plus , 7 Plus  ."
             echo "Please be patient..."
             # lineageos
             echo "----------------------------------------------"
@@ -1858,7 +1858,7 @@ do
         "all_roms")
             clear
             echo "----------------------------------------------"
-            echo "Started Building LineageOS 17.0 , Pixel-Exp , Havoc & Twrp for Nokia 6.1 Plus , 7 plus , 6.1 , 6.2 & 7.2 ."
+            echo "Started Building LineageOS 17.1 , Pixel-Exp , Havoc & Twrp for Nokia 6.1 Plus , 7 plus , 6.1 , 6.2 & 7.2 ."
             echo "Please be patient..."
             # all_roms
             echo "----------------------------------------------"
