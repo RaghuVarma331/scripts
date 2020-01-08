@@ -23,8 +23,8 @@ clear
 Telegram_Api_code=
 chat_id=
 jenkinsurl=
-securitypatch=2019-12-05
-twrpsp='2019-12-05'
+securitypatch=2020-01-05
+twrpsp='2020-01-05'
 evoxversion=3.69
 havocversion=3.0
 oxversion=v-4
