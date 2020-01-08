@@ -28,6 +28,7 @@ twrpsp='2020-01-05'
 evoxversion=4.0
 havocversion=3.0
 oxversion=v-4
+tag=4.4.208
 password=
 gitpassword=username:password
 path=/var/lib/jenkins/workspace/Raghu
@@ -1482,7 +1483,7 @@ KIWIS-SOURCE()
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-6-1-plus/development/kernel-kiwis-kernel-9-0-0-nokia-6-1-t3963473)
     📱Device: *Nokia 6.1 Plus*
-    ⚡Build Version: *4.4.207*
+    ⚡Build Version: *$tag*
     ⚡Android Version: *10.0.0*
     👤 By: *Raghu Varma*
     #drg #nokia #kernel #update
