@@ -1454,17 +1454,20 @@ KIWIS-SOURCE()
     wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     mkdir kiwis-kernel
     git clone https://github.com/RaghuVarma331/aarch64-linux-android-4.9.git -b master aarch64-linux-android-4.9
+    git clone https://github.com/RaghuVarma331/clang.git -b clang-r353983c --depth=1 clang
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 drg
     cd drg
-    export ARCH=arm64
-    export CROSS_COMPILE=$path/aarch64-linux-android-4.9/bin/aarch64-linux-android-
-    mkdir output
-    make -C $(pwd) O=output SAT-perf_defconfig
-    make -j32 -C $(pwd) O=output
+    make O=out ARCH=arm64 SAT-perf_defconfig
+    PATH=$path/clang/bin:$path/aarch64-linux-android-4.9/bin:${PATH} \
+    make -j$(nproc --all) O=out \
+                          ARCH=arm64 \
+                          CC=clang \
+                          CLANG_TRIPLE=aarch64-linux-gnu- \
+                          CROSS_COMPILE=aarch64-linux-android-
     cp -r output/arch/arm64/boot/Image.gz-dtb $path/drg/DRG_sprout
     cd DRG_sprout
-    zip -r Kiwis-kernel-10.0-DRG_sprout-$(date +"%Y%m%d").zip META-INF patch tools Image.gz-dtb anykernel.sh   
-    cp -r Kiwis-kernel-10.0-DRG_sprout-$(date +"%Y%m%d").zip $path/kiwis-kernel
+    zip -r Kiwis-kernel-10.0-CLANG-DRG_sprout-$(date +"%Y%m%d").zip META-INF patch tools Image.gz-dtb anykernel.sh   
+    cp -r Kiwis-kernel-10.0-CLANG-DRG_sprout-$(date +"%Y%m%d").zip $path/kiwis-kernel
     cd
     cd $path
     rm -r drg
