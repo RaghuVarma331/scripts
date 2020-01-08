@@ -1464,7 +1464,7 @@ KIWIS-SOURCE()
                           CC=clang \
                           CLANG_TRIPLE=aarch64-linux-gnu- \
                           CROSS_COMPILE=aarch64-linux-android-
-    cp -r output/arch/arm64/boot/Image.gz-dtb $path/drg/DRG_sprout
+    cp -r out/arch/arm64/boot/Image.gz-dtb $path/drg/DRG_sprout
     cd DRG_sprout
     zip -r Kiwis-kernel-10.0-CLANG-DRG_sprout-$(date +"%Y%m%d").zip META-INF patch tools Image.gz-dtb anykernel.sh   
     cp -r Kiwis-kernel-10.0-CLANG-DRG_sprout-$(date +"%Y%m%d").zip $path/kiwis-kernel
