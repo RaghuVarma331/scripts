@@ -847,7 +847,7 @@ HAVOC-SOURCE()
     cd vendor/havoc
     git remote add prebuilt https://github.com/RaghuVarma331/vendor_havoc.git
     git fetch prebuilt
-    git cherry-pick 0e72dd40c7e9a1fce2f3b0e112967fc03625edd9
+    git cherry-pick 35de3f391184a3a9bd1ff07ec0bc626916bd8647
     cd
     cd $path/havoc
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/havoc/config/common.mk     
