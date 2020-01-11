@@ -1115,6 +1115,7 @@ TWRP-P-SOURCE()
     mkdir DDV_sprout
     mkdir SLD_sprout
     mkdir CTL_sprout
+    mkdir PL2_sprout
     mkdir twrp
     cd twrp
     repo init -u git://github.com/omnirom/android.git -b android-9.0 --depth=1
@@ -1175,9 +1176,11 @@ TWRP-Q-SOURCE()
     git clone https://github.com/RaghuVarma331/android_device_nokia_DRG_sprout-TWRP.git -b android-10.0 device/nokia/DRG_sprout
     git clone https://github.com/RaghuVarma331/android_device_nokia_B2N_sprout-TWRP.git -b android-10.0 device/nokia/B2N_sprout
     git clone https://github.com/RaghuVarma331/android_device_nokia_CTL_sprout-TWRP.git -b android-10.0 device/nokia/CTL_sprout
+    git clone https://github.com/RaghuVarma331/android_device_nokia_PL2_sprout-TWRP.git -b android-10.0 device/nokia/PL2_sprout
     . build/envsetup.sh && lunch omni_DRG_sprout-eng && make -j32 recoveryimage	
     . build/envsetup.sh && lunch omni_B2N_sprout-eng && make -j32 recoveryimage
     . build/envsetup.sh && lunch omni_CTL_sprout-eng && make -j32 recoveryimage
+    . build/envsetup.sh && lunch omni_PL2_sprout-eng && make -j32 recoveryimage
     cd out/target/product/DRG_sprout
     mv recovery.img twrp-3.3.1-0-DRG_sprout-10.0-$(date +"%Y%m%d").img
     cp -r twrp-3.3.1-0-DRG_sprout-10.0-$(date +"%Y%m%d").img $path/DRG_sprout
@@ -1186,6 +1189,11 @@ TWRP-Q-SOURCE()
     cd out/target/product/CTL_sprout
     mv recovery.img twrp-3.3.1-0-CTL_sprout-10.0-$(date +"%Y%m%d").img
     cp -r twrp-3.3.1-0-CTL_sprout-10.0-$(date +"%Y%m%d").img $path/CTL_sprout
+    cd
+    cd $path/twrp    
+    cd out/target/product/PL2_sprout
+    mv recovery.img twrp-3.3.1-0-PL2_sprout-10.0-$(date +"%Y%m%d").img
+    cp -r twrp-3.3.1-0-PL2_sprout-10.0-$(date +"%Y%m%d").img $path/PL2_sprout
     cd
     cd $path/twrp    
     cd out/target/product/B2N_sprout
@@ -1212,11 +1220,13 @@ TWRP-Q-INSTALLER()
     rm -r device/nokia
     git clone https://github.com/RaghuVarma331/android_device_nokia_DRG_sprout-TWRP.git -b android-10.0 device/nokia/DRG_sprout
     git clone https://github.com/RaghuVarma331/android_device_nokia_B2N_sprout-TWRP.git -b android-10.0 device/nokia/B2N_sprout	
-    git clone https://github.com/RaghuVarma331/android_device_nokia_CTL_sprout-TWRP.git -b android-10.0 device/nokia/CTL_sprout    
+    git clone https://github.com/RaghuVarma331/android_device_nokia_CTL_sprout-TWRP.git -b android-10.0 device/nokia/CTL_sprout
+    git clone https://github.com/RaghuVarma331/android_device_nokia_PL2_sprout-TWRP.git -b android-10.0 device/nokia/PL2_sprout
     sed -i "/ro.build.version.security_patch/d" build/tools/buildinfo.sh
     . build/envsetup.sh && lunch omni_DRG_sprout-eng && make -j32 recoveryimage
     . build/envsetup.sh && lunch omni_B2N_sprout-eng && make -j32 recoveryimage
     . build/envsetup.sh && lunch omni_CTL_sprout-eng && make -j32 recoveryimage  
+    . build/envsetup.sh && lunch omni_PL2_sprout-eng && make -j32 recoveryimage 
     cd out/target/product/DRG_sprout
     mv ramdisk-recovery.cpio ramdisk-twrp.cpio
     cp -r ramdisk-twrp.cpio $path/twrp/device/nokia/DRG_sprout/installer
@@ -1235,6 +1245,15 @@ TWRP-Q-INSTALLER()
     cp -r twrp-installer-3.3.1-0-CTL_sprout-10.0-$(date +"%Y%m%d").zip $path/CTL_sprout  
     cd
     cd $path/twrp
+    cd out/target/product/PL2_sprout
+    mv ramdisk-recovery.cpio ramdisk-twrp.cpio
+    cp -r ramdisk-twrp.cpio $path/twrp/device/nokia/PL2_sprout/installer
+    cd
+    cd $path/twrp/device/nokia/PL2_sprout/installer
+    zip -r twrp-installer-3.3.1-0-PL2_sprout-10.0-$(date +"%Y%m%d").zip magiskboot  META-INF ramdisk-twrp.cpio
+    cp -r twrp-installer-3.3.1-0-PL2_sprout-10.0-$(date +"%Y%m%d").zip $path/PL2_sprout  
+    cd
+    cd $path/twrp    
     cd out/target/product/B2N_sprout
     mv ramdisk-recovery.cpio ramdisk-twrp.cpio
     cp -r ramdisk-twrp.cpio $path/twrp/device/nokia/B2N_sprout/installer
@@ -1300,6 +1319,9 @@ TWRP-P-INSTALLER()
     cd
     cd $path     
     rm -r twrp
+    cd PL2_sprout
+    sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-PL2_sprout-10.0* twrp-installer-3.3.1-0-PL2_sprout-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/TWRP/TEN
+    cd ..
     cd CTL_sprout
     sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-CTL_sprout-10.0* twrp-installer-3.3.1-0-CTL_sprout-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/TWRP/TEN
     cd ..
