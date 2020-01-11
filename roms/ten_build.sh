@@ -1367,7 +1367,21 @@ TWRP-P-INSTALLER()
     ⚡Android Version: *10.0.0*
     👤 By: *Raghu Varma*
     #ctl #nokia #twrp #update
-    Follow: @nokia7161 ✅"      
+    Follow: @nokia7161 ✅"  
+    
+    python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
+    *
+    New Android 10.0 Twrp-3.3.1-0 Build is up 
+    
+    $(date)*
+    
+    ⬇️ [Download](https://sourceforge.net/projects/pl2-sprout/files/TWRP/TEN/)
+    📱Device: *Nokia 6.1*
+    ⚡Build Version: *3.3.1-0*
+    ⚡Android Version: *10.0.0*
+    👤 By: *Raghu Varma*
+    #pl2 #nokia #twrp #update
+    Follow: @nokia7161 ✅"     
     
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
     *
