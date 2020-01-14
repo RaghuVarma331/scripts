@@ -1485,11 +1485,11 @@ TWRP-P-INSTALLER()
     
 }
 
-KIWIS-SOURCE()
+BLACKCAPS-SOURCE()
 {   
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/kiwis.jpg
     wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
-    mkdir kiwis-kernel
+    mkdir Black_Caps-Edition
     git clone https://github.com/RaghuVarma331/aarch64-linux-android-4.9.git -b master aarch64-linux-android-4.9
     git clone https://github.com/RaghuVarma331/clang.git -b clang-r353983c --depth=1 clang
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 drg
@@ -1503,17 +1503,18 @@ KIWIS-SOURCE()
                           CROSS_COMPILE=aarch64-linux-android-
     cp -r out/arch/arm64/boot/Image.gz-dtb $path/drg/DRG_sprout
     cd DRG_sprout
-    zip -r Kiwis-kernel-10.0-CLANG-DRG_sprout-$(date +"%Y%m%d").zip META-INF patch tools Image.gz-dtb anykernel.sh   
-    cp -r Kiwis-kernel-10.0-CLANG-DRG_sprout-$(date +"%Y%m%d").zip $path/kiwis-kernel
+    zip -r Black_Caps-Edition-10.0-CLANG-DRG_sprout-$(date +"%Y%m%d").zip META-INF patch tools Image.gz-dtb anykernel.sh
+    cp -r Black_Caps-Edition-10.0-CLANG-DRG_sprout-$(date +"%Y%m%d").zip $path/Black_Caps-Edition
     cd
     cd $path
     rm -r drg
-    cd kiwis-kernel
-    sshpass -p $password rsync -avP -e ssh Kiwis-kernel**.zip raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/Kiwis-kernel
+    cd Black_Caps-Edition
+    echo Sending build to sourceforge..
+    sshpass -p $password rsync -avP -e ssh Black_Caps**.zip raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/Black_Caps-Edition
     cd ..
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P kiwis.jpg -C "
     *
-    New Android 10 Kiwis Kernel Build is up 
+    New Android 10 Black_Caps-Edition Build is up 
     
     $(date)*
     
@@ -1681,7 +1682,7 @@ echo "A simple remote script to compile custom Stuff"
 echo "Coded By Raghu Varma.G "
 echo "------------------------------------------------"
 PS3='Please select your option (1-9): '
-menuvar=("BasicSetup" "pe" "lineageos" "havoc" "evox" "oxygen" "twrp" "kiwis-kernel" "all_roms" "Exit")
+menuvar=("BasicSetup" "pe" "lineageos" "havoc" "evox" "oxygen" "twrp" "Black_Caps-Edition" "all_roms" "Exit")
 select menuvar in "${menuvar[@]}"
 do
     case $menuvar in
@@ -1705,24 +1706,24 @@ do
             read -n1 -r key
             break
             ;; 
-        "kiwis-kernel")
+        "Black_Caps-Edition")
             clear
             echo "----------------------------------------------"
-            echo "Started Building kiwis-kernel For Nokia 6.1 Plus  ."
+            echo "Started Building Black_Caps-Edition For Nokia 6.1 Plus  ."
             echo "Please be patient..."
-            # kiwis-kernel
+            # Black_Caps-Edition
             echo "----------------------------------------------"
             echo "Setting Up Tools & Stuff..."
             echo " "
             TOOLS_SETUP
 	    echo " "	    
             echo "----------------------------------------------"
-            echo "Setting up twrp kiwis-kernel source..."
+            echo "Setting up Black_Caps-Edition source..."
             echo " "
-            KIWIS-SOURCE
+            BLACKCAPS-SOURCE
 	    echo " "    
             echo "----------------------------------------------"
-            echo "kiwis-kernel Build successfully completed."
+            echo "Black_Caps-Edition Build successfully completed."
             echo " "
             echo "----------------------------------------------"
             echo "Press any key for end the script."
@@ -1952,9 +1953,9 @@ do
             TWRP-P-INSTALLER
 	    echo " "    
             echo "----------------------------------------------"
-            echo "Setting up kiwis-kernel source..."
+            echo "Setting up Black_Caps-Edition source..."
             echo " "
-            KIWIS-SOURCE
+            BLACKCAPS-SOURCE
 	    echo " "		    
             echo "----------------------------------------------"
             echo "Build successfully completed."
