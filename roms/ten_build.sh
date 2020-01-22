@@ -40,6 +40,7 @@ LINEAGE-SOURCE()
     wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/lineage.jpg
     git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog
+    git clone https://$gitpassword@github.com/RaghuVarma331/Json-Tracker.git json    
     mkdir los
     cd los
     echo -ne '\n' | repo init -u git://github.com/LineageOS/android.git -b lineage-17.1 --depth=1
@@ -47,6 +48,10 @@ LINEAGE-SOURCE()
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/lineage/config/common.mk
     git clone https://gitlab.com/RaghuVarma331/vendor_gapps.git -b ten --depth=1 vendor/gapps
     rm -r packages/apps/Settings
+    rm -r device/lineage/sepolicy
+    rm -r packages/apps/Updater
+    git clone https://github.com/RaghuVarma331/android_device_os_sepolicy.git -b lineage-17.1  device/lineage/sepolicy
+    git clone https://github.com/RaghuVarma331/Os_Updates.git -b lineage-17.1 packages/apps/Os_Updates    
     git clone https://github.com/LineageOS/android_packages_apps_Settings.git -b lineage-17.1 packages/apps/Settings
     cd packages/apps/Settings
     git remote add main https://github.com/RaghuVarma331/settings.git
@@ -61,6 +66,11 @@ LINEAGE-SOURCE()
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
     git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon
+    cd device/nokia/Dragon/overlay/packages/apps/Os_Updates/res/values
+    rm -r *
+    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Dragon/LineageOS/strings.xml
+    cd
+    cd $path/los    
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New LineageOS 17.1 for Nokia 6.1 Plus build started 
@@ -93,6 +103,11 @@ LINEAGE-SOURCE()
     repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
     echo >> $Changelog;
     done
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/drg_lineage.sh
+    chmod a+x drg_lineage.sh
+    ./drg_lineage.sh
+    zipname=$(echo lineage-17.1**.zip)
+    cat $zipname.json > $path/json/Dragon/lineage.json    
     cat lineage-17.1-Dragon.txt > $path/changelog/Dragon/LineageOS.txt
     sshpass -p $password rsync -avP -e ssh lineage-17.1**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/LineageOS
     cd 
@@ -117,10 +132,20 @@ LINEAGE-SOURCE()
     git commit -m "build $(date)"
     git push -u -f origin master
     cd ..
+    cd json
+    git add .
+    git commit -m "build $(date)"
+    git push -u -f origin master
+    cd ..    
     cd los
     rm -r device/nokia
     rm -r out/target/product/Dragon
     git clone https://github.com/RaghuVarma331/android_device_nokia_Onyx.git -b ten device/nokia/Onyx
+    cd device/nokia/Onyx/overlay/packages/apps/Os_Updates/res/values
+    rm -r *
+    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Onyx/LineageOS/strings.xml
+    cd
+    cd $path/los        
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New LineageOS 17.1 for Nokia 7 Plus build started 
@@ -153,6 +178,11 @@ LINEAGE-SOURCE()
     repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
     echo >> $Changelog;
     done    
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/b2n_lineage.sh
+    chmod a+x b2n_lineage.sh
+    ./b2n_lineage.sh
+    zipname=$(echo lineage-17.1**.zip)
+    cat $zipname.json > $path/json/Onyx/lineage.json        
     cat lineage-17.1-Onyx.txt > $path/changelog/Onyx/LineageOS.txt
     sshpass -p $password rsync -avP -e ssh lineage-17.1**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/LineageOS
     cd 
@@ -177,10 +207,20 @@ LINEAGE-SOURCE()
     git commit -m "build $(date)"
     git push -u -f origin master
     cd ..    
+    cd json
+    git add .
+    git commit -m "build $(date)"
+    git push -u -f origin master
+    cd ..    
     cd los
     rm -r device/nokia
     rm -r out/target/product/Onyx
     git clone https://github.com/RaghuVarma331/android_device_nokia_Crystal.git -b ten device/nokia/Crystal
+    cd device/nokia/Crystal/overlay/packages/apps/Os_Updates/res/values
+    rm -r *
+    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Crystal/LineageOS/strings.xml
+    cd
+    cd $path/los      
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New LineageOS 17.1 for Nokia 7.1 build started 
@@ -212,7 +252,12 @@ LINEAGE-SOURCE()
     # Cycle through every repo to find commits between 2 dates
     repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
     echo >> $Changelog;
-    done    
+    done 
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/ctl_lineage.sh
+    chmod a+x ctl_lineage.sh
+    ./ctl_lineage.sh
+    zipname=$(echo lineage-17.1**.zip)
+    cat $zipname.json > $path/json/Crystal/lineage.json      
     cat lineage-17.1-Crystal.txt > $path/changelog/Crystal/LineageOS.txt
     sshpass -p $password rsync -avP -e ssh lineage-17.1**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/LineageOS
     cd 
@@ -237,6 +282,11 @@ LINEAGE-SOURCE()
     git commit -m "build $(date)"
     git push -u -f origin master
     cd ..    
+    cd json
+    git add .
+    git commit -m "build $(date)"
+    git push -u -f origin master
+    cd ..      
     cd los
     rm -r device/nokia
     rm -r kernel/nokia
