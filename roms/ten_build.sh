@@ -378,6 +378,9 @@ PE-SOURCE()
     sed -i "/<<<<<<< HEAD/d" res/xml/firmware_version.xml
     sed -i "/=======/d" res/xml/firmware_version.xml
     sed -i "/>>>>>>>/d" res/xml/firmware_version.xml
+    cd src/com/android/settings/system
+    rm -r SystemUpdatePreferenceController.java
+    wget https://github.com/RaghuVarma331/settings/raw/ten-l/src/com/android/settings/system/SystemUpdatePreferenceController.java
     cd
     cd $path/pe    
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings
@@ -706,6 +709,9 @@ EVOX-SOURCE()
     sed -i "/<<<<<<< HEAD/d" res/xml/firmware_version.xml
     sed -i "/=======/d" res/xml/firmware_version.xml
     sed -i "/>>>>>>>/d" res/xml/firmware_version.xml
+    cd src/com/android/settings/system
+    rm -r SystemUpdatePreferenceController.java
+    wget https://github.com/RaghuVarma331/settings/raw/ten-l/src/com/android/settings/system/SystemUpdatePreferenceController.java    
     cd
     cd $path/evo
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings
@@ -1046,6 +1052,9 @@ HAVOC-SOURCE()
     sed -i "/<<<<<<< HEAD/d" res/xml/firmware_version.xml
     sed -i "/=======/d" res/xml/firmware_version.xml
     sed -i "/>>>>>>>/d" res/xml/firmware_version.xml
+    cd src/com/android/settings/system
+    rm -r SystemUpdatePreferenceController.java
+    wget https://github.com/RaghuVarma331/settings/raw/ten-l/src/com/android/settings/system/SystemUpdatePreferenceController.java    
     cd
     cd $path/havoc    
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings
