@@ -687,12 +687,17 @@ EVOX-SOURCE()
     wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/evox.png
     git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog    
+    git clone https://$gitpassword@github.com/RaghuVarma331/Json-Tracker.git json    
     mkdir evo
     cd evo
     echo -ne '\n' | repo init -u https://github.com/Evolution-X/manifest -b ten --depth=1
     repo sync -c --no-tags --no-clone-bundle -f --force-sync -j16
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/aosp/config/common.mk
     rm -r packages/apps/Settings
+    rm -r device/custom/sepolicy
+    rm -r packages/apps/Updates
+    git clone https://github.com/RaghuVarma331/android_device_os_sepolicy.git -b evo-ten  device/custom/sepolicy
+    git clone https://github.com/RaghuVarma331/Os_Updates.git -b lineage-17.1 packages/apps/Os_Updates       
     git clone https://github.com/Evolution-X/packages_apps_Settings.git -b ten packages/apps/Settings
     cd packages/apps/Settings
     git remote add main https://github.com/RaghuVarma331/settings.git
@@ -706,7 +711,12 @@ EVOX-SOURCE()
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660	
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon    
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon 
+    cd device/nokia/Dragon/overlay/packages/apps/Os_Updates/res/values
+    rm -r *
+    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Dragon/EvolutionX/strings.xml
+    cd
+    cd $path/evo        
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Evolution X for Nokia 6.1 Plus build started 
@@ -740,6 +750,11 @@ EVOX-SOURCE()
     repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
     echo >> $Changelog;
     done
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/drg_evox.sh
+    chmod a+x drg_evox.sh
+    ./drg_evox.sh
+    zipname=$(echo EvolutionX**.zip)
+    cat $zipname.json > $path/json/Dragon/evox.json     
     cat Evox-Dragon.txt > $path/changelog/Dragon/evolutionx.txt
     sshpass -p $password rsync -avP -e ssh EvolutionX**.zip       raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/EvolutionX
     cd 
@@ -764,10 +779,20 @@ EVOX-SOURCE()
     git commit -m "build $(date)"
     git push -u -f origin master
     cd ..    
+    cd json
+    git add .
+    git commit -m "build $(date)"
+    git push -u -f origin master
+    cd ..     
     cd evo
     rm -r device/nokia
     rm -r out/target/product/Dragon
     git clone https://github.com/RaghuVarma331/android_device_nokia_Onyx.git -b ten device/nokia/Onyx
+    cd device/nokia/Onyx/overlay/packages/apps/Os_Updates/res/values
+    rm -r *
+    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Onyx/EvolutionX/strings.xml
+    cd
+    cd $path/evo     
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Evolution X for Nokia 7 Plus build started 
@@ -800,6 +825,11 @@ EVOX-SOURCE()
     repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
     echo >> $Changelog;
     done
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/b2n_evox.sh
+    chmod a+x b2n_evox.sh
+    ./b2n_evox.sh
+    zipname=$(echo EvolutionX**.zip)
+    cat $zipname.json > $path/json/Onyx/evox.json     
     cat Evox-Onyx.txt > $path/changelog/Onyx/evolutionx.txt
     sshpass -p $password rsync -avP -e ssh EvolutionX**.zip       raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/EvolutionX
     cd 
@@ -823,11 +853,21 @@ EVOX-SOURCE()
     git add .
     git commit -m "build $(date)"
     git push -u -f origin master
-    cd ..        
+    cd ..
+    cd json
+    git add .
+    git commit -m "build $(date)"
+    git push -u -f origin master
+    cd ..     
     cd evo
     rm -r device/nokia
     rm -r out/target/product/Onyx
     git clone https://github.com/RaghuVarma331/android_device_nokia_Crystal.git -b ten device/nokia/Crystal
+    cd device/nokia/Crystal/overlay/packages/apps/Os_Updates/res/values
+    rm -r *
+    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Crystal/EvolutionX/strings.xml
+    cd
+    cd $path/evo     
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Evolution X for Nokia 7.1 build started 
@@ -861,6 +901,11 @@ EVOX-SOURCE()
     repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
     echo >> $Changelog;
     done
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/ctl_evox.sh
+    chmod a+x ctl_evox.sh
+    ./ctl_evox.sh
+    zipname=$(echo EvolutionX**.zip)
+    cat $zipname.json > $path/json/Crystal/evox.json        
     cat Evox-Crystal.txt > $path/changelog/Crystal/evolutionx.txt
     sshpass -p $password rsync -avP -e ssh EvolutionX**.zip       raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/EvolutionX
     cd 
@@ -884,11 +929,21 @@ EVOX-SOURCE()
     git add .
     git commit -m "build $(date)"
     git push -u -f origin master
-    cd ..            
+    cd ..     
+    cd json
+    git add .
+    git commit -m "build $(date)"
+    git push -u -f origin master
+    cd ..           
     cd evo
     rm -r device/nokia
     rm -r out/target/product/Crystal
     git clone https://github.com/RaghuVarma331/android_device_nokia_Plate2.git -b ten device/nokia/Plate2
+    cd device/nokia/Plate2/overlay/packages/apps/Os_Updates/res/values
+    rm -r *
+    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Plate2/EvolutionX/strings.xml
+    cd
+    cd $path/evo      
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Evolution X for Nokia 6.1 build started 
@@ -921,6 +976,11 @@ EVOX-SOURCE()
     repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
     echo >> $Changelog;
     done
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/pl2_evox.sh
+    chmod a+x pl2_evox.sh
+    ./pl2_evox.sh
+    zipname=$(echo EvolutionX**.zip)
+    cat $zipname.json > $path/json/Plate2/evox.json     
     cat Evox-Plate2.txt > $path/changelog/Plate2/evolutionx.txt
     sshpass -p $password rsync -avP -e ssh EvolutionX**.zip  raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/EvolutionX
     cd 
@@ -945,7 +1005,12 @@ EVOX-SOURCE()
     git add .
     git commit -m "build $(date)"
     git push -u -f origin master
-    cd ..    
+    cd ..   
+    cd json
+    git add .
+    git commit -m "build $(date)"
+    git push -u -f origin master
+    cd ..         
 }
 
 HAVOC-SOURCE()
