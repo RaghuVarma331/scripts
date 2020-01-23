@@ -358,15 +358,20 @@ PE-SOURCE()
 {
     wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/pixel.jpg
-    git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog    
+    git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog  
+    git clone https://$gitpassword@github.com/RaghuVarma331/Json-Tracker.git json
     mkdir pe
     cd pe
     echo -ne '\n' | repo init -u https://github.com/PixelExperience/manifest -b ten --depth=1
     repo sync -c --no-tags --no-clone-bundle -f --force-sync -j16
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/aosp/config/common.mk
     rm -r packages/apps/Settings
+    rm -r device/custom/sepolicy
+    rm -r packages/apps/Updates
+    git clone https://github.com/RaghuVarma331/android_device_os_sepolicy.git -b pe-ten  device/custom/sepolicy
+    git clone https://github.com/RaghuVarma331/Os_Updates.git -b lineage-17.1 packages/apps/Os_Updates       
     git clone https://github.com/PixelExperience/packages_apps_Settings.git -b ten packages/apps/Settings
-    cd packages/apps/Settings
+    cd packages/apps/Settings    
     git remote add main https://github.com/RaghuVarma331/settings.git
     git fetch main
     git cherry-pick bbc67f641de4fd4daf747bf3c8f578ad7ff14c26
@@ -378,7 +383,12 @@ PE-SOURCE()
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660	
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon    
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon   
+    cd device/nokia/Dragon/overlay/packages/apps/Os_Updates/res/values
+    rm -r *
+    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Dragon/PixelExperience/strings.xml
+    cd
+    cd $path/pe      
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Pixel-Experience for Nokia 6.1 Plus build started 
@@ -411,6 +421,11 @@ PE-SOURCE()
     repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
     echo >> $Changelog;
     done
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/drg_pe.sh
+    chmod a+x drg_pe.sh
+    ./drg_pe.sh
+    zipname=$(echo PixelExperience**.zip)
+    cat $zipname.json > $path/json/Dragon/pixel.json       
     cat Pixel-Dragon.txt > $path/changelog/Dragon/PixelExperience.txt
     sshpass -p $password rsync -avP -e ssh PixelExperience**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/PixelExperience
     cd 
@@ -435,10 +450,20 @@ PE-SOURCE()
     git commit -m "build $(date)"
     git push -u -f origin master
     cd ..
+    cd json
+    git add .
+    git commit -m "build $(date)"
+    git push -u -f origin master
+    cd ..        
     cd pe
     rm -r device/nokia
     rm -r out/target/product/Dragon
     git clone https://github.com/RaghuVarma331/android_device_nokia_Onyx.git -b ten device/nokia/Onyx
+    cd device/nokia/Onyx/overlay/packages/apps/Os_Updates/res/values
+    rm -r *
+    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Onyx/PixelExperience/strings.xml
+    cd
+    cd $path/pe   
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Pixel-Experience for Nokia 7 Plus build started 
@@ -471,6 +496,11 @@ PE-SOURCE()
     repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
     echo >> $Changelog;
     done
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/b2n_pe.sh
+    chmod a+x b2n_pe.sh
+    ./b2n_pe.sh
+    zipname=$(echo PixelExperience**.zip)
+    cat $zipname.json > $path/json/Onyx/pixel.json      
     cat Pixel-Onyx.txt > $path/changelog/Onyx/PixelExperience.txt
     sshpass -p $password rsync -avP -e ssh PixelExperience**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/PixelExperience
     cd 
@@ -495,10 +525,20 @@ PE-SOURCE()
     git commit -m "build $(date)"
     git push -u -f origin master
     cd ..    
+    cd json
+    git add .
+    git commit -m "build $(date)"
+    git push -u -f origin master
+    cd ..     
     cd pe
     rm -r device/nokia
     rm -r out/target/product/Onyx
     git clone https://github.com/RaghuVarma331/android_device_nokia_Crystal.git -b ten device/nokia/Crystal
+    cd device/nokia/Crystal/overlay/packages/apps/Os_Updates/res/values
+    rm -r *
+    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Crystal/PixelExperience/strings.xml
+    cd
+    cd $path/pe     
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Pixel-Experience for Nokia 7.1 build started 
@@ -531,6 +571,11 @@ PE-SOURCE()
     repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
     echo >> $Changelog;
     done
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/ctl_pe.sh
+    chmod a+x ctl_pe.sh
+    ./ctl_pe.sh
+    zipname=$(echo PixelExperience**.zip)
+    cat $zipname.json > $path/json/Crystal/pixel.json     
     cat Pixel-Crystal.txt > $path/changelog/Crystal/PixelExperience.txt
     sshpass -p $password rsync -avP -e ssh PixelExperience**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/PixelExperience
     cd 
@@ -555,10 +600,20 @@ PE-SOURCE()
     git commit -m "build $(date)"
     git push -u -f origin master
     cd .. 
+    cd json
+    git add .
+    git commit -m "build $(date)"
+    git push -u -f origin master
+    cd ..       
     cd pe
     rm -r device/nokia
     rm -r out/target/product/Crystal
     git clone https://github.com/RaghuVarma331/android_device_nokia_Plate2.git -b ten device/nokia/Plate2
+    cd device/nokia/Plate2/overlay/packages/apps/Os_Updates/res/values
+    rm -r *
+    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Plate2/PixelExperience/strings.xml
+    cd
+    cd $path/pe     
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Pixel-Experience for Nokia 6.1 build started 
@@ -590,6 +645,11 @@ PE-SOURCE()
     repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
     echo >> $Changelog;
     done
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/pl2_pe.sh
+    chmod a+x pl2_pe.sh
+    ./pl2_pe.sh
+    zipname=$(echo PixelExperience**.zip)
+    cat $zipname.json > $path/json/Plate2/pixel.json     
     cat Pixel-Plate2.txt > $path/changelog/Plate2/PixelExperience.txt
     sshpass -p $password rsync -avP -e ssh PixelExperience**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/PixelExperience
     cd 
@@ -615,6 +675,11 @@ PE-SOURCE()
     git commit -m "build $(date)"
     git push -u -f origin master
     cd ..    
+    cd json
+    git add .
+    git commit -m "build $(date)"
+    git push -u -f origin master
+    cd ..     
 }
 
 EVOX-SOURCE()
