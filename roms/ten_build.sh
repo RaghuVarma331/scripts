@@ -1017,7 +1017,8 @@ HAVOC-SOURCE()
 {
     wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/havoc.jpg
-    git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog    
+    git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog 
+    git clone https://$gitpassword@github.com/RaghuVarma331/Json-Tracker.git json        
     mkdir havoc
     cd havoc
     echo -ne '\n' | repo init -u https://github.com/Havoc-OS/android_manifest.git -b ten --depth=1
@@ -1033,6 +1034,10 @@ HAVOC-SOURCE()
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/havoc/config/common.mk     
     git clone https://gitlab.com/RaghuVarma331/vendor_gapps.git -b ten --depth=1 vendor/gapps
     rm -r packages/apps/Settings
+    rm -r device/havoc/sepolicy
+    rm -r packages/apps/Updates
+    git clone https://github.com/RaghuVarma331/android_device_os_sepolicy.git -b havoc-ten  device/havoc/sepolicy
+    git clone https://github.com/RaghuVarma331/Os_Updates.git -b lineage-17.1 packages/apps/Os_Updates      
     git clone https://github.com/Havoc-OS/android_packages_apps_Settings.git -b ten packages/apps/Settings
     cd packages/apps/Settings
     git remote add main https://github.com/RaghuVarma331/settings.git
@@ -1046,7 +1051,12 @@ HAVOC-SOURCE()
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon    
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon
+    cd device/nokia/Dragon/overlay/packages/apps/Os_Updates/res/values
+    rm -r *
+    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Dragon/Havoc-OS/strings.xml
+    cd
+    cd $path/havoc     
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Havoc-OS for Nokia 6.1 Plus build started 
@@ -1079,6 +1089,11 @@ HAVOC-SOURCE()
     repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
     echo >> $Changelog;
     done
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/drg_havoc.sh
+    chmod a+x drg_havoc.sh
+    ./drg_havoc.sh
+    zipname=$(echo Havoc-OS**.zip)
+    cat $zipname.json > $path/json/Dragon/havoc.json        
     cat Havoc-Dragon.txt > $path/changelog/Dragon/HavocOS.txt
     sshpass -p $password rsync -avP -e ssh Havoc-OS**.zip   raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/Havoc-OS
     cd 
@@ -1103,10 +1118,20 @@ HAVOC-SOURCE()
     git commit -m "build $(date)"
     git push -u -f origin master
     cd ..
+    cd json
+    git add .
+    git commit -m "build $(date)"
+    git push -u -f origin master
+    cd ..         
     cd havoc
     rm -r device/nokia
     rm -r out/target/product/Dragon
     git clone https://github.com/RaghuVarma331/android_device_nokia_Onyx.git -b ten device/nokia/Onyx
+    cd device/nokia/Onyx/overlay/packages/apps/Os_Updates/res/values
+    rm -r *
+    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Onyx/Havoc-OS/strings.xml
+    cd
+    cd $path/havoc     
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Havoc-OS for Nokia 7 Plus build started 
@@ -1139,6 +1164,11 @@ HAVOC-SOURCE()
     repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
     echo >> $Changelog;
     done
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/b2n_havoc.sh
+    chmod a+x b2n_havoc.sh
+    ./b2n_havoc.sh
+    zipname=$(echo Havoc-OS**.zip)
+    cat $zipname.json > $path/json/Onyx/havoc.json       
     cat Havoc-Onyx.txt > $path/changelog/Onyx/HavocOS.txt
     sshpass -p $password rsync -avP -e ssh Havoc-OS**.zip   raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/Havoc-OS
     cd 
@@ -1162,11 +1192,21 @@ HAVOC-SOURCE()
     git add .
     git commit -m "build $(date)"
     git push -u -f origin master
+    cd ..   
+    cd json
+    git add .
+    git commit -m "build $(date)"
+    git push -u -f origin master
     cd ..    
     cd havoc
     rm -r device/nokia
     rm -r out/target/product/Onyx
     git clone https://github.com/RaghuVarma331/android_device_nokia_Crystal.git -b ten device/nokia/Crystal
+    cd device/nokia/Crystal/overlay/packages/apps/Os_Updates/res/values
+    rm -r *
+    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Crystal/Havoc-OS/strings.xml
+    cd
+    cd $path/havoc
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Havoc-OS for Nokia 7.1 build started 
@@ -1199,6 +1239,11 @@ HAVOC-SOURCE()
     repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
     echo >> $Changelog;
     done
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/ctl_havoc.sh
+    chmod a+x ctl_havoc.sh
+    ./ctl_havoc.sh
+    zipname=$(echo Havoc-OS**.zip)
+    cat $zipname.json > $path/json/Crystal/havoc.json     
     cat Havoc-Crystal.txt > $path/changelog/Crystal/HavocOS.txt
     sshpass -p $password rsync -avP -e ssh Havoc-OS**.zip   raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/Havoc-OS
     cd 
@@ -1223,10 +1268,20 @@ HAVOC-SOURCE()
     git commit -m "build $(date)"
     git push -u -f origin master
     cd ..          
+    cd json
+    git add .
+    git commit -m "build $(date)"
+    git push -u -f origin master
+    cd ..               
     cd havoc
     rm -r device/nokia
     rm -r out/target/product/Crystal
     git clone https://github.com/RaghuVarma331/android_device_nokia_Plate2.git -b ten device/nokia/Plate2
+    cd device/nokia/Plate2/overlay/packages/apps/Os_Updates/res/values
+    rm -r *
+    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Plate2/Havoc-OS/strings.xml
+    cd
+    cd $path/havoc        
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Havoc-OS for Nokia 6.1 build started 
@@ -1259,6 +1314,11 @@ HAVOC-SOURCE()
     repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
     echo >> $Changelog;
     done
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/pl2_havoc.sh
+    chmod a+x pl2_havoc.sh
+    ./pl2_havoc.sh
+    zipname=$(echo Havoc-OS**.zip)
+    cat $zipname.json > $path/json/Plate2/havoc.json    
     cat Havoc-Plate2.txt > $path/changelog/Plate2/HavocOS.txt
     sshpass -p $password rsync -avP -e ssh Havoc-OS**.zip raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/Havoc-OS
     cd 
@@ -1284,6 +1344,11 @@ HAVOC-SOURCE()
     git commit -m "build $(date)"
     git push -u -f origin master
     cd ..    
+    cd json
+    git add .
+    git commit -m "build $(date)"
+    git push -u -f origin master
+    cd ..       
 }
 
 TWRP-P-SOURCE()
