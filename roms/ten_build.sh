@@ -129,12 +129,12 @@ LINEAGE-SOURCE()
     Follow:  @Nokia6plusofficial ✅"  
     cd changelog
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Dragon: LineageOS 17.1 build $(date)"
     git push -u -f origin master
     cd ..
     cd json
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Dragon: LineageOS 17.1 build $(date)"
     git push -u -f origin master
     cd ..    
     cd los
@@ -204,12 +204,12 @@ LINEAGE-SOURCE()
     Follow: @Nokia7plusOfficial ✅"  
     cd changelog
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Onyx: LineageOS 17.1 build $(date)"
     git push -u -f origin master
     cd ..    
     cd json
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Onyx: LineageOS 17.1 build $(date)"
     git push -u -f origin master
     cd ..    
     cd los
@@ -279,12 +279,12 @@ LINEAGE-SOURCE()
     Follow: @nokia7161  ✅"    
     cd changelog
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Crystal: LineageOS 17.1 build $(date)"
     git push -u -f origin master
     cd ..    
     cd json
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Crystal: LineageOS 17.1 build $(date)"
     git push -u -f origin master
     cd ..      
     cd los
@@ -351,7 +351,7 @@ LINEAGE-SOURCE()
     Follow: @Nokia7plusOfficial ✅"    
     cd changelog
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Whyred: LineageOS 17.1 build $(date)"
     git push -u -f origin master
     cd ..    
 }
@@ -452,12 +452,12 @@ PE-SOURCE()
     Follow:  @Nokia6plusofficial ✅" 
     cd changelog
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Dragon: PixelExperience 10.0 build $(date)"
     git push -u -f origin master
     cd ..
     cd json
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Dragon: PixelExperience 10.0 build $(date)"
     git push -u -f origin master
     cd ..        
     cd pe
@@ -527,12 +527,12 @@ PE-SOURCE()
     Follow: @Nokia7plusOfficial ✅"     
     cd changelog
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Onyx: PixelExperience 10.0 build $(date)"
     git push -u -f origin master
     cd ..    
     cd json
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Onyx: PixelExperience 10.0 build $(date)"
     git push -u -f origin master
     cd ..     
     cd pe
@@ -602,12 +602,12 @@ PE-SOURCE()
     Follow: @nokia7161 ✅"     
     cd changelog
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Crystal: PixelExperience 10.0 build $(date)"
     git push -u -f origin master
     cd .. 
     cd json
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Crystal: PixelExperience 10.0 build $(date)"
     git push -u -f origin master
     cd ..       
     cd pe
@@ -677,12 +677,12 @@ PE-SOURCE()
     Follow: @nokia7161 ✅"        
     cd changelog
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Plate2: PixelExperience 10.0 build $(date)"
     git push -u -f origin master
     cd ..    
     cd json
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Plate2: PixelExperience 10.0 build $(date)"
     git push -u -f origin master
     cd ..     
 }
@@ -784,12 +784,12 @@ EVOX-SOURCE()
     Follow:  @Nokia6plusofficial ✅" 
     cd changelog
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Dragon: Evolution-X 10.0 build $(date)"
     git push -u -f origin master
     cd ..    
     cd json
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Dragon: Evolution-X 10.0 build $(date)"
     git push -u -f origin master
     cd ..     
     cd evo
@@ -859,12 +859,12 @@ EVOX-SOURCE()
     Follow: @Nokia7plusOfficial ✅"  
     cd changelog
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Onyx: Evolution-X 10.0 build $(date)"
     git push -u -f origin master
     cd ..
     cd json
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Onyx: Evolution-X 10.0 build $(date)"
     git push -u -f origin master
     cd ..     
     cd evo
@@ -935,12 +935,12 @@ EVOX-SOURCE()
     Follow: @nokia7161 ✅"  
     cd changelog
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Crystal: Evolution-X 10.0 build $(date)"
     git push -u -f origin master
     cd ..     
     cd json
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Crystal: Evolution-X 10.0 build $(date)"
     git push -u -f origin master
     cd ..           
     cd evo
@@ -1011,12 +1011,12 @@ EVOX-SOURCE()
     Follow: @nokia7161 ✅"        
     cd changelog
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Plate2: Evolution-X 10.0 build $(date)"
     git push -u -f origin master
     cd ..   
     cd json
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Plate2: Evolution-X 10.0 build $(date)"
     git push -u -f origin master
     cd ..         
 }
@@ -1126,12 +1126,12 @@ HAVOC-SOURCE()
     Follow:  @Nokia6plusofficial ✅" 
     cd changelog
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Dragon: Havoc-OS 10.0 build $(date)"
     git push -u -f origin master
     cd ..
     cd json
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Dragon: Havoc-OS 10.0 build $(date)"
     git push -u -f origin master
     cd ..         
     cd havoc
@@ -1201,12 +1201,12 @@ HAVOC-SOURCE()
     Follow: @Nokia7plusOfficial ✅"     
     cd changelog
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Onyx: Havoc-OS 10.0 build $(date)"
     git push -u -f origin master
     cd ..   
     cd json
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Onyx: Havoc-OS 10.0 build $(date)"
     git push -u -f origin master
     cd ..    
     cd havoc
@@ -1276,12 +1276,12 @@ HAVOC-SOURCE()
     Follow: @nokia7161 ✅"     
     cd changelog
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Crystal: Havoc-OS 10.0 build $(date)"
     git push -u -f origin master
     cd ..          
     cd json
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Crystal: Havoc-OS 10.0 build $(date)"
     git push -u -f origin master
     cd ..               
     cd havoc
@@ -1352,12 +1352,12 @@ HAVOC-SOURCE()
     Follow: @nokia7161 ✅"        
     cd changelog
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Plate2: Havoc-OS 10.0 build $(date)"
     git push -u -f origin master
     cd ..    
     cd json
     git add .
-    git commit -m "build $(date)"
+    git commit -m "Plate2: Havoc-OS 10.0 build $(date)"
     git push -u -f origin master
     cd ..       
 }
