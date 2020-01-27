@@ -1770,7 +1770,9 @@ BLACKCAPS-SOURCE()
     cd ..
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P kiwis.jpg -C "
     *
-    New Android 10 Black_Caps-Edition Build is up 
+    New Android 10
+    Black_Caps-Edition 
+    Build is up 
     
     $(date)*
     
