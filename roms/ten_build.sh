@@ -609,82 +609,9 @@ PE-SOURCE()
     git add .
     git commit -m "Crystal: PixelExperience 10.0 build $(date)"
     git push -u -f origin master
-    cd ..       
-    cd pe
-    rm -r device/nokia
-    rm -r out/target/product/Crystal
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Plate2.git -b ten device/nokia/Plate2
-    cd device/nokia/Plate2/overlay/packages/apps/Os_Updates/res/values
-    rm -r *
-    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Plate2/PixelExperience/strings.xml
-    cd
-    cd $path/pe     
-    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
-    
-    New Pixel-Experience for Nokia 6.1 build started 
-    
-    $(date)
-    
-    👤 By: Raghu Varma
-
-    build's progress at $jenkinsurl"      
-    . build/envsetup.sh && lunch aosp_Plate2-eng && make -j32 bacon
-    cd out/target/product/Plate2
-    Changelog=Pixel-Plate2.txt
-
-    echo "Generating changelog..."
-
-    for i in $(seq 14);
-    do
-    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
-    k=$(expr $i - 1)
-    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
-
-    # Line with after --- until was too long for a small ListView
-    echo '=======================' >> $Changelog;
-    echo  "     "$Until_Date       >> $Changelog;
-    echo '=======================' >> $Changelog;
-    echo >> $Changelog;
-
-    # Cycle through every repo to find commits between 2 dates
-    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
-    echo >> $Changelog;
-    done
-    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/pl2_pe.sh
-    chmod a+x pl2_pe.sh
-    ./pl2_pe.sh
-    zipname=$(echo PixelExperience**.zip)
-    cat $zipname.json > $path/json/Plate2/pixel.json     
-    cat Pixel-Plate2.txt > $path/changelog/Plate2/PixelExperience.txt
-    sshpass -p $password rsync -avP -e ssh PixelExperience**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/PixelExperience
     cd 
     cd $path
     rm -r pe
-    python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
-    *
-    New Pixel-Experience Build is up 
-    
-    $(date)*
-    
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-6-2018/development/rom-pixel-experience-t3994591)
-    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Plate2/PixelExperience.txt)
-    📱Device: *Nokia 6.1*
-    ⚡Build Version: *Ten*
-    ⚡Android Version: *10.0.0*
-    ⚡Security Patch : *$securitypatch*
-    👤 By: *Raghu Varma*
-    #pl2 #nokia #pe #update
-    Follow: @nokia7161 ✅"        
-    cd changelog
-    git add .
-    git commit -m "Plate2: PixelExperience 10.0 build $(date)"
-    git push -u -f origin master
-    cd ..    
-    cd json
-    git add .
-    git commit -m "Plate2: PixelExperience 10.0 build $(date)"
-    git push -u -f origin master
-    cd ..     
 }
 
 EVOX-SOURCE()
@@ -942,83 +869,9 @@ EVOX-SOURCE()
     git add .
     git commit -m "Crystal: Evolution-X 10.0 build $(date)"
     git push -u -f origin master
-    cd ..           
-    cd evo
-    rm -r device/nokia
-    rm -r out/target/product/Crystal
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Plate2.git -b ten device/nokia/Plate2
-    cd device/nokia/Plate2/overlay/packages/apps/Os_Updates/res/values
-    rm -r *
-    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Plate2/EvolutionX/strings.xml
-    cd
-    cd $path/evo      
-    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
-    
-    New Evolution X for Nokia 6.1 build started 
-    
-    $(date)
-    
-    👤 By: Raghu Varma
-
-    build's progress at $jenkinsurl" 
-    export SKIP_ABI_CHECKS=true
-    . build/envsetup.sh && lunch aosp_Plate2-eng && make -j32 bacon
-    cd out/target/product/Plate2
-    Changelog=Evox-Plate2.txt
-
-    echo "Generating changelog..."
-
-    for i in $(seq 14);
-    do
-    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
-    k=$(expr $i - 1)
-    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
-
-    # Line with after --- until was too long for a small ListView
-    echo '=======================' >> $Changelog;
-    echo  "     "$Until_Date       >> $Changelog;
-    echo '=======================' >> $Changelog;
-    echo >> $Changelog;
-
-    # Cycle through every repo to find commits between 2 dates
-    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
-    echo >> $Changelog;
-    done
-    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/pl2_evox.sh
-    chmod a+x pl2_evox.sh
-    ./pl2_evox.sh
-    zipname=$(echo EvolutionX**.zip)
-    cat $zipname.json > $path/json/Plate2/evox.json     
-    cat Evox-Plate2.txt > $path/changelog/Plate2/evolutionx.txt
-    sshpass -p $password rsync -avP -e ssh EvolutionX**.zip  raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/EvolutionX
     cd 
     cd $path
-    rm -r evo
-    python telegram.py -t $Telegram_Api_code -c $chat_id  -P evox.png -C "
-    *
-    New Evolution X Build is up 
-    
-    $(date)*
-    
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-6-2018/development/rom-evolution-x-3-3-t4011611)
-    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Plate2/evolutionx.txt)
-    📱Device: *Nokia 6.1*
-    ⚡Build Version: *$evoxversion*
-    ⚡Android Version: *10.0.0*
-    ⚡Security Patch : *$securitypatch*
-    👤 By: *Raghu Varma*
-    #pl2 #nokia #evox #update
-    Follow: @nokia7161 ✅"        
-    cd changelog
-    git add .
-    git commit -m "Plate2: Evolution-X 10.0 build $(date)"
-    git push -u -f origin master
-    cd ..   
-    cd json
-    git add .
-    git commit -m "Plate2: Evolution-X 10.0 build $(date)"
-    git push -u -f origin master
-    cd ..         
+    rm -r evox
 }
 
 HAVOC-SOURCE()
@@ -1283,83 +1136,9 @@ HAVOC-SOURCE()
     git add .
     git commit -m "Crystal: Havoc-OS 10.0 build $(date)"
     git push -u -f origin master
-    cd ..               
-    cd havoc
-    rm -r device/nokia
-    rm -r out/target/product/Crystal
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Plate2.git -b ten device/nokia/Plate2
-    cd device/nokia/Plate2/overlay/packages/apps/Os_Updates/res/values
-    rm -r *
-    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Plate2/Havoc-OS/strings.xml
-    cd
-    cd $path/havoc        
-    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
-    
-    New Havoc-OS for Nokia 6.1 build started 
-    
-    $(date)
-    
-    👤 By: Raghu Varma
-
-    build's progress at $jenkinsurl"      
-    . build/envsetup.sh && lunch havoc_Plate2-eng && make -j32 bacon
-    cd out/target/product/Plate2
-    Changelog=Havoc-Plate2.txt
-
-
-    echo "Generating changelog..."
-
-    for i in $(seq 14);
-    do
-    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
-    k=$(expr $i - 1)
-    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
-
-    # Line with after --- until was too long for a small ListView
-    echo '=======================' >> $Changelog;
-    echo  "     "$Until_Date       >> $Changelog;
-    echo '=======================' >> $Changelog;
-    echo >> $Changelog;
-
-    # Cycle through every repo to find commits between 2 dates
-    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
-    echo >> $Changelog;
-    done
-    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/pl2_havoc.sh
-    chmod a+x pl2_havoc.sh
-    ./pl2_havoc.sh
-    zipname=$(echo Havoc-OS**.zip)
-    cat $zipname.json > $path/json/Plate2/havoc.json    
-    cat Havoc-Plate2.txt > $path/changelog/Plate2/HavocOS.txt
-    sshpass -p $password rsync -avP -e ssh Havoc-OS**.zip raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/Havoc-OS
     cd 
     cd $path
     rm -r havoc
-    python telegram.py -t $Telegram_Api_code -c $chat_id  -P havoc.jpg -C "
-    *
-    New Havoc-OS Build is up 
-    
-    $(date)*
-    
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-6-2018/development/rom-havoc-os-v3-0-t3998283)
-    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Plate2/HavocOS.txt)
-    📱Device: *Nokia 6.1*
-    ⚡Build Version: *$havocversion*
-    ⚡Android Version: *10.0.0*
-    ⚡Security Patch : *$securitypatch*
-    👤 By: *Raghu Varma*
-    #pl2 #nokia #havoc #update
-    Follow: @nokia7161 ✅"        
-    cd changelog
-    git add .
-    git commit -m "Plate2: Havoc-OS 10.0 build $(date)"
-    git push -u -f origin master
-    cd ..    
-    cd json
-    git add .
-    git commit -m "Plate2: Havoc-OS 10.0 build $(date)"
-    git push -u -f origin master
-    cd ..       
 }
 
 TWRP-P-SOURCE()
@@ -1371,7 +1150,6 @@ TWRP-P-SOURCE()
     mkdir DDV_sprout
     mkdir SLD_sprout
     mkdir CTL_sprout
-    mkdir PL2_sprout
     mkdir twrp
     cd twrp
     repo init -u git://github.com/omnirom/android.git -b android-9.0 --depth=1
@@ -1432,11 +1210,9 @@ TWRP-Q-SOURCE()
     git clone https://github.com/RaghuVarma331/android_device_nokia_DRG_sprout-TWRP.git -b android-10.0 device/nokia/DRG_sprout
     git clone https://github.com/RaghuVarma331/android_device_nokia_B2N_sprout-TWRP.git -b android-10.0 device/nokia/B2N_sprout
     git clone https://github.com/RaghuVarma331/android_device_nokia_CTL_sprout-TWRP.git -b android-10.0 device/nokia/CTL_sprout
-    git clone https://github.com/RaghuVarma331/android_device_nokia_PL2_sprout-TWRP.git -b android-10.0 device/nokia/PL2_sprout
     . build/envsetup.sh && lunch omni_DRG_sprout-eng && make -j32 recoveryimage	
     . build/envsetup.sh && lunch omni_B2N_sprout-eng && make -j32 recoveryimage
     . build/envsetup.sh && lunch omni_CTL_sprout-eng && make -j32 recoveryimage
-    . build/envsetup.sh && lunch omni_PL2_sprout-eng && make -j32 recoveryimage
     cd out/target/product/DRG_sprout
     mv recovery.img twrp-3.3.1-0-DRG_sprout-10.0-$(date +"%Y%m%d").img
     cp -r twrp-3.3.1-0-DRG_sprout-10.0-$(date +"%Y%m%d").img $path/DRG_sprout
@@ -1445,11 +1221,6 @@ TWRP-Q-SOURCE()
     cd out/target/product/CTL_sprout
     mv recovery.img twrp-3.3.1-0-CTL_sprout-10.0-$(date +"%Y%m%d").img
     cp -r twrp-3.3.1-0-CTL_sprout-10.0-$(date +"%Y%m%d").img $path/CTL_sprout
-    cd
-    cd $path/twrp    
-    cd out/target/product/PL2_sprout
-    mv recovery.img twrp-3.3.1-0-PL2_sprout-10.0-$(date +"%Y%m%d").img
-    cp -r twrp-3.3.1-0-PL2_sprout-10.0-$(date +"%Y%m%d").img $path/PL2_sprout
     cd
     cd $path/twrp    
     cd out/target/product/B2N_sprout
@@ -1477,12 +1248,10 @@ TWRP-Q-INSTALLER()
     git clone https://github.com/RaghuVarma331/android_device_nokia_DRG_sprout-TWRP.git -b android-10.0 device/nokia/DRG_sprout
     git clone https://github.com/RaghuVarma331/android_device_nokia_B2N_sprout-TWRP.git -b android-10.0 device/nokia/B2N_sprout	
     git clone https://github.com/RaghuVarma331/android_device_nokia_CTL_sprout-TWRP.git -b android-10.0 device/nokia/CTL_sprout
-    git clone https://github.com/RaghuVarma331/android_device_nokia_PL2_sprout-TWRP.git -b android-10.0 device/nokia/PL2_sprout
     sed -i "/ro.build.version.security_patch/d" build/tools/buildinfo.sh
     . build/envsetup.sh && lunch omni_DRG_sprout-eng && make -j32 recoveryimage
     . build/envsetup.sh && lunch omni_B2N_sprout-eng && make -j32 recoveryimage
     . build/envsetup.sh && lunch omni_CTL_sprout-eng && make -j32 recoveryimage  
-    . build/envsetup.sh && lunch omni_PL2_sprout-eng && make -j32 recoveryimage 
     cd out/target/product/DRG_sprout
     mv ramdisk-recovery.cpio ramdisk-twrp.cpio
     cp -r ramdisk-twrp.cpio $path/twrp/device/nokia/DRG_sprout/installer
@@ -1499,15 +1268,6 @@ TWRP-Q-INSTALLER()
     cd $path/twrp/device/nokia/CTL_sprout/installer
     zip -r twrp-installer-3.3.1-0-CTL_sprout-10.0-$(date +"%Y%m%d").zip magiskboot  META-INF ramdisk-twrp.cpio
     cp -r twrp-installer-3.3.1-0-CTL_sprout-10.0-$(date +"%Y%m%d").zip $path/CTL_sprout  
-    cd
-    cd $path/twrp
-    cd out/target/product/PL2_sprout
-    mv ramdisk-recovery.cpio ramdisk-twrp.cpio
-    cp -r ramdisk-twrp.cpio $path/twrp/device/nokia/PL2_sprout/installer
-    cd
-    cd $path/twrp/device/nokia/PL2_sprout/installer
-    zip -r twrp-installer-3.3.1-0-PL2_sprout-10.0-$(date +"%Y%m%d").zip magiskboot  META-INF ramdisk-twrp.cpio
-    cp -r twrp-installer-3.3.1-0-PL2_sprout-10.0-$(date +"%Y%m%d").zip $path/PL2_sprout  
     cd
     cd $path/twrp    
     cd out/target/product/B2N_sprout
@@ -1575,9 +1335,6 @@ TWRP-P-INSTALLER()
     cd
     cd $path     
     rm -r twrp
-    cd PL2_sprout
-    sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-PL2_sprout-10.0* twrp-installer-3.3.1-0-PL2_sprout-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/TWRP/TEN
-    cd ..
     cd CTL_sprout
     sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-CTL_sprout-10.0* twrp-installer-3.3.1-0-CTL_sprout-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/TWRP/TEN
     cd ..
@@ -1623,22 +1380,7 @@ TWRP-P-INSTALLER()
     ⚡Android Version: *10.0.0*
     👤 By: *Raghu Varma*
     #ctl #nokia #twrp #update
-    Follow: @nokia7161 ✅"  
-    
-    python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
-    *
-    New Android 10.0 Twrp-3.3.1-0 Build is up 
-    
-    $(date)*
-    
-    ⬇️ [Download](https://sourceforge.net/projects/pl2-sprout/files/TWRP/TEN/)
-    📱Device: *Nokia 6.1*
-    ⚡Build Version: *3.3.1-0*
-    ⚡Android Version: *10.0.0*
-    👤 By: *Raghu Varma*
-    #pl2 #nokia #twrp #update
-    Follow: @nokia7161 ✅"     
-    
+    Follow: @nokia7161 ✅"          
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
     *
     New Android 10.0 Twrp-3.3.1-0 Build is up 
@@ -1836,27 +1578,7 @@ OXYGEN-SOURCE()
     ⚡Security Patch : *$securitypatch*
     👤 By: *Raghu Varma*
     #b2n #nokia #oos #update
-    Follow: @Nokia7plusOfficial ✅"  
-    
-    
-    python telegram.py -t $Telegram_Api_code -c $chat_id  -P oxygenos.png -C "
-    *
-    New Android 10.0  Oxygen OS Port 
-    Build is up 
-    
-    $(date)*
-    
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-2/nokia-616162777172-cross-device-development/rom-oxygen-os-t4008971)
-    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/crossdevelopment/oxygenos.txt)
-    📱Device: *Nokia 6.1*
-    ⚡Build Version: *$oxversion*
-    ⚡Android Version: *10.0*
-    ⚡Security Patch : *$securitypatch*
-    👤 By: *Raghu Varma*
-    #pl2 #nokia #oos #update
-    Follow: @nokia7161 ✅"     
-    
-    
+    Follow: @Nokia7plusOfficial ✅"          
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P oxygenos.png -C "
     *
     New Android 10.0  Oxygen OS Port 
