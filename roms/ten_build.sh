@@ -26,7 +26,6 @@ jenkinsurl=
 securitypatch=2020-01-05
 twrpsp='2020-01-05'
 evoxversion=4.0
-havocversion=3.1
 oxversion=v-5
 tag=4.4.194
 password=
@@ -874,273 +873,6 @@ EVOX-SOURCE()
     rm -r evox
 }
 
-HAVOC-SOURCE()
-{
-    wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
-    wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/havoc.jpg
-    git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog 
-    git clone https://$gitpassword@github.com/RaghuVarma331/Json-Tracker.git json        
-    mkdir havoc
-    cd havoc
-    echo -ne '\n' | repo init -u https://github.com/Havoc-OS/android_manifest.git -b ten --depth=1
-    repo sync -c --no-tags --no-clone-bundle -f --force-sync -j16
-    rm -r vendor/havoc
-    git clone https://github.com/Havoc-OS/android_vendor_havoc.git -b ten vendor/havoc
-    cd vendor/havoc
-    git remote add prebuilt https://github.com/RaghuVarma331/vendor_havoc.git
-    git fetch prebuilt
-    git cherry-pick 35de3f391184a3a9bd1ff07ec0bc626916bd8647
-    cd
-    cd $path/havoc
-    sed -i "/ro.control_privapp_permissions=enforce/d" vendor/havoc/config/common.mk     
-    git clone https://gitlab.com/RaghuVarma331/vendor_gapps.git -b ten --depth=1 vendor/gapps
-    rm -r packages/apps/Settings
-    rm -r device/havoc/sepolicy
-    rm -r packages/apps/Updates
-    git clone https://github.com/RaghuVarma331/android_device_os_sepolicy.git -b havoc-ten  device/havoc/sepolicy
-    git clone https://github.com/RaghuVarma331/Os_Updates.git -b lineage-17.1 packages/apps/Os_Updates      
-    git clone https://github.com/Havoc-OS/android_packages_apps_Settings.git -b ten packages/apps/Settings
-    cd packages/apps/Settings
-    git remote add main https://github.com/RaghuVarma331/settings.git
-    git fetch main
-    git cherry-pick bbc67f641de4fd4daf747bf3c8f578ad7ff14c26
-    sed -i "/<<<<<<< HEAD/d" res/xml/firmware_version.xml
-    sed -i "/=======/d" res/xml/firmware_version.xml
-    sed -i "/>>>>>>>/d" res/xml/firmware_version.xml
-    cd src/com/android/settings/system
-    rm -r SystemUpdatePreferenceController.java
-    wget https://github.com/RaghuVarma331/settings/raw/ten-l/src/com/android/settings/system/SystemUpdatePreferenceController.java    
-    cd
-    cd $path/havoc    
-    git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings
-    git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660
-    git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon
-    cd device/nokia/Dragon/overlay/packages/apps/Os_Updates/res/values
-    rm -r *
-    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Dragon/Havoc-OS/strings.xml
-    cd
-    cd $path/havoc     
-    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
-    
-    New Havoc-OS for Nokia 6.1 Plus build started 
-    
-    $(date)
-    
-    👤 By: Raghu Varma
-
-    build's progress at $jenkinsurl"      
-    . build/envsetup.sh && lunch havoc_Dragon-eng && make -j32 bacon
-    cd out/target/product/Dragon
-    Changelog=Havoc-Dragon.txt
-
-
-    echo "Generating changelog..."
-
-    for i in $(seq 14);
-    do
-    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
-    k=$(expr $i - 1)
-    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
-
-    # Line with after --- until was too long for a small ListView
-    echo '=======================' >> $Changelog;
-    echo  "     "$Until_Date       >> $Changelog;
-    echo '=======================' >> $Changelog;
-    echo >> $Changelog;
-
-    # Cycle through every repo to find commits between 2 dates
-    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
-    echo >> $Changelog;
-    done
-    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/drg_havoc.sh
-    chmod a+x drg_havoc.sh
-    ./drg_havoc.sh
-    zipname=$(echo Havoc-OS**.zip)
-    cat $zipname.json > $path/json/Dragon/havoc.json        
-    cat Havoc-Dragon.txt > $path/changelog/Dragon/HavocOS.txt
-    sshpass -p $password rsync -avP -e ssh Havoc-OS**.zip   raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/Havoc-OS
-    cd 
-    cd $path
-    python telegram.py -t $Telegram_Api_code -c $chat_id  -P havoc.jpg -C "
-    *
-    New Havoc-OS Build is up 
-    
-    $(date)*
-    
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-6-1-plus/development/rom-havoc-os-v3-0-t3997651)
-    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Dragon/HavocOS.txt)
-    📱Device: *Nokia 6.1 Plus*
-    ⚡Build Version: *$havocversion*
-    ⚡Android Version: *10.0.0*
-    ⚡Security Patch : *$securitypatch*
-    👤 By: *Raghu Varma*
-    #drg #nokia #havoc #update
-    Follow:  @Nokia6plusofficial ✅" 
-    cd changelog
-    git add .
-    git commit -m "Dragon: Havoc-OS 10.0 build $(date)"
-    git push -u -f origin master
-    cd ..
-    cd json
-    git add .
-    git commit -m "Dragon: Havoc-OS 10.0 build $(date)"
-    git push -u -f origin master
-    cd ..         
-    cd havoc
-    rm -r device/nokia
-    rm -r out/target/product/Dragon
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Onyx.git -b ten device/nokia/Onyx
-    cd device/nokia/Onyx/overlay/packages/apps/Os_Updates/res/values
-    rm -r *
-    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Onyx/Havoc-OS/strings.xml
-    cd
-    cd $path/havoc     
-    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
-    
-    New Havoc-OS for Nokia 7 Plus build started 
-    
-    $(date)
-    
-    👤 By: Raghu Varma
-
-    build's progress at $jenkinsurl"      
-    . build/envsetup.sh && lunch havoc_Onyx-eng && make -j32 bacon
-    cd out/target/product/Onyx
-    Changelog=Havoc-Onyx.txt
-
-
-    echo "Generating changelog..."
-
-    for i in $(seq 14);
-    do
-    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
-    k=$(expr $i - 1)
-    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
-
-    # Line with after --- until was too long for a small ListView
-    echo '=======================' >> $Changelog;
-    echo  "     "$Until_Date       >> $Changelog;
-    echo '=======================' >> $Changelog;
-    echo >> $Changelog;
-
-    # Cycle through every repo to find commits between 2 dates
-    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
-    echo >> $Changelog;
-    done
-    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/b2n_havoc.sh
-    chmod a+x b2n_havoc.sh
-    ./b2n_havoc.sh
-    zipname=$(echo Havoc-OS**.zip)
-    cat $zipname.json > $path/json/Onyx/havoc.json       
-    cat Havoc-Onyx.txt > $path/changelog/Onyx/HavocOS.txt
-    sshpass -p $password rsync -avP -e ssh Havoc-OS**.zip   raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/Havoc-OS
-    cd 
-    cd $path
-    python telegram.py -t $Telegram_Api_code -c $chat_id  -P havoc.jpg -C "
-    *
-    New Havoc-OS Build is up 
-    
-    $(date)*
-    
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/rom-havoc-os-v3-0-t3998287)
-    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Onyx/HavocOS.txt)
-    📱Device: *Nokia 7 Plus*
-    ⚡Build Version: *$havocversion*
-    ⚡Android Version: *10.0.0*
-    ⚡Security Patch : *$securitypatch*
-    👤 By: *Raghu Varma*
-    #b2n #nokia #havoc #update
-    Follow: @Nokia7plusOfficial ✅"     
-    cd changelog
-    git add .
-    git commit -m "Onyx: Havoc-OS 10.0 build $(date)"
-    git push -u -f origin master
-    cd ..   
-    cd json
-    git add .
-    git commit -m "Onyx: Havoc-OS 10.0 build $(date)"
-    git push -u -f origin master
-    cd ..    
-    cd havoc
-    rm -r device/nokia
-    rm -r out/target/product/Onyx
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Crystal.git -b ten device/nokia/Crystal
-    cd device/nokia/Crystal/overlay/packages/apps/Os_Updates/res/values
-    rm -r *
-    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Crystal/Havoc-OS/strings.xml
-    cd
-    cd $path/havoc
-    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
-    
-    New Havoc-OS for Nokia 7.1 build started 
-    
-    $(date)
-    
-    👤 By: Raghu Varma
-
-    build's progress at $jenkinsurl"      
-    . build/envsetup.sh && lunch havoc_Crystal-eng && make -j32 bacon
-    cd out/target/product/Crystal
-    Changelog=Havoc-Crystal.txt
-
-
-    echo "Generating changelog..."
-
-    for i in $(seq 14);
-    do
-    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
-    k=$(expr $i - 1)
-    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
-
-    # Line with after --- until was too long for a small ListView
-    echo '=======================' >> $Changelog;
-    echo  "     "$Until_Date       >> $Changelog;
-    echo '=======================' >> $Changelog;
-    echo >> $Changelog;
-
-    # Cycle through every repo to find commits between 2 dates
-    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
-    echo >> $Changelog;
-    done
-    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/ctl_havoc.sh
-    chmod a+x ctl_havoc.sh
-    ./ctl_havoc.sh
-    zipname=$(echo Havoc-OS**.zip)
-    cat $zipname.json > $path/json/Crystal/havoc.json     
-    cat Havoc-Crystal.txt > $path/changelog/Crystal/HavocOS.txt
-    sshpass -p $password rsync -avP -e ssh Havoc-OS**.zip   raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/Havoc-OS
-    cd 
-    cd $path
-    python telegram.py -t $Telegram_Api_code -c $chat_id  -P havoc.jpg -C "
-    *
-    New Havoc-OS Build is up 
-    
-    $(date)*
-    
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-1/development/rom-havoc-os-v3-0-t4020097)
-    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Crystal/HavocOS.txt)
-    📱Device: *Nokia 7.1*
-    ⚡Build Version: *$havocversion*
-    ⚡Android Version: *10.0.0*
-    ⚡Security Patch : *$securitypatch*
-    👤 By: *Raghu Varma*
-    #ctl #nokia #havoc #update
-    Follow: @nokia7161 ✅"     
-    cd changelog
-    git add .
-    git commit -m "Crystal: Havoc-OS 10.0 build $(date)"
-    git push -u -f origin master
-    cd ..          
-    cd json
-    git add .
-    git commit -m "Crystal: Havoc-OS 10.0 build $(date)"
-    git push -u -f origin master
-    cd 
-    cd $path
-    rm -r havoc
-}
-
 TWRP-P-SOURCE()
 {
     wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
@@ -1661,8 +1393,8 @@ echo "------------------------------------------------"
 echo "A simple remote script to compile custom Stuff"
 echo "Coded By Raghu Varma.G "
 echo "------------------------------------------------"
-PS3='Please select your option (1-9): '
-menuvar=("BasicSetup" "pe" "lineageos" "havoc" "evox" "oxygen" "twrp" "Black_Caps-Edition" "all_roms" "Exit")
+PS3='Please select your option (1-8): '
+menuvar=("BasicSetup" "pe" "lineageos" "evox" "oxygen" "twrp" "Black_Caps-Edition" "all_roms" "Exit")
 select menuvar in "${menuvar[@]}"
 do
     case $menuvar in
@@ -1826,31 +1558,6 @@ do
             read -n1 -r key
             break
             ;;		    
-        "havoc")
-            clear
-            echo "----------------------------------------------"
-            echo "Started Building Havoc-3.0 for Nokia 6.1 , 6.1plus & 7 plus  ."
-            echo "Please be patient..."
-            # havoc
-            echo "----------------------------------------------"
-            echo "Setting Up Tools & Stuff..."
-            echo " "
-            TOOLS_SETUP
-	    echo " "	    
-            echo "----------------------------------------------"
-            echo "Setting up havoc source..."
-            echo " "
-            HAVOC-SOURCE
-	    echo " "	 	    
-            echo "----------------------------------------------"
-            echo "Build successfully completed."
-            echo " "
-            echo "----------------------------------------------"
-            echo "Press any key for end the script."
-            echo "----------------------------------------------"
-            read -n1 -r key
-            break
-            ;;		  
         "evox")
             clear
             echo "----------------------------------------------"
@@ -1879,7 +1586,7 @@ do
         "all_roms")
             clear
             echo "----------------------------------------------"
-            echo "Started Building LineageOS 17.1 , Pixel-Exp , Havoc & Twrp for Nokia 6.1 Plus , 7 plus , 6.1 , 6.2 & 7.2 ."
+            echo "Started Building LineageOS 17.1 , Pixel-Exp & Twrp for Nokia 6.1 Plus , 7 plus , 6.1 , 6.2 & 7.2 ."
             echo "Please be patient..."
             # all_roms
             echo "----------------------------------------------"
@@ -1897,11 +1604,6 @@ do
             echo " "
             PE-SOURCE
 	    echo " "
-            echo "----------------------------------------------"
-            echo "Setting up pe source..."
-            echo " "
-            HAVOC-SOURCE
-	    echo " "	    
             echo "----------------------------------------------"
             echo "Setting up Evolution X source..."
             echo " "
