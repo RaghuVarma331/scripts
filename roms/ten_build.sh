@@ -47,9 +47,7 @@ LINEAGE-SOURCE()
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/lineage/config/common.mk
     git clone https://gitlab.com/RaghuVarma331/vendor_gapps.git -b ten --depth=1 vendor/gapps
     rm -r packages/apps/Settings
-    rm -r device/lineage/sepolicy
     rm -r packages/apps/Updater
-    git clone https://github.com/RaghuVarma331/android_device_os_sepolicy.git -b lineage-17.1  device/lineage/sepolicy
     git clone https://github.com/RaghuVarma331/Os_Updates.git -b lineage-17.1 packages/apps/Os_Updates    
     git clone https://github.com/LineageOS/android_packages_apps_Settings.git -b lineage-17.1 packages/apps/Settings
     cd packages/apps/Settings
@@ -291,8 +289,6 @@ LINEAGE-SOURCE()
     rm -r kernel/nokia
     rm -r vendor/nokia
     rm -r out/target/product/Crystal
-    rm -r device/lineage/sepolicy
-    git clone https://github.com/LineageOS/android_device_lineage_sepolicy.git -b lineage-17.1 device/lineage/sepolicy
     git clone https://github.com/RaghuVarma331/android_device_xiaomi_whyred.git -b lineage-17.0 device/xiaomi/whyred
     git clone https://github.com/RaghuVarma331/android_kernel_xiaomi_whyred.git -b ten --depth=1 kernel/xiaomi/whyred
     git clone https://github.com/RaghuVarma331/vendor_MiuiCamera.git -b ten vendor/MiuiCamera
@@ -367,9 +363,7 @@ PE-SOURCE()
     repo sync -c --no-tags --no-clone-bundle -f --force-sync -j16
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/aosp/config/common.mk
     rm -r packages/apps/Settings
-    rm -r device/custom/sepolicy
     rm -r packages/apps/Updates
-    git clone https://github.com/RaghuVarma331/android_device_os_sepolicy.git -b pe-ten  device/custom/sepolicy
     git clone https://github.com/RaghuVarma331/Os_Updates.git -b lineage-17.1 packages/apps/Os_Updates       
     git clone https://github.com/PixelExperience/packages_apps_Settings.git -b ten packages/apps/Settings
     cd packages/apps/Settings    
@@ -625,9 +619,7 @@ EVOX-SOURCE()
     repo sync -c --no-tags --no-clone-bundle -f --force-sync -j16
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/aosp/config/common.mk
     rm -r packages/apps/Settings
-    rm -r device/custom/sepolicy
     rm -r packages/apps/Updates
-    git clone https://github.com/RaghuVarma331/android_device_os_sepolicy.git -b evo-ten  device/custom/sepolicy
     git clone https://github.com/RaghuVarma331/Os_Updates.git -b lineage-17.1 packages/apps/Os_Updates       
     git clone https://github.com/Evolution-X/packages_apps_Settings.git -b ten packages/apps/Settings
     cd packages/apps/Settings
