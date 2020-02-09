@@ -25,6 +25,7 @@ chat_id=
 jenkinsurl=
 securitypatch=2020-01-05
 twrpsp='2020-01-05'
+extversion=
 evoxversion=4.0
 oxversion=v-5
 tag=4.4.194
@@ -864,6 +865,330 @@ EVOX-SOURCE()
     rm -r evox
 }
 
+EXT-SOURCE()
+{
+    wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
+    wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/extended.jpg
+    git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog    
+    git clone https://$gitpassword@github.com/RaghuVarma331/Json-Tracker.git json     
+    mkdir ext
+    cd ext
+    echo -ne '\n' | https://github.com/Extended-UI/android_manifest -b android_10 --depth=1
+    repo sync -c --no-tags --no-clone-bundle -f --force-sync -j16
+    sed -i "/ro.control_privapp_permissions=enforce/d" vendor/aosp/config/common.mk
+    rm -r packages/apps/Settings
+    rm -r packages/apps/Updates
+    git clone https://github.com/RaghuVarma331/Os_Updates.git -b lineage-17.1 packages/apps/Os_Updates       
+    git clone https://github.com/Extended-UI/android_packages_apps_Settings.git -b android_10 packages/apps/Settings
+    cd packages/apps/Settings
+    git remote add main https://github.com/RaghuVarma331/settings.git
+    git fetch main
+    git cherry-pick bbc67f641de4fd4daf747bf3c8f578ad7ff14c26
+    sed -i "/<<<<<<< HEAD/d" res/xml/firmware_version.xml
+    sed -i "/=======/d" res/xml/firmware_version.xml
+    sed -i "/>>>>>>>/d" res/xml/firmware_version.xml
+    cd src/com/android/settings/system
+    rm -r SystemUpdatePreferenceController.java
+    wget https://github.com/RaghuVarma331/settings/raw/ten-l/src/com/android/settings/system/SystemUpdatePreferenceController.java   
+    cd
+    cd $path/ext
+    git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings
+    git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660	
+    git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon 
+    cd device/nokia/Dragon/overlay/packages/apps/Os_Updates/res/values
+    rm -r *
+    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Dragon/ExtendedUI/strings.xml
+    cd
+    cd $path/ext        
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    
+    New ExtendedUI for Nokia 6.1 Plus build started 
+    
+    $(date)
+    
+    👤 By: Raghu Varma
+    build's progress at $jenkinsurl"      
+    . build/envsetup.sh && lunch aosp_Dragon-eng && make -j32 bacon
+    cd out/target/product/Dragon
+    Changelog=Ext-Dragon.txt
+
+
+    echo "Generating changelog..."
+
+    for i in $(seq 14);
+    do
+    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
+    k=$(expr $i - 1)
+    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
+
+    # Line with after --- until was too long for a small ListView
+    echo '=======================' >> $Changelog;
+    echo  "     "$Until_Date       >> $Changelog;
+    echo '=======================' >> $Changelog;
+    echo >> $Changelog;
+
+    # Cycle through every repo to find commits between 2 dates
+    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
+    echo >> $Changelog;
+    done
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/drg_ext.sh
+    chmod a+x drg_ext.sh
+    ./drg_ext.sh
+    zipname=$(echo ExtendedUI**.zip)
+    cat $zipname.json > $path/json/Dragon/ext.json     
+    cat Ext-Dragon.txt > $path/changelog/Dragon/ext.txt
+    sshpass -p $password rsync -avP -e ssh ExtendedUI**.zip  raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/ExtendedUI
+    cd 
+    cd $path
+    python telegram.py -t $Telegram_Api_code -c $chat_id  -P extended.jpg -C "
+    *
+    New ExtendedUI Build is up 
+    
+    $(date)*
+    
+    ⬇️ [Download](https://forum.xda-developers.com/nokia-6-1-plus/development/rom-evolution-x-3-3-t4011589)
+    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Dragon/ext.txt)
+    📱Device: *Nokia 6.1 Plus*
+    ⚡Build Version: *$extversion*
+    ⚡Android Version: *10.0.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #drg #nokia #extd #update
+    Follow:  @Nokia6plusofficial ✅" 
+    cd changelog
+    git add .
+    git commit -m "Dragon: ExtendedUI 10.0 build $(date)"
+    git push -u -f origin master
+    cd ..    
+    cd json
+    git add .
+    git commit -m "Dragon: ExtendedUI 10.0 build $(date)"
+    git push -u -f origin master
+    cd ..     
+    cd ext
+    rm -r device/nokia
+    rm -r out/target/product/Dragon
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Onyx.git -b ten device/nokia/Onyx
+    cd device/nokia/Onyx/overlay/packages/apps/Os_Updates/res/values
+    rm -r *
+    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Onyx/ExtendedUI/strings.xml
+    cd
+    cd $path/ext
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    
+    New ExtendedUI for Nokia 7 Plus build started 
+    
+    $(date)
+    
+    👤 By: Raghu Varma
+    build's progress at $jenkinsurl"      
+    . build/envsetup.sh && lunch aosp_Onyx-eng && make -j32 bacon
+    cd out/target/product/Onyx
+    Changelog=Ext-Onyx.txt
+
+    echo "Generating changelog..."
+
+    for i in $(seq 14);
+    do
+    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
+    k=$(expr $i - 1)
+    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
+
+    # Line with after --- until was too long for a small ListView
+    echo '=======================' >> $Changelog;
+    echo  "     "$Until_Date       >> $Changelog;
+    echo '=======================' >> $Changelog;
+    echo >> $Changelog;
+
+    # Cycle through every repo to find commits between 2 dates
+    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
+    echo >> $Changelog;
+    done
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/b2n_ext.sh
+    chmod a+x b2n_ext.sh
+    ./b2n_ext.sh
+    zipname=$(echo ExtendedUI**.zip)
+    cat $zipname.json > $path/json/Onyx/ext.json     
+    cat Ext-Onyx.txt > $path/changelog/Onyx/ext.txt
+    sshpass -p $password rsync -avP -e ssh ExtendedUI**.zip  raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/ExtendedUI
+    cd 
+    cd $path
+    python telegram.py -t $Telegram_Api_code -c $chat_id  -P extended.jpg -C "
+    *
+    New ExtendedUI Build is up 
+    
+    $(date)*
+     
+    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/rom-evolution-x-3-3-t4011603)
+    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Onyx/ext.txt)
+    📱Device: *Nokia 7 Plus*
+    ⚡Build Version: *$extversion*
+    ⚡Android Version: *10.0.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #b2n #nokia #extd #update
+    Follow: @Nokia7plusOfficial ✅"  
+    cd changelog
+    git add .
+    git commit -m "Onyx: ExtendedUI 10.0 build $(date)"
+    git push -u -f origin master
+    cd ..
+    cd json
+    git add .
+    git commit -m "Onyx: ExtendedUI 10.0 build $(date)"
+    git push -u -f origin master
+    cd ..     
+    cd ext
+    rm -r device/nokia
+    rm -r out/target/product/Onyx
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Crystal.git -b ten device/nokia/Crystal
+    cd device/nokia/Crystal/overlay/packages/apps/Os_Updates/res/values
+    rm -r *
+    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Crystal/ExtendedUI/strings.xml
+    cd
+    cd $path/ext
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    
+    New ExtendedUI for Nokia 7.1 build started 
+    
+    $(date)
+    
+    👤 By: Raghu Varma
+    build's progress at $jenkinsurl"      
+    . build/envsetup.sh && lunch aosp_Crystal-eng && make -j32 bacon
+    cd out/target/product/Crystal
+    Changelog=Ext-Crystal.txt
+
+
+    echo "Generating changelog..."
+
+    for i in $(seq 14);
+    do
+    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
+    k=$(expr $i - 1)
+    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
+
+    # Line with after --- until was too long for a small ListView
+    echo '=======================' >> $Changelog;
+    echo  "     "$Until_Date       >> $Changelog;
+    echo '=======================' >> $Changelog;
+    echo >> $Changelog;
+
+    # Cycle through every repo to find commits between 2 dates
+    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
+    echo >> $Changelog;
+    done
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/ctl_ext.sh
+    chmod a+x ctl_ext.sh
+    ./ctl_ext.sh
+    zipname=$(echo ExtendedUI**.zip)
+    cat $zipname.json > $path/json/Crystal/ext.json        
+    cat Ext-Crystal.txt > $path/changelog/Crystal/ext.txt
+    sshpass -p $password rsync -avP -e ssh ExtendedUI**.zip raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/ExtendedUI
+    cd 
+    cd $path
+    python telegram.py -t $Telegram_Api_code -c $chat_id  -P extended.jpg -C "
+    *
+    New ExtendedUI Build is up 
+    
+    $(date)*
+     
+    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-1/development/rom-evolution-x-3-5-t4020515)
+    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Crystal/ext.txt)
+    📱Device: *Nokia 7.1*
+    ⚡Build Version: *$extversion*
+    ⚡Android Version: *10.0.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #ctl #nokia #extd #update
+    Follow: @nokia7161 ✅"  
+    cd changelog
+    git add .
+    git commit -m "Crystal: ExtendedUI 10.0 build $(date)"
+    git push -u -f origin master
+    cd ..     
+    cd json
+    git add .
+    git commit -m "Crystal: ExtendedUI 10.0 build $(date)"
+    git push -u -f origin master
+    cd ..           
+    cd ext
+    rm -r device/nokia
+    rm -r out/target/product/Crystal
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Plate2.git -b ten device/nokia/Plate2
+    cd device/nokia/Plate2/overlay/packages/apps/Os_Updates/res/values
+    rm -r *
+    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Plate2/ExtendedUI/strings.xml
+    cd
+    cd $path/ext      
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    
+    New Evolution X for Nokia 6.1 build started 
+    
+    $(date)
+    
+    👤 By: Raghu Varma
+    build's progress at $jenkinsurl" 
+    . build/envsetup.sh && lunch aosp_Plate2-eng && make -j32 bacon
+    cd out/target/product/Plate2
+    Changelog=Ext-Plate2.txt
+
+    echo "Generating changelog..."
+
+    for i in $(seq 14);
+    do
+    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
+    k=$(expr $i - 1)
+    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
+
+    # Line with after --- until was too long for a small ListView
+    echo '=======================' >> $Changelog;
+    echo  "     "$Until_Date       >> $Changelog;
+    echo '=======================' >> $Changelog;
+    echo >> $Changelog;
+
+    # Cycle through every repo to find commits between 2 dates
+    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
+    echo >> $Changelog;
+    done
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/pl2_ext.sh
+    chmod a+x pl2_ext.sh
+    ./pl2_ext.sh
+    zipname=$(echo ExtendedUI**.zip)
+    cat $zipname.json > $path/json/Plate2/ext.json     
+    cat Ext-Plate2.txt > $path/changelog/Plate2/ext.txt
+    sshpass -p $password rsync -avP -e ssh ExtendedUI**.zip  raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/ExtendedUI
+    cd 
+    cd $path
+    rm -r ext
+    python telegram.py -t $Telegram_Api_code -c $chat_id  -P extended.jpg -C "
+    *
+    New ExtendedUI Build is up 
+    
+    $(date)*
+    
+    ⬇️ [Download](https://forum.xda-developers.com/nokia-6-2018/development/rom-evolution-x-3-3-t4011611)
+    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Plate2/ext.txt)
+    📱Device: *Nokia 6.1*
+    ⚡Build Version: *$extversion*
+    ⚡Android Version: *10.0.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #pl2 #nokia #extd #update
+    Follow: @nokia7161 ✅"        
+    cd changelog
+    git add .
+    git commit -m "Plate2: ExtendedUI 10.0 build $(date)"
+    git push -u -f origin master
+    cd ..   
+    cd json
+    git add .
+    git commit -m "Plate2: ExtendedUI 10.0 build $(date)"
+    git push -u -f origin master
+    cd ..         
+}
+
 TWRP-P-SOURCE()
 {
     wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
@@ -1384,8 +1709,8 @@ echo "------------------------------------------------"
 echo "A simple remote script to compile custom Stuff"
 echo "Coded By Raghu Varma.G "
 echo "------------------------------------------------"
-PS3='Please select your option (1-8): '
-menuvar=("BasicSetup" "pe" "lineageos" "evox" "oxygen" "twrp" "Black_Caps-Edition" "all_roms" "Exit")
+PS3='Please select your option (1-9): '
+menuvar=("BasicSetup" "pe" "lineageos" "ext" "evox" "oxygen" "twrp" "Black_Caps-Edition" "all_roms" "Exit")
 select menuvar in "${menuvar[@]}"
 do
     case $menuvar in
@@ -1548,7 +1873,7 @@ do
             echo "----------------------------------------------"
             read -n1 -r key
             break
-            ;;		    
+            ;;		    		  
         "evox")
             clear
             echo "----------------------------------------------"
@@ -1573,11 +1898,36 @@ do
             echo "----------------------------------------------"
             read -n1 -r key
             break
-            ;;			    
+            ;;		
+        "ext")
+            clear
+            echo "----------------------------------------------"
+            echo "Started Building ExtendedUI for Nokia 6.1 , 6.1plus & 7 plus  ."
+            echo "Please be patient..."
+            # ext
+            echo "----------------------------------------------"
+            echo "Setting Up Tools & Stuff..."
+            echo " "
+            TOOLS_SETUP
+	    echo " "	    
+            echo "----------------------------------------------"
+            echo "Setting up Evolution X source..."
+            echo " "
+            EXT-SOURCE
+	    echo " "	 	    
+            echo "----------------------------------------------"
+            echo "Build successfully completed."
+            echo " "
+            echo "----------------------------------------------"
+            echo "Press any key for end the script."
+            echo "----------------------------------------------"
+            read -n1 -r key
+            break
+            ;;		    
         "all_roms")
             clear
             echo "----------------------------------------------"
-            echo "Started Building LineageOS 17.1 , Pixel-Exp & Twrp for Nokia 6.1 Plus , 7 plus , 6.1 , 6.2 & 7.2 ."
+            echo "Started Building LineageOS 17.1 , Pixel-Exp , ExtendedUI & Twrp for Nokia 6.1 Plus , 7 plus , 6.1 , 6.2 & 7.2 ."
             echo "Please be patient..."
             # all_roms
             echo "----------------------------------------------"
@@ -1595,6 +1945,11 @@ do
             echo " "
             PE-SOURCE
 	    echo " "
+            echo "----------------------------------------------"
+            echo "Setting up ExtendedUI source..."
+            echo " "
+            EXT-SOURCE
+	    echo " "	    
             echo "----------------------------------------------"
             echo "Setting up Evolution X source..."
             echo " "
@@ -1645,5 +2000,3 @@ do
         *) echo Invalid option.;;
     esac
 done              
-
-    
