@@ -1124,7 +1124,7 @@ EXT-SOURCE()
     cd $path/ext      
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
-    New Evolution X for Nokia 6.1 build started 
+    New ExtendedUI for Nokia 6.1 build started 
     
     $(date)
     
