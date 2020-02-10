@@ -1168,7 +1168,7 @@ EXT-SOURCE()
     
     $(date)*
     
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-6-2018/development/rom-evolution-x-3-3-t4011611)
+    ⬇️ [Download](https://forum.xda-developers.com/nokia-6-2018/development/rom-extended-ui-t4048947)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Plate2/ext.txt)
     📱Device: *Nokia 6.1*
     ⚡Build Version: *$extversion*
