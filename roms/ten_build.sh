@@ -23,9 +23,9 @@ clear
 Telegram_Api_code=
 chat_id=
 jenkinsurl=
-securitypatch=2020-01-05
-twrpsp='2020-01-05'
-extversion=
+securitypatch=2020-02-05
+twrpsp='2020-02-05'
+extversion=1.0.2
 evoxversion=4.0
 oxversion=v-5
 tag=4.4.194
