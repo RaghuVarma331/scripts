@@ -873,7 +873,7 @@ EXT-SOURCE()
     git clone https://$gitpassword@github.com/RaghuVarma331/Json-Tracker.git json     
     mkdir ext
     cd ext
-    echo -ne '\n' | https://github.com/Extended-UI/android_manifest -b android_10 --depth=1
+    echo -ne '\n' | repo init -u https://github.com/Extended-UI/android_manifest -b android_10 --depth=1
     repo sync -c --no-tags --no-clone-bundle -f --force-sync -j16
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/aosp/config/common.mk
     rm -r packages/apps/Settings
@@ -1911,7 +1911,7 @@ do
             TOOLS_SETUP
 	    echo " "	    
             echo "----------------------------------------------"
-            echo "Setting up Evolution X source..."
+            echo "Setting up ExtendedUI source..."
             echo " "
             EXT-SOURCE
 	    echo " "	 	    
