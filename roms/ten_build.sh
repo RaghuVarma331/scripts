@@ -1094,7 +1094,7 @@ EXT-SOURCE()
     
     $(date)*
      
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-1/development/rom-evolution-x-3-5-t4020515)
+    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-1/development/rom-extended-ui-t4048929)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Crystal/ext.txt)
     📱Device: *Nokia 7.1*
     ⚡Build Version: *$extversion*
