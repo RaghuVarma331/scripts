@@ -947,7 +947,7 @@ EXT-SOURCE()
     
     $(date)*
     
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-6-1-plus/development/rom-evolution-x-3-3-t4011589)
+    ⬇️ [Download](https://forum.xda-developers.com/nokia-6-1-plus/development/rom-extended-ui-t4048875)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Dragon/ext.txt)
     📱Device: *Nokia 6.1 Plus*
     ⚡Build Version: *$extversion*
@@ -1020,7 +1020,7 @@ EXT-SOURCE()
     
     $(date)*
      
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/rom-evolution-x-3-3-t4011603)
+    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/rom-extended-ui-t4048887)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Onyx/ext.txt)
     📱Device: *Nokia 7 Plus*
     ⚡Build Version: *$extversion*
