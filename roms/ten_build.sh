@@ -862,7 +862,7 @@ EVOX-SOURCE()
     git push -u -f origin master
     cd 
     cd $path
-    rm -r evox
+    rm -r evo
 }
 
 EXT-SOURCE()
