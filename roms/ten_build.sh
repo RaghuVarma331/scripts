@@ -26,7 +26,6 @@ jenkinsurl=
 securitypatch=2020-02-05
 twrpsp='2020-02-05'
 extversion=1.0.2
-evoxversion=4.0
 oxversion=v-5
 tag=4.4.194
 password=
@@ -605,264 +604,6 @@ PE-SOURCE()
     cd 
     cd $path
     rm -r pe
-}
-
-EVOX-SOURCE()
-{
-    wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
-    wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/evox.png
-    git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog    
-    git clone https://$gitpassword@github.com/RaghuVarma331/Json-Tracker.git json    
-    mkdir evo
-    cd evo
-    echo -ne '\n' | repo init -u https://github.com/Evolution-X/manifest -b ten --depth=1
-    repo sync -c --no-tags --no-clone-bundle -f --force-sync -j16
-    sed -i "/ro.control_privapp_permissions=enforce/d" vendor/aosp/config/common.mk
-    rm -r packages/apps/Settings
-    rm -r packages/apps/Updates
-    git clone https://github.com/RaghuVarma331/Os_Updates.git -b lineage-17.1 packages/apps/Os_Updates       
-    git clone https://github.com/Evolution-X/packages_apps_Settings.git -b ten packages/apps/Settings
-    cd packages/apps/Settings
-    git remote add main https://github.com/RaghuVarma331/settings.git
-    git fetch main
-    git cherry-pick bbc67f641de4fd4daf747bf3c8f578ad7ff14c26
-    sed -i "/<<<<<<< HEAD/d" res/xml/firmware_version.xml
-    sed -i "/=======/d" res/xml/firmware_version.xml
-    sed -i "/>>>>>>>/d" res/xml/firmware_version.xml
-    cd src/com/android/settings/system
-    rm -r SystemUpdatePreferenceController.java
-    wget https://github.com/RaghuVarma331/settings/raw/ten-l/src/com/android/settings/system/SystemUpdatePreferenceController.java    
-    cd
-    cd $path/evo
-    git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings
-    git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660	
-    git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon 
-    cd device/nokia/Dragon/overlay/packages/apps/Os_Updates/res/values
-    rm -r *
-    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Dragon/EvolutionX/strings.xml
-    cd
-    cd $path/evo        
-    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
-    
-    New Evolution X for Nokia 6.1 Plus build started 
-    
-    $(date)
-    
-    👤 By: Raghu Varma
-
-    build's progress at $jenkinsurl"      
-    export SKIP_ABI_CHECKS=true
-    . build/envsetup.sh && lunch aosp_Dragon-eng && make -j32 bacon
-    cd out/target/product/Dragon
-    Changelog=Evox-Dragon.txt
-
-
-    echo "Generating changelog..."
-
-    for i in $(seq 14);
-    do
-    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
-    k=$(expr $i - 1)
-    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
-
-    # Line with after --- until was too long for a small ListView
-    echo '=======================' >> $Changelog;
-    echo  "     "$Until_Date       >> $Changelog;
-    echo '=======================' >> $Changelog;
-    echo >> $Changelog;
-
-    # Cycle through every repo to find commits between 2 dates
-    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
-    echo >> $Changelog;
-    done
-    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/drg_evox.sh
-    chmod a+x drg_evox.sh
-    ./drg_evox.sh
-    zipname=$(echo EvolutionX**.zip)
-    cat $zipname.json > $path/json/Dragon/evox.json     
-    cat Evox-Dragon.txt > $path/changelog/Dragon/evolutionx.txt
-    sshpass -p $password rsync -avP -e ssh EvolutionX**.zip       raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/EvolutionX
-    cd 
-    cd $path
-    python telegram.py -t $Telegram_Api_code -c $chat_id  -P evox.png -C "
-    *
-    New Evolution X Build is up 
-    
-    $(date)*
-    
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-6-1-plus/development/rom-evolution-x-3-3-t4011589)
-    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Dragon/evolutionx.txt)
-    📱Device: *Nokia 6.1 Plus*
-    ⚡Build Version: *$evoxversion*
-    ⚡Android Version: *10.0.0*
-    ⚡Security Patch : *$securitypatch*
-    👤 By: *Raghu Varma*
-    #drg #nokia #evox #update
-    Follow:  @Nokia6plusofficial ✅" 
-    cd changelog
-    git add .
-    git commit -m "Dragon: Evolution-X 10.0 build $(date)"
-    git push -u -f origin master
-    cd ..    
-    cd json
-    git add .
-    git commit -m "Dragon: Evolution-X 10.0 build $(date)"
-    git push -u -f origin master
-    cd ..     
-    cd evo
-    rm -r device/nokia
-    rm -r out/target/product/Dragon
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Onyx.git -b ten device/nokia/Onyx
-    cd device/nokia/Onyx/overlay/packages/apps/Os_Updates/res/values
-    rm -r *
-    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Onyx/EvolutionX/strings.xml
-    cd
-    cd $path/evo     
-    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
-    
-    New Evolution X for Nokia 7 Plus build started 
-    
-    $(date)
-    
-    👤 By: Raghu Varma
-
-    build's progress at $jenkinsurl"      
-    export SKIP_ABI_CHECKS=true
-    . build/envsetup.sh && lunch aosp_Onyx-eng && make -j32 bacon
-    cd out/target/product/Onyx
-    Changelog=Evox-Onyx.txt
-
-    echo "Generating changelog..."
-
-    for i in $(seq 14);
-    do
-    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
-    k=$(expr $i - 1)
-    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
-
-    # Line with after --- until was too long for a small ListView
-    echo '=======================' >> $Changelog;
-    echo  "     "$Until_Date       >> $Changelog;
-    echo '=======================' >> $Changelog;
-    echo >> $Changelog;
-
-    # Cycle through every repo to find commits between 2 dates
-    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
-    echo >> $Changelog;
-    done
-    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/b2n_evox.sh
-    chmod a+x b2n_evox.sh
-    ./b2n_evox.sh
-    zipname=$(echo EvolutionX**.zip)
-    cat $zipname.json > $path/json/Onyx/evox.json     
-    cat Evox-Onyx.txt > $path/changelog/Onyx/evolutionx.txt
-    sshpass -p $password rsync -avP -e ssh EvolutionX**.zip       raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/EvolutionX
-    cd 
-    cd $path
-    python telegram.py -t $Telegram_Api_code -c $chat_id  -P evox.png -C "
-    *
-    New Evolution X Build is up 
-    
-    $(date)*
-     
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/rom-evolution-x-3-3-t4011603)
-    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Onyx/evolutionx.txt)
-    📱Device: *Nokia 7 Plus*
-    ⚡Build Version: *$evoxversion*
-    ⚡Android Version: *10.0.0*
-    ⚡Security Patch : *$securitypatch*
-    👤 By: *Raghu Varma*
-    #b2n #nokia #evox #update
-    Follow: @Nokia7plusOfficial ✅"  
-    cd changelog
-    git add .
-    git commit -m "Onyx: Evolution-X 10.0 build $(date)"
-    git push -u -f origin master
-    cd ..
-    cd json
-    git add .
-    git commit -m "Onyx: Evolution-X 10.0 build $(date)"
-    git push -u -f origin master
-    cd ..     
-    cd evo
-    rm -r device/nokia
-    rm -r out/target/product/Onyx
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Crystal.git -b ten device/nokia/Crystal
-    cd device/nokia/Crystal/overlay/packages/apps/Os_Updates/res/values
-    rm -r *
-    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Crystal/EvolutionX/strings.xml
-    cd
-    cd $path/evo     
-    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
-    
-    New Evolution X for Nokia 7.1 build started 
-    
-    $(date)
-    
-    👤 By: Raghu Varma
-
-    build's progress at $jenkinsurl"      
-    export SKIP_ABI_CHECKS=true
-    . build/envsetup.sh && lunch aosp_Crystal-eng && make -j32 bacon
-    cd out/target/product/Crystal
-    Changelog=Evox-Crystal.txt
-
-
-    echo "Generating changelog..."
-
-    for i in $(seq 14);
-    do
-    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
-    k=$(expr $i - 1)
-    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
-
-    # Line with after --- until was too long for a small ListView
-    echo '=======================' >> $Changelog;
-    echo  "     "$Until_Date       >> $Changelog;
-    echo '=======================' >> $Changelog;
-    echo >> $Changelog;
-
-    # Cycle through every repo to find commits between 2 dates
-    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
-    echo >> $Changelog;
-    done
-    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/ctl_evox.sh
-    chmod a+x ctl_evox.sh
-    ./ctl_evox.sh
-    zipname=$(echo EvolutionX**.zip)
-    cat $zipname.json > $path/json/Crystal/evox.json        
-    cat Evox-Crystal.txt > $path/changelog/Crystal/evolutionx.txt
-    sshpass -p $password rsync -avP -e ssh EvolutionX**.zip       raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/EvolutionX
-    cd 
-    cd $path
-    python telegram.py -t $Telegram_Api_code -c $chat_id  -P evox.png -C "
-    *
-    New Evolution X Build is up 
-    
-    $(date)*
-     
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-1/development/rom-evolution-x-3-5-t4020515)
-    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Crystal/evolutionx.txt)
-    📱Device: *Nokia 7.1*
-    ⚡Build Version: *$evoxversion*
-    ⚡Android Version: *10.0.0*
-    ⚡Security Patch : *$securitypatch*
-    👤 By: *Raghu Varma*
-    #ctl #nokia #evox #update
-    Follow: @nokia7161 ✅"  
-    cd changelog
-    git add .
-    git commit -m "Crystal: Evolution-X 10.0 build $(date)"
-    git push -u -f origin master
-    cd ..     
-    cd json
-    git add .
-    git commit -m "Crystal: Evolution-X 10.0 build $(date)"
-    git push -u -f origin master
-    cd 
-    cd $path
-    rm -r evo
 }
 
 EXT-SOURCE()
@@ -1709,8 +1450,8 @@ echo "------------------------------------------------"
 echo "A simple remote script to compile custom Stuff"
 echo "Coded By Raghu Varma.G "
 echo "------------------------------------------------"
-PS3='Please select your option (1-9): '
-menuvar=("BasicSetup" "pe" "lineageos" "ext" "evox" "oxygen" "twrp" "Black_Caps-Edition" "all_roms" "Exit")
+PS3='Please select your option (1-8): '
+menuvar=("BasicSetup" "pe" "lineageos" "ext" "oxygen" "twrp" "Black_Caps-Edition" "all_roms" "Exit")
 select menuvar in "${menuvar[@]}"
 do
     case $menuvar in
@@ -1874,31 +1615,6 @@ do
             read -n1 -r key
             break
             ;;		    		  
-        "evox")
-            clear
-            echo "----------------------------------------------"
-            echo "Started Building Evolution X for Nokia 6.1 , 6.1plus & 7 plus  ."
-            echo "Please be patient..."
-            # evox
-            echo "----------------------------------------------"
-            echo "Setting Up Tools & Stuff..."
-            echo " "
-            TOOLS_SETUP
-	    echo " "	    
-            echo "----------------------------------------------"
-            echo "Setting up Evolution X source..."
-            echo " "
-            EVOX-SOURCE
-	    echo " "	 	    
-            echo "----------------------------------------------"
-            echo "Build successfully completed."
-            echo " "
-            echo "----------------------------------------------"
-            echo "Press any key for end the script."
-            echo "----------------------------------------------"
-            read -n1 -r key
-            break
-            ;;		
         "ext")
             clear
             echo "----------------------------------------------"
@@ -1950,11 +1666,6 @@ do
             echo " "
             EXT-SOURCE
 	    echo " "	    
-            echo "----------------------------------------------"
-            echo "Setting up Evolution X source..."
-            echo " "
-            EVOX-SOURCE
-	    echo " "	
             echo "----------------------------------------------"
             echo "Setting up OxygenOS source..."
             echo " "
