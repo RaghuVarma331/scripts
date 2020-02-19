@@ -62,6 +62,10 @@ LINEAGE-SOURCE()
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
     git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon   
+    cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
+    rm -r Constants.java
+    cd
+    cd $path
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New LineageOS 17.1 for Nokia 6.1 Plus build started 
@@ -131,7 +135,11 @@ LINEAGE-SOURCE()
     cd los
     rm -r device/nokia
     rm -r out/target/product/Dragon
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Onyx.git -b ten device/nokia/Onyx      
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Onyx.git -b ten device/nokia/Onyx   
+    cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
+    rm -r Constants.java
+    cd
+    cd $path    
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New LineageOS 17.1 for Nokia 7 Plus build started 
@@ -201,7 +209,11 @@ LINEAGE-SOURCE()
     cd los
     rm -r device/nokia
     rm -r out/target/product/Onyx
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Crystal.git -b ten device/nokia/Crystal    
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Crystal.git -b ten device/nokia/Crystal   
+    cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
+    rm -r Constants.java
+    cd
+    cd $path    
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New LineageOS 17.1 for Nokia 7.1 build started 
@@ -365,7 +377,11 @@ PE-SOURCE()
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660	
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon      
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon     
+    cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
+    rm -r Constants.java
+    cd
+    cd $path   
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Pixel-Experience for Nokia 6.1 Plus build started 
@@ -436,6 +452,10 @@ PE-SOURCE()
     rm -r device/nokia
     rm -r out/target/product/Dragon
     git clone https://github.com/RaghuVarma331/android_device_nokia_Onyx.git -b ten device/nokia/Onyx 
+    cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
+    rm -r Constants.java
+    cd
+    cd $path    
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Pixel-Experience for Nokia 7 Plus build started 
@@ -506,6 +526,10 @@ PE-SOURCE()
     rm -r device/nokia
     rm -r out/target/product/Onyx
     git clone https://github.com/RaghuVarma331/android_device_nokia_Crystal.git -b ten device/nokia/Crystal 
+    cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
+    rm -r Constants.java
+    cd
+    cd $path    
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Pixel-Experience for Nokia 7.1 build started 
@@ -606,7 +630,11 @@ EXT-SOURCE()
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660	
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon       
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon 
+    cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
+    rm -r Constants.java
+    cd
+    cd $path    
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New ExtendedUI for Nokia 6.1 Plus build started 
@@ -676,6 +704,10 @@ EXT-SOURCE()
     rm -r device/nokia
     rm -r out/target/product/Dragon
     git clone https://github.com/RaghuVarma331/android_device_nokia_Onyx.git -b ten device/nokia/Onyx
+    cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
+    rm -r Constants.java
+    cd
+    cd $path    
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New ExtendedUI for Nokia 7 Plus build started 
@@ -744,6 +776,10 @@ EXT-SOURCE()
     rm -r device/nokia
     rm -r out/target/product/Onyx
     git clone https://github.com/RaghuVarma331/android_device_nokia_Crystal.git -b ten device/nokia/Crystal
+    cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
+    rm -r Constants.java
+    cd
+    cd $path    
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New ExtendedUI for Nokia 7.1 build started 
@@ -812,7 +848,11 @@ EXT-SOURCE()
     cd ext
     rm -r device/nokia
     rm -r out/target/product/Crystal
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Plate2.git -b ten device/nokia/Plate2     
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Plate2.git -b ten device/nokia/Plate2 
+    cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
+    rm -r Constants.java
+    cd
+    cd $path    
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New ExtendedUI for Nokia 6.1 build started 
