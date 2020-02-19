@@ -66,7 +66,7 @@ LINEAGE-SOURCE()
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Dragon/LineageOS/Constants.java
     cd
-    cd $path
+    cd $path/los
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New LineageOS 17.1 for Nokia 6.1 Plus build started 
@@ -141,7 +141,7 @@ LINEAGE-SOURCE()
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Onyx/LineageOS/Constants.java
     cd
-    cd $path    
+    cd $path/los    
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New LineageOS 17.1 for Nokia 7 Plus build started 
@@ -216,7 +216,7 @@ LINEAGE-SOURCE()
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Crystal/LineageOS/Constants.java
     cd
-    cd $path    
+    cd $path/los    
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New LineageOS 17.1 for Nokia 7.1 build started 
@@ -385,7 +385,7 @@ PE-SOURCE()
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Dragon/PixelExperience/Constants.java
     cd
-    cd $path   
+    cd $path/pe   
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Pixel-Experience for Nokia 6.1 Plus build started 
@@ -460,7 +460,7 @@ PE-SOURCE()
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Onyx/PixelExperience/Constants.java
     cd
-    cd $path    
+    cd $path/pe    
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Pixel-Experience for Nokia 7 Plus build started 
@@ -535,7 +535,7 @@ PE-SOURCE()
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Crystal/PixelExperience/Constants.java
     cd
-    cd $path    
+    cd $path/pe    
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Pixel-Experience for Nokia 7.1 build started 
@@ -641,7 +641,7 @@ EXT-SOURCE()
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Dragon/ExtendedUI/Constants.java
     cd
-    cd $path    
+    cd $path/ext    
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New ExtendedUI for Nokia 6.1 Plus build started 
@@ -715,7 +715,7 @@ EXT-SOURCE()
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Onyx/ExtendedUI/Constants.java
     cd
-    cd $path    
+    cd $path/ext    
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New ExtendedUI for Nokia 7 Plus build started 
@@ -788,7 +788,7 @@ EXT-SOURCE()
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Crystal/ExtendedUI/Constants.java
     cd
-    cd $path    
+    cd $path/ext    
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New ExtendedUI for Nokia 7.1 build started 
@@ -862,7 +862,7 @@ EXT-SOURCE()
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Plate2/ExtendedUI/Constants.java
     cd
-    cd $path    
+    cd $path/ext    
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New ExtendedUI for Nokia 6.1 build started 
