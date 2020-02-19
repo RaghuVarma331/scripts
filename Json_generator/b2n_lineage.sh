@@ -1,12 +1,18 @@
 #!/bin/sh
-
-devicecode=Onyx
 sourceforge=https://sourceforge.net/projects/b2n-sprout/files/LineageOS
-
+filename=$(echo lineage-17.1**.zip)
 datetime=$(grep ro\.build\.date\.utc system/build.prop | cut -d= -f2)
+size=$(stat -c%s $filename)
+url=$sourceforge/$filename/download
+filehash=$(cat **.md5sum | cut -d' ' -f1)
+id=$(sha256sum $filename | awk '{ print $1 }');
+error=false
+donate_url=https://www.paypal.me/Raghu107
+website_url=https://raghuvarma331.github.io
+news_url=https://t.me/Nokia7plusOfficial
+maintainer=$(echo G.RaghuVarma [Unofficial])
+forum_url=https://forum.xda-developers.com/nokia-7-plus/development/rom-lineageos-17-0-t3993445
 version=android-10.0
-romtype=UNOFFICIAL
-zipname=$(echo lineage-17.1**.zip)
-url=$sourceforge/$zipname/download
-id=$(cat "$zipname.md5sum" | cut -d' ' -f1)
-echo "{\n\"response\": [\n{\n   \"datetime\": \"$datetime\",\n   \"filename\": \"$zipname\",\n   \"id\": \"$id\",\n   \"romtype\": \"UNOFFICIAL\",\n   \"size\": $(stat -c%s lineage-17.1**.zip),\n   \"url\": \"$url\",\n   \"version\": \"$version\"\n}\n]\n}" > $zipname.json
+
+
+echo "{\n\"error\":$error,\n\"donate_url\":\"$donate_url\",\n\"website_url\":\"$website_url\",\n\"news_url\":\"$news_url\",\n\"maintainer\":\"$maintainer\",\n\"forum_url\":\"$forum_url\",\n\"version\":\"$version\",\n\"filename\":\"$filename\",\n\"datetime\":$datetime,\n\"size\":$size,\n\"url\":\"$url\",\n\"filehash\":\"$filehash\",\n\"id\":\"$id\"\n}" > $filename.json
