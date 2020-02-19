@@ -47,7 +47,7 @@ LINEAGE-SOURCE()
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/lineage/config/common.mk
     rm -r packages/apps/Settings
     rm -r packages/apps/Updater
-    git clone https://github.com/RaghuVarma331/Os_Updates.git -b lineage-17.1 packages/apps/Os_Updates    
+    git clone https://github.com/RaghuVarma331/Os_Updates.git -b pe-ten packages/apps/Os_Updates    
     git clone https://github.com/LineageOS/android_packages_apps_Settings.git -b lineage-17.1 packages/apps/Settings
     cd packages/apps/Settings
     git remote add main https://github.com/RaghuVarma331/settings.git
@@ -363,7 +363,7 @@ PE-SOURCE()
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/aosp/config/common.mk
     rm -r packages/apps/Settings
     rm -r packages/apps/Updates
-    git clone https://github.com/RaghuVarma331/Os_Updates.git -b lineage-17.1 packages/apps/Os_Updates       
+    git clone https://github.com/RaghuVarma331/Os_Updates.git -b pe-ten packages/apps/Os_Updates       
     git clone https://github.com/PixelExperience/packages_apps_Settings.git -b ten packages/apps/Settings
     cd packages/apps/Settings    
     git remote add main https://github.com/RaghuVarma331/settings.git
@@ -619,7 +619,7 @@ EXT-SOURCE()
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/aosp/config/common.mk
     rm -r packages/apps/Settings
     rm -r packages/apps/Updates
-    git clone https://github.com/RaghuVarma331/Os_Updates.git -b lineage-17.1 packages/apps/Os_Updates       
+    git clone https://github.com/RaghuVarma331/Os_Updates.git -b pe-ten packages/apps/Os_Updates       
     git clone https://github.com/Extended-UI/android_packages_apps_Settings.git -b android_10 packages/apps/Settings
     cd packages/apps/Settings
     git remote add main https://github.com/RaghuVarma331/settings.git
