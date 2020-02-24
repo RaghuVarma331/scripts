@@ -59,7 +59,7 @@ LINEAGE-SOURCE()
     cd
     cd $path/los
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings
-    git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660
+    git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten-gcc --depth=1 kernel/nokia/sdm660
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
     git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon   
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
@@ -378,7 +378,7 @@ PE-SOURCE()
     cd
     cd $path/pe    
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings
-    git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660	
+    git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten-gcc --depth=1 kernel/nokia/sdm660	
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
     git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon     
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
@@ -634,7 +634,7 @@ EXT-SOURCE()
     cd
     cd $path/ext
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings
-    git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660	
+    git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten-gcc --depth=1 kernel/nokia/sdm660	
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
     git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon 
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
@@ -1278,20 +1278,17 @@ BLACKCAPS-SOURCE()
     wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     mkdir Black_Caps-Edition
     git clone https://github.com/RaghuVarma331/aarch64-linux-android-4.9.git -b master aarch64-linux-android-4.9
-    git clone https://github.com/RaghuVarma331/clang.git -b clang-r353983c --depth=1 clang
-    git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten --depth=1 drg
+    git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten-gcc --depth=1 drg
     cd drg
-    make O=out ARCH=arm64 SAT-perf_defconfig
-    PATH=$path/clang/bin:$path/aarch64-linux-android-4.9/bin:${PATH} \
-    make -j$(nproc --all) O=out \
-                          ARCH=arm64 \
-                          CC=clang \
-                          CLANG_TRIPLE=aarch64-linux-gnu- \
-                          CROSS_COMPILE=aarch64-linux-android-
-    cp -r out/arch/arm64/boot/Image.gz-dtb $path/drg/DRG_sprout
+    export ARCH=arm64
+    export CROSS_COMPILE=$path/aarch64-linux-android-4.9/bin/aarch64-linux-android-
+    mkdir output
+    make -C $(pwd) O=output SAT-perf_defconfig
+    make -j32 -C $(pwd) O=output
+    cp -r output/arch/arm64/boot/Image.gz-dtb $path/drg/DRG_sprout
     cd DRG_sprout
-    zip -r Black_Caps-Edition-10.0-CLANG-DRG_sprout-$(date +"%Y%m%d").zip META-INF patch tools Image.gz-dtb anykernel.sh
-    cp -r Black_Caps-Edition-10.0-CLANG-DRG_sprout-$(date +"%Y%m%d").zip $path/Black_Caps-Edition
+    zip -r Black_Caps-Edition-10.0-GCC-FIH-SDM660-2018-$(date +"%Y%m%d").zip META-INF patch tools Image.gz-dtb anykernel.sh
+    cp -r Black_Caps-Edition-10.0-GCC-FIH-SDM660-2018-$(date +"%Y%m%d").zip $path/Black_Caps-Edition
     cd
     cd $path
     rm -r drg
