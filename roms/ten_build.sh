@@ -1188,7 +1188,7 @@ EVOX-SOURCE()
     git clone https://github.com/RaghuVarma331/android_device_nokia_Plate2.git -b ten device/nokia/Plate2
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
     rm -r Constants.java
-    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Plate2/EvolutionX/Constants.java
+    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Plate2/Evolution/Constants.java
     cd
     cd $path/evox    
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
