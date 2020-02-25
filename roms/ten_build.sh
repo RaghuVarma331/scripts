@@ -966,7 +966,7 @@ EVOX-SOURCE()
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Dragon/Evolution/Constants.java
     cd
-    cd $path/evox
+    cd $path/evo
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Evolution X for Nokia 6.1 Plus build started 
@@ -1041,7 +1041,7 @@ EVOX-SOURCE()
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Onyx/Evolution/Constants.java
     cd
-    cd $path/evox
+    cd $path/evo
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Evolution X for Nokia 7 Plus build started 
@@ -1115,7 +1115,7 @@ EVOX-SOURCE()
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Crystal/Evolution/Constants.java
     cd
-    cd $path/evox 
+    cd $path/evo 
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Evolution X for Nokia 7.1 build started 
@@ -1190,7 +1190,7 @@ EVOX-SOURCE()
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Plate2/Evolution/Constants.java
     cd
-    cd $path/evox    
+    cd $path/evo   
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Evolution X for Nokia 6.1 build started 
