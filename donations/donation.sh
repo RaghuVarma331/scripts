@@ -28,7 +28,7 @@ Show your support here 😊
 
 https://www.paypal.me/Raghu107
 
-Thank you all for your massive support again 👍
+Thank you 👍
 *
 "
 
@@ -40,7 +40,7 @@ Show your support here 😊
 
 https://www.paypal.me/Raghu107
 
-Thank you all for your massive support again 👍
+Thank you 👍
 *
 "
 
@@ -53,7 +53,7 @@ Show your support here 😊
 
 https://www.paypal.me/Raghu107
 
-Thank you all for your massive support again 👍
+Thank you 👍
 *
 "
 
@@ -65,6 +65,6 @@ Show your support here 😊
 
 https://www.paypal.me/Raghu107
 
-Thank you all for your massive support again 👍
+Thank you 👍
 *
 "
