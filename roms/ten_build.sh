@@ -39,6 +39,7 @@ LINEAGE-SOURCE()
 {
     wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/lineage.jpg
+    wget https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/crossdevelopment/changelog.txt
     git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog
     git clone https://$gitpassword@github.com/RaghuVarma331/Json-Tracker.git json    
     mkdir los
@@ -355,6 +356,7 @@ PE-SOURCE()
 {
     wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/pixel.jpg
+    wget https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/crossdevelopment/changelog.txt
     git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog  
     git clone https://$gitpassword@github.com/RaghuVarma331/Json-Tracker.git json
     mkdir pe
@@ -611,6 +613,7 @@ EXT-SOURCE()
 {
     wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/extended.jpg
+    wget https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/crossdevelopment/changelog.txt
     git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog    
     git clone https://$gitpassword@github.com/RaghuVarma331/Json-Tracker.git json     
     mkdir ext
@@ -935,6 +938,7 @@ EVOX-SOURCE()
 {
     wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/evox.png
+    wget https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/crossdevelopment/changelog.txt
     git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog    
     git clone https://$gitpassword@github.com/RaghuVarma331/Json-Tracker.git json    
     mkdir evo
