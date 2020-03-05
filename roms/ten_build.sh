@@ -291,6 +291,8 @@ LINEAGE-SOURCE()
     rm -r device/nokia
     rm -r kernel/nokia
     rm -r vendor/nokia
+    rm -r vendor/google/customization
+    rm -r vendor/gapps    
     rm -r out/target/product/Crystal
     git clone https://github.com/RaghuVarma331/android_device_xiaomi_whyred.git -b lineage-17.0 device/xiaomi/whyred
     git clone https://github.com/RaghuVarma331/android_kernel_xiaomi_whyred.git -b ten --depth=1 kernel/xiaomi/whyred
