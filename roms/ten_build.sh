@@ -64,7 +64,6 @@ LINEAGE-SOURCE()
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten-gcc --depth=1 kernel/nokia/sdm660
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
     git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon 
-    git clone https://github.com/PixelExperience/vendor_google_customization.git -b ten --depth=1 vendor/google/customization
     git clone https://gitlab.com/PixelExperience/vendor_gapps.git -b ten --depth=1 vendor/gapps
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
     rm -r Constants.java
@@ -291,7 +290,6 @@ LINEAGE-SOURCE()
     rm -r device/nokia
     rm -r kernel/nokia
     rm -r vendor/nokia
-    rm -r vendor/google/customization
     rm -r vendor/gapps    
     rm -r out/target/product/Crystal
     git clone https://github.com/RaghuVarma331/android_device_xiaomi_whyred.git -b lineage-17.0 device/xiaomi/whyred
