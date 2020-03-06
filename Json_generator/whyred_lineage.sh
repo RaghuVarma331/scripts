@@ -7,7 +7,7 @@ filehash=$(cat **.md5sum | cut -d' ' -f1)
 id=$(sha256sum $filename | awk '{ print $1 }');
 version=android-10.0
 path=/var/lib/jenkins/workspace/Raghu
-whatsNew=$(cat $path/changelog.txt)
+whatsNew=$(cat $path/whyred.txt)
 notification=$(echo Sofware update - New LineageOS build is up)
 
 echo { >> $filename.json
