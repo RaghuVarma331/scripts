@@ -81,6 +81,7 @@ LINEAGE-SOURCE()
     build's progress at $jenkinsurl"  
     . build/envsetup.sh && lunch lineage_Dragon-eng && make -j32 bacon
     cd out/target/product/Dragon
+    rm -r **.json
     Changelog=lineage-17.1-Dragon.txt
 
 
@@ -156,6 +157,7 @@ LINEAGE-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch lineage_Onyx-eng && make -j32 bacon
     cd out/target/product/Onyx
+    rm -r **.json    
     Changelog=lineage-17.1-Onyx.txt
 
 
@@ -231,6 +233,7 @@ LINEAGE-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch lineage_Crystal-eng && make -j32 bacon
     cd out/target/product/Crystal
+    rm -r **.json
     Changelog=lineage-17.1-Crystal.txt
 
 
@@ -310,6 +313,7 @@ LINEAGE-SOURCE()
     build's progress at $jenkinsurl"    
     . build/envsetup.sh && lunch lineage_whyred-userdebug && make -j32 bacon
     cd out/target/product/whyred
+    rm -r **.json
     Changelog=lineage-17.1-whyred.txt
 
 
@@ -416,6 +420,7 @@ PE-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch aosp_Dragon-eng && make -j32 bacon
     cd out/target/product/Dragon
+    rm -r **.json
     Changelog=Pixel-Dragon.txt
 
 
@@ -491,6 +496,7 @@ PE-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch aosp_Onyx-eng && make -j32 bacon
     cd out/target/product/Onyx
+    rm -r **.json
     Changelog=Pixel-Onyx.txt
 
 
@@ -566,6 +572,7 @@ PE-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch aosp_Crystal-eng && make -j32 bacon
     cd out/target/product/Crystal
+    rm -r **.json
     Changelog=Pixel-Crystal.txt
 
 
@@ -672,6 +679,7 @@ EXT-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch aosp_Dragon-eng && make -j32 bacon
     cd out/target/product/Dragon
+    rm -r **.json
     Changelog=Ext-Dragon.txt
 
 
@@ -746,6 +754,7 @@ EXT-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch aosp_Onyx-eng && make -j32 bacon
     cd out/target/product/Onyx
+    rm -r **.json
     Changelog=Ext-Onyx.txt
 
     echo "Generating changelog..."
@@ -819,6 +828,7 @@ EXT-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch aosp_Crystal-eng && make -j32 bacon
     cd out/target/product/Crystal
+    rm -r **.json
     Changelog=Ext-Crystal.txt
 
 
@@ -893,6 +903,7 @@ EXT-SOURCE()
     build's progress at $jenkinsurl" 
     . build/envsetup.sh && lunch aosp_Plate2-eng && make -j32 bacon
     cd out/target/product/Plate2
+    rm -r **.json
     Changelog=Ext-Plate2.txt
 
     echo "Generating changelog..."
@@ -998,6 +1009,7 @@ EVOX-SOURCE()
     export SKIP_ABI_CHECKS=true
     . build/envsetup.sh && lunch aosp_Dragon-eng && make -j32 bacon
     cd out/target/product/Dragon
+    rm -r **.json
     Changelog=Evox-Dragon.txt
 
 
@@ -1073,6 +1085,7 @@ EVOX-SOURCE()
     export SKIP_ABI_CHECKS=true
     . build/envsetup.sh && lunch aosp_Onyx-eng && make -j32 bacon
     cd out/target/product/Onyx
+    rm -r **.json
     Changelog=Evox-Onyx.txt
 
     echo "Generating changelog..."
@@ -1147,6 +1160,7 @@ EVOX-SOURCE()
     export SKIP_ABI_CHECKS=true
     . build/envsetup.sh && lunch aosp_Crystal-eng && make -j32 bacon
     cd out/target/product/Crystal
+    rm -r **.json
     Changelog=Evox-Crystal.txt
 
 
@@ -1222,6 +1236,7 @@ EVOX-SOURCE()
     export SKIP_ABI_CHECKS=true
     . build/envsetup.sh && lunch aosp_Plate2-eng && make -j32 bacon
     cd out/target/product/Plate2
+    rm -r **.json
     Changelog=Evox-Plate2.txt
 
     echo "Generating changelog..."
