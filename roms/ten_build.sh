@@ -40,6 +40,7 @@ LINEAGE-SOURCE()
     wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/lineage.jpg
     wget https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/crossdevelopment/changelog.txt
+    wget https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/whyred.txt
     git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog
     git clone https://$gitpassword@github.com/RaghuVarma331/Json-Tracker.git json    
     mkdir los
