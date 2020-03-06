@@ -289,13 +289,17 @@ LINEAGE-SOURCE()
     cd los
     rm -r device/nokia
     rm -r kernel/nokia
-    rm -r vendor/nokia
-    rm -r vendor/gapps    
+    rm -r vendor/nokia 
     rm -r out/target/product/Crystal
-    git clone https://github.com/RaghuVarma331/android_device_xiaomi_whyred.git -b lineage-17.0 device/xiaomi/whyred
-    git clone https://github.com/RaghuVarma331/android_kernel_xiaomi_whyred.git -b ten --depth=1 kernel/xiaomi/whyred
+    git clone https://github.com/RaghuVarma331/android_device_xiaomi_whyred.git -b lineage-17.1 device/xiaomi/whyred
+    git clone https://github.com/RaghuVarma331/android_kernel_xiaomi_whyred.git -b lineage-17.1 --depth=1 kernel/xiaomi/whyred
+    git clone https://github.com/RaghuVarma331/vendor_xiaomi_whyred.git -b lineage-17.1 vendor/xiaomi/whyred
     git clone https://github.com/RaghuVarma331/vendor_MiuiCamera.git -b ten vendor/MiuiCamera
-    git clone https://github.com/RaghuVarma331/vendor_xiaomi_whyred.git -b ten vendor/xiaomi/whyred
+    cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
+    rm -r Constants.java
+    wget https://raw.githubusercontent.com/RaghuVarma331/Json-configs/master/whyred/LineageOS/Constants.java
+    cd
+    cd $path/los    
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New LineageOS 17.1 for Redmi Note 5 Pro build started 
@@ -304,7 +308,7 @@ LINEAGE-SOURCE()
     
     👤 By: Raghu Varma
     build's progress at $jenkinsurl"    
-    . build/envsetup.sh && lunch lineage_whyred-eng && make -j32 bacon
+    . build/envsetup.sh && lunch lineage_whyred-userdebug && make -j32 bacon
     cd out/target/product/whyred
     Changelog=lineage-17.1-whyred.txt
 
@@ -327,6 +331,11 @@ LINEAGE-SOURCE()
     repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
     echo >> $Changelog;
     done    
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/whyred_lineage.sh
+    chmod a+x whyred_lineage.sh
+    ./whyred_lineage.sh
+    zipname=$(echo lineage-17.1**.zip)
+    cat $zipname.json > $path/json/whyred/lineage.json       
     cat lineage-17.1-whyred.txt > $path/changelog/whyred/LineageOS.txt
     sshpass -p $password rsync -avP -e ssh lineage-17.1**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/whyred-rv/LineageOS
     cd 
@@ -346,12 +355,17 @@ LINEAGE-SOURCE()
     ⚡Security Patch : *$securitypatch*
     👤 By: *Raghu Varma*
     #whyred #nokia #los #update
-    Follow: @Nokia7plusOfficial ✅"    
+    Follow: @whyredrn5pro ✅"    
     cd changelog
     git add .
     git commit -m "Whyred: LineageOS 17.1 build $(date)"
     git push -u -f origin master
     cd ..    
+    cd json
+    git add .
+    git commit -m "Whyred: LineageOS 17.1 build $(date)"
+    git push -u -f origin master
+    cd ..        
 }
 
 PE-SOURCE()
