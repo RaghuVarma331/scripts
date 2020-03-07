@@ -298,7 +298,6 @@ LINEAGE-SOURCE()
     git clone https://github.com/RaghuVarma331/android_device_xiaomi_whyred.git -b lineage-17.1 device/xiaomi/whyred
     git clone https://github.com/RaghuVarma331/android_kernel_xiaomi_whyred.git -b lineage-17.1 --depth=1 kernel/xiaomi/whyred
     git clone https://github.com/RaghuVarma331/vendor_xiaomi_whyred.git -b lineage-17.1 vendor/xiaomi/whyred
-    git clone https://github.com/RaghuVarma331/vendor_MiuiCamera.git -b ten vendor/MiuiCamera
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
     rm -r Constants.java
     wget https://raw.githubusercontent.com/RaghuVarma331/Json-configs/master/whyred/LineageOS/Constants.java
