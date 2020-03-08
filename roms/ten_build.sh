@@ -48,8 +48,10 @@ LINEAGE-SOURCE()
     echo -ne '\n' | repo init -u git://github.com/LineageOS/android.git -b lineage-17.1 --depth=1
     repo sync -c --no-tags --no-clone-bundle -f --force-sync -j16
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/lineage/config/common.mk
+    rm -r device/lineage/sepolicy
     rm -r packages/apps/Settings
     rm -r packages/apps/Updater
+    git clone https://github.com/RaghuVarma331/device_custom_sepolicy.git -b los-ten device/lineage/sepolicy
     git clone https://github.com/RaghuVarma331/Os_Updates.git -b pixel-ten packages/apps/Os_Updates    
     git clone https://github.com/LineageOS/android_packages_apps_Settings.git -b lineage-17.1 packages/apps/Settings
     cd packages/apps/Settings
@@ -976,6 +978,8 @@ EVOX-SOURCE()
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/aosp/config/common.mk
     rm -r packages/apps/Settings
     rm -r packages/apps/Updates
+    rm -r device/custom/sepolicy
+    git clone https://github.com/RaghuVarma331/device_custom_sepolicy.git -b evox-ten device/custom/sepolicy
     git clone https://github.com/RaghuVarma331/Os_Updates.git -b pixel-ten packages/apps/Os_Updates  
     git clone https://github.com/Evolution-X/packages_apps_Settings.git -b ten packages/apps/Settings
     cd packages/apps/Settings
