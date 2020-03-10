@@ -25,7 +25,7 @@ securitypatch=2020-03-05
 twrpsp='2020-03-05'
 extversion=1.0.2
 oxversion=v-6
-evoxversion=4.1.420
+evoxversion=4.1.169
 tag=4.4.194
 jenkinsurl=
 
