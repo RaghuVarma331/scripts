@@ -18,20 +18,25 @@
 
 clear
 
-# Init Fields
+# Detail Versions
 
-Telegram_Api_code=
-chat_id=
-jenkinsurl=
+path=/var/lib/jenkins/workspace/Raghu
 securitypatch=2020-03-05
 twrpsp='2020-03-05'
 extversion=1.0.2
 oxversion=v-6
 evoxversion=4.1.420
 tag=4.4.194
-password=
-gitpassword=username:password
-path=/var/lib/jenkins/workspace/Raghu
+jenkinsurl=
+
+
+# credentials
+
+Telegram_Api_code=$(cat $path/cred** | grep api | cut -d "=" -f 2)
+chat_id=$(cat $path/cred** | grep id | cut -d "=" -f 2)
+password=$(cat $path/cred** | grep sf | cut -d "=" -f 2)
+gitpassword=$(cat $path/cred** | grep git | cut -d "=" -f 2)
+
 
 # Init Methods
 
