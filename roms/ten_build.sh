@@ -986,6 +986,8 @@ EVOX-SOURCE()
     rm -r packages/apps/Settings
     rm -r packages/apps/Updates
     rm -r device/custom/sepolicy
+    rm -r vendor/pixelstyle
+    git clone https://github.com/RaghuVarma331/vendor_pixelstyle.git -b ten vendor/pixelstyle
     git clone https://github.com/RaghuVarma331/device_custom_sepolicy.git -b evox-ten device/custom/sepolicy
     git clone https://github.com/RaghuVarma331/Os_Updates.git -b pixel-ten packages/apps/Os_Updates  
     git clone https://github.com/Evolution-X/packages_apps_Settings.git -b ten packages/apps/Settings
