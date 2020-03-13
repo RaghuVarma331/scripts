@@ -392,9 +392,11 @@ PE-SOURCE()
     echo -ne '\n' | repo init -u https://github.com/PixelExperience/manifest -b ten --depth=1
     repo sync -c --no-tags --no-clone-bundle -f --force-sync -j16
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/aosp/config/common.mk
+    rm -r packages/apps/Gallery2
     rm -r vendor/gapps
     rm -r packages/apps/Settings
     rm -r packages/apps/Updates
+    git clone https://github.com/RaghuVarma331/android_packages_apps_Gallery2.git -b lineage-17.1 packages/apps/Gallery2
     git clone https://gitlab.com/RaghuVarma331/vendor_gapps.git -b ten vendor/gapps
     git clone https://github.com/RaghuVarma331/Os_Updates.git -b pixel-ten packages/apps/Os_Updates         
     git clone https://github.com/PixelExperience/packages_apps_Settings.git -b ten packages/apps/Settings
