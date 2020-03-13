@@ -70,7 +70,7 @@ LINEAGE-SOURCE()
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten-gcc --depth=1 kernel/nokia/sdm660
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
     git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon 
-    git clone https://gitlab.com/PixelExperience/vendor_gapps.git -b ten --depth=1 vendor/gapps
+    git clone https://gitlab.com/RaghuVarma331/vendor_gapps.git -b ten --depth=1 vendor/gapps
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Dragon/LineageOS/Constants.java
@@ -392,8 +392,10 @@ PE-SOURCE()
     echo -ne '\n' | repo init -u https://github.com/PixelExperience/manifest -b ten --depth=1
     repo sync -c --no-tags --no-clone-bundle -f --force-sync -j16
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/aosp/config/common.mk
+    rm -r vendor/gapps
     rm -r packages/apps/Settings
     rm -r packages/apps/Updates
+    git clone https://gitlab.com/RaghuVarma331/vendor_gapps.git -b ten vendor/gapps
     git clone https://github.com/RaghuVarma331/Os_Updates.git -b pixel-ten packages/apps/Os_Updates         
     git clone https://github.com/PixelExperience/packages_apps_Settings.git -b ten packages/apps/Settings
     cd packages/apps/Settings    
