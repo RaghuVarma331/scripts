@@ -60,10 +60,8 @@ LINEAGE-SOURCE()
     cd packages/apps/Settings
     git remote add main https://github.com/RaghuVarma331/settings.git
     git fetch main
-    git cherry-pick bbc67f641de4fd4daf747bf3c8f578ad7ff14c26
-    sed -i "/<<<<<<< HEAD/d" res/xml/firmware_version.xml
-    sed -i "/=======/d" res/xml/firmware_version.xml
-    sed -i "/>>>>>>>/d" res/xml/firmware_version.xml
+    git cherry-pick d0dede567168181d4f0035f61cf12f2996445be7
+    git cherry-pick 249b4a08e10be19d20b9b25f88fcc6ee230a6614
     cd
     cd $path/los
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings
@@ -405,13 +403,11 @@ PE-SOURCE()
     cd packages/apps/Settings    
     git remote add main https://github.com/RaghuVarma331/settings.git
     git fetch main
-    git cherry-pick bbc67f641de4fd4daf747bf3c8f578ad7ff14c26
-    sed -i "/<<<<<<< HEAD/d" res/xml/firmware_version.xml
-    sed -i "/=======/d" res/xml/firmware_version.xml
-    sed -i "/>>>>>>>/d" res/xml/firmware_version.xml
+    git cherry-pick d0dede567168181d4f0035f61cf12f2996445be7
+    git cherry-pick 249b4a08e10be19d20b9b25f88fcc6ee230a6614
     cd src/com/android/settings/system
     rm -r SystemUpdatePreferenceController.java
-    wget https://github.com/RaghuVarma331/settings/raw/ten-l/src/com/android/settings/system/SystemUpdatePreferenceController.java
+    wget https://raw.githubusercontent.com/RaghuVarma331/settings/ten/src/com/android/settings/system/SystemUpdatePreferenceController.java
     cd
     cd $path/pe    
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings
