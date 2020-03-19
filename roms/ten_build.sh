@@ -53,22 +53,23 @@ LINEAGE-SOURCE()
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/lineage/config/common.mk
     rm -r device/lineage/sepolicy
     rm -r packages/apps/Settings
-    rm -r packages/apps/Updater
+    rm -r packages/apps/Updater    
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon 
+    git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten-gcc --depth=1 kernel/nokia/sdm660
+    git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
+    git clone https://github.com/RaghuVarma331/vendor_nokia_Camera.git -b ten --depth=1 vendor/nokia/Camera
+    git clone https://gitlab.com/RaghuVarma331/vendor_gapps.git -b ten --depth=1 vendor/gapps
     git clone https://github.com/RaghuVarma331/device_custom_sepolicy.git -b los-ten device/lineage/sepolicy
     git clone https://github.com/RaghuVarma331/Os_Updates.git -b pixel-ten packages/apps/Os_Updates    
-    git clone https://github.com/LineageOS/android_packages_apps_Settings.git -b lineage-17.1 packages/apps/Settings
+    git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings
+    git clone https://github.com/LineageOS/android_packages_apps_Settings.git -b lineage-17.1 packages/apps/Settings    
     cd packages/apps/Settings
     git remote add main https://github.com/RaghuVarma331/settings.git
     git fetch main
     git cherry-pick d0dede567168181d4f0035f61cf12f2996445be7
     git cherry-pick 249b4a08e10be19d20b9b25f88fcc6ee230a6614
     cd
-    cd $path/los
-    git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings
-    git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten-gcc --depth=1 kernel/nokia/sdm660
-    git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon 
-    git clone https://gitlab.com/RaghuVarma331/vendor_gapps.git -b ten --depth=1 vendor/gapps
+    cd $path/los 
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Dragon/LineageOS/Constants.java
@@ -394,12 +395,17 @@ PE-SOURCE()
     rm -r vendor/gapps
     rm -r packages/apps/Settings
     rm -r packages/apps/Updates
-    rm -r device/custom/sepolicy
+    rm -r device/custom/sepolicy   
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon 
+    git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten-gcc --depth=1 kernel/nokia/sdm660
+    git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
+    git clone https://github.com/RaghuVarma331/vendor_nokia_Camera.git -b ten --depth=1 vendor/nokia/Camera
+    git clone https://gitlab.com/RaghuVarma331/vendor_gapps.git -b ten --depth=1 vendor/gapps
     git clone https://github.com/RaghuVarma331/device_custom_sepolicy.git -b pe-ten device/custom/sepolicy
     git clone https://github.com/RaghuVarma331/android_packages_apps_Gallery2.git -b lineage-17.1 packages/apps/Gallery2
-    git clone https://gitlab.com/RaghuVarma331/vendor_gapps.git -b ten vendor/gapps
-    git clone https://github.com/RaghuVarma331/Os_Updates.git -b pixel-ten packages/apps/Os_Updates         
-    git clone https://github.com/PixelExperience/packages_apps_Settings.git -b ten packages/apps/Settings
+    git clone https://github.com/RaghuVarma331/Os_Updates.git -b pixel-ten packages/apps/Os_Updates          
+    git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings
+    git clone https://github.com/PixelExperience/packages_apps_Settings.git -b ten packages/apps/Settings    
     cd packages/apps/Settings    
     git remote add main https://github.com/RaghuVarma331/settings.git
     git fetch main
@@ -410,10 +416,6 @@ PE-SOURCE()
     wget https://raw.githubusercontent.com/RaghuVarma331/settings/ten/src/com/android/settings/system/SystemUpdatePreferenceController.java
     cd
     cd $path/pe    
-    git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings
-    git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten-gcc --depth=1 kernel/nokia/sdm660	
-    git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon     
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Dragon/PixelExperience/Constants.java
