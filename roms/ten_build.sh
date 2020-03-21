@@ -55,7 +55,7 @@ LINEAGE-SOURCE()
     rm -r device/lineage/sepolicy
     rm -r packages/apps/Settings
     rm -r packages/apps/Updater    
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon 
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten-enforcing device/nokia/Dragon 
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten-gcc --depth=1 kernel/nokia/sdm660
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
     git clone https://github.com/RaghuVarma331/vendor_nokia_Camera.git -b ten --depth=1 vendor/nokia/Camera
@@ -146,7 +146,7 @@ LINEAGE-SOURCE()
     cd los
     rm -r device/nokia
     rm -r out/target/product/Dragon
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Onyx.git -b ten device/nokia/Onyx   
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Onyx.git -b ten-enforcing device/nokia/Onyx   
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Onyx/LineageOS/Constants.java
@@ -222,7 +222,7 @@ LINEAGE-SOURCE()
     cd los
     rm -r device/nokia
     rm -r out/target/product/Onyx
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Crystal.git -b ten device/nokia/Crystal   
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Crystal.git -b ten-enforcing device/nokia/Crystal   
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Crystal/LineageOS/Constants.java
@@ -397,7 +397,7 @@ PE-SOURCE()
     rm -r packages/apps/Settings
     rm -r packages/apps/Updates
     rm -r device/custom/sepolicy   
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon 
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten-enforcing device/nokia/Dragon 
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten-gcc --depth=1 kernel/nokia/sdm660
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
     git clone https://github.com/RaghuVarma331/vendor_nokia_Camera.git -b ten --depth=1 vendor/nokia/Camera
@@ -492,7 +492,7 @@ PE-SOURCE()
     cd pe
     rm -r device/nokia
     rm -r out/target/product/Dragon
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Onyx.git -b ten device/nokia/Onyx 
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Onyx.git -b ten-enforcing device/nokia/Onyx 
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Onyx/PixelExperience/Constants.java
@@ -568,7 +568,7 @@ PE-SOURCE()
     cd pe
     rm -r device/nokia
     rm -r out/target/product/Onyx
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Crystal.git -b ten device/nokia/Crystal 
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Crystal.git -b ten-enforcing device/nokia/Crystal 
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Crystal/PixelExperience/Constants.java
@@ -663,7 +663,7 @@ EVOX-SOURCE()
     rm -r packages/apps/Updates
     rm -r device/custom/sepolicy 
     rm -r vendor/pixelstyle
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon 
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten-permissive device/nokia/Dragon 
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten-gcc --depth=1 kernel/nokia/sdm660
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
     git clone https://github.com/RaghuVarma331/vendor_nokia_Camera.git -b ten --depth=1 vendor/nokia/Camera
@@ -758,7 +758,7 @@ EVOX-SOURCE()
     cd evo
     rm -r device/nokia
     rm -r out/target/product/Dragon
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Onyx.git -b ten device/nokia/Onyx  
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Onyx.git -b ten-permissive device/nokia/Onyx  
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Onyx/Evolution/Constants.java
@@ -833,7 +833,7 @@ EVOX-SOURCE()
     cd evo
     rm -r device/nokia
     rm -r out/target/product/Onyx
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Crystal.git -b ten device/nokia/Crystal   
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Crystal.git -b ten-permissive device/nokia/Crystal   
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Crystal/Evolution/Constants.java
@@ -909,7 +909,7 @@ EVOX-SOURCE()
     cd evo
     rm -r device/nokia
     rm -r out/target/product/Crystal
-    git clone https://github.com/RaghuVarma331/android_device_nokia_Plate2.git -b ten device/nokia/Plate2
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Plate2.git -b ten-permissive device/nokia/Plate2
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Plate2/Evolution/Constants.java
