@@ -678,6 +678,9 @@ EVOX-SOURCE()
     git remote add main https://github.com/RaghuVarma331/settings.git
     git fetch main
     git cherry-pick d0dede567168181d4f0035f61cf12f2996445be7
+    sed -i "/<<<<<<< HEAD/d" res/xml/firmware_version.xml
+    sed -i "/=======/d" res/xml/firmware_version.xml
+    sed -i "/>>>>>>>/d" res/xml/firmware_version.xml
     cd src/com/android/settings/system
     rm -r SystemUpdatePreferenceController.java
     wget https://raw.githubusercontent.com/RaghuVarma331/settings/ten/src/com/android/settings/system/SystemUpdatePreferenceController.java
