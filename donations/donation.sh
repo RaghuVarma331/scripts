@@ -68,3 +68,15 @@ https://www.paypal.me/Raghu107
 Thank you 👍
 *
 "
+
+python telegram.py -t $Telegram_Api_code -c @whyredrn5pro -M "
+*
+Do you like my contribution towards whyred?
+
+Show your support here 😊
+
+https://www.paypal.me/Raghu107
+
+Thank you 👍
+*
+"
