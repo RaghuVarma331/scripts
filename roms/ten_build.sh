@@ -297,10 +297,86 @@ LINEAGE-SOURCE()
     cd ..      
     cd los
     rm -r device/nokia
+    rm -r out/target/product/Crystal
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Daredevil.git -b ten-enforcing device/nokia/Daredevil 
+    cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
+    rm -r Constants.java
+    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Daredevil/LineageOS/Constants.java
+    cd
+    cd $path/los    
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    
+    New LineageOS 17.1 for Nokia 7.2 build started 
+    
+    $(date)
+    
+    👤 By: Raghu Varma
+
+    build's progress at $jenkinsurl"      
+    . build/envsetup.sh && lunch lineage_Daredevil-userdebug && make -j32 bacon
+    cd out/target/product/Daredevil
+    rm -r **.json
+    Changelog=lineage-17.1-Daredevil.txt
+
+
+    echo "Generating changelog..."
+
+    for i in $(seq 14);
+    do
+    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
+    k=$(expr $i - 1)
+    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
+
+    # Line with after --- until was too long for a small ListView
+    echo '=======================' >> $Changelog;
+    echo  "     "$Until_Date       >> $Changelog;
+    echo '=======================' >> $Changelog;
+    echo >> $Changelog;
+
+    # Cycle through every repo to find commits between 2 dates
+    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
+    echo >> $Changelog;
+    done 
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/ddv_lineage.sh
+    chmod a+x ddv_lineage.sh
+    ./ddv_lineage.sh
+    zipname=$(echo lineage-17.1**.zip)
+    cat $zipname.json > $path/json/Daredevil/lineage.json      
+    cat lineage-17.1-Daredevil.txt > $path/changelog/Daredevil/LineageOS.txt
+    sshpass -p $password rsync -avP -e ssh lineage-17.1**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/ddv-sprout/LineageOS
+    cd 
+    cd $path
+    python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
+    *
+    New LineageOS 17.1 Build is up 
+    
+    $(date)*
+    
+    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-2/development/rom-lineageos-17-0-t4001281)
+    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Daredevil/LineageOS.txt)
+    📱Device: *Nokia 7.2*
+    ⚡Build Version: *17.1*
+    ⚡Android Version: *10.0.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #ddv #nokia #los #update
+    Follow: @nokia7161  ✅"    
+    cd changelog
+    git add .
+    git commit -m "Daredevil: LineageOS 17.1 build $(date)"
+    git push -u -f origin master
+    cd ..    
+    cd json
+    git add .
+    git commit -m "Daredevil: LineageOS 17.1 build $(date)"
+    git push -u -f origin master
+    cd ..      
+    cd los    
+    rm -r device/nokia
     rm -r kernel/nokia
     rm -r vendor/nokia 
     rm -r vendor/gapps
-    rm -r out/target/product/Crystal
+    rm -r out/target/product/Daredevil
     rm -r device/lineage/sepolicy
     git clone https://github.com/LineageOS/android_device_lineage_sepolicy.git -b lineage-17.1 device/lineage/sepolicy
     git clone https://github.com/RaghuVarma331/android_device_xiaomi_whyred.git -b lineage-17.1 device/xiaomi/whyred
@@ -650,7 +726,84 @@ PE-SOURCE()
     git push -u -f origin master
     cd 
     cd $path
-    rm -r pe
+    cd pe
+    rm -r device/nokia
+    rm -r out/target/product/Crystal
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Daredevil.git -b ten-enforcing device/nokia/Daredevil
+    cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
+    rm -r Constants.java
+    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Daredevil/PixelExperience/Constants.java
+    cd
+    cd $path/pe    
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    
+    New Pixel-Experience for Nokia 7.2 build started 
+    
+    $(date)
+    
+    👤 By: Raghu Varma
+
+    build's progress at $jenkinsurl"      
+    . build/envsetup.sh && lunch aosp_Daredevil-userdebug && make -j32 bacon
+    cd out/target/product/Daredevil
+    rm -r **.json
+    Changelog=Pixel-Daredevil.txt
+
+
+    echo "Generating changelog..."
+
+    for i in $(seq 14);
+    do
+    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
+    k=$(expr $i - 1)
+    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
+
+    # Line with after --- until was too long for a small ListView
+    echo '=======================' >> $Changelog;
+    echo  "     "$Until_Date       >> $Changelog;
+    echo '=======================' >> $Changelog;
+    echo >> $Changelog;
+
+    # Cycle through every repo to find commits between 2 dates
+    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
+    echo >> $Changelog;
+    done
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/ddv_pe.sh
+    chmod a+x ddv_pe.sh
+    ./ddv_pe.sh
+    zipname=$(echo PixelExperience**.zip)
+    cat $zipname.json > $path/json/Daredevil/pixel.json     
+    cat Pixel-Daredevil.txt > $path/changelog/Daredevil/PixelExperience.txt
+    sshpass -p $password rsync -avP -e ssh PixelExperience**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/ddv-sprout/PixelExperience
+    cd 
+    cd $path
+    python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
+    *
+    New Pixel-Experience Build is up 
+    
+    $(date)*
+     
+    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-1/development/rom-pixel-experience-t4019933)
+    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Daredevil/PixelExperience.txt)
+    📱Device: *Nokia 7.2*
+    ⚡Build Version: *Ten*
+    ⚡Android Version: *10.0.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #ddv #nokia #pe #update
+    Follow: @nokia7161 ✅"     
+    cd changelog
+    git add .
+    git commit -m "Daredevil: PixelExperience 10.0 build $(date)"
+    git push -u -f origin master
+    cd .. 
+    cd json
+    git add .
+    git commit -m "Daredevil: PixelExperience 10.0 build $(date)"
+    git push -u -f origin master
+    cd 
+    cd $path
+    rm -r pe    
 }
 
 EVOX-SOURCE()
@@ -928,6 +1081,82 @@ EVOX-SOURCE()
     cd evo
     rm -r device/nokia
     rm -r out/target/product/Crystal
+    git clone https://github.com/RaghuVarma331/android_device_nokia_Daredevil.git -b ten-permissive device/nokia/Daredevil 
+    cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
+    rm -r Constants.java
+    wget https://github.com/RaghuVarma331/Json-configs/raw/master/Daredevil/Evolution/Constants.java
+    cd
+    cd $path/evo 
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    
+    New Evolution X for Nokia 7.2 build started 
+    
+    $(date)
+    
+    👤 By: Raghu Varma
+    build's progress at $jenkinsurl"      
+    export SKIP_ABI_CHECKS=true
+    . build/envsetup.sh && lunch aosp_Daredevil-userdebug && make -j32 bacon
+    cd out/target/product/Daredevil
+    rm -r **.json
+    Changelog=Evox-Daredevil.txt
+
+
+    echo "Generating changelog..."
+
+    for i in $(seq 14);
+    do
+    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
+    k=$(expr $i - 1)
+    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
+
+    # Line with after --- until was too long for a small ListView
+    echo '=======================' >> $Changelog;
+    echo  "     "$Until_Date       >> $Changelog;
+    echo '=======================' >> $Changelog;
+    echo >> $Changelog;
+
+    # Cycle through every repo to find commits between 2 dates
+    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
+    echo >> $Changelog;
+    done
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/ddv_evox.sh
+    chmod a+x ddv_evox.sh
+    ./ddv_evox.sh
+    zipname=$(echo EvolutionX**.zip)
+    cat $zipname.json > $path/json/Daredevil/evox.json        
+    cat Evox-Daredevil.txt > $path/changelog/Daredevil/evolutionx.txt
+    sshpass -p $password rsync -avP -e ssh EvolutionX**.zip       raghuvarma331@frs.sourceforge.net:/home/frs/project/ddv-sprout/EvolutionX
+    cd 
+    cd $path
+    python telegram.py -t $Telegram_Api_code -c $chat_id  -P evox.png -C "
+    *
+    New Evolution X Build is up 
+    
+    $(date)*
+     
+    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-1/development/rom-evolution-x-3-5-t4020515)
+    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Daredevil/evolutionx.txt)
+    📱Device: *Nokia 7.2*
+    ⚡Build Version: *$evoxversion*
+    ⚡Android Version: *10.0.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *Raghu Varma*
+    #ctl #nokia #evox #update
+    Follow: @nokia7161 ✅"  
+    cd changelog
+    git add .
+    git commit -m "Daredevil: Evolution-X 10.0 build $(date)"
+    git push -u -f origin master
+    cd ..     
+    cd json
+    git add .
+    git commit -m "Daredevil: Evolution-X 10.0 build $(date)"
+    git push -u -f origin master
+    cd ..           
+    cd evo    
+    rm -r device/nokia
+    rm -r out/target/product/Daredevil
     git clone https://github.com/RaghuVarma331/android_device_nokia_Plate2.git -b ten-permissive device/nokia/Plate2
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
     rm -r Constants.java
