@@ -1024,14 +1024,8 @@ TWRP-P-SOURCE()
     git clone https://github.com/omnirom/android_vendor_qcom_opensource_commonsys.git -b android-9.0 vendor/qcom/opensource/commonsys
     git clone https://github.com/RaghuVarma331/android_device_nokia_DRG_sprout-TWRP.git -b android-9.0 device/nokia/DRG_sprout
     git clone https://github.com/RaghuVarma331/android_device_nokia_B2N_sprout-TWRP.git -b android-9.0 device/nokia/B2N_sprout
-    git clone https://github.com/RaghuVarma331/android_device_nokia_DDV_sprout-TWRP.git -b android-9.0 device/nokia/DDV_sprout
-    sed -i "91i PLATFORM_SECURITY_PATCH := $twrpsp" device/nokia/DDV_sprout/BoardConfig.mk
-    git clone https://github.com/RaghuVarma331/android_device_nokia_SLD_sprout-TWRP.git -b android-9.0 device/nokia/SLD_sprout
-    sed -i "91i PLATFORM_SECURITY_PATCH := $twrpsp" device/nokia/SLD_sprout/BoardConfig.mk
     . build/envsetup.sh && lunch omni_DRG_sprout-eng && make -j32 recoveryimage
     . build/envsetup.sh && lunch omni_B2N_sprout-eng && make -j32 recoveryimage	
-    . build/envsetup.sh && lunch omni_SLD_sprout-eng && make -j32 recoveryimage	
-    . build/envsetup.sh && lunch omni_DDV_sprout-eng && make -j32 recoveryimage
     cd out/target/product/DRG_sprout
     mv recovery.img twrp-3.3.1-0-DRG_sprout-9.0-$(date +"%Y%m%d").img
     cp -r twrp-3.3.1-0-DRG_sprout-9.0-$(date +"%Y%m%d").img $path/DRG_sprout
@@ -1040,16 +1034,6 @@ TWRP-P-SOURCE()
     cd out/target/product/B2N_sprout
     mv recovery.img twrp-3.3.1-0-B2N_sprout-OOB-9.0-$(date +"%Y%m%d").img
     cp -r twrp-3.3.1-0-B2N_sprout-OOB-9.0-$(date +"%Y%m%d").img $path/B2N_sprout
-    cd
-    cd $path/twrp	
-    cd out/target/product/SLD_sprout
-    mv recovery.img twrp-3.3.1-0-SLD_sprout-9.0-$(date +"%Y%m%d").img
-    cp -r twrp-3.3.1-0-SLD_sprout-9.0-$(date +"%Y%m%d").img $path/SLD_sprout
-    cd
-    cd $path/twrp	
-    cd out/target/product/DDV_sprout
-    mv recovery.img twrp-3.3.1-0-DDV_sprout-9.0-$(date +"%Y%m%d").img
-    cp -r twrp-3.3.1-0-DDV_sprout-9.0-$(date +"%Y%m%d").img $path/DDV_sprout
     cd
     cd $path/twrp
     rm -r device/nokia
@@ -1072,9 +1056,15 @@ TWRP-Q-SOURCE()
     git clone https://github.com/RaghuVarma331/android_device_nokia_DRG_sprout-TWRP.git -b android-10.0 device/nokia/DRG_sprout
     git clone https://github.com/RaghuVarma331/android_device_nokia_B2N_sprout-TWRP.git -b android-10.0 device/nokia/B2N_sprout
     git clone https://github.com/RaghuVarma331/android_device_nokia_CTL_sprout-TWRP.git -b android-10.0 device/nokia/CTL_sprout
+    git clone https://github.com/RaghuVarma331/android_device_nokia_DDV_sprout-TWRP.git -b android-10.0 device/nokia/DDV_sprout
+    sed -i "91i PLATFORM_SECURITY_PATCH := $twrpsp" device/nokia/DDV_sprout/BoardConfig.mk
+    git clone https://github.com/RaghuVarma331/android_device_nokia_SLD_sprout-TWRP.git -b android-10.0 device/nokia/SLD_sprout
+    sed -i "91i PLATFORM_SECURITY_PATCH := $twrpsp" device/nokia/SLD_sprout/BoardConfig.mk    
     . build/envsetup.sh && lunch omni_DRG_sprout-eng && make -j32 recoveryimage	
     . build/envsetup.sh && lunch omni_B2N_sprout-eng && make -j32 recoveryimage
     . build/envsetup.sh && lunch omni_CTL_sprout-eng && make -j32 recoveryimage
+    . build/envsetup.sh && lunch omni_SLD_sprout-eng && make -j32 recoveryimage	
+    . build/envsetup.sh && lunch omni_DDV_sprout-eng && make -j32 recoveryimage    
     cd out/target/product/DRG_sprout
     mv recovery.img twrp-3.3.1-0-DRG_sprout-10.0-$(date +"%Y%m%d").img
     cp -r twrp-3.3.1-0-DRG_sprout-10.0-$(date +"%Y%m%d").img $path/DRG_sprout
@@ -1088,6 +1078,16 @@ TWRP-Q-SOURCE()
     cd out/target/product/B2N_sprout
     mv recovery.img twrp-3.3.1-0-B2N_sprout-OOB-10.0-$(date +"%Y%m%d").img
     cp -r twrp-3.3.1-0-B2N_sprout-OOB-10.0-$(date +"%Y%m%d").img $path/B2N_sprout
+    cd
+    cd $path/twrp	
+    cd out/target/product/SLD_sprout
+    mv recovery.img twrp-3.3.1-0-SLD_sprout-10.0-$(date +"%Y%m%d").img
+    cp -r twrp-3.3.1-0-SLD_sprout-10.0-$(date +"%Y%m%d").img $path/SLD_sprout
+    cd
+    cd $path/twrp	
+    cd out/target/product/DDV_sprout
+    mv recovery.img twrp-3.3.1-0-DDV_sprout-10.0-$(date +"%Y%m%d").img
+    cp -r twrp-3.3.1-0-DDV_sprout-10.0-$(date +"%Y%m%d").img $path/DDV_sprout    
     cd
     cd $path/twrp
     rm -r device/nokia
@@ -1211,10 +1211,10 @@ TWRP-P-INSTALLER()
     sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-B2N_sprout-POB-10.0* twrp-installer-3.3.1-0-B2N_sprout-POB-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/TWRP-TEN/POB
     cd ..
     cd SLD_sprout 
-    sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-SLD_sprout-9.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/sld-sprout/TWRP/PIE/2020-03-05
+    sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-SLD_sprout-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/sld-sprout/TWRP/TEN/2020-03-05
     cd ..
     cd DDV_sprout
-    sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-DDV_sprout-9.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/ddv-sprout/TWRP/PIE/2020-03-05
+    sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-DDV_sprout-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/ddv-sprout/TWRP/TEN/2020-03-05
     cd .. 
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
     *
@@ -1315,14 +1315,14 @@ TWRP-P-INSTALLER()
 
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
     *
-    New Android 9.0 Twrp-3.3.1-0 Build is up 
+    New Android 10.0 Twrp-3.3.1-0 Build is up 
     
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-6-2/development/unofficial-twrp-3-3-1-0-team-win-t3999433)
     📱Device: *Nokia 6.2*
     ⚡Build Version: *3.3.1-0*
-    ⚡Android Version: *9.0.0*
+    ⚡Android Version: *10.0.0*
     ⚡Android Security Patch : *$twrpsp*
     👤 By: *Raghu Varma*
     #sld #nokia #twrp #update
@@ -1330,14 +1330,14 @@ TWRP-P-INSTALLER()
     
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
     *
-    New Android 9.0 Twrp-3.3.1-0 Build is up 
+    New Android 10.0 Twrp-3.3.1-0 Build is up 
     
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-2/development/unofficial-twrp-3-3-1-0-team-win-t3999325)
     📱Device: *Nokia 7.2*
     ⚡Build Version: *3.3.1-0*
-    ⚡Android Version: *9.0.0*
+    ⚡Android Version: *10.0.0*
     ⚡Android Security Patch : *$twrpsp*
     👤 By: *Raghu Varma*
     #ddv #nokia #twrp #update
