@@ -145,7 +145,7 @@ LINEAGE-SOURCE()
     cd ..    
     cd los
     rm -r device/nokia
-    rm -r out/target/product/Dragon
+    rm -r out/target/product/**
     git clone https://github.com/RaghuVarma331/android_device_nokia_Onyx.git -b ten-enforcing device/nokia/Onyx   
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
     rm -r Constants.java
@@ -221,7 +221,7 @@ LINEAGE-SOURCE()
     cd ..    
     cd los
     rm -r device/nokia
-    rm -r out/target/product/Onyx
+    rm -r out/target/product/**
     git clone https://github.com/RaghuVarma331/android_device_nokia_Crystal.git -b ten-enforcing device/nokia/Crystal   
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
     rm -r Constants.java
@@ -297,7 +297,7 @@ LINEAGE-SOURCE()
     cd ..      
     cd los
     rm -r device/nokia
-    rm -r out/target/product/Crystal
+    rm -r out/target/product/**
     git clone https://github.com/RaghuVarma331/android_device_nokia_Daredevil.git -b ten-enforcing device/nokia/Daredevil 
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
     rm -r Constants.java
@@ -381,7 +381,7 @@ LINEAGE-SOURCE()
     rm -r kernel/nokia
     rm -r vendor/nokia 
     rm -r vendor/gapps
-    rm -r out/target/product/Daredevil
+    rm -r out/target/product/**
     rm -r device/lineage/sepolicy
     git clone https://github.com/LineageOS/android_device_lineage_sepolicy.git -b lineage-17.1 device/lineage/sepolicy
     git clone https://github.com/RaghuVarma331/android_device_xiaomi_whyred.git -b lineage-17.1 device/xiaomi/whyred
@@ -585,7 +585,7 @@ PE-SOURCE()
     cd ..        
     cd pe
     rm -r device/nokia
-    rm -r out/target/product/Dragon
+    rm -r out/target/product/**
     git clone https://github.com/RaghuVarma331/android_device_nokia_Onyx.git -b ten-enforcing device/nokia/Onyx 
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
     rm -r Constants.java
@@ -661,7 +661,7 @@ PE-SOURCE()
     cd ..     
     cd pe
     rm -r device/nokia
-    rm -r out/target/product/Onyx
+    rm -r out/target/product/**
     git clone https://github.com/RaghuVarma331/android_device_nokia_Crystal.git -b ten-enforcing device/nokia/Crystal 
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
     rm -r Constants.java
@@ -738,7 +738,7 @@ PE-SOURCE()
     cd $path
     cd pe
     rm -r device/nokia
-    rm -r out/target/product/Crystal
+    rm -r out/target/product/**
     git clone https://github.com/RaghuVarma331/android_device_nokia_Daredevil.git -b ten-enforcing device/nokia/Daredevil
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
     rm -r Constants.java
@@ -944,7 +944,7 @@ EVOX-SOURCE()
     cd ..     
     cd evo
     rm -r device/nokia
-    rm -r out/target/product/Dragon
+    rm -r out/target/product/**
     git clone https://github.com/RaghuVarma331/android_device_nokia_Onyx.git -b ten-permissive device/nokia/Onyx  
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
     rm -r Constants.java
@@ -1019,7 +1019,7 @@ EVOX-SOURCE()
     cd ..     
     cd evo
     rm -r device/nokia
-    rm -r out/target/product/Onyx
+    rm -r out/target/product/**
     git clone https://github.com/RaghuVarma331/android_device_nokia_Crystal.git -b ten-permissive device/nokia/Crystal   
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
     rm -r Constants.java
@@ -1095,7 +1095,7 @@ EVOX-SOURCE()
     cd ..           
     cd evo
     rm -r device/nokia
-    rm -r out/target/product/Crystal
+    rm -r out/target/product/**
     git clone https://github.com/RaghuVarma331/android_device_nokia_Daredevil.git -b ten-permissive device/nokia/Daredevil 
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
     rm -r Constants.java
@@ -1176,7 +1176,7 @@ EVOX-SOURCE()
     cd ..           
     cd evo    
     rm -r device/nokia
-    rm -r out/target/product/Daredevil
+    rm -r out/target/product/**
     git clone https://github.com/RaghuVarma331/android_device_nokia_Plate2.git -b ten-permissive device/nokia/Plate2
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
     rm -r Constants.java
