@@ -303,6 +303,11 @@ LINEAGE-SOURCE()
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Daredevil/LineageOS/Constants.java
     cd
+    cd $path/los
+    cd vendor/lineage/build/tasks
+    rm -r kernel.mk
+    wget https://github.com/RaghuVarma331/vendor_lineage/raw/lineage-17.1/build/tasks/kernel.mk
+    cd
     cd $path/los    
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
@@ -386,7 +391,12 @@ LINEAGE-SOURCE()
     rm -r Constants.java
     wget https://raw.githubusercontent.com/RaghuVarma331/Json-configs/master/whyred/LineageOS/Constants.java
     cd
-    cd $path/los    
+    cd $path/los
+    cd vendor/lineage/build/tasks
+    rm -r kernel.mk
+    wget https://github.com/LineageOS/android_vendor_lineage/raw/lineage-17.1/build/tasks/kernel.mk
+    cd
+    cd $path/los          
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New LineageOS 17.1 for Redmi Note 5 Pro build started 
@@ -733,6 +743,11 @@ PE-SOURCE()
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Daredevil/PixelExperience/Constants.java
+    cd
+    cd $path/pe
+    cd vendor/aosp/build/tasks
+    rm -r kernel.mk
+    wget https://github.com/RaghuVarma331/vendor_lineage/raw/lineage-17.1/build/tasks/kernel.mk      
     cd
     cd $path/pe    
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
@@ -1086,7 +1101,12 @@ EVOX-SOURCE()
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Daredevil/Evolution/Constants.java
     cd
-    cd $path/evo 
+    cd $path/evo
+    cd vendor/aosp/build/tasks
+    rm -r kernel.mk
+    wget https://github.com/RaghuVarma331/vendor_lineage/raw/lineage-17.1/build/tasks/kernel.mk
+    cd
+    cd $path/evo        
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     New Evolution X for Nokia 7.2 build started 
@@ -1161,6 +1181,13 @@ EVOX-SOURCE()
     cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
     rm -r Constants.java
     wget https://github.com/RaghuVarma331/Json-configs/raw/master/Plate2/Evolution/Constants.java
+    cd
+    cd $path/evo
+    cd vendor/aosp/build/tasks
+    rm -r kernel.mk
+    wget https://github.com/Evolution-X/vendor_aosp/raw/ten/build/tasks/kernel.mk
+    cd
+    cd $path/evo      
     cd
     cd $path/evo   
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
