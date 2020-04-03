@@ -47,6 +47,7 @@ LINEAGE-SOURCE()
     wget https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/whyred.txt
     git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog
     git clone https://$gitpassword@github.com/RaghuVarma331/Json-Tracker.git json
+    git clone https://github.com/RaghuVarma331/prebuilt_kernels.git -b ten prebuilts
     mkdir los
     cd los
     echo -ne '\n' | repo init -u git://github.com/LineageOS/android.git -b lineage-17.1 --depth=1
@@ -474,6 +475,7 @@ PE-SOURCE()
     wget https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/crossdevelopment/changelog.txt
     git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog  
     git clone https://$gitpassword@github.com/RaghuVarma331/Json-Tracker.git json
+    git clone https://github.com/RaghuVarma331/prebuilt_kernels.git -b ten prebuilts    
     mkdir pe
     cd pe
     echo -ne '\n' | repo init -u https://github.com/PixelExperience/manifest -b ten --depth=1
@@ -828,7 +830,8 @@ EVOX-SOURCE()
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/evox.png
     wget https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/crossdevelopment/changelog.txt
     git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog    
-    git clone https://$gitpassword@github.com/RaghuVarma331/Json-Tracker.git json    
+    git clone https://$gitpassword@github.com/RaghuVarma331/Json-Tracker.git json 
+    git clone https://github.com/RaghuVarma331/prebuilt_kernels.git -b ten prebuilts    
     mkdir evo
     cd evo
     echo -ne '\n' | repo init -u https://github.com/Evolution-X/manifest -b ten --depth=1
