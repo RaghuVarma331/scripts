@@ -358,7 +358,7 @@ LINEAGE-SOURCE()
     
     $(date)*
     
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-2/development)
+    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-2/development/rom-lineageos-17-0-t4001281)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Daredevil/LineageOS.txt)
     📱Device: *Nokia 7.2*
     ⚡Build Version: *17.1*
@@ -800,7 +800,7 @@ PE-SOURCE()
     
     $(date)*
      
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-2/development)
+    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-2/development/rom-pixel-experience-t4077103)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Daredevil/PixelExperience.txt)
     📱Device: *Nokia 7.2*
     ⚡Build Version: *Ten*
@@ -1158,7 +1158,7 @@ EVOX-SOURCE()
     
     $(date)*
      
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-2/development)
+    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-2/development/rom-evolution-x-4-1-169-t4077205)
     💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Daredevil/evolutionx.txt)
     📱Device: *Nokia 7.2*
     ⚡Build Version: *$evoxversion*
