@@ -366,7 +366,7 @@ LINEAGE-SOURCE()
     ⚡Security Patch : *$securitypatch*
     👤 By: *Raghu Varma*
     #ddv #nokia #los #update
-    Follow: @nokia7161  ✅"    
+    Follow: @Nokia7262  ✅"    
     cd changelog
     git add .
     git commit -m "Daredevil: LineageOS 17.1 build $(date)"
@@ -808,7 +808,7 @@ PE-SOURCE()
     ⚡Security Patch : *$securitypatch*
     👤 By: *Raghu Varma*
     #ddv #nokia #pe #update
-    Follow: @nokia7161 ✅"     
+    Follow: @Nokia7262 ✅"     
     cd changelog
     git add .
     git commit -m "Daredevil: PixelExperience 10.0 build $(date)"
@@ -1165,8 +1165,8 @@ EVOX-SOURCE()
     ⚡Android Version: *10.0.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *Raghu Varma*
-    #ctl #nokia #evox #update
-    Follow: @nokia7161 ✅"  
+    #ddv #nokia #evox #update
+    Follow: @Nokia7262 ✅"  
     cd changelog
     git add .
     git commit -m "Daredevil: Evolution-X 10.0 build $(date)"
