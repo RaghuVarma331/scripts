@@ -1753,7 +1753,7 @@ TOOLS_SETUP()
 {
         sudo apt-get update 
         echo -ne '\n' | sudo apt-get upgrade
-        echo -ne '\n' | sudo apt-get install git ccache schedtool lzop bison gperf build-essential zip curl zlib1g-dev g++-multilib python-networkx libxml2-utils bzip2 libbz2-dev libghc-bzlib-dev squashfs-tools pngcrush liblz4-tool optipng libc6-dev-i386 gcc-multilib libssl-dev gnupg flex lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev xsltproc unzip python-pip python-dev libffi-dev libxml2-dev libxslt1-dev libjpeg8-dev openjdk-8-jdk imagemagick device-tree-compiler repo mailutils-mh expect python3-requests python-requests android-tools-fsutils sshpass
+        echo -ne '\n' | sudo apt-get install git ccache schedtool lzop bison gperf build-essential zip curl zlib1g-dev g++-multilib python-networkx libxml2-utils bzip2 libbz2-dev libghc-bzlib-dev squashfs-tools pngcrush liblz4-tool optipng libc6-dev-i386 gcc-multilib libssl-dev gnupg flex lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev xsltproc unzip python-pip python-dev libffi-dev libxml2-dev libxslt1-dev libjpeg8-dev openjdk-8-jdk imagemagick device-tree-compiler mailutils-mh expect python3-requests python-requests android-tools-fsutils sshpass
         sudo swapon --show
         sudo fallocate -l 20G /swapfile
         ls -lh /swapfile
@@ -1767,6 +1767,14 @@ TOOLS_SETUP()
 	git config --global user.name "RaghuVarma331"
 	mkdir -p ~/.ssh  &&  echo "Host *" > ~/.ssh/config && echo " StrictHostKeyChecking no" >> ~/.ssh/config
 	echo "# Allow Jenkins" >> /etc/sudoers && echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+}
+
+REPO()
+{
+       mkdir bin
+       PATH=$path/bin:$PATH
+       curl https://storage.googleapis.com/git-repo-downloads/repo > $path/bin/repo
+       chmod a+x $path/bin/repo
 }
 
 		
@@ -1786,7 +1794,7 @@ do
             echo "----------------------------------------------"
             echo "Started Settingup Basic Stuff For Linux..."
             echo "Please be patient..."
-            # BasicSetup
+            # Tools Setup
             echo "----------------------------------------------"
             echo "Setting Up Tools & Stuff..."
             echo " "
@@ -1833,6 +1841,11 @@ do
             echo "Please be patient..."
             # twrp
             echo "----------------------------------------------"
+            echo "Repo Setup..."
+            echo " "
+            REPO
+	    echo " "  
+            echo "----------------------------------------------"
             echo "Setting Up Tools & Stuff..."
             echo " "
             TOOLS_SETUP
@@ -1873,6 +1886,11 @@ do
             echo "Please be patient..."
             # pe
             echo "----------------------------------------------"
+            echo "Repo Setup..."
+            echo " "
+            REPO
+	    echo " " 	    
+            echo "----------------------------------------------"
             echo "Setting Up Tools & Stuff..."
             echo " "
             TOOLS_SETUP
@@ -1898,6 +1916,11 @@ do
             echo "Please be patient..."
             # lineageos
             echo "----------------------------------------------"
+            echo "Repo Setup..."
+            echo " "
+            REPO
+	    echo " " 	    
+            echo "----------------------------------------------"
             echo "Setting Up Tools & Stuff..."
             echo " "
             TOOLS_SETUP
@@ -1922,6 +1945,11 @@ do
             echo "Started Building Evox for Nokia 6.1 Plus , 7 Plus & 6.1  ."
             echo "Please be patient..."
             # evox
+            echo "----------------------------------------------"
+            echo "Repo Setup..."
+            echo " "
+            REPO
+	    echo " " 	    
             echo "----------------------------------------------"
             echo "Setting Up Tools & Stuff..."
             echo " "
@@ -1972,6 +2000,11 @@ do
             echo "Started Building LineageOS 17.1 , Pixel-EXP , Evox & Twrp for Nokia 6.1 Plus , 7 plus , 6.1 , 6.2 & 7.2 ."
             echo "Please be patient..."
             # all_roms
+            echo "----------------------------------------------"
+            echo "Repo Setup..."
+            echo " "
+            REPO
+	    echo " " 	    
             echo "----------------------------------------------"
             echo "Setting Up Tools & Stuff..."
             echo " "
