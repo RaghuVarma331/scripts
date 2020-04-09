@@ -45,7 +45,6 @@ LINEAGE-SOURCE()
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/lineage.jpg
     wget https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/crossdevelopment/changelog.txt
     wget https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/whyred.txt
-    git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog
     git clone https://$gitpassword@github.com/RaghuVarma331/Json-Tracker.git json
     git clone https://github.com/RaghuVarma331/prebuilt_kernels.git -b ten prebuilts
     mkdir los
@@ -88,33 +87,11 @@ LINEAGE-SOURCE()
     . build/envsetup.sh && lunch lineage_Dragon-userdebug && make -j32 bacon
     cd out/target/product/Dragon
     rm -r **.json
-    Changelog=lineage-17.1-Dragon.txt
-
-
-    echo "Generating changelog..."
-
-    for i in $(seq 14);
-    do
-    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
-    k=$(expr $i - 1)
-    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
-
-    # Line with after --- until was too long for a small ListView
-    echo '=======================' >> $Changelog;
-    echo  "     "$Until_Date       >> $Changelog;
-    echo '=======================' >> $Changelog;
-    echo >> $Changelog;
-
-    # Cycle through every repo to find commits between 2 dates
-    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
-    echo >> $Changelog;
-    done
     wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/drg_lineage.sh
     chmod a+x drg_lineage.sh
     ./drg_lineage.sh
     zipname=$(echo lineage-17.1**.zip)
     cat $zipname.json > $path/json/Dragon/lineage.json    
-    cat lineage-17.1-Dragon.txt > $path/changelog/Dragon/LineageOS.txt
     sshpass -p $password rsync -avP -e ssh lineage-17.1**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/LineageOS
     cd 
     cd $path
@@ -125,7 +102,7 @@ LINEAGE-SOURCE()
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-6-1-plus/development/beta-lineageos-17-0-t3985367)
-    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Dragon/LineageOS.txt)
+    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
     📱Device: *Nokia 6.1 Plus*
     ⚡Build Version: *17.1* 
     ⚡Android Version: *10.0.0*
@@ -133,11 +110,6 @@ LINEAGE-SOURCE()
     👤 By: *Raghu Varma*
     #drg #nokia #los #update
     Follow:  @Nokia6plusofficial ✅"  
-    cd changelog
-    git add .
-    git commit -m "Dragon: LineageOS 17.1 build $(date)"
-    git push -u -f origin master
-    cd ..
     cd json
     git add .
     git commit -m "Dragon: LineageOS 17.1 build $(date)"
@@ -163,34 +135,12 @@ LINEAGE-SOURCE()
     build's progress at $jenkinsurl"      
     . build/envsetup.sh && lunch lineage_Onyx-userdebug && make -j32 bacon
     cd out/target/product/Onyx
-    rm -r **.json    
-    Changelog=lineage-17.1-Onyx.txt
-
-
-    echo "Generating changelog..."
-
-    for i in $(seq 14);
-    do
-    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
-    k=$(expr $i - 1)
-    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
-
-    # Line with after --- until was too long for a small ListView
-    echo '=======================' >> $Changelog;
-    echo  "     "$Until_Date       >> $Changelog;
-    echo '=======================' >> $Changelog;
-    echo >> $Changelog;
-
-    # Cycle through every repo to find commits between 2 dates
-    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
-    echo >> $Changelog;
-    done    
+    rm -r **.json      
     wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/b2n_lineage.sh
     chmod a+x b2n_lineage.sh
     ./b2n_lineage.sh
     zipname=$(echo lineage-17.1**.zip)
     cat $zipname.json > $path/json/Onyx/lineage.json        
-    cat lineage-17.1-Onyx.txt > $path/changelog/Onyx/LineageOS.txt
     sshpass -p $password rsync -avP -e ssh lineage-17.1**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/LineageOS
     cd 
     cd $path
@@ -201,19 +151,14 @@ LINEAGE-SOURCE()
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/rom-lineageos-17-0-t3993445)
-    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Onyx/LineageOS.txt)
+    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
     📱Device: *Nokia 7 Plus*
     ⚡Build Version: *17.1*
     ⚡Android Version: *10.0.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *Raghu Varma*
     #b2n #nokia #los #update
-    Follow: @Nokia7plusOfficial ✅"  
-    cd changelog
-    git add .
-    git commit -m "Onyx: LineageOS 17.1 build $(date)"
-    git push -u -f origin master
-    cd ..    
+    Follow: @Nokia7plusOfficial ✅"    
     cd json
     git add .
     git commit -m "Onyx: LineageOS 17.1 build $(date)"
@@ -240,33 +185,11 @@ LINEAGE-SOURCE()
     . build/envsetup.sh && lunch lineage_Crystal-userdebug && make -j32 bacon
     cd out/target/product/Crystal
     rm -r **.json
-    Changelog=lineage-17.1-Crystal.txt
-
-
-    echo "Generating changelog..."
-
-    for i in $(seq 14);
-    do
-    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
-    k=$(expr $i - 1)
-    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
-
-    # Line with after --- until was too long for a small ListView
-    echo '=======================' >> $Changelog;
-    echo  "     "$Until_Date       >> $Changelog;
-    echo '=======================' >> $Changelog;
-    echo >> $Changelog;
-
-    # Cycle through every repo to find commits between 2 dates
-    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
-    echo >> $Changelog;
-    done 
     wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/ctl_lineage.sh
     chmod a+x ctl_lineage.sh
     ./ctl_lineage.sh
     zipname=$(echo lineage-17.1**.zip)
     cat $zipname.json > $path/json/Crystal/lineage.json      
-    cat lineage-17.1-Crystal.txt > $path/changelog/Crystal/LineageOS.txt
     sshpass -p $password rsync -avP -e ssh lineage-17.1**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/LineageOS
     cd 
     cd $path
@@ -277,19 +200,14 @@ LINEAGE-SOURCE()
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-1/development/rom-lineageos-17-0-t4019915)
-    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Crystal/LineageOS.txt)
+    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
     📱Device: *Nokia 7.1*
     ⚡Build Version: *17.1*
     ⚡Android Version: *10.0.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *Raghu Varma*
     #ctl #nokia #los #update
-    Follow: @nokia7161  ✅"    
-    cd changelog
-    git add .
-    git commit -m "Crystal: LineageOS 17.1 build $(date)"
-    git push -u -f origin master
-    cd ..    
+    Follow: @nokia7161  ✅"     
     cd json
     git add .
     git commit -m "Crystal: LineageOS 17.1 build $(date)"
@@ -321,33 +239,11 @@ LINEAGE-SOURCE()
     . build/envsetup.sh && lunch lineage_Daredevil-userdebug && make -j32 bacon
     cd out/target/product/Daredevil
     rm -r **.json
-    Changelog=lineage-17.1-Daredevil.txt
-
-
-    echo "Generating changelog..."
-
-    for i in $(seq 14);
-    do
-    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
-    k=$(expr $i - 1)
-    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
-
-    # Line with after --- until was too long for a small ListView
-    echo '=======================' >> $Changelog;
-    echo  "     "$Until_Date       >> $Changelog;
-    echo '=======================' >> $Changelog;
-    echo >> $Changelog;
-
-    # Cycle through every repo to find commits between 2 dates
-    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
-    echo >> $Changelog;
-    done 
     wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/ddv_lineage.sh
     chmod a+x ddv_lineage.sh
     ./ddv_lineage.sh
     zipname=$(echo lineage-17.1**.zip)
     cat $zipname.json > $path/json/Daredevil/lineage.json      
-    cat lineage-17.1-Daredevil.txt > $path/changelog/Daredevil/LineageOS.txt
     sshpass -p $password rsync -avP -e ssh lineage-17.1**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/ddv-sprout/LineageOS
     cd 
     cd $path
@@ -358,19 +254,14 @@ LINEAGE-SOURCE()
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-2/development/rom-lineageos-17-0-t4001281)
-    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Daredevil/LineageOS.txt)
+    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
     📱Device: *Nokia 7.2*
     ⚡Build Version: *17.1*
     ⚡Android Version: *10.0.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *Raghu Varma*
     #ddv #nokia #los #update
-    Follow: @Nokia7262  ✅"    
-    cd changelog
-    git add .
-    git commit -m "Daredevil: LineageOS 17.1 build $(date)"
-    git push -u -f origin master
-    cd ..    
+    Follow: @Nokia7262  ✅"     
     cd json
     git add .
     git commit -m "Daredevil: LineageOS 17.1 build $(date)"
@@ -407,34 +298,12 @@ LINEAGE-SOURCE()
     build's progress at $jenkinsurl"    
     . build/envsetup.sh && lunch lineage_whyred-userdebug && make -j32 bacon
     cd out/target/product/whyred
-    rm -r **.json
-    Changelog=lineage-17.1-whyred.txt
-
-
-    echo "Generating changelog..."
-
-    for i in $(seq 14);
-    do
-    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
-    k=$(expr $i - 1)
-    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
-
-    # Line with after --- until was too long for a small ListView
-    echo '=======================' >> $Changelog;
-    echo  "     "$Until_Date       >> $Changelog;
-    echo '=======================' >> $Changelog;
-    echo >> $Changelog;
-
-    # Cycle through every repo to find commits between 2 dates
-    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
-    echo >> $Changelog;
-    done    
+    rm -r **.json  
     wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/whyred_lineage.sh
     chmod a+x whyred_lineage.sh
     ./whyred_lineage.sh
     zipname=$(echo lineage-17.1**.zip)
     cat $zipname.json > $path/json/whyred/lineage.json       
-    cat lineage-17.1-whyred.txt > $path/changelog/whyred/LineageOS.txt
     sshpass -p $password rsync -avP -e ssh lineage-17.1**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/whyred-rv/LineageOS
     cd 
     cd $path
@@ -446,19 +315,14 @@ LINEAGE-SOURCE()
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/redmi-note-5-pro/development/rom-lineageos-16-0-t3882431)
-    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/whyred/LineageOS.txt)
+    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/whyred.txt)
     📱Device: *Redmi Note 5 Pro*
     ⚡Build Version: *17.1*
     ⚡Android Version: *10.0.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *Raghu Varma*
     #whyred #nokia #los #update
-    Follow: @whyredrn5pro ✅"    
-    cd changelog
-    git add .
-    git commit -m "Whyred: LineageOS 17.1 build $(date)"
-    git push -u -f origin master
-    cd ..    
+    Follow: @whyredrn5pro ✅"      
     cd json
     git add .
     git commit -m "Whyred: LineageOS 17.1 build $(date)"
@@ -472,7 +336,6 @@ PE-SOURCE()
     wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/pixel.jpg
     wget https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/crossdevelopment/changelog.txt
-    git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog  
     git clone https://$gitpassword@github.com/RaghuVarma331/Json-Tracker.git json
     git clone https://github.com/RaghuVarma331/prebuilt_kernels.git -b ten prebuilts    
     mkdir pe
@@ -528,33 +391,11 @@ PE-SOURCE()
     . build/envsetup.sh && lunch aosp_Dragon-userdebug && make -j32 bacon
     cd out/target/product/Dragon
     rm -r **.json
-    Changelog=Pixel-Dragon.txt
-
-
-    echo "Generating changelog..."
-
-    for i in $(seq 14);
-    do
-    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
-    k=$(expr $i - 1)
-    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
-
-    # Line with after --- until was too long for a small ListView
-    echo '=======================' >> $Changelog;
-    echo  "     "$Until_Date       >> $Changelog;
-    echo '=======================' >> $Changelog;
-    echo >> $Changelog;
-
-    # Cycle through every repo to find commits between 2 dates
-    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
-    echo >> $Changelog;
-    done
     wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/drg_pe.sh
     chmod a+x drg_pe.sh
     ./drg_pe.sh
     zipname=$(echo PixelExperience**.zip)
     cat $zipname.json > $path/json/Dragon/pixel.json       
-    cat Pixel-Dragon.txt > $path/changelog/Dragon/PixelExperience.txt
     sshpass -p $password rsync -avP -e ssh PixelExperience**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/PixelExperience
     cd 
     cd $path
@@ -565,7 +406,7 @@ PE-SOURCE()
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-6-1-plus/development/rom-pixel-experience-t3985853)
-    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Dragon/PixelExperience.txt)
+    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
     📱Device: *Nokia 6.1 Plus*
     ⚡Build Version: *Ten*
     ⚡Android Version: *10.0.0*
@@ -573,11 +414,6 @@ PE-SOURCE()
     👤 By: *Raghu Varma*
     #drg #nokia #pe #update
     Follow:  @Nokia6plusofficial ✅" 
-    cd changelog
-    git add .
-    git commit -m "Dragon: PixelExperience 10.0 build $(date)"
-    git push -u -f origin master
-    cd ..
     cd json
     git add .
     git commit -m "Dragon: PixelExperience 10.0 build $(date)"
@@ -604,33 +440,11 @@ PE-SOURCE()
     . build/envsetup.sh && lunch aosp_Onyx-userdebug && make -j32 bacon
     cd out/target/product/Onyx
     rm -r **.json
-    Changelog=Pixel-Onyx.txt
-
-
-    echo "Generating changelog..."
-
-    for i in $(seq 14);
-    do
-    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
-    k=$(expr $i - 1)
-    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
-
-    # Line with after --- until was too long for a small ListView
-    echo '=======================' >> $Changelog;
-    echo  "     "$Until_Date       >> $Changelog;
-    echo '=======================' >> $Changelog;
-    echo >> $Changelog;
-
-    # Cycle through every repo to find commits between 2 dates
-    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
-    echo >> $Changelog;
-    done
     wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/b2n_pe.sh
     chmod a+x b2n_pe.sh
     ./b2n_pe.sh
     zipname=$(echo PixelExperience**.zip)
     cat $zipname.json > $path/json/Onyx/pixel.json      
-    cat Pixel-Onyx.txt > $path/changelog/Onyx/PixelExperience.txt
     sshpass -p $password rsync -avP -e ssh PixelExperience**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/PixelExperience
     cd 
     cd $path
@@ -641,19 +455,14 @@ PE-SOURCE()
     $(date)*
      
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/rom-pixel-experience-t3992063)
-    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Onyx/PixelExperience.txt)
+    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
     📱Device: *Nokia 7 Plus*
     ⚡Build Version: *Ten*
     ⚡Android Version: *10.0.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *Raghu Varma*
     #b2n #nokia #pe #update
-    Follow: @Nokia7plusOfficial ✅"     
-    cd changelog
-    git add .
-    git commit -m "Onyx: PixelExperience 10.0 build $(date)"
-    git push -u -f origin master
-    cd ..    
+    Follow: @Nokia7plusOfficial ✅"        
     cd json
     git add .
     git commit -m "Onyx: PixelExperience 10.0 build $(date)"
@@ -680,33 +489,11 @@ PE-SOURCE()
     . build/envsetup.sh && lunch aosp_Crystal-userdebug && make -j32 bacon
     cd out/target/product/Crystal
     rm -r **.json
-    Changelog=Pixel-Crystal.txt
-
-
-    echo "Generating changelog..."
-
-    for i in $(seq 14);
-    do
-    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
-    k=$(expr $i - 1)
-    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
-
-    # Line with after --- until was too long for a small ListView
-    echo '=======================' >> $Changelog;
-    echo  "     "$Until_Date       >> $Changelog;
-    echo '=======================' >> $Changelog;
-    echo >> $Changelog;
-
-    # Cycle through every repo to find commits between 2 dates
-    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
-    echo >> $Changelog;
-    done
     wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/ctl_pe.sh
     chmod a+x ctl_pe.sh
     ./ctl_pe.sh
     zipname=$(echo PixelExperience**.zip)
     cat $zipname.json > $path/json/Crystal/pixel.json     
-    cat Pixel-Crystal.txt > $path/changelog/Crystal/PixelExperience.txt
     sshpass -p $password rsync -avP -e ssh PixelExperience**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/PixelExperience
     cd 
     cd $path
@@ -717,7 +504,7 @@ PE-SOURCE()
     $(date)*
      
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-1/development/rom-pixel-experience-t4019933)
-    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Crystal/PixelExperience.txt)
+    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
     📱Device: *Nokia 7.1*
     ⚡Build Version: *Ten*
     ⚡Android Version: *10.0.0*
@@ -725,11 +512,6 @@ PE-SOURCE()
     👤 By: *Raghu Varma*
     #ctl #nokia #pe #update
     Follow: @nokia7161 ✅"     
-    cd changelog
-    git add .
-    git commit -m "Crystal: PixelExperience 10.0 build $(date)"
-    git push -u -f origin master
-    cd .. 
     cd json
     git add .
     git commit -m "Crystal: PixelExperience 10.0 build $(date)"
@@ -762,33 +544,11 @@ PE-SOURCE()
     . build/envsetup.sh && lunch aosp_Daredevil-userdebug && make -j32 bacon
     cd out/target/product/Daredevil
     rm -r **.json
-    Changelog=Pixel-Daredevil.txt
-
-
-    echo "Generating changelog..."
-
-    for i in $(seq 14);
-    do
-    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
-    k=$(expr $i - 1)
-    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
-
-    # Line with after --- until was too long for a small ListView
-    echo '=======================' >> $Changelog;
-    echo  "     "$Until_Date       >> $Changelog;
-    echo '=======================' >> $Changelog;
-    echo >> $Changelog;
-
-    # Cycle through every repo to find commits between 2 dates
-    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
-    echo >> $Changelog;
-    done
     wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/ddv_pe.sh
     chmod a+x ddv_pe.sh
     ./ddv_pe.sh
     zipname=$(echo PixelExperience**.zip)
     cat $zipname.json > $path/json/Daredevil/pixel.json     
-    cat Pixel-Daredevil.txt > $path/changelog/Daredevil/PixelExperience.txt
     sshpass -p $password rsync -avP -e ssh PixelExperience**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/ddv-sprout/PixelExperience
     cd 
     cd $path
@@ -799,7 +559,7 @@ PE-SOURCE()
     $(date)*
      
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-2/development/rom-pixel-experience-t4077103)
-    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Daredevil/PixelExperience.txt)
+    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
     📱Device: *Nokia 7.2*
     ⚡Build Version: *Ten*
     ⚡Android Version: *10.0.0*
@@ -807,11 +567,6 @@ PE-SOURCE()
     👤 By: *Raghu Varma*
     #ddv #nokia #pe #update
     Follow: @Nokia7262 ✅"     
-    cd changelog
-    git add .
-    git commit -m "Daredevil: PixelExperience 10.0 build $(date)"
-    git push -u -f origin master
-    cd .. 
     cd json
     git add .
     git commit -m "Daredevil: PixelExperience 10.0 build $(date)"
@@ -827,7 +582,6 @@ EVOX-SOURCE()
     wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/evox.png
     wget https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/crossdevelopment/changelog.txt
-    git clone https://$gitpassword@github.com/RaghuVarma331/changelogs.git changelog    
     git clone https://$gitpassword@github.com/RaghuVarma331/Json-Tracker.git json 
     git clone https://github.com/RaghuVarma331/prebuilt_kernels.git -b ten prebuilts    
     mkdir evo
@@ -887,33 +641,11 @@ EVOX-SOURCE()
     . build/envsetup.sh && lunch aosp_Dragon-userdebug && make -j32 bacon
     cd out/target/product/Dragon
     rm -r **.json
-    Changelog=Evox-Dragon.txt
-
-
-    echo "Generating changelog..."
-
-    for i in $(seq 14);
-    do
-    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
-    k=$(expr $i - 1)
-    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
-
-    # Line with after --- until was too long for a small ListView
-    echo '=======================' >> $Changelog;
-    echo  "     "$Until_Date       >> $Changelog;
-    echo '=======================' >> $Changelog;
-    echo >> $Changelog;
-
-    # Cycle through every repo to find commits between 2 dates
-    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
-    echo >> $Changelog;
-    done
     wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/drg_evox.sh
     chmod a+x drg_evox.sh
     ./drg_evox.sh
     zipname=$(echo EvolutionX**.zip)
     cat $zipname.json > $path/json/Dragon/evox.json     
-    cat Evox-Dragon.txt > $path/changelog/Dragon/evolutionx.txt
     sshpass -p $password rsync -avP -e ssh EvolutionX**.zip       raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/EvolutionX
     cd 
     cd $path
@@ -924,19 +656,14 @@ EVOX-SOURCE()
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-6-1-plus/development/rom-evolution-x-3-3-t4011589)
-    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Dragon/evolutionx.txt)
+    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
     📱Device: *Nokia 6.1 Plus*
     ⚡Build Version: *$evoxversion*
     ⚡Android Version: *10.0.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *Raghu Varma*
     #drg #nokia #evox #update
-    Follow:  @Nokia6plusofficial ✅" 
-    cd changelog
-    git add .
-    git commit -m "Dragon: Evolution-X 10.0 build $(date)"
-    git push -u -f origin master
-    cd ..    
+    Follow:  @Nokia6plusofficial ✅"  
     cd json
     git add .
     git commit -m "Dragon: Evolution-X 10.0 build $(date)"
@@ -963,32 +690,11 @@ EVOX-SOURCE()
     . build/envsetup.sh && lunch aosp_Onyx-userdebug && make -j32 bacon
     cd out/target/product/Onyx
     rm -r **.json
-    Changelog=Evox-Onyx.txt
-
-    echo "Generating changelog..."
-
-    for i in $(seq 14);
-    do
-    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
-    k=$(expr $i - 1)
-    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
-
-    # Line with after --- until was too long for a small ListView
-    echo '=======================' >> $Changelog;
-    echo  "     "$Until_Date       >> $Changelog;
-    echo '=======================' >> $Changelog;
-    echo >> $Changelog;
-
-    # Cycle through every repo to find commits between 2 dates
-    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
-    echo >> $Changelog;
-    done
     wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/b2n_evox.sh
     chmod a+x b2n_evox.sh
     ./b2n_evox.sh
     zipname=$(echo EvolutionX**.zip)
     cat $zipname.json > $path/json/Onyx/evox.json     
-    cat Evox-Onyx.txt > $path/changelog/Onyx/evolutionx.txt
     sshpass -p $password rsync -avP -e ssh EvolutionX**.zip  raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/EvolutionX
     cd 
     cd $path
@@ -999,7 +705,7 @@ EVOX-SOURCE()
     $(date)*
      
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/rom-evolution-x-3-3-t4011603)
-    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Onyx/evolutionx.txt)
+    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
     📱Device: *Nokia 7 Plus*
     ⚡Build Version: *$evoxversion*
     ⚡Android Version: *10.0.0*
@@ -1007,11 +713,6 @@ EVOX-SOURCE()
     👤 By: *Raghu Varma*
     #b2n #nokia #evox #update
     Follow: @Nokia7plusOfficial ✅"  
-    cd changelog
-    git add .
-    git commit -m "Onyx: Evolution-X 10.0 build $(date)"
-    git push -u -f origin master
-    cd ..
     cd json
     git add .
     git commit -m "Onyx: Evolution-X 10.0 build $(date)"
@@ -1038,33 +739,11 @@ EVOX-SOURCE()
     . build/envsetup.sh && lunch aosp_Crystal-userdebug && make -j32 bacon
     cd out/target/product/Crystal
     rm -r **.json
-    Changelog=Evox-Crystal.txt
-
-
-    echo "Generating changelog..."
-
-    for i in $(seq 14);
-    do
-    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
-    k=$(expr $i - 1)
-    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
-
-    # Line with after --- until was too long for a small ListView
-    echo '=======================' >> $Changelog;
-    echo  "     "$Until_Date       >> $Changelog;
-    echo '=======================' >> $Changelog;
-    echo >> $Changelog;
-
-    # Cycle through every repo to find commits between 2 dates
-    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
-    echo >> $Changelog;
-    done
     wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/ctl_evox.sh
     chmod a+x ctl_evox.sh
     ./ctl_evox.sh
     zipname=$(echo EvolutionX**.zip)
     cat $zipname.json > $path/json/Crystal/evox.json        
-    cat Evox-Crystal.txt > $path/changelog/Crystal/evolutionx.txt
     sshpass -p $password rsync -avP -e ssh EvolutionX**.zip       raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/EvolutionX
     cd 
     cd $path
@@ -1075,19 +754,14 @@ EVOX-SOURCE()
     $(date)*
      
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-1/development/rom-evolution-x-3-5-t4020515)
-    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Crystal/evolutionx.txt)
+    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
     📱Device: *Nokia 7.1*
     ⚡Build Version: *$evoxversion*
     ⚡Android Version: *10.0.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *Raghu Varma*
     #ctl #nokia #evox #update
-    Follow: @nokia7161 ✅"  
-    cd changelog
-    git add .
-    git commit -m "Crystal: Evolution-X 10.0 build $(date)"
-    git push -u -f origin master
-    cd ..     
+    Follow: @nokia7161 ✅"      
     cd json
     git add .
     git commit -m "Crystal: Evolution-X 10.0 build $(date)"
@@ -1119,33 +793,11 @@ EVOX-SOURCE()
     . build/envsetup.sh && lunch aosp_Daredevil-userdebug && make -j32 bacon
     cd out/target/product/Daredevil
     rm -r **.json
-    Changelog=Evox-Daredevil.txt
-
-
-    echo "Generating changelog..."
-
-    for i in $(seq 14);
-    do
-    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
-    k=$(expr $i - 1)
-    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
-
-    # Line with after --- until was too long for a small ListView
-    echo '=======================' >> $Changelog;
-    echo  "     "$Until_Date       >> $Changelog;
-    echo '=======================' >> $Changelog;
-    echo >> $Changelog;
-
-    # Cycle through every repo to find commits between 2 dates
-    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
-    echo >> $Changelog;
-    done
     wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/ddv_evox.sh
     chmod a+x ddv_evox.sh
     ./ddv_evox.sh
     zipname=$(echo EvolutionX**.zip)
     cat $zipname.json > $path/json/Daredevil/evox.json        
-    cat Evox-Daredevil.txt > $path/changelog/Daredevil/evolutionx.txt
     sshpass -p $password rsync -avP -e ssh EvolutionX**.zip       raghuvarma331@frs.sourceforge.net:/home/frs/project/ddv-sprout/EvolutionX
     cd 
     cd $path
@@ -1156,19 +808,14 @@ EVOX-SOURCE()
     $(date)*
      
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-2/development/rom-evolution-x-4-1-169-t4077205)
-    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Daredevil/evolutionx.txt)
+    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
     📱Device: *Nokia 7.2*
     ⚡Build Version: *$evoxversion*
     ⚡Android Version: *10.0.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *Raghu Varma*
     #ddv #nokia #evox #update
-    Follow: @Nokia7262 ✅"  
-    cd changelog
-    git add .
-    git commit -m "Daredevil: Evolution-X 10.0 build $(date)"
-    git push -u -f origin master
-    cd ..     
+    Follow: @Nokia7262 ✅"      
     cd json
     git add .
     git commit -m "Daredevil: Evolution-X 10.0 build $(date)"
@@ -1202,32 +849,11 @@ EVOX-SOURCE()
     . build/envsetup.sh && lunch aosp_Plate2-userdebug && make -j32 bacon
     cd out/target/product/Plate2
     rm -r **.json
-    Changelog=Evox-Plate2.txt
-
-    echo "Generating changelog..."
-
-    for i in $(seq 14);
-    do
-    export After_Date=`date --date="$i days ago" +%Y/%m/%d`
-    k=$(expr $i - 1)
-    export Until_Date=`date --date="$k days ago" +%Y/%m/%d`
-
-    # Line with after --- until was too long for a small ListView
-    echo '=======================' >> $Changelog;
-    echo  "     "$Until_Date       >> $Changelog;
-    echo '=======================' >> $Changelog;
-    echo >> $Changelog;
-
-    # Cycle through every repo to find commits between 2 dates
-    repo forall -pc 'git log --oneline --after=$After_Date --until=$Until_Date' >> $Changelog
-    echo >> $Changelog;
-    done
     wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/pl2_evox.sh
     chmod a+x pl2_evox.sh
     ./pl2_evox.sh
     zipname=$(echo EvolutionX**.zip)
     cat $zipname.json > $path/json/Plate2/evox.json     
-    cat Evox-Plate2.txt > $path/changelog/Plate2/evolutionx.txt
     sshpass -p $password rsync -avP -e ssh EvolutionX**.zip  raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/EvolutionX
     cd 
     cd $path
@@ -1239,19 +865,14 @@ EVOX-SOURCE()
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-6-2018/development/rom-evolution-x-3-3-t4011611)
-    💬 [Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/Plate2/evolutionx.txt)
+    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
     📱Device: *Nokia 6.1*
     ⚡Build Version: *$evoxversion*
     ⚡Android Version: *10.0.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *Raghu Varma*
     #pl2 #nokia #evox #update
-    Follow: @nokia7161 ✅"        
-    cd changelog
-    git add .
-    git commit -m "Plate2: Evolution-X 10.0 build $(date)"
-    git push -u -f origin master
-    cd ..   
+    Follow: @nokia7161 ✅"          
     cd json
     git add .
     git commit -m "Plate2: Evolution-X 10.0 build $(date)"
