@@ -224,7 +224,7 @@ LINEAGE-SOURCE()
     cd $path/los
     cd vendor/lineage/build/tasks
     rm -r kernel.mk
-    wget https://github.com/RaghuVarma331/vendor_lineage/raw/lineage-17.1/build/tasks/kernel.mk
+    wget https://github.com/RaghuVarma331/vendor_custom/raw/ten-los/build/tasks/kernel.mk
     cd
     cd $path/los    
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
@@ -529,7 +529,7 @@ PE-SOURCE()
     cd $path/pe
     cd vendor/aosp/build/tasks
     rm -r kernel.mk
-    wget https://github.com/RaghuVarma331/vendor_lineage/raw/lineage-17.1/build/tasks/kernel.mk      
+    wget https://github.com/RaghuVarma331/vendor_custom/raw/ten-los/build/tasks/kernel.mk
     cd
     cd $path/pe    
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
@@ -778,7 +778,7 @@ EVOX-SOURCE()
     cd $path/evo
     cd vendor/aosp/build/tasks
     rm -r kernel.mk
-    wget https://github.com/RaghuVarma331/vendor_lineage/raw/lineage-17.1/build/tasks/kernel.mk
+    wget https://github.com/RaghuVarma331/vendor_custom/raw/ten-los/build/tasks/kernel.mk
     cd
     cd $path/evo        
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
