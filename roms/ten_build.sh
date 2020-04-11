@@ -332,7 +332,6 @@ LINEAGE-SOURCE()
 
 PE-SOURCE()
 {
-    git clone https://github.com/RaghuVarma331/aux.git -b ten aux
     wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/pixel.jpg
     wget https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/crossdevelopment/changelog.txt
@@ -342,13 +341,6 @@ PE-SOURCE()
     cd pe
     echo -ne '\n' | repo init -u https://github.com/PixelExperience/manifest -b ten --depth=1
     repo sync -c --no-tags --no-clone-bundle -f --force-sync -j16
-    cat $path/aux/Camera.java > $path/pe/frameworks/base/core/java/android/hardware/Camera.java
-    cat $path/aux/CameraDevice.java > $path/pe/frameworks/base/core/java/android/hardware/camera2/CameraDevice.java
-    cat $path/aux/CameraManager.java > $path/pe/frameworks/base/core/java/android/hardware/camera2/CameraManager.java
-    cat $path/aux/CameraCaptureSessionImpl.java > $path/pe/frameworks/base/core/java/android/hardware/camera2/impl/CameraCaptureSessionImpl.java
-    cat $path/aux/CameraDeviceImpl.java > $path/pe/frameworks/base/core/java/android/hardware/camera2/impl/CameraDeviceImpl.java
-    cat $path/aux/SurfaceUtils.java > $path/pe/frameworks/base/core/java/android/hardware/camera2/utils/SurfaceUtils.java
-    cat $path/aux/android_hardware_Camera.cpp > $path/pe/frameworks/base/core/jni/android_hardware_Camera.cpp
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/aosp/config/common.mk
     rm -r packages/apps/Gallery2
     rm -r vendor/gapps
@@ -578,7 +570,6 @@ PE-SOURCE()
 
 EVOX-SOURCE()
 {
-    git clone https://github.com/RaghuVarma331/aux.git -b ten aux
     wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/evox.png
     wget https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/crossdevelopment/changelog.txt
@@ -588,20 +579,12 @@ EVOX-SOURCE()
     cd evo
     echo -ne '\n' | repo init -u https://github.com/Evolution-X/manifest -b ten --depth=1
     repo sync -c --no-tags --no-clone-bundle -f --force-sync -j16
-    cat $path/aux/Camera.java > $path/evo/frameworks/base/core/java/android/hardware/Camera.java
-    cat $path/aux/CameraDevice.java > $path/evo/frameworks/base/core/java/android/hardware/camera2/CameraDevice.java
-    cat $path/aux/CameraManager.java > $path/evo/frameworks/base/core/java/android/hardware/camera2/CameraManager.java
-    cat $path/aux/CameraCaptureSessionImpl.java > $path/evo/frameworks/base/core/java/android/hardware/camera2/impl/CameraCaptureSessionImpl.java
-    cat $path/aux/CameraDeviceImpl.java > $path/evo/frameworks/base/core/java/android/hardware/camera2/impl/CameraDeviceImpl.java
-    cat $path/aux/SurfaceUtils.java > $path/evo/frameworks/base/core/java/android/hardware/camera2/utils/SurfaceUtils.java
-    cat $path/aux/android_hardware_Camera.cpp > $path/evo/frameworks/base/core/jni/android_hardware_Camera.cpp
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/aosp/config/common.mk
     rm -r packages/apps/Gallery2
     rm -r vendor/gapps
     rm -r packages/apps/Settings
     rm -r packages/apps/Updates
     rm -r device/custom/sepolicy 
-    rm -r vendor/pixelstyle
     git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten-permissive device/nokia/Dragon 
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten-gcc --depth=1 kernel/nokia/sdm660
     git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
@@ -611,7 +594,6 @@ EVOX-SOURCE()
     git clone https://github.com/RaghuVarma331/Os_Updates.git -b pixel-ten packages/apps/Os_Updates          
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings 
     git clone https://github.com/Evolution-X/packages_apps_Settings.git -b ten packages/apps/Settings
-    git clone https://github.com/RaghuVarma331/vendor_pixelstyle.git -b ten vendor/pixelstyle    
     cd packages/apps/Settings    
     git remote add main https://github.com/RaghuVarma331/settings.git
     git fetch main
