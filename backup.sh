@@ -1,6 +1,7 @@
 #!/bin/bash
 
-password=
+path=/root
+password=$(cat $path/cred** | grep git | cut -d "=" -f 2)
 cd
 git clone https://$password@github.com/RaghuVarma331/scripts-backup backup
 cd backup
