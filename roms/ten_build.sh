@@ -101,8 +101,10 @@ LINEAGE-SOURCE()
     
     $(date)*
     
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-6-1-plus/development/beta-lineageos-17-0-t3985367)
+    ⬇️ [Download Rom](https://forum.xda-developers.com/nokia-6-1-plus/development/beta-lineageos-17-0-t3985367)
+    ⬇️ [Download Vendor](https://forum.xda-developers.com/nokia-6-1-plus/development/vendor-drg-drgsprout-treble-gsi-vendor-t4040201)
     💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
+    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 6.1 Plus*
     ⚡Build Version: *17.1* 
     ⚡Android Version: *10.0.0*
@@ -150,8 +152,10 @@ LINEAGE-SOURCE()
     
     $(date)*
     
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/rom-lineageos-17-0-t3993445)
+    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-7-plus/development/rom-lineageos-17-0-t3993445)
+    ⬇️ [Download Vendor](https://forum.xda-developers.com/nokia-7-plus/development/vendor-b2n-b2nsprout-treble-gsi-vendor-t4040207)
     💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
+    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 7 Plus*
     ⚡Build Version: *17.1*
     ⚡Android Version: *10.0.0*
@@ -199,8 +203,10 @@ LINEAGE-SOURCE()
     
     $(date)*
     
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-1/development/rom-lineageos-17-0-t4019915)
+    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-7-1/development/rom-lineageos-17-0-t4019915)
+    ⬇️ [Download Vendor](https://forum.xda-developers.com/nokia-7-1/development/vendor-ctl-ctlsprout-treble-gsi-vendor-t4040211)
     💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
+    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 7.1*
     ⚡Build Version: *17.1*
     ⚡Android Version: *10.0.0*
@@ -253,8 +259,10 @@ LINEAGE-SOURCE()
     
     $(date)*
     
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-2/development/rom-lineageos-17-0-t4001281)
+    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-7-2/development/rom-lineageos-17-0-t4001281)
+    ⬇️ [Download Vendor](https://forum.xda-developers.com/nokia-7-2/development/vendor-ddv-ddvsprout-treble-gsi-vendor-t4083095)
     💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
+    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 7.2*
     ⚡Build Version: *17.1*
     ⚡Android Version: *10.0.0*
@@ -314,7 +322,7 @@ LINEAGE-SOURCE()
     
     $(date)*
     
-    ⬇️ [Download](https://forum.xda-developers.com/redmi-note-5-pro/development/rom-lineageos-16-0-t3882431)
+    ⬇️ [Download ROM](https://forum.xda-developers.com/redmi-note-5-pro/development/rom-lineageos-16-0-t3882431)
     💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/whyred.txt)
     📱Device: *Redmi Note 5 Pro*
     ⚡Build Version: *17.1*
@@ -397,8 +405,10 @@ PE-SOURCE()
     
     $(date)*
     
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-6-1-plus/development/rom-pixel-experience-t3985853)
+    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-6-1-plus/development/rom-pixel-experience-t3985853)
+    ⬇️ [Download Vendor](https://forum.xda-developers.com/nokia-6-1-plus/development/vendor-drg-drgsprout-treble-gsi-vendor-t4040201)
     💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
+    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 6.1 Plus*
     ⚡Build Version: *Ten*
     ⚡Android Version: *10.0.0*
@@ -446,8 +456,10 @@ PE-SOURCE()
     
     $(date)*
      
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/rom-pixel-experience-t3992063)
+    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-7-plus/development/rom-pixel-experience-t3992063)
+    ⬇️ [Download Vendor](https://forum.xda-developers.com/nokia-7-plus/development/vendor-b2n-b2nsprout-treble-gsi-vendor-t4040207)
     💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
+    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 7 Plus*
     ⚡Build Version: *Ten*
     ⚡Android Version: *10.0.0*
@@ -495,8 +507,10 @@ PE-SOURCE()
     
     $(date)*
      
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-1/development/rom-pixel-experience-t4019933)
+    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-7-1/development/rom-pixel-experience-t4019933)
+    ⬇️ [Download Vendor](https://forum.xda-developers.com/nokia-7-1/development/vendor-ctl-ctlsprout-treble-gsi-vendor-t4040211)
     💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
+    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 7.1*
     ⚡Build Version: *Ten*
     ⚡Android Version: *10.0.0*
@@ -550,8 +564,10 @@ PE-SOURCE()
     
     $(date)*
      
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-2/development/rom-pixel-experience-t4077103)
+    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-7-2/development/rom-pixel-experience-t4077103)
+    ⬇️ [Download Vendor](https://forum.xda-developers.com/nokia-7-2/development/vendor-ddv-ddvsprout-treble-gsi-vendor-t4083095)
     💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
+    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 7.2*
     ⚡Build Version: *Ten*
     ⚡Android Version: *10.0.0*
@@ -637,8 +653,10 @@ EVOX-SOURCE()
     
     $(date)*
     
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-6-1-plus/development/rom-evolution-x-3-3-t4011589)
+    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-6-1-plus/development/rom-evolution-x-3-3-t4011589)
+    ⬇️ [Download Vendor](https://forum.xda-developers.com/nokia-6-1-plus/development/vendor-drg-drgsprout-treble-gsi-vendor-t4040201)
     💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
+    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 6.1 Plus*
     ⚡Build Version: *$evoxversion*
     ⚡Android Version: *10.0.0*
@@ -686,8 +704,10 @@ EVOX-SOURCE()
     
     $(date)*
      
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/rom-evolution-x-3-3-t4011603)
+    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-7-plus/development/rom-evolution-x-3-3-t4011603)
+    ⬇️ [Download Vendor](https://forum.xda-developers.com/nokia-7-plus/development/vendor-b2n-b2nsprout-treble-gsi-vendor-t4040207)
     💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
+    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 7 Plus*
     ⚡Build Version: *$evoxversion*
     ⚡Android Version: *10.0.0*
@@ -735,8 +755,10 @@ EVOX-SOURCE()
     
     $(date)*
      
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-1/development/rom-evolution-x-3-5-t4020515)
+    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-7-1/development/rom-evolution-x-3-5-t4020515)
+    ⬇️ [Download Vendor](https://forum.xda-developers.com/nokia-7-1/development/vendor-ctl-ctlsprout-treble-gsi-vendor-t4040211)
     💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
+    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 7.1*
     ⚡Build Version: *$evoxversion*
     ⚡Android Version: *10.0.0*
@@ -789,8 +811,10 @@ EVOX-SOURCE()
     
     $(date)*
      
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-7-2/development/rom-evolution-x-4-1-169-t4077205)
+    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-7-2/development/rom-evolution-x-4-1-169-t4077205)
+    ⬇️ [Download Vendor](https://forum.xda-developers.com/nokia-7-2/development/vendor-ddv-ddvsprout-treble-gsi-vendor-t4083095)
     💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
+    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 7.2*
     ⚡Build Version: *$evoxversion*
     ⚡Android Version: *10.0.0*
@@ -846,8 +870,10 @@ EVOX-SOURCE()
     
     $(date)*
     
-    ⬇️ [Download](https://forum.xda-developers.com/nokia-6-2018/development/rom-evolution-x-3-3-t4011611)
+    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-6-2018/development/rom-evolution-x-3-3-t4011611)
+    ⬇️ [Download Vendor](https://forum.xda-developers.com/nokia-6-2018/development/vendor-pl2-pl2sprout-treble-gsi-vendor-t4040213)
     💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
+    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 6.1*
     ⚡Build Version: *$evoxversion*
     ⚡Android Version: *10.0.0*
