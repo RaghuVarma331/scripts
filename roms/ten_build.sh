@@ -57,7 +57,7 @@ LINEAGE-SOURCE()
     rm -r packages/apps/Updater    
     git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten-enforcing device/nokia/Dragon 
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten-gcc --depth=1 kernel/nokia/sdm660
-    git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
+    git clone https://github.com/RaghuVarma331/android_vendor_nokia.git -b ten vendor/nokia
     git clone https://gitlab.com/RaghuVarma331/vendor_gapps.git -b ten --depth=1 vendor/gapps
     git clone https://github.com/RaghuVarma331/device_custom_sepolicy.git -b los-ten device/lineage/sepolicy
     git clone https://github.com/RaghuVarma331/Os_Updates.git -b pixel-ten packages/apps/Os_Updates    
@@ -349,7 +349,7 @@ PE-SOURCE()
     rm -r device/custom/sepolicy   
     git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten-enforcing device/nokia/Dragon 
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten-gcc --depth=1 kernel/nokia/sdm660
-    git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
+    git clone https://github.com/RaghuVarma331/android_vendor_nokia.git -b ten vendor/nokia
     git clone https://gitlab.com/RaghuVarma331/vendor_gapps.git -b ten --depth=1 vendor/gapps
     git clone https://github.com/RaghuVarma331/device_custom_sepolicy.git -b pe-ten device/custom/sepolicy
     git clone https://github.com/RaghuVarma331/android_packages_apps_Gallery2.git -b lineage-17.1 packages/apps/Gallery2
@@ -587,7 +587,7 @@ EVOX-SOURCE()
     rm -r device/custom/sepolicy 
     git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten-permissive device/nokia/Dragon 
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten-gcc --depth=1 kernel/nokia/sdm660
-    git clone https://gitlab.com/RaghuVarma331/vendor_nokia.git -b ten --depth=1 vendor/nokia
+    git clone https://github.com/RaghuVarma331/android_vendor_nokia.git -b ten vendor/nokia
     git clone https://gitlab.com/RaghuVarma331/vendor_gapps.git -b ten --depth=1 vendor/gapps
     git clone https://github.com/RaghuVarma331/device_custom_sepolicy.git -b pe-ten device/custom/sepolicy
     git clone https://github.com/RaghuVarma331/android_packages_apps_Gallery2.git -b lineage-17.1 packages/apps/Gallery2
