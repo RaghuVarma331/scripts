@@ -41,6 +41,7 @@ gitpassword=$(cat $path/cred** | grep git | cut -d "=" -f 2)
 
 LINEAGE-SOURCE()
 {
+    git clone https://$gitpassword@github.com/RaghuVarma331/Keys keys
     wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/lineage.jpg
     wget https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/crossdevelopment/changelog.txt
@@ -340,6 +341,7 @@ LINEAGE-SOURCE()
 
 PE-SOURCE()
 {
+    git clone https://$gitpassword@github.com/RaghuVarma331/Keys keys
     wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/pixel.jpg
     wget https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/crossdevelopment/changelog.txt
@@ -586,6 +588,7 @@ PE-SOURCE()
 
 EVOX-SOURCE()
 {
+    git clone https://$gitpassword@github.com/RaghuVarma331/Keys keys
     wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/evox.png
     wget https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/crossdevelopment/changelog.txt
