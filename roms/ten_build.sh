@@ -84,7 +84,8 @@ LINEAGE-SOURCE()
     👤 By: Raghu Varma
 
     build's progress at $jenkinsurl"  
-    . build/envsetup.sh && lunch lineage_Dragon-user && make target-files-package otatools
+    export SELINUX_IGNORE_NEVERALLOWS=true
+    . build/envsetup.sh && lunch lineage_Dragon-userdebug && make target-files-package otatools
     romname=$(cat $path/los/out/target/product/Dragon/system/build.prop | grep ro.lineage.version | cut -d "=" -f 2)
     ./build/tools/releasetools/sign_target_files_apks -o -d $path/keys $path/los/out/target/product/Dragon/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/los/out/target/product/Dragon/signed-target-files.zip
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/los/out/target/product/Dragon/signed-target-files.zip $path/los/out/target/product/Dragon/lineage-$romname.zip
@@ -138,7 +139,8 @@ LINEAGE-SOURCE()
     👤 By: Raghu Varma
 
     build's progress at $jenkinsurl"      
-    . build/envsetup.sh && lunch lineage_Onyx-user && make target-files-package otatools
+    export SELINUX_IGNORE_NEVERALLOWS=true
+    . build/envsetup.sh && lunch lineage_Onyx-userdebug && make target-files-package otatools
     romname=$(cat $path/los/out/target/product/Onyx/system/build.prop | grep ro.lineage.version | cut -d "=" -f 2)
     ./build/tools/releasetools/sign_target_files_apks -o -d $path/keys $path/los/out/target/product/Onyx/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/los/out/target/product/Onyx/signed-target-files.zip
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/los/out/target/product/Onyx/signed-target-files.zip $path/los/out/target/product/Onyx/lineage-$romname.zip
@@ -191,8 +193,9 @@ LINEAGE-SOURCE()
     
     👤 By: Raghu Varma
 
-    build's progress at $jenkinsurl"      
-    . build/envsetup.sh && lunch lineage_Crystal-user && make target-files-package otatools
+    build's progress at $jenkinsurl"    
+    export SELINUX_IGNORE_NEVERALLOWS=true
+    . build/envsetup.sh && lunch lineage_Crystal-userdebug && make target-files-package otatools
     romname=$(cat $path/los/out/target/product/Crystal/system/build.prop | grep ro.lineage.version | cut -d "=" -f 2)
     ./build/tools/releasetools/sign_target_files_apks -o -d $path/keys $path/los/out/target/product/Crystal/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/los/out/target/product/Crystal/signed-target-files.zip
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/los/out/target/product/Crystal/signed-target-files.zip $path/los/out/target/product/Crystal/lineage-$romname.zip
@@ -250,8 +253,9 @@ LINEAGE-SOURCE()
     
     👤 By: Raghu Varma
 
-    build's progress at $jenkinsurl"      
-    . build/envsetup.sh && lunch lineage_Daredevil-user && make target-files-package otatools
+    build's progress at $jenkinsurl"     
+    export SELINUX_IGNORE_NEVERALLOWS=true
+    . build/envsetup.sh && lunch lineage_Daredevil-userdebug && make target-files-package otatools
     romname=$(cat $path/los/out/target/product/Daredevil/system/build.prop | grep ro.lineage.version | cut -d "=" -f 2)
     ./build/tools/releasetools/sign_target_files_apks -o -d $path/keys $path/los/out/target/product/Daredevil/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/los/out/target/product/Daredevil/signed-target-files.zip
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/los/out/target/product/Daredevil/signed-target-files.zip $path/los/out/target/product/Daredevil/lineage-$romname.zip
@@ -316,7 +320,7 @@ LINEAGE-SOURCE()
     
     👤 By: Raghu Varma
     build's progress at $jenkinsurl"    
-    . build/envsetup.sh && lunch lineage_whyred-user && make target-files-package otatools
+    . build/envsetup.sh && lunch lineage_whyred-userdebug && make target-files-package otatools
     romname=$(cat $path/los/out/target/product/whyred/system/build.prop | grep ro.lineage.version | cut -d "=" -f 2)
     ./build/tools/releasetools/sign_target_files_apks -o -d $path/keys $path/los/out/target/product/whyred/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/los/out/target/product/whyred/signed-target-files.zip
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/los/out/target/product/whyred/signed-target-files.zip $path/los/out/target/product/whyred/lineage-$romname.zip
@@ -404,7 +408,8 @@ PE-SOURCE()
     👤 By: Raghu Varma
 
     build's progress at $jenkinsurl"      
-    . build/envsetup.sh && lunch aosp_Dragon-user && make target-files-package otatools
+    export SELINUX_IGNORE_NEVERALLOWS=true
+    . build/envsetup.sh && lunch aosp_Dragon-userdebug && make target-files-package otatools
     romname=$(cat $path/pe/out/target/product/Dragon/system/build.prop | grep org.pixelexperience.version.display | cut -d "=" -f 2)
     ./build/tools/releasetools/sign_target_files_apks -o -d $path/keys $path/pe/out/target/product/Dragon/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/pe/out/target/product/Dragon/signed-target-files.zip
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/pe/out/target/product/Dragon/signed-target-files.zip $path/pe/out/target/product/Dragon/$romname.zip
@@ -458,7 +463,8 @@ PE-SOURCE()
     👤 By: Raghu Varma
 
     build's progress at $jenkinsurl"      
-    . build/envsetup.sh && lunch aosp_Onyx-user && make target-files-package otatools
+    export SELINUX_IGNORE_NEVERALLOWS=true
+    . build/envsetup.sh && lunch aosp_Onyx-userdebug && make target-files-package otatools
     romname=$(cat $path/pe/out/target/product/Onyx/system/build.prop | grep org.pixelexperience.version.display | cut -d "=" -f 2)
     ./build/tools/releasetools/sign_target_files_apks -o -d $path/keys $path/pe/out/target/product/Onyx/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/pe/out/target/product/Onyx/signed-target-files.zip
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/pe/out/target/product/Onyx/signed-target-files.zip $path/pe/out/target/product/Onyx/$romname.zip
@@ -512,7 +518,8 @@ PE-SOURCE()
     👤 By: Raghu Varma
 
     build's progress at $jenkinsurl"      
-    . build/envsetup.sh && lunch aosp_Crystal-user && make target-files-package otatools
+    export SELINUX_IGNORE_NEVERALLOWS=true
+    . build/envsetup.sh && lunch aosp_Crystal-userdebug && make target-files-package otatools
     romname=$(cat $path/pe/out/target/product/Crystal/system/build.prop | grep org.pixelexperience.version.display | cut -d "=" -f 2)
     ./build/tools/releasetools/sign_target_files_apks -o -d $path/keys $path/pe/out/target/product/Crystal/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/pe/out/target/product/Crystal/signed-target-files.zip
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/pe/out/target/product/Crystal/signed-target-files.zip $path/pe/out/target/product/Crystal/$romname.zip
@@ -571,8 +578,9 @@ PE-SOURCE()
     
     👤 By: Raghu Varma
 
-    build's progress at $jenkinsurl"      
-    . build/envsetup.sh && lunch aosp_Daredevil-user && make target-files-package otatools
+    build's progress at $jenkinsurl"  
+    export SELINUX_IGNORE_NEVERALLOWS=true
+    . build/envsetup.sh && lunch aosp_Daredevil-userdebug && make target-files-package otatools
     romname=$(cat $path/pe/out/target/product/Daredevil/system/build.prop | grep org.pixelexperience.version.display | cut -d "=" -f 2)
     ./build/tools/releasetools/sign_target_files_apks -o -d $path/keys $path/pe/out/target/product/Daredevil/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/pe/out/target/product/Daredevil/signed-target-files.zip
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/pe/out/target/product/Daredevil/signed-target-files.zip $path/pe/out/target/product/Daredevil/$romname.zip
@@ -661,8 +669,9 @@ DERP-SOURCE()
     $(date)
     
     👤 By: Raghu Varma
-    build's progress at $jenkinsurl"      
-    . build/envsetup.sh && lunch derp_Dragon-user && make target-files-package otatools
+    build's progress at $jenkinsurl"  
+    export SELINUX_IGNORE_NEVERALLOWS=true
+    . build/envsetup.sh && lunch derp_Dragon-userdebug && make target-files-package otatools
     romname=$(cat $path/derp/out/target/product/Dragon/system/etc/prop.default | grep ro.aosip.version | cut -d "=" -f 2)
     ./build/tools/releasetools/sign_target_files_apks -o -d $path/keys $path/derp/out/target/product/Dragon/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/derp/out/target/product/Dragon/signed-target-files.zip
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/derp/out/target/product/Dragon/signed-target-files.zip $path/derp/out/target/product/Dragon/DerpFest-$romname.zip
@@ -714,8 +723,9 @@ DERP-SOURCE()
     $(date)
     
     👤 By: Raghu Varma
-    build's progress at $jenkinsurl"      
-    . build/envsetup.sh && lunch derp_Onyx-user && make target-files-package otatools
+    build's progress at $jenkinsurl"    
+    export SELINUX_IGNORE_NEVERALLOWS=true
+    . build/envsetup.sh && lunch derp_Onyx-userdebug && make target-files-package otatools
     romname=$(cat $path/derp/out/target/product/Onyx/system/etc/prop.default | grep ro.aosip.version | cut -d "=" -f 2)
     ./build/tools/releasetools/sign_target_files_apks -o -d $path/keys $path/derp/out/target/product/Onyx/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/derp/out/target/product/Onyx/signed-target-files.zip
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/derp/out/target/product/Onyx/signed-target-files.zip $path/derp/out/target/product/Onyx/DerpFest-$romname.zip
@@ -767,8 +777,9 @@ DERP-SOURCE()
     $(date)
     
     👤 By: Raghu Varma
-    build's progress at $jenkinsurl"      
-    . build/envsetup.sh && lunch derp_Crystal-user && make target-files-package otatools
+    build's progress at $jenkinsurl"    
+    export SELINUX_IGNORE_NEVERALLOWS=true
+    . build/envsetup.sh && lunch derp_Crystal-userdebug && make target-files-package otatools
     romname=$(cat $path/derp/out/target/product/Crystal/system/etc/prop.default | grep ro.aosip.version | cut -d "=" -f 2)
     ./build/tools/releasetools/sign_target_files_apks -o -d $path/keys $path/derp/out/target/product/Crystal/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/derp/out/target/product/Crystal/signed-target-files.zip
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/derp/out/target/product/Crystal/signed-target-files.zip $path/derp/out/target/product/Crystal/DerpFest-$romname.zip
@@ -820,8 +831,9 @@ DERP-SOURCE()
     $(date)
     
     👤 By: Raghu Varma
-    build's progress at $jenkinsurl"      
-    . build/envsetup.sh && lunch derp_Plate2-user && make target-files-package otatools
+    build's progress at $jenkinsurl"     
+    export SELINUX_IGNORE_NEVERALLOWS=true
+    . build/envsetup.sh && lunch derp_Plate2-userdebug && make target-files-package otatools
     romname=$(cat $path/derp/out/target/product/Plate2/system/etc/prop.default | grep ro.aosip.version | cut -d "=" -f 2)
     ./build/tools/releasetools/sign_target_files_apks -o -d $path/keys $path/derp/out/target/product/Plate2/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/derp/out/target/product/Plate2/signed-target-files.zip
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/derp/out/target/product/Plate2/signed-target-files.zip $path/derp/out/target/product/Plate2/DerpFest-$romname.zip
@@ -881,7 +893,8 @@ DERP-SOURCE()
     
     👤 By: Raghu Varma
     build's progress at $jenkinsurl"      
-    . build/envsetup.sh && lunch derp_Daredevil-user && make target-files-package otatools
+    export SELINUX_IGNORE_NEVERALLOWS=true
+    . build/envsetup.sh && lunch derp_Daredevil-userdebug && make target-files-package otatools
     romname=$(cat $path/derp/out/target/product/Daredevil/system/etc/prop.default | grep ro.aosip.version | cut -d "=" -f 2)
     ./build/tools/releasetools/sign_target_files_apks -o -d $path/keys $path/derp/out/target/product/Daredevil/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/derp/out/target/product/Daredevil/signed-target-files.zip
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/derp/out/target/product/Daredevil/signed-target-files.zip $path/derp/out/target/product/Daredevil/DerpFest-$romname.zip
