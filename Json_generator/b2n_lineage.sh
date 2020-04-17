@@ -1,3 +1,7 @@
+rm -r **.md5sum
+rm -r **.json
+md5sum lineage-17.1**.zip > lineage.md5sum
+
 sourceforge=https://sourceforge.net/projects/b2n-sprout/files/LineageOS
 filename=$(echo lineage-17.1**.zip)
 datetime=$(grep ro\.build\.date\.utc system/build.prop | cut -d= -f2)

@@ -1,3 +1,7 @@
+rm -r **.md5sum
+rm -r **.json
+md5sum PixelExperience**.zip > pixel.md5sum
+
 sourceforge=https://sourceforge.net/projects/ddv-sprout/files/PixelExperience
 filename=$(echo PixelExperience**.zip)
 datetime=$(grep ro\.build\.date\.utc system/build.prop | cut -d= -f2)

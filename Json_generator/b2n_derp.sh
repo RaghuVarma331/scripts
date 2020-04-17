@@ -1,3 +1,7 @@
+rm -r **.md5sum
+rm -r **.json
+md5sum DerpFest**.zip > derp.md5sum
+
 sourceforge=https://sourceforge.net/projects/b2n-sprout/files/DerpFest
 filename=$(echo DerpFest**.zip)
 datetime=$(grep ro\.build\.date\.utc system/build.prop | cut -d= -f2)
