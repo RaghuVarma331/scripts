@@ -8,7 +8,7 @@ id=$(sha256sum $filename | awk '{ print $1 }');
 version=android-10.0
 path=/var/lib/jenkins/workspace/Raghu
 whatsNew=$(cat $path/changelog.txt)
-notification=$(echo Sofware update - New PixelExperience build is up)
+notification=$(echo Sofware update - New DerpFest build is up)
 
 echo { >> $filename.json
 echo \"version\":\"$version\", >> $filename.json
