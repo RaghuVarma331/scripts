@@ -691,7 +691,7 @@ DERP-SOURCE()
     
     $(date)*
     
-    ⬇️ [Download ROM](https://sourceforge.net/projects/drg-sprout/files/DerpFest)
+    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-6-1-plus/development/rom-aosip-derpfest-t4084447)
     ⬇️ [Download Vendor](https://forum.xda-developers.com/nokia-6-1-plus/development/vendor-drg-drgsprout-treble-gsi-vendor-t4040201)
     💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
@@ -745,7 +745,7 @@ DERP-SOURCE()
     
     $(date)*
      
-    ⬇️ [Download ROM](https://sourceforge.net/projects/b2n-sprout/files/DerpFest)
+    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-7-plus/development/rom-aosip-derpfest-t4084459)
     ⬇️ [Download Vendor](https://forum.xda-developers.com/nokia-7-plus/development/vendor-b2n-b2nsprout-treble-gsi-vendor-t4040207)
     💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
@@ -799,7 +799,7 @@ DERP-SOURCE()
     
     $(date)*
      
-    ⬇️ [Download ROM](https://sourceforge.net/projects/ctl-sprout/files/DerpFest)
+    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-7-1/development/rom-aosip-derpfest-t4084451)
     ⬇️ [Download Vendor](https://forum.xda-developers.com/nokia-7-1/development/vendor-ctl-ctlsprout-treble-gsi-vendor-t4040211)
     💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
@@ -854,8 +854,8 @@ DERP-SOURCE()
     
     $(date)*
      
-    ⬇️ [Download ROM](https://sourceforge.net/projects/pl2-sprout/files/DerpFest)
-    ⬇️ [Download Vendor](https://forum.xda-developers.com/nokia-7-1/development/vendor-ctl-ctlsprout-treble-gsi-vendor-t4040211)
+    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-6-2018/development/rom-aosip-derpfest-t4084463)
+    ⬇️ [Download Vendor](https://forum.xda-developers.com/nokia-6-2018/development/vendor-pl2-pl2sprout-treble-gsi-vendor-t4040213)
     💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 6.1*
@@ -914,7 +914,7 @@ DERP-SOURCE()
     
     $(date)*
      
-    ⬇️ [Download ROM](https://sourceforge.net/projects/ddv-sprout/files/DerpFest)
+    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-7-2/development/rom-aosip-derpfest-t4084471)
     ⬇️ [Download Vendor](https://forum.xda-developers.com/nokia-7-2/development/vendor-ddv-ddvsprout-treble-gsi-vendor-t4083095)
     💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
