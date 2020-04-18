@@ -648,10 +648,8 @@ DERP-SOURCE()
     cd packages/apps/Settings    
     git remote add main https://github.com/RaghuVarma331/settings.git
     git fetch main
-    git cherry-pick d0dede567168181d4f0035f61cf12f2996445be7
-    sed -i "/<<<<<<< HEAD/d" res/xml/firmware_version.xml
-    sed -i "/=======/d" res/xml/firmware_version.xml
-    sed -i "/>>>>>>>/d" res/xml/firmware_version.xml
+    git cherry-pick 7e115712a20e3494a54cacc4ec71b982158e2af1
+    git cherry-pick f997d458211f0f7a9c1d58be43b7a08327785287
     cd src/com/android/settings/system
     rm -r SystemUpdatePreferenceController.java
     wget https://raw.githubusercontent.com/RaghuVarma331/settings/ten/src/com/android/settings/system/SystemUpdatePreferenceController.java
