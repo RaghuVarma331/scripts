@@ -54,6 +54,13 @@ LINEAGE-SOURCE()
     rm -r device/lineage/sepolicy
     rm -r packages/apps/Settings
     rm -r packages/apps/Updater    
+    rm -r system/sepolicy
+    git clone https://github.com/LineageOS/android_system_sepolicy.git -b lineage-17.1 system/sepolicy 
+    cd system/sepolicy 
+    git remote add ss https://github.com/RaghuVarma331/android_system_sepolicy.git 
+    git fetch ss
+    git cherry-pick 242d14d7274dc8aed7ae91d77365aee25910cbf6
+    cd $path/los
     git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon 
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten-gcc --depth=1 kernel/nokia/sdm660
     git clone https://github.com/RaghuVarma331/android_vendor_nokia.git -b ten vendor/nokia
@@ -298,6 +305,11 @@ LINEAGE-SOURCE()
     rm -r out/target/product/**
     rm -r device/lineage/sepolicy
     git clone https://github.com/LineageOS/android_device_lineage_sepolicy.git -b lineage-17.1 device/lineage/sepolicy
+    cd device/lineage/sepolicy
+    git remote add ls https://github.com/RaghuVarma331/device_custom_sepolicy
+    git fetch ls
+    git cherry-pick 126467d47adbcca911ac54957c89dcfd5d3b0f50
+    cd $path/los
     git clone https://github.com/RaghuVarma331/android_device_xiaomi_whyred.git -b lineage-17.1 device/xiaomi/whyred
     git clone https://github.com/RaghuVarma331/android_kernel_xiaomi_whyred.git -b lineage-17.1 --depth=1 kernel/xiaomi/whyred
     git clone https://github.com/RaghuVarma331/vendor_xiaomi_whyred.git -b lineage-17.1 vendor/xiaomi/whyred
@@ -374,6 +386,13 @@ PE-SOURCE()
     rm -r packages/apps/Settings
     rm -r packages/apps/Updates
     rm -r device/custom/sepolicy   
+    rm -r system/sepolicy
+    git clone https://github.com/PixelExperience/system_sepolicy.git -b ten system/sepolicy
+    cd system/sepolicy
+    git remote add ss https://github.com/RaghuVarma331/android_system_sepolicy.git 
+    git fetch ss
+    git cherry-pick 242d14d7274dc8aed7ae91d77365aee25910cbf6  
+    cd $path/pe
     git clone https://github.com/RaghuVarma331/android_device_nokia_Dragon.git -b ten device/nokia/Dragon 
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten-gcc --depth=1 kernel/nokia/sdm660
     git clone https://github.com/RaghuVarma331/android_vendor_nokia.git -b ten vendor/nokia
