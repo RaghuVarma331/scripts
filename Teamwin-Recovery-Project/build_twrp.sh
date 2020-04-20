@@ -22,7 +22,7 @@ clear
 
 path=/var/lib/jenkins/workspace/Raghu
 twrpsp='2020-04-05'
-
+securitypatch=2020-04-05
 
 # credentials
 

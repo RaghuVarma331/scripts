@@ -22,7 +22,6 @@ clear
 
 path=/var/lib/jenkins/workspace/Raghu
 securitypatch=2020-04-05
-oxversion=v-7
 tag=4.4.194
 jenkinsurl=
 

@@ -13,7 +13,7 @@
 
      For setup scripts & stuff  go through readme in setup directory
 
-     For roms scripts & stuff go through readme in roms directory
+     For roms scripts & stuff go through readme in Custom-Roms directory
 
 ### Support
 
