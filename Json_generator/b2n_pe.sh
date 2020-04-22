@@ -10,7 +10,7 @@ url=$sourceforge/$filename/download
 filehash=$(cat **.md5sum | cut -d' ' -f1)
 id=$(sha256sum $filename | awk '{ print $1 }');
 version=android-10.0
-path=/var/lib/jenkins/workspace/Raghu
+path=/mnt/raghu/jenkins/workspace/PixelExperience
 whatsNew=$(cat $path/changelog.txt)
 notification=$(echo Sofware update - New PixelExperience build is up)
 
