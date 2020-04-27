@@ -35,6 +35,28 @@ gitpassword=$(cat $path/cred** | grep git | cut -d "=" -f 2)
 
 # Init Methods
 
+TOOLS_SETUP() 
+{
+        sudo apt-get update 
+        echo -ne '\n' | sudo apt-get upgrade
+        echo -ne '\n' | sudo apt-get install git ccache schedtool lzop bison gperf build-essential zip curl zlib1g-dev g++-multilib python-networkx libxml2-utils bzip2 libbz2-dev libghc-bzlib-dev squashfs-tools pngcrush liblz4-tool optipng libc6-dev-i386 gcc-multilib libssl-dev gnupg flex lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev xsltproc unzip python-pip python-dev libffi-dev libxml2-dev libxslt1-dev libjpeg8-dev openjdk-8-jdk imagemagick device-tree-compiler mailutils-mh expect python3-requests python-requests android-tools-fsutils sshpass
+        sudo swapon --show
+        sudo fallocate -l 20G /swapfile
+        ls -lh /swapfile
+        sudo chmod 600 /swapfile
+        sudo mkswap /swapfile
+        sudo swapon /swapfile
+        sudo swapon --show
+        sudo cp /etc/fstab /etc/fstab.bak
+        echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+	git config --global user.email "raghuvarma331@gmail.com"
+	git config --global user.name "RaghuVarma331"
+	mkdir -p ~/.ssh  &&  echo "Host *" > ~/.ssh/config && echo " StrictHostKeyChecking no" >> ~/.ssh/config
+	echo "# Allow Jenkins" >> /etc/sudoers && echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+} &> /dev/null
+
+
+
 
 REPO()
 {
@@ -42,7 +64,7 @@ REPO()
        PATH=$path/bin:$PATH
        curl https://storage.googleapis.com/git-repo-downloads/repo > $path/bin/repo
        chmod a+x $path/bin/repo
-}
+} &> /dev/null
 
 
 
@@ -57,18 +79,17 @@ TWRP-P-SOURCE()
     mkdir CTL_sprout
     mkdir twrp
     cd twrp
-    repo init -u git://github.com/omnirom/android.git -b android-9.0 --depth=1
-    repo sync -c --no-tags --no-clone-bundle -f --force-sync -j16
+    echo -ne '\n' | repo init -u git://github.com/LineageOS/android.git -b lineage-16.0 --depth=1
+    repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
     rm -r bootable/recovery
+    rm -r system/core
+    git clone https://github.com/RaghuVarma331/android_system_core.git -b android-9.0 system/core
     git clone https://github.com/RaghuVarma331/android_bootable_recovery.git -b android-9.0 bootable/recovery
-    git clone https://github.com/TeamWin/external_magisk-prebuilt -b master external/magisk-prebuilt
-    git clone https://github.com/TeamWin/android_external_busybox.git -b android-9.0 external/busybox
-    git clone https://github.com/omnirom/android_external_toybox.git -b android-9.0 external/toybox
-    git clone https://github.com/omnirom/android_vendor_qcom_opensource_commonsys.git -b android-9.0 vendor/qcom/opensource/commonsys
+    git clone https://github.com/RaghuVarma331/external_magisk-prebuilt.git -b master external/magisk-prebuilt
     git clone https://github.com/RaghuVarma331/android_device_nokia_DRG_sprout-TWRP.git -b android-9.0 device/nokia/DRG_sprout
     git clone https://github.com/RaghuVarma331/android_device_nokia_B2N_sprout-TWRP.git -b android-9.0 device/nokia/B2N_sprout
-    . build/envsetup.sh && lunch omni_DRG_sprout-eng && make -j32 recoveryimage
-    . build/envsetup.sh && lunch omni_B2N_sprout-eng && make -j32 recoveryimage	
+    . build/envsetup.sh && lunch lineage_DRG_sprout-eng && make -j32 recoveryimage
+    . build/envsetup.sh && lunch lineage_B2N_sprout-eng && make -j32 recoveryimage	
     cd out/target/product/DRG_sprout
     mv recovery.img twrp-3.3.1-0-DRG_sprout-9.0-$(date +"%Y%m%d").img
     cp -r twrp-3.3.1-0-DRG_sprout-9.0-$(date +"%Y%m%d").img $path/DRG_sprout
@@ -82,7 +103,7 @@ TWRP-P-SOURCE()
     rm -r device/nokia
     rm -r out
     git clone https://github.com/RaghuVarma331/android_device_nokia_B2N_sprout-TWRP.git -b android-9.0-NB device/nokia/B2N_sprout
-    . build/envsetup.sh && lunch omni_B2N_sprout-eng && make -j32 recoveryimage	
+    . build/envsetup.sh && lunch lineage_B2N_sprout-eng && make -j32 recoveryimage	
     cd out/target/product/B2N_sprout
     mv recovery.img twrp-3.3.1-0-B2N_sprout-POB-9.0-$(date +"%Y%m%d").img
     cp -r twrp-3.3.1-0-B2N_sprout-POB-9.0-$(date +"%Y%m%d").img $path/B2N_sprout
@@ -100,14 +121,14 @@ TWRP-Q-SOURCE()
     git clone https://github.com/RaghuVarma331/android_device_nokia_B2N_sprout-TWRP.git -b android-10.0 device/nokia/B2N_sprout
     git clone https://github.com/RaghuVarma331/android_device_nokia_CTL_sprout-TWRP.git -b android-10.0 device/nokia/CTL_sprout
     git clone https://github.com/RaghuVarma331/android_device_nokia_DDV_sprout-TWRP.git -b android-10.0 device/nokia/DDV_sprout
-    sed -i "91i PLATFORM_SECURITY_PATCH := $twrpsp" device/nokia/DDV_sprout/BoardConfig.mk
+    sed -i "90i PLATFORM_SECURITY_PATCH := $twrpsp" device/nokia/DDV_sprout/BoardConfig.mk
     git clone https://github.com/RaghuVarma331/android_device_nokia_SLD_sprout-TWRP.git -b android-10.0 device/nokia/SLD_sprout
-    sed -i "91i PLATFORM_SECURITY_PATCH := $twrpsp" device/nokia/SLD_sprout/BoardConfig.mk    
-    . build/envsetup.sh && lunch omni_DRG_sprout-eng && make -j32 recoveryimage	
-    . build/envsetup.sh && lunch omni_B2N_sprout-eng && make -j32 recoveryimage
-    . build/envsetup.sh && lunch omni_CTL_sprout-eng && make -j32 recoveryimage
-    . build/envsetup.sh && lunch omni_SLD_sprout-eng && make -j32 recoveryimage	
-    . build/envsetup.sh && lunch omni_DDV_sprout-eng && make -j32 recoveryimage    
+    sed -i "90i PLATFORM_SECURITY_PATCH := $twrpsp" device/nokia/SLD_sprout/BoardConfig.mk    
+    . build/envsetup.sh && lunch lineage_DRG_sprout-eng && make -j32 recoveryimage	
+    . build/envsetup.sh && lunch lineage_B2N_sprout-eng && make -j32 recoveryimage
+    . build/envsetup.sh && lunch lineage_CTL_sprout-eng && make -j32 recoveryimage
+    . build/envsetup.sh && lunch lineage_SLD_sprout-eng && make -j32 recoveryimage	
+    . build/envsetup.sh && lunch lineage_DDV_sprout-eng && make -j32 recoveryimage    
     cd out/target/product/DRG_sprout
     mv recovery.img twrp-3.3.1-0-DRG_sprout-10.0-$(date +"%Y%m%d").img
     cp -r twrp-3.3.1-0-DRG_sprout-10.0-$(date +"%Y%m%d").img $path/DRG_sprout
@@ -136,7 +157,7 @@ TWRP-Q-SOURCE()
     rm -r device/nokia
     rm -r out
     git clone https://github.com/RaghuVarma331/android_device_nokia_B2N_sprout-TWRP.git -b android-10.0-NB device/nokia/B2N_sprout
-    . build/envsetup.sh && lunch omni_B2N_sprout-eng && make -j32 recoveryimage	
+    . build/envsetup.sh && lunch lineage_B2N_sprout-eng && make -j32 recoveryimage	
     cd out/target/product/B2N_sprout
     mv recovery.img twrp-3.3.1-0-B2N_sprout-POB-10.0-$(date +"%Y%m%d").img
     cp -r twrp-3.3.1-0-B2N_sprout-POB-10.0-$(date +"%Y%m%d").img $path/B2N_sprout
@@ -154,9 +175,9 @@ TWRP-Q-INSTALLER()
     git clone https://github.com/RaghuVarma331/android_device_nokia_B2N_sprout-TWRP.git -b android-10.0 device/nokia/B2N_sprout	
     git clone https://github.com/RaghuVarma331/android_device_nokia_CTL_sprout-TWRP.git -b android-10.0 device/nokia/CTL_sprout
     sed -i "/ro.build.version.security_patch/d" build/tools/buildinfo.sh
-    . build/envsetup.sh && lunch omni_DRG_sprout-eng && make -j32 recoveryimage
-    . build/envsetup.sh && lunch omni_B2N_sprout-eng && make -j32 recoveryimage
-    . build/envsetup.sh && lunch omni_CTL_sprout-eng && make -j32 recoveryimage  
+    . build/envsetup.sh && lunch lineage_DRG_sprout-eng && make -j32 recoveryimage
+    . build/envsetup.sh && lunch lineage_B2N_sprout-eng && make -j32 recoveryimage
+    . build/envsetup.sh && lunch lineage_CTL_sprout-eng && make -j32 recoveryimage  
     cd out/target/product/DRG_sprout
     mv ramdisk-recovery.cpio ramdisk-twrp.cpio
     cp -r ramdisk-twrp.cpio $path/twrp/device/nokia/DRG_sprout/installer
@@ -187,7 +208,7 @@ TWRP-Q-INSTALLER()
     rm -r out
     rm -r device/nokia
     git clone https://github.com/RaghuVarma331/android_device_nokia_B2N_sprout-TWRP.git -b android-10.0-NB device/nokia/B2N_sprout	
-    . build/envsetup.sh && lunch omni_B2N_sprout-eng && make -j32 recoveryimage  
+    . build/envsetup.sh && lunch lineage_B2N_sprout-eng && make -j32 recoveryimage  
     cd out/target/product/B2N_sprout
     mv ramdisk-recovery.cpio ramdisk-twrp.cpio
     cp -r ramdisk-twrp.cpio $path/twrp/device/nokia/B2N_sprout/installer
@@ -206,8 +227,8 @@ TWRP-P-INSTALLER()
     rm -r device/nokia
     git clone https://github.com/RaghuVarma331/android_device_nokia_DRG_sprout-TWRP.git -b android-9.0 device/nokia/DRG_sprout
     git clone https://github.com/RaghuVarma331/android_device_nokia_B2N_sprout-TWRP.git -b android-9.0 device/nokia/B2N_sprout		
-    . build/envsetup.sh && lunch omni_DRG_sprout-eng && make -j32 recoveryimage
-    . build/envsetup.sh && lunch omni_B2N_sprout-eng && make -j32 recoveryimage
+    . build/envsetup.sh && lunch lineage_DRG_sprout-eng && make -j32 recoveryimage
+    . build/envsetup.sh && lunch lineage_B2N_sprout-eng && make -j32 recoveryimage
     cd out/target/product/DRG_sprout
     mv ramdisk-recovery.cpio ramdisk-twrp.cpio
     cp -r ramdisk-twrp.cpio $path/twrp/device/nokia/DRG_sprout/installer
@@ -229,7 +250,7 @@ TWRP-P-INSTALLER()
     rm -r out
     rm -r device/nokia
     git clone https://github.com/RaghuVarma331/android_device_nokia_B2N_sprout-TWRP.git -b android-9.0-NB device/nokia/B2N_sprout	
-    . build/envsetup.sh && lunch omni_B2N_sprout-eng && make -j32 recoveryimage     
+    . build/envsetup.sh && lunch lineage_B2N_sprout-eng && make -j32 recoveryimage     
     cd out/target/product/B2N_sprout
     mv ramdisk-recovery.cpio ramdisk-twrp.cpio
     cp -r ramdisk-twrp.cpio $path/twrp/device/nokia/B2N_sprout/installer
@@ -240,6 +261,10 @@ TWRP-P-INSTALLER()
     cd
     cd $path     
     rm -r twrp
+}
+
+UPLOAD()
+{
     cd CTL_sprout
     sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-CTL_sprout-10.0* twrp-installer-3.3.1-0-CTL_sprout-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/TWRP/TEN
     cd ..
@@ -386,12 +411,28 @@ TWRP-P-INSTALLER()
     #ddv #nokia #twrp #update
     Follow:  @Nokia7262 ✅"  
     
-}
+} &> /dev/null
 
 
-clear
+echo Setting up tools..!!
+TOOLS_SETUP
+echo downloading repo..!!
 REPO
+echo "-----------------------------------------------------"
+echo "Started building TWRP-3.3.1-0 For DRG B2N CTL DDV SLD"
+echo "-----------------------------------------------------" 
 TWRP-P-SOURCE
 TWRP-Q-SOURCE
 TWRP-Q-INSTALLER
 TWRP-P-INSTALLER
+echo "----------------------------------------------------"
+echo " builds successfully completed" 
+echo "----------------------------------------------------" 
+
+echo "----------------------------------------------------"
+echo "Started Uploading builds to sourceforge..!!"
+echo "----------------------------------------------------" 
+UPLOAD
+echo "----------------------------------------------------"
+echo " builds successfully Uploaded" 
+echo "----------------------------------------------------" 
