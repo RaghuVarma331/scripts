@@ -411,6 +411,11 @@ UPLOAD()
     #ddv #nokia #twrp #update
     Follow:  @Nokia7262 ✅"  
     
+    cd
+    rm -r *
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Teamwin-Recovery-Project/build_twrp.sh
+    chmod a+x build_twrp.sh
+    
 } &> /dev/null
 
 
