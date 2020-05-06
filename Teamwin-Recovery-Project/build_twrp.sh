@@ -21,8 +21,8 @@ clear
 # Detail Versions
 
 path=/var/lib/jenkins/workspace/Raghu
-twrpsp='2020-04-05'
-securitypatch=2020-04-05
+twrpsp='2020-05-05'
+securitypatch=2020-05-05
 
 # credentials
 
@@ -279,10 +279,10 @@ UPLOAD()
     sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-B2N_sprout-POB-10.0* twrp-installer-3.3.1-0-B2N_sprout-POB-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/TWRP-TEN/POB
     cd ..
     cd SLD_sprout 
-    sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-SLD_sprout-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/sld-sprout/TWRP/TEN/2020-04-05
+    sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-SLD_sprout-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/sld-sprout/TWRP/TEN/2020-05-05
     cd ..
     cd DDV_sprout
-    sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-DDV_sprout-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/ddv-sprout/TWRP/TEN/2020-04-05
+    sshpass -p $password rsync -avP -e ssh twrp-3.3.1-0-DDV_sprout-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/ddv-sprout/TWRP/TEN/2020-05-05
     cd .. 
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
     *

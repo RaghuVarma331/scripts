@@ -4,7 +4,7 @@
 # Detail Versions
 
 path=/mnt/raghu/jenkins/workspace/DerpFest
-securitypatch=2020-04-05
+securitypatch=2020-05-05
 
 
 # credentials
