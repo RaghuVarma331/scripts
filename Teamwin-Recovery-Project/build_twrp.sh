@@ -20,7 +20,7 @@ clear
 
 # Detail Versions
 
-path=/var/lib/jenkins/workspace/Raghu
+path=/var/lib/jenkins/workspace/TWRP
 twrpsp='2020-05-05'
 securitypatch=2020-05-05
 
