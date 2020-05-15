@@ -26,6 +26,7 @@ TOOLS_SETUP()
 
 REPO()
 {
+       rm -r bin
        mkdir bin
        PATH=$path/bin:$PATH
        curl https://storage.googleapis.com/git-repo-downloads/repo > $path/bin/repo
