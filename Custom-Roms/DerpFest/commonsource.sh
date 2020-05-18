@@ -31,23 +31,13 @@ COMMON-SOURCE()
     git clone https://github.com/RaghuVarma331/prebuilt_kernels.git -b ten prebuilts  
     cd derp
     rm -r device/nokia
-    rm -r packages/apps/Gallery2
-    rm -r vendor/gapps
-    rm -r packages/apps/Settings
     rm -r packages/apps/OpenDelta  
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten-gcc --depth=1 kernel/nokia/sdm660
     git clone https://github.com/RaghuVarma331/android_vendor_nokia.git -b ten vendor/nokia
     git clone https://github.com/RaghuVarma331/vendor_nokia_Camera.git -b ten --depth=1 vendor/nokia/Camera
-    git clone https://gitlab.com/RaghuVarma331/vendor_gapps.git -b ten --depth=1 vendor/gapps
-    git clone https://github.com/RaghuVarma331/android_packages_apps_Gallery2.git -b lineage-17.1 packages/apps/Gallery2
     git clone https://github.com/RaghuVarma331/Os_Updates.git -b pixel-ten packages/apps/Os_Updates          
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings
-    git clone https://github.com/DerpLab/platform_packages_apps_Settings.git -b ten packages/apps/Settings    
-    cd packages/apps/Settings    
-    git remote add main https://github.com/RaghuVarma331/settings.git
-    git fetch main
-    git cherry-pick 7e115712a20e3494a54cacc4ec71b982158e2af1
-    git cherry-pick f997d458211f0f7a9c1d58be43b7a08327785287
+    cd packages/apps/Settings
     cd src/com/android/settings/system
     rm -r SystemUpdatePreferenceController.java
     wget https://raw.githubusercontent.com/RaghuVarma331/settings/ten/src/com/android/settings/system/SystemUpdatePreferenceController.java
