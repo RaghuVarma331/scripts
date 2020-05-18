@@ -34,15 +34,7 @@ COMMON-SOURCE()
     cd los
     rm -r device/nokia
     rm -r device/lineage/sepolicy
-    rm -r packages/apps/Settings
     rm -r packages/apps/Updater    
-    rm -r system/sepolicy
-    git clone https://github.com/LineageOS/android_system_sepolicy.git -b lineage-17.1 system/sepolicy 
-    cd system/sepolicy 
-    git remote add ss https://github.com/RaghuVarma331/android_system_sepolicy.git 
-    git fetch ss
-    git cherry-pick 242d14d7274dc8aed7ae91d77365aee25910cbf6
-    cd $path/los
     git clone https://github.com/RaghuVarma331/android_kernel_nokia_sdm660.git -b ten-gcc --depth=1 kernel/nokia/sdm660
     git clone https://github.com/RaghuVarma331/android_vendor_nokia.git -b ten vendor/nokia
     git clone https://github.com/RaghuVarma331/vendor_nokia_Camera.git -b ten --depth=1 vendor/nokia/Camera
@@ -50,13 +42,6 @@ COMMON-SOURCE()
     git clone https://github.com/RaghuVarma331/device_custom_sepolicy.git -b los-ten device/lineage/sepolicy
     git clone https://github.com/RaghuVarma331/Os_Updates.git -b pixel-ten packages/apps/Os_Updates    
     git clone https://github.com/LineageOS/android_packages_resources_devicesettings.git -b lineage-17.1 packages/resources/devicesettings
-    git clone https://github.com/LineageOS/android_packages_apps_Settings.git -b lineage-17.1 packages/apps/Settings    
-    cd packages/apps/Settings
-    git remote add main https://github.com/RaghuVarma331/settings.git
-    git fetch main
-    git cherry-pick d0dede567168181d4f0035f61cf12f2996445be7
-    git cherry-pick 249b4a08e10be19d20b9b25f88fcc6ee230a6614
-    cd
     cd $path/los
 } &> /dev/null
 
