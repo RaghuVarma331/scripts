@@ -294,7 +294,7 @@ UPLOAD()
     📱Device: *Nokia 6.1 Plus*
     ⚡Build Version: *3.3.1-0*
     ⚡Android Version: *10.0.0*
-    👤 By: *Raghu Varma*
+    👤 By: *@RaghuVarma*
     #drg #nokia #twrp #update
     Follow:  @Nokia6plusofficial ✅"  
 
@@ -308,7 +308,7 @@ UPLOAD()
     📱Device: *Nokia 7.1*
     ⚡Build Version: *3.3.1-0*
     ⚡Android Version: *10.0.0*
-    👤 By: *Raghu Varma*
+    👤 By: *@RaghuVarma*
     #ctl #nokia #twrp #update
     Follow: @nokia7161 ✅"          
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
@@ -321,7 +321,7 @@ UPLOAD()
     📱Device: *Nokia 7 Plus (OOB)*
     ⚡Build Version: *3.3.1-0*
     ⚡Android Version: *10.0.0*
-    👤 By: *Raghu Varma*
+    👤 By: *@RaghuVarma*
     #b2n #nokia #twrp #update
     Follow:  @Nokia7plusOfficial ✅" 
     
@@ -335,7 +335,7 @@ UPLOAD()
     📱Device: *Nokia 7 Plus (POB)*
     ⚡Build Version: *3.3.1-0*
     ⚡Android Version: *10.0.0*
-    👤 By: *Raghu Varma*
+    👤 By: *@RaghuVarma*
     #b2n #nokia #twrp #update
     Follow:  @Nokia7plusOfficial ✅" 
     
@@ -349,7 +349,7 @@ UPLOAD()
     📱Device: *Nokia 6.1 Plus*
     ⚡Build Version: *3.3.1-0*
     ⚡Android Version: *9.0.0*
-    👤 By: *Raghu Varma*
+    👤 By: *@RaghuVarma*
     #drg #nokia #twrp #update
     Follow:  @Nokia6plusofficial ✅"  
     
@@ -363,7 +363,7 @@ UPLOAD()
     📱Device: *Nokia 7 Plus (OOB)*
     ⚡Build Version: *3.3.1-0*
     ⚡Android Version: *9.0.0*
-    👤 By: *Raghu Varma*
+    👤 By: *@RaghuVarma*
     #b2n #nokia #twrp #update
     Follow:  @Nokia7plusOfficial ✅" 
     
@@ -377,7 +377,7 @@ UPLOAD()
     📱Device: *Nokia 7 Plus (POB)*
     ⚡Build Version: *3.3.1-0*
     ⚡Android Version: *9.0.0*
-    👤 By: *Raghu Varma*
+    👤 By: *@RaghuVarma*
     #b2n #nokia #twrp #update
     Follow:  @Nokia7plusOfficial ✅"  
 
@@ -392,7 +392,7 @@ UPLOAD()
     ⚡Build Version: *3.3.1-0*
     ⚡Android Version: *10.0.0*
     ⚡Android Security Patch : *$twrpsp*
-    👤 By: *Raghu Varma*
+    👤 By: *@RaghuVarma*
     #sld #nokia #twrp #update
     Follow:  @Nokia7262 ✅"     
     
@@ -407,7 +407,7 @@ UPLOAD()
     ⚡Build Version: *3.3.1-0*
     ⚡Android Version: *10.0.0*
     ⚡Android Security Patch : *$twrpsp*
-    👤 By: *Raghu Varma*
+    👤 By: *@RaghuVarma*
     #ddv #nokia #twrp #update
     Follow:  @Nokia7262 ✅"  
     

@@ -95,7 +95,7 @@ BUILD_DRG-3()
     ⚡Build Version: *Ten*
     ⚡Android Version: *10.0.0*
     ⚡Security Patch : *$securitypatch*
-    👤 By: *Raghu Varma*
+    👤 By: *@RaghuVarma*
     #drg #nokia #derp #update
     Follow:  @Nokia6plusofficial ✅" 
     cd json
@@ -162,7 +162,7 @@ BUILD_B2N-3()
     ⚡Build Version: *Ten*
     ⚡Android Version: *10.0.0*
     ⚡Security Patch : *$securitypatch*
-    👤 By: *Raghu Varma*
+    👤 By: *@RaghuVarma*
     #b2n #nokia #derp #update
     Follow: @Nokia7plusOfficial ✅"        
     cd json
@@ -229,7 +229,7 @@ BUILD_CTL-3()
     ⚡Build Version: *Ten*
     ⚡Android Version: *10.0.0*
     ⚡Security Patch : *$securitypatch*
-    👤 By: *Raghu Varma*
+    👤 By: *@RaghuVarma*
     #ctl #nokia #derp #update
     Follow: @nokia7161 ✅"     
     cd json
@@ -299,7 +299,7 @@ BUILD_PL2-3()
     ⚡Build Version: *Ten*
     ⚡Android Version: *10.0.0*
     ⚡Security Patch : *$securitypatch*
-    👤 By: *Raghu Varma*
+    👤 By: *@RaghuVarma*
     #pl2 #nokia #derp #update
     Follow: @nokia7161 ✅"     
     cd json
@@ -372,7 +372,7 @@ BUILD_DDV-3()
     ⚡Build Version: *Ten*
     ⚡Android Version: *10.0.0*
     ⚡Security Patch : *$securitypatch*
-    👤 By: *Raghu Varma*
+    👤 By: *@RaghuVarma*
     #ddv #nokia #derp #update
     Follow: @Nokia7262 ✅"     
     cd json

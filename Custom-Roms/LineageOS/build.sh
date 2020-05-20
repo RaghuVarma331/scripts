@@ -100,7 +100,7 @@ BUILD_DRG-3()
     ⚡Build Version: *17.1* 
     ⚡Android Version: *10.0.0*
     ⚡Security Patch : *$securitypatch*
-    👤 By: *Raghu Varma*
+    👤 By: *@RaghuVarma*
     #drg #nokia #los #update
     Follow:  @Nokia6plusofficial ✅"  
     cd json
@@ -170,7 +170,7 @@ BUILD_B2N-3()
     ⚡Build Version: *17.1*
     ⚡Android Version: *10.0.0*
     ⚡Security Patch : *$securitypatch*
-    👤 By: *Raghu Varma*
+    👤 By: *@RaghuVarma*
     #b2n #nokia #los #update
     Follow: @Nokia7plusOfficial ✅"    
     cd json
@@ -239,7 +239,7 @@ BUILD_CTL-3()
     ⚡Build Version: *17.1*
     ⚡Android Version: *10.0.0*
     ⚡Security Patch : *$securitypatch*
-    👤 By: *Raghu Varma*
+    👤 By: *@RaghuVarma*
     #ctl #nokia #los #update
     Follow: @nokia7161  ✅"     
     cd json
@@ -311,7 +311,7 @@ BUILD_DDV-3()
     ⚡Build Version: *17.1*
     ⚡Android Version: *10.0.0*
     ⚡Security Patch : *$securitypatch*
-    👤 By: *Raghu Varma*
+    👤 By: *@RaghuVarma*
     #ddv #nokia #los #update
     Follow: @Nokia7262  ✅"     
     cd json
@@ -393,7 +393,7 @@ BUILD_WHY-3()
     ⚡Build Version: *17.1*
     ⚡Android Version: *10.0.0*
     ⚡Security Patch : *$securitypatch*
-    👤 By: *Raghu Varma*
+    👤 By: *@RaghuVarma*
     #whyred #nokia #los #update
     Follow: @whyredrn5pro ✅"      
     cd json
