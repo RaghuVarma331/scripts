@@ -22,9 +22,11 @@ wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram
 
 python telegram.py -t $Telegram_Api_code -c @Nokia6plusofficial -M "
 *
-Do you like my work? Show your support by donating via PayPal ❤️
+Do you like my work? Please Show your support by donating via PayPal or UPI ❤️
 
-https://www.paypal.me/Raghu107
+Paypal: https://www.paypal.me/Raghu107
+
+Upi: Text me for getting transaction details @RaghuVarma
 
 Thank you 🙂
 *
@@ -32,20 +34,23 @@ Thank you 🙂
 
 python telegram.py -t $Telegram_Api_code -c @Nokia7plusOfficial -M "
 *
-Do you like my work? Show your support by donating via PayPal ❤️
+Do you like my work? Please Show your support by donating via PayPal or UPI ❤️
 
-https://www.paypal.me/Raghu107
+Paypal: https://www.paypal.me/Raghu107
+
+Upi: Text me for getting transaction details @RaghuVarma
 
 Thank you 🙂
 *
 "
 
-
 python telegram.py -t $Telegram_Api_code -c @Nokia7262 -M "
 *
-Do you like my work? Show your support by donating via PayPal ❤️
+Do you like my work? Please Show your support by donating via PayPal or UPI ❤️
 
-https://www.paypal.me/Raghu107
+Paypal: https://www.paypal.me/Raghu107
+
+Upi: Text me for getting transaction details @RaghuVarma
 
 Thank you 🙂
 *
@@ -53,9 +58,11 @@ Thank you 🙂
 
 python telegram.py -t $Telegram_Api_code -c @nokia7161 -M "
 *
-Do you like my work? Show your support by donating via PayPal ❤️
+Do you like my work? Please Show your support by donating via PayPal or UPI ❤️
 
-https://www.paypal.me/Raghu107
+Paypal: https://www.paypal.me/Raghu107
+
+Upi: Text me for getting transaction details @RaghuVarma
 
 Thank you 🙂
 *

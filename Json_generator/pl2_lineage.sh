@@ -1,18 +1,18 @@
 rm -r **.md5sum
 rm -r **.json
-md5sum DerpFest**.zip > derp.md5sum
+md5sum lineage-17.1**.zip > lineage.md5sum
 
-sourceforge=https://sourceforge.net/projects/pl2-sprout/files/DerpFest
-filename=$(echo DerpFest**.zip)
+sourceforge=https://sourceforge.net/projects/pl2-sprout/files/LineageOS
+filename=$(echo lineage-17.1**.zip)
 datetime=$(grep ro\.build\.date\.utc system/build.prop | cut -d= -f2)
 size=$(stat -c%s $filename)
 url=$sourceforge/$filename/download
 filehash=$(cat **.md5sum | cut -d' ' -f1)
 id=$(sha256sum $filename | awk '{ print $1 }');
 version=android-10.0
-path=/var/lib/jenkins/workspace/DerpFest
+path=/var/lib/jenkins/workspace/LineageOS
 whatsNew=$(cat $path/changelog.txt)
-notification=$(echo Sofware update - New DerpFest build is up)
+notification=$(echo Sofware update - New LineageOS build is up)
 
 echo { >> $filename.json
 echo \"version\":\"$version\", >> $filename.json
