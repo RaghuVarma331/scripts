@@ -96,6 +96,17 @@ S2()
    rm -r web roms
 } &> /dev/null
 
+T1()
+{
+   cd $path
+   wget https://github.com/RaghuVarma331/scripts/raw/master/Teamwin-Recovery-Project/build-3.4.0-0.sh
+   chmod a+x build-3.4.0-0.sh
+} &> /dev/null
+
+T2()
+{
+   ./build-3.4.0-0.sh
+}
 
 S1
 L1
@@ -107,3 +118,5 @@ D2
 E1
 E2
 S2
+T1
+T2
