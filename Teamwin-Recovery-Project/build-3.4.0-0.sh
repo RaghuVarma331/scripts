@@ -344,7 +344,7 @@ UPLOAD()
     
     $(date)*
     
-    ⬇️ [Download](https://sourceforge.net/projects/pl2-sprout/files/TWRP/TEN/)
+    ⬇️ [Download](https://forum.xda-developers.com/nokia-6-2018/development/unofficial-twrp-3-4-0-0-team-win-t4122949)
     📱Device: *Nokia 6.1*
     ⚡Build Version: *3.4.0-0*
     ⚡Android Version: *10.0.0*
