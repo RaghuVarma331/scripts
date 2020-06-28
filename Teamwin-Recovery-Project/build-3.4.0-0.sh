@@ -88,7 +88,7 @@ TWRP-Q-SOURCE()
     rm -r system/core
     git clone https://github.com/RaghuVarma331/android_system_core.git -b android-9.0 system/core
     git clone https://github.com/RaghuVarma331/external_magisk-prebuilt.git -b master external/magisk-prebuilt
-    git clone https://github.com/TeamWin/android_bootable_recovery.git -b android-9.0 bootable/recovery	
+    git clone https://github.com/Nokia-SDM660/android_bootable_recovery.git -b android-9.0 bootable/recovery	
     git clone https://github.com/Nokia-SDM660/android_device_nokia_DRG_sprout-TWRP.git -b android-10.0 device/nokia/DRG_sprout
     git clone https://github.com/Nokia-SDM660/android_device_nokia_B2N_sprout-TWRP.git -b android-10.0 device/nokia/B2N_sprout
     git clone https://github.com/Nokia-SDM660/android_device_nokia_CTL_sprout-TWRP.git -b android-10.0 device/nokia/CTL_sprout
