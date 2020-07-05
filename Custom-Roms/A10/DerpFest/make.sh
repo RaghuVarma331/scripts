@@ -21,7 +21,7 @@ clear
 # Detail Versions
 
 path=/var/lib/jenkins/workspace/Raghu
-securitypatch=2020-06-05
+securitypatch=2020-07-05
 
 
 # credentials
