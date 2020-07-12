@@ -31,10 +31,10 @@ PL2DERPLINK=https://sourceforge.net/projects/pl2-sprout/files/DerpFest/$PL2DERPZ
 CTLDERPZIP=$(echo DerpFest-10-Community-Crystal**.zip)
 CTLDERPLINK=https://sourceforge.net/projects/ctl-sprout/files/DerpFest/$CTLDERPZIP
 
-DRGEVOZIP=$(echo EvolutionX_4.4_Dragon**.zip)
+DRGEVOZIP=$(echo EvolutionX_4.5_Dragon**.zip)
 DRGEVOLINK=https://sourceforge.net/projects/drg-sprout/files/EvolutionX/$DRGEVOZIP
 
-CTLEVOZIP=$(echo EvolutionX_4.4_Crystal**.zip)
+CTLEVOZIP=$(echo EvolutionX_4.5_Crystal**.zip)
 CTLEVOLINK=https://sourceforge.net/projects/ctl-sprout/files/EvolutionX/$CTLEVOZIP
 
 
