@@ -75,17 +75,19 @@ L4()
     cd los
     echo -ne '\n' | repo init -u git://github.com/LineageOS/android.git -b lineage-17.1 --depth=1
     repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+    sed -i "/ro.control_privapp_permissions=enforce/d" vendor/lineage/config/common.mk
 }
 
 L5()
 {
     cd $path/los
     rm -r packages/apps/Updater
-    git clone https://gitlab.com/RaghuVarma331/vendor_gapps.git -b ten --depth=1 vendor/gapps
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_vendor_nokia.git -b ten --depth=1 vendor/nokia
+    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia.git -b android-10.0 vendor/nokia
+    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_camera.git -b android-10.0 vendor/nokia/camera
+    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_GoogleCamera -b android-10.0 vendor/nokia/GoogleCamera
     git clone https://github.com/Nokia-SDM660/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660
     git clone https://github.com/Nokia-SDM660/android_external_bson.git -b lineage-17.1 external/bson
-    git clone https://github.com/Nokia-SDM660/android_system_qcom.git -b lineage-17.1 system/qcom 
+    git clone https://github.com/Nokia-SDM660/android_system_qcom.git -b lineage-17.1 system/qcom
 } &> /dev/null
 
 L6()
@@ -98,7 +100,7 @@ L6()
     
     👤 By: Raghu Varma"
     cd $path/los
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Dragon.git -b lineage-17.1 device/nokia/Dragon
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Dragon.git -b android-10.0 device/nokia/Dragon
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch lineage_Dragon-userdebug && make -j$(nproc --all) target-files-package otatools
     romname=$(cat $path/los/out/target/product/Dragon/system/build.prop | grep ro.lineage.version | cut -d "=" -f 2)
@@ -126,7 +128,7 @@ L7()
     cd $path/los
     rm -r device/nokia
     rm -r out/target/product/*
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Onyx.git -b lineage-17.1 device/nokia/Onyx
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Onyx.git -b android-10.0 device/nokia/Onyx
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch lineage_Onyx-userdebug && make -j$(nproc --all) target-files-package otatools
     romname=$(cat $path/los/out/target/product/Onyx/system/build.prop | grep ro.lineage.version | cut -d "=" -f 2)
@@ -154,7 +156,7 @@ L8()
     cd $path/los
     rm -r device/nokia
     rm -r out/target/product/*
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Crystal.git -b lineage-17.1 device/nokia/Crystal
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Crystal.git -b android-10.0 device/nokia/Crystal
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch lineage_Crystal-userdebug && make -j$(nproc --all) target-files-package otatools
     romname=$(cat $path/los/out/target/product/Crystal/system/build.prop | grep ro.lineage.version | cut -d "=" -f 2)

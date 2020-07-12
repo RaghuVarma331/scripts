@@ -75,16 +75,19 @@ L4()
     cd pe
     echo -ne '\n' | repo init -u https://github.com/PixelExperience/manifest -b ten --depth=1
     repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+    sed -i "/ro.control_privapp_permissions=enforce/d" vendor/aosp/config/common.mk
 }
 
 L5()
 {
     cd $path/pe
     rm -r packages/apps/Updates
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_vendor_nokia.git -b ten --depth=1 vendor/nokia
+    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia.git -b android-10.0 vendor/nokia
+    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_camera.git -b android-10.0 vendor/nokia/camera
+    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_GoogleCamera -b android-10.0 vendor/nokia/GoogleCamera
     git clone https://github.com/Nokia-SDM660/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660
     git clone https://github.com/Nokia-SDM660/android_external_bson.git -b lineage-17.1 external/bson
-    git clone https://github.com/Nokia-SDM660/android_system_qcom.git -b lineage-17.1 system/qcom    
+    git clone https://github.com/Nokia-SDM660/android_system_qcom.git -b lineage-17.1 system/qcom
 } &> /dev/null
 
 L6()
@@ -97,7 +100,7 @@ L6()
     
     👤 By: Raghu Varma"   
     cd $path/pe
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Dragon.git -b ten-pe device/nokia/Dragon
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Dragon.git -b android-10.0 device/nokia/Dragon
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch aosp_Dragon-userdebug && make -j$(nproc --all) target-files-package otatools
     romname=$(cat $path/pe/out/target/product/Dragon/system/build.prop | grep org.pixelexperience.version.display | cut -d "=" -f 2)
@@ -125,7 +128,7 @@ L7()
     cd $path/pe
     rm -r device/nokia
     rm -r out/target/product/*
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Onyx.git -b ten-pe device/nokia/Onyx
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Onyx.git -b android-10.0 device/nokia/Onyx
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch aosp_Onyx-userdebug && make -j$(nproc --all) target-files-package otatools
     romname=$(cat $path/pe/out/target/product/Onyx/system/build.prop | grep org.pixelexperience.version.display | cut -d "=" -f 2)
@@ -153,7 +156,7 @@ L8()
     cd $path/pe
     rm -r device/nokia
     rm -r out/target/product/*
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Plate2.git -b ten-pe device/nokia/Plate2
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Plate2.git -b android-10.0 device/nokia/Plate2
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch aosp_Plate2-userdebug && make -j$(nproc --all) target-files-package otatools
     romname=$(cat $path/pe/out/target/product/Plate2/system/build.prop | grep org.pixelexperience.version.display | cut -d "=" -f 2)
@@ -181,7 +184,7 @@ L9()
     cd $path/pe
     rm -r device/nokia
     rm -r out/target/product/*
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Crystal.git -b ten-pe device/nokia/Crystal
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Crystal.git -b android-10.0 device/nokia/Crystal
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch aosp_Crystal-userdebug && make -j$(nproc --all) target-files-package otatools
     romname=$(cat $path/pe/out/target/product/Crystal/system/build.prop | grep org.pixelexperience.version.display | cut -d "=" -f 2)
