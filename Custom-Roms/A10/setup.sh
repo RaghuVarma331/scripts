@@ -80,7 +80,21 @@ E2()
    cd $path
    ./make.sh
    rm -r make.sh
-}   
+}
+
+H1()
+{
+   cd $path
+   wget https://github.com/RaghuVarma331/scripts/raw/master/Custom-Roms/A10/Havoc-OS/make.sh
+   chmod a+x make.sh
+} &> /dev/null
+
+H2()
+{
+   cd $path
+   ./make.sh
+   rm -r make.sh
+}
 
 S2()
 {
@@ -115,6 +129,8 @@ P1
 P2
 D1
 D2
+H1
+H2
 E1
 E2
 S2
