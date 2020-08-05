@@ -103,7 +103,16 @@ L6()
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Dragon.git -b android-10.0 device/nokia/Dragon
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch havoc_Dragon-userdebug && make -j$(nproc --all) bacon
-    cd out/target/product/Dragon  
+    cd out/target/product/Dragon
+    sshpass -p $hpassword rsync -avP -e ssh Havoc-OS**.zip     maintainers@frs.sourceforge.net:/home/frs/project/havoc-os/Dragon
+    cd $path/havoc
+    rm -r out/target/product/*
+    export IS_PHONE=true
+    export WITH_GAPPS=true
+    export TARGET_GAPPS_ARCH=arm64
+    export SELINUX_IGNORE_NEVERALLOWS=true
+    . build/envsetup.sh && lunch havoc_Dragon-userdebug && make -j$(nproc --all) bacon
+    cd out/target/product/Dragon
     sshpass -p $hpassword rsync -avP -e ssh Havoc-OS**.zip     maintainers@frs.sourceforge.net:/home/frs/project/havoc-os/Dragon
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
@@ -127,7 +136,16 @@ L7()
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Onyx.git -b android-10.0 device/nokia/Onyx
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch havoc_Onyx-userdebug && make -j$(nproc --all) bacon
-    cd out/target/product/Onyx  
+    cd out/target/product/Onyx
+    sshpass -p $hpassword rsync -avP -e ssh Havoc-OS**.zip     maintainers@frs.sourceforge.net:/home/frs/project/havoc-os/Onyx
+    cd $path/havoc
+    rm -r out/target/product/*
+    export IS_PHONE=true
+    export WITH_GAPPS=true
+    export TARGET_GAPPS_ARCH=arm64
+    export SELINUX_IGNORE_NEVERALLOWS=true
+    . build/envsetup.sh && lunch havoc_Onyx-userdebug && make -j$(nproc --all) bacon
+    cd out/target/product/Onyx
     sshpass -p $hpassword rsync -avP -e ssh Havoc-OS**.zip     maintainers@frs.sourceforge.net:/home/frs/project/havoc-os/Onyx
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
@@ -151,7 +169,16 @@ L8()
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Plate2.git -b android-10.0 device/nokia/Plate2
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch havoc_Plate2-userdebug && make -j$(nproc --all) bacon
-    cd out/target/product/Plate2  
+    cd out/target/product/Plate2
+    sshpass -p $hpassword rsync -avP -e ssh Havoc-OS**.zip     maintainers@frs.sourceforge.net:/home/frs/project/havoc-os/Plate2
+    cd $path/havoc
+    rm -r out/target/product/*
+    export IS_PHONE=true
+    export WITH_GAPPS=true
+    export TARGET_GAPPS_ARCH=arm64
+    export SELINUX_IGNORE_NEVERALLOWS=true
+    . build/envsetup.sh && lunch havoc_Plate2-userdebug && make -j$(nproc --all) bacon
+    cd out/target/product/Plate2
     sshpass -p $hpassword rsync -avP -e ssh Havoc-OS**.zip     maintainers@frs.sourceforge.net:/home/frs/project/havoc-os/Plate2
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
@@ -175,7 +202,16 @@ L9()
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Crystal.git -b android-10.0 device/nokia/Crystal
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch havoc_Crystal-userdebug && make -j$(nproc --all) bacon
-    cd out/target/product/Crystal  
+    cd out/target/product/Crystal
+    sshpass -p $hpassword rsync -avP -e ssh Havoc-OS**.zip     maintainers@frs.sourceforge.net:/home/frs/project/havoc-os/Crystal
+    cd $path/havoc
+    rm -r out/target/product/*
+    export IS_PHONE=true
+    export WITH_GAPPS=true
+    export TARGET_GAPPS_ARCH=arm64
+    export SELINUX_IGNORE_NEVERALLOWS=true
+    . build/envsetup.sh && lunch havoc_Crystal-userdebug && make -j$(nproc --all) bacon
+    cd out/target/product/Crystal
     sshpass -p $hpassword rsync -avP -e ssh Havoc-OS**.zip     maintainers@frs.sourceforge.net:/home/frs/project/havoc-os/Crystal
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
