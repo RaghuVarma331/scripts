@@ -73,7 +73,10 @@ L4()
     cd havoc
     echo -ne '\n' | repo init -u https://github.com/Havoc-OS/android_manifest.git -b ten --depth=1
     repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
-    git clone https://$gitpassword@github.com/Havoc-OS/android_external_motorola_faceunlock -b ten external/motorola/faceunlock
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_external_motorola_faceunlock -b android-10.0 external/motorola/faceunlock
+    cd $path/fpatch
+    chmod a+x *
+    ./setup.sh
 }
 
 L5()
