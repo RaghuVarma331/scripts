@@ -75,6 +75,7 @@ L4()
     cd derp
     echo -ne '\n' | repo init -u git://github.com/DerpLab/platform_manifest.git -b ten --depth=1
     repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+    rm -r packages/apps/PixelLiveWallpaper
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_external_motorola_faceunlock -b android-10.0 external/motorola/faceunlock
     cd $path/fpatch
     chmod a+x *
