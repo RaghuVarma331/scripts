@@ -148,6 +148,33 @@ L7()
     $(date) "
 }
 
+L7-1()
+{
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    
+    New Evolution-X for Nokia 6.1 build started 
+    
+    $(date)
+    
+    👤 By: Raghu Varma"
+    cd $path/pe
+    rm -r device/nokia
+    rm -r out/target/product/*
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Plate2.git -b android-10.0 device/nokia/Plate2
+    export SELINUX_IGNORE_NEVERALLOWS=true
+    . build/envsetup.sh && lunch aosp_Plate2-userdebug && make -j$(nproc --all) target-files-package otatools
+    romname=$(cat $path/pe/out/target/product/Plate2/system/build.prop | grep org.evolution.version.display | cut -d "=" -f 2)
+    ./build/tools/releasetools/sign_target_files_apks -o -d $path/keys $path/pe/out/target/product/Plate2/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/pe/out/target/product/Plate2/signed-target-files.zip
+    ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/pe/out/target/product/Plate2/signed-target-files.zip $path/pe/out/target/product/Plate2/$romname.zip
+    cd out/target/product/Plate2
+    cp -r EvolutionX**.zip $path/roms
+    sshpass -p $password rsync -avP -e ssh EvolutionX**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/EvolutionX
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    
+    Build successfully completed
+    
+    $(date) "
+}
 
 L8()
 {
@@ -170,7 +197,6 @@ L8()
     Follow:  @Nokia6plusofficial ✅" 
 
     cd $path
-
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P evox.png -C "
     *
     🔥 New Evolution-X Build is up 
@@ -186,6 +212,24 @@ L8()
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #ctl #nokia #evox #update
+    Follow:  @nokia7161 ✅" 
+
+    cd $path
+    python telegram.py -t $Telegram_Api_code -c $chat_id  -P evox.png -C "
+    *
+    🔥 New Evolution-X Build is up
+    ==========================
+    $(date)*
+
+    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-6-2018/development/rom-evolution-x-3-3-t4011611)
+    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
+    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
+    📱Device: *Nokia 6.1*
+    ⚡Build Version: *Ten*
+    ⚡Android Version: *10.0.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *@RaghuVarma*
+    #pl2 #nokia #evox #update
     Follow:  @nokia7161 ✅" 
 
     rm -r bin pe keys  evox.png  telegram.py
@@ -220,6 +264,10 @@ echo "----------------------------------------------------"
 echo "Started building Evolution-X for Nokia 7.1"
 echo "----------------------------------------------------" 
 L7
+echo "----------------------------------------------------"
+echo "Started building Evolution-X for Nokia 6.1"
+echo "----------------------------------------------------" 
+L7-1
 echo "----------------------------------------------------"
 echo "Started Posting in Channel"
 echo "----------------------------------------------------" 

@@ -37,6 +37,8 @@ DRGEVOLINK=https://sourceforge.net/projects/drg-sprout/files/EvolutionX/$DRGEVOZ
 CTLEVOZIP=$(echo EvolutionX_4.5_Crystal**.zip)
 CTLEVOLINK=https://sourceforge.net/projects/ctl-sprout/files/EvolutionX/$CTLEVOZIP
 
+PL2EVOZIP=$(echo EvolutionX_4.5_Plate2**.zip)
+PL2EVOLINK=https://sourceforge.net/projects/pl2-sprout/files/EvolutionX/$PL2EVOZIP
 
 echo "### Pixel Experience for Nokia phones"
 echo
@@ -70,6 +72,7 @@ echo "| Device       |   Download Link                                 |"
 echo "| -----------: | :---------------------------------------------- |"
 echo "| Nokia 6.1 Plus ( Latest build )          | [**$DRGEVOZIP**]($DRGEVOLINK)|"
 echo "| Nokia 7.1 ( Latest build )          | [**$CTLEVOZIP**]($CTLEVOLINK)|"
+echo "| Nokia 6.1 ( Latest build )          | [**$PL2EVOZIP**]($PL2EVOLINK)|"
 echo
 echo "###### Few words from myside -"
 echo
