@@ -31,13 +31,13 @@ PL2DERPLINK=https://sourceforge.net/projects/pl2-sprout/files/DerpFest/$PL2DERPZ
 CTLDERPZIP=$(echo DerpFest-10-Community-Crystal**.zip)
 CTLDERPLINK=https://sourceforge.net/projects/ctl-sprout/files/DerpFest/$CTLDERPZIP
 
-DRGEVOZIP=$(echo EvolutionX_4.5_Dragon**.zip)
+DRGEVOZIP=$(echo EvolutionX_4.6_Dragon**.zip)
 DRGEVOLINK=https://sourceforge.net/projects/drg-sprout/files/EvolutionX/$DRGEVOZIP
 
-CTLEVOZIP=$(echo EvolutionX_4.5_Crystal**.zip)
+CTLEVOZIP=$(echo EvolutionX_4.6_Crystal**.zip)
 CTLEVOLINK=https://sourceforge.net/projects/ctl-sprout/files/EvolutionX/$CTLEVOZIP
 
-PL2EVOZIP=$(echo EvolutionX_4.5_Plate2**.zip)
+PL2EVOZIP=$(echo EvolutionX_4.6_Plate2**.zip)
 PL2EVOLINK=https://sourceforge.net/projects/pl2-sprout/files/EvolutionX/$PL2EVOZIP
 
 echo "### Pixel Experience for Nokia phones"
