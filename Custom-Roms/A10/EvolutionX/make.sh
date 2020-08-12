@@ -21,14 +21,12 @@ clear
 # Detail Versions
 
 path=/var/lib/jenkins/workspace/Raghu
-securitypatch=2020-08-05
 
 
 # credentials
 
 Telegram_Api_code=$(cat $path/cred** | grep api | cut -d "=" -f 2)
 chat_id=$(cat $path/cred** | grep id | cut -d "=" -f 2)
-password=$(cat $path/cred** | grep sf | cut -d "=" -f 2)
 gitpassword=$(cat $path/cred** | grep git | cut -d "=" -f 2)
 
 
