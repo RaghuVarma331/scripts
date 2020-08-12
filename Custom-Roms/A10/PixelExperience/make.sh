@@ -64,8 +64,6 @@ L3()
 {
     cd $path
     git clone https://$gitpassword@github.com/RaghuVarma331/Keys keys
-    wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
-    wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/pixel.jpg
 } &> /dev/null
 
 L4()
@@ -204,78 +202,7 @@ L9()
 L10()
 {
     cd $path
-    python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
-    *
-    🔥 New Pixel-Experience Build 
-    ==========================
-    $(date)*
-    
-    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-6-1-plus/development/rom-pixel-experience-t3985853)
-    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
-    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
-    📱Device: *Nokia 6.1 Plus*
-    ⚡Build Version: *Ten*
-    ⚡Android Version: *10.0.0*
-    ⚡Security Patch : *$securitypatch*
-    👤 By: *@RaghuVarma*
-    #drg #nokia #pe #update
-    Follow:  @Nokia6plusofficial ✅" 
-
-    cd $path
-    python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
-    *
-    🔥 New Pixel-Experience Build 
-    ==========================
-    $(date)*
-    
-    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-7-plus/development/rom-pixel-experience-t3992063)
-    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
-    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
-    📱Device: *Nokia 7 Plus*
-    ⚡Build Version: *Ten*
-    ⚡Android Version: *10.0.0*
-    ⚡Security Patch : *$securitypatch*
-    👤 By: *@RaghuVarma*
-    #b2n #nokia #pe #update
-    Follow:  @Nokia7plusofficial ✅" 
-
-    cd $path
-    python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
-    *
-    🔥 New Pixel-Experience Build 
-    ==========================
-    $(date)*
-    
-    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-6-2018/development/rom-pixel-experience-t3994591)
-    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
-    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
-    📱Device: *Nokia 6.1*
-    ⚡Build Version: *Ten*
-    ⚡Android Version: *10.0.0*
-    ⚡Security Patch : *$securitypatch*
-    👤 By: *@RaghuVarma*
-    #pl2 #nokia #pe #update
-    Follow:  @nokia7161 ✅" 
-
-    python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
-    *
-    🔥 New Pixel-Experience Build 
-    ==========================
-    $(date)*
-    
-    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-7-1/development/rom-pixel-experience-t4019933)
-    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
-    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
-    📱Device: *Nokia 7.1*
-    ⚡Build Version: *Ten*
-    ⚡Android Version: *10.0.0*
-    ⚡Security Patch : *$securitypatch*
-    👤 By: *@RaghuVarma*
-    #ctl #nokia #pe #update
-    Follow:  @nokia7161 ✅" 
-
-    rm -r bin pe keys  pixel.jpg  telegram.py
-
+    rm -r bin pe keys
 }
 
 echo "----------------------------------------------------"
@@ -315,6 +242,6 @@ echo "Started building PixelExperience for Nokia 7.1"
 echo "----------------------------------------------------" 
 L9
 echo "----------------------------------------------------"
-echo "Started Posting in Channel"
+echo "Started cleaning"
 echo "----------------------------------------------------" 
 L10

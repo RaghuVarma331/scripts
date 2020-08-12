@@ -102,9 +102,11 @@ S2()
    cd $path/roms
    wget https://github.com/RaghuVarma331/scripts/raw/master/Nokia-SDM660/websync.sh
    wget https://github.com/RaghuVarma331/scripts/raw/master/Nokia-SDM660/uploads.sh
-   chmod a+x websync.sh uploads.sh
+   wget https://github.com/RaghuVarma331/scripts/raw/master/Nokia-SDM660/telegram_post.sh
+   chmod a+x websync.sh uploads.sh telegram_post.sh
    ./uploads.sh
    ./websync.sh > $path/web/README.md
+   ./telegram_post.sh
    cd $path/web
    git add .
    git commit -s -m "Nokia-SDM660: Builds $(date)"

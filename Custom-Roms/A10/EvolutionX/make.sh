@@ -64,8 +64,6 @@ L3()
 {
     cd $path
     git clone https://$gitpassword@github.com/RaghuVarma331/Keys keys
-    wget https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
-    wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/evox.png
 } &> /dev/null
 
 L4()
@@ -176,61 +174,7 @@ L7-1()
 L8()
 {
     cd $path
-    python telegram.py -t $Telegram_Api_code -c $chat_id  -P evox.png -C "
-    *
-    🔥 New Evolution-X Build
-    =======================
-    $(date)*
-    
-    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-6-1-plus/development/rom-evolution-x-3-3-t4011589)
-    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
-    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
-    📱Device: *Nokia 6.1 Plus*
-    ⚡Build Version: *Ten*
-    ⚡Android Version: *10.0.0*
-    ⚡Security Patch : *$securitypatch*
-    👤 By: *@RaghuVarma*
-    #drg #nokia #evox #update
-    Follow:  @Nokia6plusofficial ✅" 
-
-    cd $path
-    python telegram.py -t $Telegram_Api_code -c $chat_id  -P evox.png -C "
-    *
-    🔥 New Evolution-X Build
-    =======================
-    $(date)*
-    
-    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-7-1/development/rom-evolution-x-3-5-t4020515)
-    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
-    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
-    📱Device: *Nokia 7.1*
-    ⚡Build Version: *Ten*
-    ⚡Android Version: *10.0.0*
-    ⚡Security Patch : *$securitypatch*
-    👤 By: *@RaghuVarma*
-    #ctl #nokia #evox #update
-    Follow:  @nokia7161 ✅" 
-
-    cd $path
-    python telegram.py -t $Telegram_Api_code -c $chat_id  -P evox.png -C "
-    *
-    🔥 New Evolution-X Build
-    =======================
-    $(date)*
-
-    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-6-2018/development/rom-evolution-x-3-3-t4011611)
-    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
-    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
-    📱Device: *Nokia 6.1*
-    ⚡Build Version: *Ten*
-    ⚡Android Version: *10.0.0*
-    ⚡Security Patch : *$securitypatch*
-    👤 By: *@RaghuVarma*
-    #pl2 #nokia #evox #update
-    Follow:  @nokia7161 ✅" 
-
-    rm -r bin pe keys  evox.png  telegram.py
-
+    rm -r bin pe keys
 }
 
 echo "----------------------------------------------------"
@@ -266,6 +210,6 @@ echo "Started building Evolution-X for Nokia 6.1"
 echo "----------------------------------------------------" 
 L7-1
 echo "----------------------------------------------------"
-echo "Started Posting in Channel"
+echo "Started cleaning"
 echo "----------------------------------------------------" 
 L8

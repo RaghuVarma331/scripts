@@ -64,8 +64,6 @@ L3()
 {
     cd $path
     git clone https://$gitpassword@github.com/RaghuVarma331/Keys keys
-    wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
-    wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/lineage.jpg
 } &> /dev/null
 
 L4()
@@ -176,59 +174,7 @@ L8()
 L9()
 {
     cd $path
-    python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
-    *
-    🔥 New LineageOS 17.1 Build
-    ==========================
-    $(date)*
-    
-    ⬇️ [Download Rom](https://forum.xda-developers.com/nokia-6-1-plus/development/beta-lineageos-17-0-t3985367)
-    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
-    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
-    📱Device: *Nokia 6.1 Plus*
-    ⚡Build Version: *17.1* 
-    ⚡Android Version: *10.0.0*
-    ⚡Security Patch : *$securitypatch*
-    👤 By: *@RaghuVarma*
-    #drg #nokia #los #update
-    Follow:  @Nokia6plusofficial ✅"  
-
-    python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
-    *
-    🔥 New LineageOS 17.1 Build
-    ==========================    
-    $(date)*
-    
-    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-7-plus/development/rom-lineageos-17-0-t3993445)
-    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
-    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
-    📱Device: *Nokia 7 Plus*
-    ⚡Build Version: *17.1*
-    ⚡Android Version: *10.0.0*
-    ⚡Security Patch : *$securitypatch*
-    👤 By: *@RaghuVarma*
-    #b2n #nokia #los #update
-    Follow: @Nokia7plusOfficial ✅"  
-
-    python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
-    *
-    🔥 New LineageOS 17.1 Build
-    ==========================    
-    $(date)*
-    
-    ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-7-1/development/rom-lineageos-17-0-t4019915)
-    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
-    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
-    📱Device: *Nokia 7.1*
-    ⚡Build Version: *17.1*
-    ⚡Android Version: *10.0.0*
-    ⚡Security Patch : *$securitypatch*
-    👤 By: *@RaghuVarma*
-    #ctl #nokia #los #update
-    Follow: @nokia7161 ✅"  
-
-    rm -r bin los keys  lineage.jpg  telegram.py
-
+    rm -r bin los keys
 } &> /dev/null
 
 
@@ -265,6 +211,6 @@ echo "Started building LineageOS for Nokia 7.1"
 echo "----------------------------------------------------"
 L8
 echo "----------------------------------------------------"
-echo "Started Posting in Channel"
+echo "Started cleaning"
 echo "----------------------------------------------------"
 L9
