@@ -214,8 +214,8 @@ L10()
     
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P derp.jpg -C "
     *
-    🔥 New DerpFest Build is up 
-    ==========================
+    🔥 New DerpFest Build
+    ====================
     $(date)*
     
     ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-6-1-plus/development/rom-aosip-derpfest-t4084447)
@@ -232,8 +232,8 @@ L10()
     cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P derp.jpg -C "
     *
-    🔥 New DerpFest Build is up 
-    ==========================
+    🔥 New DerpFest Build
+    ====================
     $(date)*
     
     ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-7-plus/development/rom-aosip-derpfest-t4084459)
@@ -250,8 +250,8 @@ L10()
     cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P derp.jpg -C "
     *
-    🔥 New DerpFest Build is up 
-    ==========================
+    🔥 New DerpFest Build
+    ====================
     $(date)*
     
     ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-6-2018/development/rom-aosip-derpfest-t4084463)
@@ -268,8 +268,8 @@ L10()
     cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P derp.jpg -C "
     *
-    🔥 New DerpFest Build is up 
-    ==========================
+    🔥 New DerpFest Build
+    ====================
     $(date)*
     
     ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-7-1/development/rom-aosip-derpfest-t4084451)

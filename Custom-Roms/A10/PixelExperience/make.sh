@@ -210,7 +210,7 @@ L10()
     cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
     *
-    🔥 New Pixel-Experience Build is up 
+    🔥 New Pixel-Experience Build 
     ==========================
     $(date)*
     
@@ -228,7 +228,7 @@ L10()
     cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
     *
-    🔥 New Pixel-Experience Build is up 
+    🔥 New Pixel-Experience Build 
     ==========================
     $(date)*
     
@@ -246,7 +246,7 @@ L10()
     cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
     *
-    🔥 New Pixel-Experience Build is up 
+    🔥 New Pixel-Experience Build 
     ==========================
     $(date)*
     
@@ -263,7 +263,7 @@ L10()
 
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
     *
-    🔥 New Pixel-Experience Build is up 
+    🔥 New Pixel-Experience Build 
     ==========================
     $(date)*
     

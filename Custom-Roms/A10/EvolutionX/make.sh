@@ -181,8 +181,8 @@ L8()
     cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P evox.png -C "
     *
-    🔥 New Evolution-X Build is up 
-    ==========================
+    🔥 New Evolution-X Build
+    =======================
     $(date)*
     
     ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-6-1-plus/development/rom-evolution-x-3-3-t4011589)
@@ -199,8 +199,8 @@ L8()
     cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P evox.png -C "
     *
-    🔥 New Evolution-X Build is up 
-    ==========================
+    🔥 New Evolution-X Build
+    =======================
     $(date)*
     
     ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-7-1/development/rom-evolution-x-3-5-t4020515)
@@ -217,8 +217,8 @@ L8()
     cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P evox.png -C "
     *
-    🔥 New Evolution-X Build is up
-    ==========================
+    🔥 New Evolution-X Build
+    =======================
     $(date)*
 
     ⬇️ [Download ROM](https://forum.xda-developers.com/nokia-6-2018/development/rom-evolution-x-3-3-t4011611)

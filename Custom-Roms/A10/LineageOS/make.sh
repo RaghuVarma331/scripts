@@ -181,7 +181,7 @@ L9()
     cd $path
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
     *
-    🔥 New LineageOS 17.1 Build is up
+    🔥 New LineageOS 17.1 Build
     ==========================
     $(date)*
     
@@ -198,7 +198,7 @@ L9()
 
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
     *
-    🔥 New LineageOS 17.1 Build is up
+    🔥 New LineageOS 17.1 Build
     ==========================    
     $(date)*
     
@@ -215,7 +215,7 @@ L9()
 
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
     *
-    🔥 New LineageOS 17.1 Build is up
+    🔥 New LineageOS 17.1 Build
     ==========================    
     $(date)*
     
