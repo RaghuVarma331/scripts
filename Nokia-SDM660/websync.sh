@@ -1,52 +1,52 @@
-DRGPEZIP=$(echo PixelExperience_Dragon**.zip)
+DRGPEZIP=$(echo PixelExperience**Dragon**.zip)
 DRGPELINK=https://sourceforge.net/projects/drg-sprout/files/PixelExperience/$DRGPEZIP
 
-B2NPEZIP=$(echo PixelExperience_Onyx**.zip)
+B2NPEZIP=$(echo PixelExperience**Onyx**.zip)
 B2NPELINK=https://sourceforge.net/projects/b2n-sprout/files/PixelExperience/$B2NPEZIP
 
-PL2PEZIP=$(echo PixelExperience_Plate2**.zip)
+PL2PEZIP=$(echo PixelExperience**Plate2**.zip)
 PL2PELINK=https://sourceforge.net/projects/pl2-sprout/files/PixelExperience/$PL2PEZIP
 
-CTLPEZIP=$(echo PixelExperience_Crystal**.zip)
+CTLPEZIP=$(echo PixelExperience**Crystal**.zip)
 CTLPELINK=https://sourceforge.net/projects/ctl-sprout/files/PixelExperience/$CTLPEZIP
 
-DRGLOSZIP=$(echo **UNOFFICIAL-Dragon.zip)
+DRGLOSZIP=$(echo lineage-17.1**Dragon**.zip)
 DRGLOSLINK=https://sourceforge.net/projects/drg-sprout/files/LineageOS/$DRGLOSZIP
 
-B2NLOSZIP=$(echo **UNOFFICIAL-Onyx.zip)
+B2NLOSZIP=$(echo lineage-17.1**Onyx**.zip)
 B2NLOSLINK=https://sourceforge.net/projects/b2n-sprout/files/LineageOS/$B2NLOSZIP
 
-CTLLOSZIP=$(echo **UNOFFICIAL-Crystal.zip)
+CTLLOSZIP=$(echo lineage-17.1**Crystal**.zip)
 CTLLOSLINK=https://sourceforge.net/projects/ctl-sprout/files/LineageOS/$CTLLOSZIP
 
-DRGDERPZIP=$(echo DerpFest-10-Community-Dragon**.zip)
+DRGDERPZIP=$(echo DerpFest**Dragon**.zip)
 DRGDERPLINK=https://sourceforge.net/projects/drg-sprout/files/DerpFest/$DRGDERPZIP
 
-B2NDERPZIP=$(echo DerpFest-10-Community-Onyx**.zip)
+B2NDERPZIP=$(echo DerpFest**Onyx**.zip)
 B2NDERPLINK=https://sourceforge.net/projects/b2n-sprout/files/DerpFest/$B2NDERPZIP
 
-PL2DERPZIP=$(echo DerpFest-10-Community-Plate2**.zip)
+PL2DERPZIP=$(echo DerpFest**Plate2**.zip)
 PL2DERPLINK=https://sourceforge.net/projects/pl2-sprout/files/DerpFest/$PL2DERPZIP
 
-CTLDERPZIP=$(echo DerpFest-10-Community-Crystal**.zip)
+CTLDERPZIP=$(echo DerpFest**Crystal**.zip)
 CTLDERPLINK=https://sourceforge.net/projects/ctl-sprout/files/DerpFest/$CTLDERPZIP
 
-DRGEVOZIP=$(echo EvolutionX_4.6_Dragon**.zip)
+DRGEVOZIP=$(echo EvolutionX**Dragon**.zip)
 DRGEVOLINK=https://sourceforge.net/projects/drg-sprout/files/EvolutionX/$DRGEVOZIP
 
-CTLEVOZIP=$(echo EvolutionX_4.6_Crystal**.zip)
+CTLEVOZIP=$(echo EvolutionX**Crystal**.zip)
 CTLEVOLINK=https://sourceforge.net/projects/ctl-sprout/files/EvolutionX/$CTLEVOZIP
 
-PL2EVOZIP=$(echo EvolutionX_4.6_Plate2**.zip)
+PL2EVOZIP=$(echo EvolutionX**Plate2**.zip)
 PL2EVOLINK=https://sourceforge.net/projects/pl2-sprout/files/EvolutionX/$PL2EVOZIP
 
-DRGRRZIP=$(echo RR***Dragon-Unofficial.zip)
+DRGRRZIP=$(echo RR**Dragon**.zip)
 DRGRRLINK=https://sourceforge.net/projects/drg-sprout/files/Resurrection-Remix/$DRGRRZIP
 
-B2NRRZIP=$(echo RR***Onyx-Unofficial.zip)
+B2NRRZIP=$(echo RR**Onyx**.zip)
 B2NRRLINK=https://sourceforge.net/projects/b2n-sprout/files/Resurrection-Remix/$B2NRRZIP
 
-PL2RRZIP=$(echo RR***Plate2-Unofficial.zip)
+PL2RRZIP=$(echo RR**Plate2**.zip)
 PL2RRLINK=https://sourceforge.net/projects/pl2-sprout/files/Resurrection-Remix/$PL2RRZIP
 
 echo "### Pixel Experience for Nokia phones"
