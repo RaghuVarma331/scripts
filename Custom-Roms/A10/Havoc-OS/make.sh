@@ -60,7 +60,7 @@ L2()
 L3()
 {
     cd $path
-    wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
+    git clone https://$gitpassword@github.com/RaghuVarma331/Keys keys
 } &> /dev/null
 
 L4()
@@ -99,7 +99,10 @@ L6()
     cd $path/havoc
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Dragon.git -b android-10.0 device/nokia/Dragon
     export SELINUX_IGNORE_NEVERALLOWS=true
-    . build/envsetup.sh && lunch havoc_Dragon-userdebug && make -j$(nproc --all) bacon
+    . build/envsetup.sh && lunch havoc_Dragon-userdebug && make -j$(nproc --all) target-files-package otatools
+    romname=$(cat $path/havoc/out/target/product/Dragon/system/build.prop | grep ro.havoc.build.version | cut -d "=" -f 2)
+    ./build/tools/releasetools/sign_target_files_apks -o -d $path/keys $path/havoc/out/target/product/Dragon/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/havoc/out/target/product/Dragon/signed-target-files.zip
+    ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/havoc/out/target/product/Dragon/signed-target-files.zip $path/havoc/out/target/product/Dragon/$romname.zip    
     cd out/target/product/Dragon
     cp -r Havoc-OS**.zip $path/roms
     cd $path/havoc
@@ -108,7 +111,10 @@ L6()
     export WITH_GAPPS=true
     export TARGET_GAPPS_ARCH=arm64
     export SELINUX_IGNORE_NEVERALLOWS=true
-    . build/envsetup.sh && lunch havoc_Dragon-userdebug && make -j$(nproc --all) bacon
+    . build/envsetup.sh && lunch havoc_Dragon-userdebug && make -j$(nproc --all) target-files-package otatools
+    romname=$(cat $path/havoc/out/target/product/Dragon/system/build.prop | grep ro.havoc.build.version | cut -d "=" -f 2)
+    ./build/tools/releasetools/sign_target_files_apks -o -d $path/keys $path/havoc/out/target/product/Dragon/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/havoc/out/target/product/Dragon/signed-target-files.zip
+    ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/havoc/out/target/product/Dragon/signed-target-files.zip $path/havoc/out/target/product/Dragon/$romname.zip    
     cd out/target/product/Dragon
     cp -r Havoc-OS**.zip $path/roms
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
@@ -132,7 +138,10 @@ L7()
     rm -r out/target/product/*
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Onyx.git -b android-10.0 device/nokia/Onyx
     export SELINUX_IGNORE_NEVERALLOWS=true
-    . build/envsetup.sh && lunch havoc_Onyx-userdebug && make -j$(nproc --all) bacon
+    . build/envsetup.sh && lunch havoc_Onyx-userdebug && make -j$(nproc --all) target-files-package otatools
+    romname=$(cat $path/havoc/out/target/product/Onyx/system/build.prop | grep ro.havoc.build.version | cut -d "=" -f 2)
+    ./build/tools/releasetools/sign_target_files_apks -o -d $path/keys $path/havoc/out/target/product/Onyx/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/havoc/out/target/product/Onyx/signed-target-files.zip
+    ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/havoc/out/target/product/Onyx/signed-target-files.zip $path/havoc/out/target/product/Onyx/$romname.zip    
     cd out/target/product/Onyx
     cp -r Havoc-OS**.zip $path/roms
     cd $path/havoc
@@ -141,7 +150,10 @@ L7()
     export WITH_GAPPS=true
     export TARGET_GAPPS_ARCH=arm64
     export SELINUX_IGNORE_NEVERALLOWS=true
-    . build/envsetup.sh && lunch havoc_Onyx-userdebug && make -j$(nproc --all) bacon
+    . build/envsetup.sh && lunch havoc_Onyx-userdebug && make -j$(nproc --all) target-files-package otatools
+    romname=$(cat $path/havoc/out/target/product/Onyx/system/build.prop | grep ro.havoc.build.version | cut -d "=" -f 2)
+    ./build/tools/releasetools/sign_target_files_apks -o -d $path/keys $path/havoc/out/target/product/Onyx/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/havoc/out/target/product/Onyx/signed-target-files.zip
+    ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/havoc/out/target/product/Onyx/signed-target-files.zip $path/havoc/out/target/product/Onyx/$romname.zip    
     cd out/target/product/Onyx
     cp -r Havoc-OS**.zip $path/roms
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
@@ -165,7 +177,10 @@ L8()
     rm -r out/target/product/*
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Plate2.git -b android-10.0 device/nokia/Plate2
     export SELINUX_IGNORE_NEVERALLOWS=true
-    . build/envsetup.sh && lunch havoc_Plate2-userdebug && make -j$(nproc --all) bacon
+    . build/envsetup.sh && lunch havoc_Plate2-userdebug && make -j$(nproc --all) target-files-package otatools
+    romname=$(cat $path/havoc/out/target/product/Plate2/system/build.prop | grep ro.havoc.build.version | cut -d "=" -f 2)
+    ./build/tools/releasetools/sign_target_files_apks -o -d $path/keys $path/havoc/out/target/product/Plate2/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/havoc/out/target/product/Plate2/signed-target-files.zip
+    ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/havoc/out/target/product/Plate2/signed-target-files.zip $path/havoc/out/target/product/Plate2/$romname.zip        
     cd out/target/product/Plate2
     cp -r Havoc-OS**.zip $path/roms
     cd $path/havoc
@@ -174,7 +189,10 @@ L8()
     export WITH_GAPPS=true
     export TARGET_GAPPS_ARCH=arm64
     export SELINUX_IGNORE_NEVERALLOWS=true
-    . build/envsetup.sh && lunch havoc_Plate2-userdebug && make -j$(nproc --all) bacon
+    . build/envsetup.sh && lunch havoc_Plate2-userdebug && make -j$(nproc --all) target-files-package otatools
+    romname=$(cat $path/havoc/out/target/product/Plate2/system/build.prop | grep ro.havoc.build.version | cut -d "=" -f 2)
+    ./build/tools/releasetools/sign_target_files_apks -o -d $path/keys $path/havoc/out/target/product/Plate2/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/havoc/out/target/product/Plate2/signed-target-files.zip
+    ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/havoc/out/target/product/Plate2/signed-target-files.zip $path/havoc/out/target/product/Plate2/$romname.zip    
     cd out/target/product/Plate2
     cp -r Havoc-OS**.zip $path/roms
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
@@ -198,16 +216,22 @@ L9()
     rm -r out/target/product/*
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Crystal.git -b android-10.0 device/nokia/Crystal
     export SELINUX_IGNORE_NEVERALLOWS=true
-    . build/envsetup.sh && lunch havoc_Crystal-userdebug && make -j$(nproc --all) bacon
+    . build/envsetup.sh && lunch havoc_Crystal-userdebug && make -j$(nproc --all) target-files-package otatools
+    romname=$(cat $path/havoc/out/target/product/Crystal/system/build.prop | grep ro.havoc.build.version | cut -d "=" -f 2)
+    ./build/tools/releasetools/sign_target_files_apks -o -d $path/keys $path/havoc/out/target/product/Crystal/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/havoc/out/target/product/Crystal/signed-target-files.zip
+    ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/havoc/out/target/product/Crystal/signed-target-files.zip $path/havoc/out/target/product/Crystal/$romname.zip    
     cd out/target/product/Crystal
-    cp -r Havoc-OS**.zip $path/roms
+     cp -r Havoc-OS**.zip $path/roms
     cd $path/havoc
     rm -r out/target/product/*
     export IS_PHONE=true
     export WITH_GAPPS=true
     export TARGET_GAPPS_ARCH=arm64
     export SELINUX_IGNORE_NEVERALLOWS=true
-    . build/envsetup.sh && lunch havoc_Crystal-userdebug && make -j$(nproc --all) bacon
+    . build/envsetup.sh && lunch havoc_Crystal-userdebug && make -j$(nproc --all) target-files-package otatools
+    romname=$(cat $path/havoc/out/target/product/Crystal/system/build.prop | grep ro.havoc.build.version | cut -d "=" -f 2)
+    ./build/tools/releasetools/sign_target_files_apks -o -d $path/keys $path/havoc/out/target/product/Crystal/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/havoc/out/target/product/Crystal/signed-target-files.zip
+    ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/havoc/out/target/product/Crystal/signed-target-files.zip $path/havoc/out/target/product/Crystal/$romname.zip    
     cd out/target/product/Crystal
     cp -r Havoc-OS**.zip $path/roms
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
@@ -216,7 +240,7 @@ L9()
     
     $(date) "
     cd $path
-    rm -r bin havoc telegram.py
+    rm -r bin havoc keys
 }
 
 
