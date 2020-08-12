@@ -40,6 +40,15 @@ CTLEVOLINK=https://sourceforge.net/projects/ctl-sprout/files/EvolutionX/$CTLEVOZ
 PL2EVOZIP=$(echo EvolutionX_4.6_Plate2**.zip)
 PL2EVOLINK=https://sourceforge.net/projects/pl2-sprout/files/EvolutionX/$PL2EVOZIP
 
+DRGRRZIP=$(echo RR***Dragon-Unofficial.zip)
+DRGRRLINK=https://sourceforge.net/projects/drg-sprout/files/Resurrection-Remix/$DRGRRZIP
+
+B2NRRZIP=$(echo RR***Onyx-Unofficial.zip)
+B2NRRLINK=https://sourceforge.net/projects/b2n-sprout/files/Resurrection-Remix/$B2NRRZIP
+
+PL2RRZIP=$(echo RR***Plate2-Unofficial.zip)
+PL2RRLINK=https://sourceforge.net/projects/pl2-sprout/files/Resurrection-Remix/$PL2RRZIP
+
 echo "### Pixel Experience for Nokia phones"
 echo
 echo "| Device       |              Download Link                      |  Download Statistics  |"
@@ -73,6 +82,14 @@ echo "|--------------|-------------------------------------------------|--------
 echo "| Nokia 6.1 Plus ( Latest build )| [**$DRGEVOZIP**]($DRGEVOLINK) |![data](https://img.shields.io/sourceforge/dt/drg-sprout/EvolutionX/$DRGEVOZIP.svg)|"
 echo "| Nokia 7.1 ( Latest build )| [**$CTLEVOZIP**]($CTLEVOLINK) |![data](https://img.shields.io/sourceforge/dt/ctl-sprout/EvolutionX/$CTLEVOZIP.svg)|"
 echo "| Nokia 6.1 ( Latest build )| [**$PL2EVOZIP**]($PL2EVOLINK) |![data](https://img.shields.io/sourceforge/dt/pl2-sprout/EvolutionX/$PL2EVOZIP.svg)|"
+echo
+echo "### Resurrection-Remix for Nokia phones"
+echo
+echo "| Device       |              Download Link                      |  Download Statistics  |"
+echo "|--------------|-------------------------------------------------|-----------------------|"
+echo "| Nokia 6.1 Plus ( Latest build )| [**$DRGRRZIP**]($DRGRRLINK)|![data](https://img.shields.io/sourceforge/dt/drg-sprout/Resurrection-Remix/$DRGRRZIP.svg)|"
+echo "| Nokia 7 Plus ( Latest build )| [**$B2NRRZIP**]($B2NRRLINK) |![data](https://img.shields.io/sourceforge/dt/b2n-sprout/Resurrection-Remix/$B2NRRZIP.svg)|"
+echo "| Nokia 6.1 ( Latest build )| [**$PL2RRZIP**]($PL2RRLINK) |![data](https://img.shields.io/sourceforge/dt/pl2-sprout/Resurrection-Remix/$PL2RRZIP.svg)|"
 echo
 echo "###### Few words from myside -"
 echo
