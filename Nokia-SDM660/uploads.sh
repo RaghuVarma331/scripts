@@ -34,8 +34,13 @@ sshpass -p $password rsync -avP -e ssh lineage-17.1**Crystal**.zip raghuvarma331
 
 # Pixel Experience
 
-sshpass -p $password rsync -avP -e ssh PixelExperience**Dragon**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/PixelExperience
+sshpass -p $password rsync -avP -e ssh PixelExperience**Dragon**.zip   raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/PixelExperience
 sshpass -p $password rsync -avP -e ssh PixelExperience**Onyx**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/PixelExperience
-sshpass -p $password rsync -avP -e ssh PixelExperience**Plate2**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/PixelExperience
-sshpass -p $password rsync -avP -e ssh PixelExperience**Crystal**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/PixelExperience
+sshpass -p $password rsync -avP -e ssh PixelExperience**Plate2**.zip   raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/PixelExperience
+sshpass -p $password rsync -avP -e ssh PixelExperience**Crystal**.zip  raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/PixelExperience
 
+# Resurrection-Remix
+
+sshpass -p $password rsync -avP -e ssh RR**Dragon**.zip raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/Resurrection-Remix
+sshpass -p $password rsync -avP -e ssh RR**Onyx**.zip   raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/Resurrection-Remix
+sshpass -p $password rsync -avP -e ssh RR**Plate2**.zip  raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/Resurrection-Remix

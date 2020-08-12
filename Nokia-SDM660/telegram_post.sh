@@ -4,7 +4,7 @@ path=/var/lib/jenkins/workspace/Raghu
 securitypatch=2020-08-05
 Telegram_Api_code=$(cat $path/cred** | grep api | cut -d "=" -f 2)
 chat_id=$(cat $path/cred** | grep id | cut -d "=" -f 2)
-
+RRV=Q-8.5.6
 
     wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/lineage.jpg
@@ -248,3 +248,55 @@ chat_id=$(cat $path/cred** | grep id | cut -d "=" -f 2)
     👤 By: *@RaghuVarma*
     #pl2 #nokia #evox #update
     Follow:  @nokia7161 ✅" 
+
+    wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/rr.png
+    python telegram.py -t $Telegram_Api_code -c $chat_id  -P rr.png -C "
+    *
+    🔥 New Resurrection-Remix Build
+    ==========================
+    $(date)*
+    
+    ⬇️ [Download Rom](https://forum.xda-developers.com/nokia-6-1-plus/development/rom-resurrection-remix-os-t4146017)
+    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
+    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
+    📱Device: *Nokia 6.1 Plus*
+    ⚡Build Version: *$RRV* 
+    ⚡Android Version: *10.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *@RaghuVarma*
+    #drg #nokia #rr #update
+    Follow:  @Nokia6plusofficial ✅"  
+
+    python telegram.py -t $Telegram_Api_code -c $chat_id  -P rr.png -C "
+    *
+    🔥 New Resurrection-Remix Build
+    ==========================
+    $(date)*
+    
+    ⬇️ [Download Rom](https://forum.xda-developers.com/nokia-7-plus/development/rom-resurrection-remix-os-t4146035)
+    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
+    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
+    📱Device: *Nokia 7 Plus*
+    ⚡Build Version: *$RRV* 
+    ⚡Android Version: *10.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *@RaghuVarma*
+    #b2n #nokia #rr #update
+    Follow:  @Nokia7plusofficial ✅" 
+
+    python telegram.py -t $Telegram_Api_code -c $chat_id  -P rr.png -C "
+    *
+    🔥 New Resurrection-Remix Build
+    ==========================
+    $(date)*
+    
+    ⬇️ [Download Rom](https://forum.xda-developers.com/nokia-6-2018/development/rom-resurrection-remix-os-t4146045)
+    💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
+    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
+    📱Device: *Nokia 6.1*
+    ⚡Build Version: *$RRV* 
+    ⚡Android Version: *10.0*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *@RaghuVarma*
+    #pl2 #nokia #rr #update
+    Follow:  @nokia7161 ✅"   

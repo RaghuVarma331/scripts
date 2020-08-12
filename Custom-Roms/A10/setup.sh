@@ -97,6 +97,20 @@ H2()
    rm -r make.sh
 }
 
+R1()
+{
+   cd $path
+   wget https://github.com/RaghuVarma331/scripts/raw/master/Custom-Roms/A10/Resurrection-Remix/make.sh
+   chmod a+x make.sh
+} &> /dev/null
+
+R2()
+{
+   cd $path
+   ./make.sh
+   rm -r make.sh
+}
+
 S2()
 {
    cd $path/roms
@@ -138,6 +152,8 @@ H1
 H2
 E1
 E2
+R1
+R2
 S2
 T1
 T2
