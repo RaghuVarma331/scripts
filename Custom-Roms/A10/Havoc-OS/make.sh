@@ -104,7 +104,7 @@ L6()
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch havoc_Dragon-userdebug && make -j$(nproc --all) bacon
     cd out/target/product/Dragon
-    sshpass -p $hpassword rsync -avP -e ssh Havoc-OS**.zip     maintainers@frs.sourceforge.net:/home/frs/project/havoc-os/Dragon
+    cp -r Havoc-OS**.zip $path/roms
     cd $path/havoc
     rm -r out/target/product/*
     export IS_PHONE=true
@@ -113,7 +113,7 @@ L6()
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch havoc_Dragon-userdebug && make -j$(nproc --all) bacon
     cd out/target/product/Dragon
-    sshpass -p $hpassword rsync -avP -e ssh Havoc-OS**.zip     maintainers@frs.sourceforge.net:/home/frs/project/havoc-os/Dragon
+    cp -r Havoc-OS**.zip $path/roms
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     Build successfully completed
@@ -137,7 +137,7 @@ L7()
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch havoc_Onyx-userdebug && make -j$(nproc --all) bacon
     cd out/target/product/Onyx
-    sshpass -p $hpassword rsync -avP -e ssh Havoc-OS**.zip     maintainers@frs.sourceforge.net:/home/frs/project/havoc-os/Onyx
+    cp -r Havoc-OS**.zip $path/roms
     cd $path/havoc
     rm -r out/target/product/*
     export IS_PHONE=true
@@ -146,7 +146,7 @@ L7()
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch havoc_Onyx-userdebug && make -j$(nproc --all) bacon
     cd out/target/product/Onyx
-    sshpass -p $hpassword rsync -avP -e ssh Havoc-OS**.zip     maintainers@frs.sourceforge.net:/home/frs/project/havoc-os/Onyx
+    cp -r Havoc-OS**.zip $path/roms
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     Build successfully completed
@@ -170,7 +170,7 @@ L8()
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch havoc_Plate2-userdebug && make -j$(nproc --all) bacon
     cd out/target/product/Plate2
-    sshpass -p $hpassword rsync -avP -e ssh Havoc-OS**.zip     maintainers@frs.sourceforge.net:/home/frs/project/havoc-os/Plate2
+    cp -r Havoc-OS**.zip $path/roms
     cd $path/havoc
     rm -r out/target/product/*
     export IS_PHONE=true
@@ -179,7 +179,7 @@ L8()
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch havoc_Plate2-userdebug && make -j$(nproc --all) bacon
     cd out/target/product/Plate2
-    sshpass -p $hpassword rsync -avP -e ssh Havoc-OS**.zip     maintainers@frs.sourceforge.net:/home/frs/project/havoc-os/Plate2
+    cp -r Havoc-OS**.zip $path/roms
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     Build successfully completed
@@ -203,7 +203,7 @@ L9()
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch havoc_Crystal-userdebug && make -j$(nproc --all) bacon
     cd out/target/product/Crystal
-    sshpass -p $hpassword rsync -avP -e ssh Havoc-OS**.zip     maintainers@frs.sourceforge.net:/home/frs/project/havoc-os/Crystal
+    cp -r Havoc-OS**.zip $path/roms
     cd $path/havoc
     rm -r out/target/product/*
     export IS_PHONE=true
@@ -212,7 +212,7 @@ L9()
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch havoc_Crystal-userdebug && make -j$(nproc --all) bacon
     cd out/target/product/Crystal
-    sshpass -p $hpassword rsync -avP -e ssh Havoc-OS**.zip     maintainers@frs.sourceforge.net:/home/frs/project/havoc-os/Crystal
+    cp -r Havoc-OS**.zip $path/roms
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     Build successfully completed

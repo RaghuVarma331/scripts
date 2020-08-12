@@ -101,7 +101,9 @@ S2()
 {
    cd $path/roms
    wget https://github.com/RaghuVarma331/scripts/raw/master/Nokia-SDM660/websync.sh
-   chmod a+x websync.sh
+   wget https://github.com/RaghuVarma331/scripts/raw/master/Nokia-SDM660/uploads.sh
+   chmod a+x websync.sh uploads.sh
+   ./uploads.sh
    ./websync.sh > $path/web/README.md
    cd $path/web
    git add .

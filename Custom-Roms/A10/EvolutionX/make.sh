@@ -112,7 +112,6 @@ L6()
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/pe/out/target/product/Dragon/signed-target-files.zip $path/pe/out/target/product/Dragon/$romname.zip
     cd out/target/product/Dragon  
     cp -r EvolutionX**.zip $path/roms
-    sshpass -p $password rsync -avP -e ssh EvolutionX**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/EvolutionX
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     Build successfully completed
@@ -140,7 +139,6 @@ L7()
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/pe/out/target/product/Crystal/signed-target-files.zip $path/pe/out/target/product/Crystal/$romname.zip
     cd out/target/product/Crystal  
     cp -r EvolutionX**.zip $path/roms
-    sshpass -p $password rsync -avP -e ssh EvolutionX**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/EvolutionX
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     Build successfully completed
@@ -168,7 +166,6 @@ L7-1()
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/pe/out/target/product/Plate2/signed-target-files.zip $path/pe/out/target/product/Plate2/$romname.zip
     cd out/target/product/Plate2
     cp -r EvolutionX**.zip $path/roms
-    sshpass -p $password rsync -avP -e ssh EvolutionX**.zip     raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/EvolutionX
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     Build successfully completed
