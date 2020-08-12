@@ -5,6 +5,7 @@ securitypatch=2020-08-05
 Telegram_Api_code=$(cat $path/cred** | grep api | cut -d "=" -f 2)
 chat_id=$(cat $path/cred** | grep id | cut -d "=" -f 2)
 RRV=Q-8.5.6
+EVOX=3.6
 
     wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/lineage.jpg
@@ -19,7 +20,7 @@ RRV=Q-8.5.6
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 6.1 Plus*
     ⚡Build Version: *17.1* 
-    ⚡Android Version: *10.0.0*
+    ⚡Android Version: *10.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #drg #nokia #los #update
@@ -36,7 +37,7 @@ RRV=Q-8.5.6
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 7 Plus*
     ⚡Build Version: *17.1*
-    ⚡Android Version: *10.0.0*
+    ⚡Android Version: *10.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #b2n #nokia #los #update
@@ -53,7 +54,7 @@ RRV=Q-8.5.6
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 7.1*
     ⚡Build Version: *17.1*
-    ⚡Android Version: *10.0.0*
+    ⚡Android Version: *10.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #ctl #nokia #los #update
@@ -72,7 +73,7 @@ RRV=Q-8.5.6
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 6.1 Plus*
     ⚡Build Version: *Ten*
-    ⚡Android Version: *10.0.0*
+    ⚡Android Version: *10.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #drg #nokia #pe #update
@@ -89,7 +90,7 @@ RRV=Q-8.5.6
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 7 Plus*
     ⚡Build Version: *Ten*
-    ⚡Android Version: *10.0.0*
+    ⚡Android Version: *10.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #b2n #nokia #pe #update
@@ -106,7 +107,7 @@ RRV=Q-8.5.6
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 6.1*
     ⚡Build Version: *Ten*
-    ⚡Android Version: *10.0.0*
+    ⚡Android Version: *10.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #pl2 #nokia #pe #update
@@ -123,7 +124,7 @@ RRV=Q-8.5.6
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 7.1*
     ⚡Build Version: *Ten*
-    ⚡Android Version: *10.0.0*
+    ⚡Android Version: *10.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #ctl #nokia #pe #update
@@ -141,7 +142,7 @@ RRV=Q-8.5.6
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 6.1 Plus*
     ⚡Build Version: *Ten*
-    ⚡Android Version: *10.0.0*
+    ⚡Android Version: *10.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #drg #nokia #derp #update
@@ -158,7 +159,7 @@ RRV=Q-8.5.6
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 7 Plus*
     ⚡Build Version: *Ten*
-    ⚡Android Version: *10.0.0*
+    ⚡Android Version: *10.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #b2n #nokia #derp #update
@@ -175,7 +176,7 @@ RRV=Q-8.5.6
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 6.1*
     ⚡Build Version: *Ten*
-    ⚡Android Version: *10.0.0*
+    ⚡Android Version: *10.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #pl2 #nokia #derp #update
@@ -192,7 +193,7 @@ RRV=Q-8.5.6
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 7.1*
     ⚡Build Version: *Ten*
-    ⚡Android Version: *10.0.0*
+    ⚡Android Version: *10.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #ctl #nokia #derp #update
@@ -209,8 +210,8 @@ RRV=Q-8.5.6
     💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 6.1 Plus*
-    ⚡Build Version: *Ten*
-    ⚡Android Version: *10.0.0*
+    ⚡Build Version: *$EVOX*
+    ⚡Android Version: *10.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #drg #nokia #evox #update
@@ -226,8 +227,8 @@ RRV=Q-8.5.6
     💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 7.1*
-    ⚡Build Version: *Ten*
-    ⚡Android Version: *10.0.0*
+    ⚡Build Version: *$EVOX*
+    ⚡Android Version: *10.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #ctl #nokia #evox #update
@@ -242,8 +243,8 @@ RRV=Q-8.5.6
     💬 [Device Changelog](https://raw.githubusercontent.com/RaghuVarma331/changelogs/master/nokia.txt)
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 6.1*
-    ⚡Build Version: *Ten*
-    ⚡Android Version: *10.0.0*
+    ⚡Build Version: *$EVOX*
+    ⚡Android Version: *10.0*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #pl2 #nokia #evox #update
