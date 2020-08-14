@@ -85,6 +85,9 @@ L5()
     git clone https://github.com/Nokia-SDM660/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660
     git clone https://github.com/Nokia-SDM660/android_external_bson.git -b lineage-17.1 external/bson
     git clone https://github.com/Nokia-SDM660/android_system_qcom.git -b lineage-17.1 system/qcom
+    cd packages/apps/Settings/src/com/android/settings/system
+    rm -r SystemUpdatePreferenceController.java
+    wget https://github.com/RaghuVarma331/settings/raw/ten/src/com/android/settings/system/SystemUpdatePreferenceController.java
 } &> /dev/null
 
 L6()

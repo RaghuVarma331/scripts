@@ -70,6 +70,8 @@ L4()
     cd rr
     echo -ne '\n' | repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b Q --depth=1
     repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+    rm -r packages/apps/Updater
+    git clone https://github.com/Nokia-SDM660/Os_Updates.git -b android-10.0 packages/apps/Os_Updates
 }
 
 L5()
@@ -81,6 +83,9 @@ L5()
     git clone https://github.com/Nokia-SDM660/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660
     git clone https://github.com/Nokia-SDM660/android_external_bson.git -b lineage-17.1 external/bson
     git clone https://github.com/Nokia-SDM660/android_system_qcom.git -b lineage-17.1 system/qcom
+    cd packages/apps/Settings/src/com/android/settings/system
+    rm -r SystemUpdatePreferenceController.java
+    wget https://github.com/RaghuVarma331/settings/raw/ten/src/com/android/settings/system/SystemUpdatePreferenceController.java
 } &> /dev/null
 
 L6()
@@ -94,6 +99,10 @@ L6()
     
     👤 By: Raghu Varma"   
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Dragon.git -b android-10.0 device/nokia/Dragon
+    cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
+    rm -r Constants.java
+    wget https://github.com/Nokia-SDM660/OTA-configs/raw/android-10.0/Dragon/Resurrection-Remix/Constants.java
+    cd $path/rr
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch rr_Dragon-userdebug && make -j$(nproc --all) target-files-package otatools
     romname=$(cat $path/rr/out/target/product/Dragon/system/build.prop | grep ro.rr.version | cut -d "=" -f 2)
@@ -119,6 +128,10 @@ L7()
     
     👤 By: Raghu Varma"    
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Onyx.git -b android-10.0 device/nokia/Onyx
+    cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
+    rm -r Constants.java
+    wget https://github.com/Nokia-SDM660/OTA-configs/raw/android-10.0/Onyx/Resurrection-Remix/Constants.java
+    cd $path/rr
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch rr_Onyx-userdebug && make -j$(nproc --all) target-files-package otatools
     romname=$(cat $path/rr/out/target/product/Onyx/system/build.prop | grep ro.rr.version | cut -d "=" -f 2)
@@ -144,6 +157,10 @@ L8()
     
     👤 By: Raghu Varma"    
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Plate2.git -b android-10.0 device/nokia/Plate2
+    cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
+    rm -r Constants.java
+    wget https://github.com/Nokia-SDM660/OTA-configs/raw/android-10.0/Plate2/Resurrection-Remix/Constants.java
+    cd $path/rr
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch rr_Plate2-userdebug && make -j$(nproc --all) target-files-package otatools	
     romname=$(cat $path/rr/out/target/product/Plate2/system/build.prop | grep ro.rr.version | cut -d "=" -f 2)

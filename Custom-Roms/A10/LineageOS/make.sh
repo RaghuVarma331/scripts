@@ -71,6 +71,8 @@ L4()
     echo -ne '\n' | repo init -u git://github.com/LineageOS/android.git -b lineage-17.1 --depth=1
     repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/lineage/config/common.mk
+    rm -r packages/apps/Updater
+    git clone https://github.com/Nokia-SDM660/Os_Updates.git -b android-10.0 packages/apps/Os_Updates
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_external_motorola_faceunlock -b android-10.0 external/motorola/faceunlock
     cd $path/fpatch
     chmod a+x *
@@ -87,6 +89,9 @@ L5()
     git clone https://github.com/Nokia-SDM660/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660
     git clone https://github.com/Nokia-SDM660/android_external_bson.git -b lineage-17.1 external/bson
     git clone https://github.com/Nokia-SDM660/android_system_qcom.git -b lineage-17.1 system/qcom
+    cd packages/apps/Settings/src/com/android/settings/system
+    rm -r SystemUpdatePreferenceController.java
+    wget https://github.com/RaghuVarma331/settings/raw/ten/src/com/android/settings/system/SystemUpdatePreferenceController.java
 } &> /dev/null
 
 L6()
@@ -100,6 +105,10 @@ L6()
     👤 By: Raghu Varma"
     cd $path/los
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Dragon.git -b android-10.0 device/nokia/Dragon
+    cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
+    rm -r Constants.java
+    wget https://github.com/Nokia-SDM660/OTA-configs/raw/android-10.0/Dragon/LineageOS/Constants.java
+    cd $path/los
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch lineage_Dragon-userdebug && make -j$(nproc --all) target-files-package otatools
     romname=$(cat $path/los/out/target/product/Dragon/system/build.prop | grep ro.lineage.version | cut -d "=" -f 2)
@@ -127,6 +136,10 @@ L7()
     rm -r device/nokia
     rm -r out/target/product/*
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Onyx.git -b android-10.0 device/nokia/Onyx
+    cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
+    rm -r Constants.java
+    wget https://github.com/Nokia-SDM660/OTA-configs/raw/android-10.0/Onyx/LineageOS/Constants.java
+    cd $path/los
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch lineage_Onyx-userdebug && make -j$(nproc --all) target-files-package otatools
     romname=$(cat $path/los/out/target/product/Onyx/system/build.prop | grep ro.lineage.version | cut -d "=" -f 2)
@@ -154,6 +167,10 @@ L8()
     rm -r device/nokia
     rm -r out/target/product/*
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Crystal.git -b android-10.0 device/nokia/Crystal
+    cd packages/apps/Os_Updates/src/org/pixelexperience/ota/misc
+    rm -r Constants.java
+    wget https://github.com/Nokia-SDM660/OTA-configs/raw/android-10.0/Crystal/LineageOS/Constants.java
+    cd $path/los
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch lineage_Crystal-userdebug && make -j$(nproc --all) target-files-package otatools
     romname=$(cat $path/los/out/target/product/Crystal/system/build.prop | grep ro.lineage.version | cut -d "=" -f 2)
