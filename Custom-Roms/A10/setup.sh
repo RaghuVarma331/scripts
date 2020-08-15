@@ -25,6 +25,7 @@ S1()
     mkdir roms
     git clone https://$gitpassword@github.com/Nokia-SDM660/Nokia-SDM660.github.io -b master web
     git clone https://$gitpassword@github.com/Nokia-SDM660/automated_faceunlock_patch -b android-10.0 fpatch
+    git clone https://$gitpassword@github.com/Nokia-SDM660/OTA-server -b android-10.0 OTA-server
 }
 
 L1()
