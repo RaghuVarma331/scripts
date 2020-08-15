@@ -116,6 +116,10 @@ L6()
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/los/out/target/product/Dragon/signed-target-files.zip $path/los/out/target/product/Dragon/lineage-$romname.zip
     cd out/target/product/Dragon
     cp -r lineage-17.1**.zip $path/roms
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/drg_lineage.sh
+    chmod a+x drg_lineage.sh
+    ./drg_lineage.sh
+    cat **.json > $path/OTA-server/LineageOS/Dragon.json
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     Build successfully completed
@@ -147,6 +151,10 @@ L7()
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/los/out/target/product/Onyx/signed-target-files.zip $path/los/out/target/product/Onyx/lineage-$romname.zip
     cd out/target/product/Onyx
     cp -r lineage-17.1**.zip $path/roms
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/b2n_lineage.sh
+    chmod a+x b2n_lineage.sh
+    ./b2n_lineage.sh
+    cat **.json > $path/OTA-server/LineageOS/Onyx.json
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     Build successfully completed
@@ -178,6 +186,10 @@ L8()
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/los/out/target/product/Crystal/signed-target-files.zip $path/los/out/target/product/Crystal/lineage-$romname.zip
     cd out/target/product/Crystal
     cp -r lineage-17.1**.zip $path/roms
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/ctl_lineage.sh
+    chmod a+x ctl_lineage.sh
+    ./ctl_lineage.sh
+    cat **.json > $path/OTA-server/LineageOS/Crystal.json
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     Build successfully completed

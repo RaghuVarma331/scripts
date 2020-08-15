@@ -117,6 +117,10 @@ L6()
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/pe/out/target/product/Dragon/signed-target-files.zip $path/pe/out/target/product/Dragon/$romname.zip
     cd out/target/product/Dragon  
     cp -r EvolutionX**.zip $path/roms
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/drg_evo.sh
+    chmod a+x drg_evo.sh
+    ./drg_evo.sh
+    cat **.json > $path/OTA-server/Evolution-X/Dragon.json
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     Build successfully completed
@@ -148,6 +152,10 @@ L7()
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/pe/out/target/product/Crystal/signed-target-files.zip $path/pe/out/target/product/Crystal/$romname.zip
     cd out/target/product/Crystal  
     cp -r EvolutionX**.zip $path/roms
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/ctl_evo.sh
+    chmod a+x ctl_evo.sh
+    ./ctl_evo.sh
+    cat **.json > $path/OTA-server/Evolution-X/Crystal.json
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     Build successfully completed
@@ -179,6 +187,10 @@ L7-1()
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/pe/out/target/product/Plate2/signed-target-files.zip $path/pe/out/target/product/Plate2/$romname.zip
     cd out/target/product/Plate2
     cp -r EvolutionX**.zip $path/roms
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/pl2_evo.sh
+    chmod a+x pl2_evo.sh
+    ./pl2_evo.sh
+    cat **.json > $path/OTA-server/Evolution-X/Plate2.json
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     Build successfully completed

@@ -126,8 +126,12 @@ S2()
    git add .
    git commit -s -m "Nokia-SDM660: Builds $(date)"
    git push -u -f origin master
+   cd $path/OTA-server
+   git add .
+   git commit -s -m "OTA-server: Build updates $(date)"
+   git push -u -f origin android-10.0
    cd $path
-   rm -r web roms
+   rm -r web roms OTA-server
 } &> /dev/null
 
 T1()

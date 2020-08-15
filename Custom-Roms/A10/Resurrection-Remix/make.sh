@@ -110,6 +110,10 @@ L6()
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/rr/out/target/product/Dragon/signed-target-files.zip $path/rr/out/target/product/Dragon/$romname.zip	
     cd out/target/product/Dragon
     cp -r RROS**.zip $path/roms
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/drg_rr.sh
+    chmod a+x drg_rr.sh
+    ./drg_rr.sh
+    cat **.json > $path/OTA-server/Resurrection-Remix/Dragon.json
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     Build successfully completed
@@ -139,6 +143,10 @@ L7()
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/rr/out/target/product/Onyx/signed-target-files.zip $path/rr/out/target/product/Onyx/$romname.zip	
     cd out/target/product/Onyx
     cp -r RROS**.zip $path/roms
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/b2n_rr.sh
+    chmod a+x b2n_rr.sh
+    ./b2n_rr.sh
+    cat **.json > $path/OTA-server/Resurrection-Remix/Onyx.json
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     Build successfully completed
@@ -168,6 +176,10 @@ L8()
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/rr/out/target/product/Plate2/signed-target-files.zip $path/rr/out/target/product/Plate2/$romname.zip
     cd out/target/product/Plate2 
     cp -r RROS**.zip $path/roms
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/pl2_rr.sh
+    chmod a+x pl2_rr.sh
+    ./pl2_rr.sh
+    cat **.json > $path/OTA-server/Resurrection-Remix/Plate2.json
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     Build successfully completed

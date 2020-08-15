@@ -116,6 +116,10 @@ L6()
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/pe/out/target/product/Dragon/signed-target-files.zip $path/pe/out/target/product/Dragon/$romname.zip
     cd out/target/product/Dragon  
     cp -r PixelExperience**.zip $path/roms
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/drg_pe.sh
+    chmod a+x drg_pe.sh
+    ./drg_pe.sh
+    cat **.json > $path/OTA-server/PixelExperience/Dragon.json
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     Build successfully completed
@@ -147,6 +151,10 @@ L7()
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/pe/out/target/product/Onyx/signed-target-files.zip $path/pe/out/target/product/Onyx/$romname.zip
     cd out/target/product/Onyx  
     cp -r PixelExperience**.zip $path/roms
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/b2n_pe.sh
+    chmod a+x b2n_pe.sh
+    ./b2n_pe.sh
+    cat **.json > $path/OTA-server/PixelExperience/Onyx.json
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     Build successfully completed
@@ -178,6 +186,10 @@ L8()
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/pe/out/target/product/Plate2/signed-target-files.zip $path/pe/out/target/product/Plate2/$romname.zip
     cd out/target/product/Plate2  
     cp -r PixelExperience**.zip $path/roms
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/pl2_pe.sh
+    chmod a+x pl2_pe.sh
+    ./pl2_pe.sh
+    cat **.json > $path/OTA-server/PixelExperience/Plate2.json
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     Build successfully completed
@@ -209,6 +221,10 @@ L9()
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/pe/out/target/product/Crystal/signed-target-files.zip $path/pe/out/target/product/Crystal/$romname.zip
     cd out/target/product/Crystal  
     cp -r PixelExperience**.zip $path/roms
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/ctl_pe.sh
+    chmod a+x ctl_pe.sh
+    ./ctl_pe.sh
+    cat **.json > $path/OTA-server/PixelExperience/Crystal.json
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     Build successfully completed

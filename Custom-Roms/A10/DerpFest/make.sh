@@ -125,6 +125,10 @@ L6()
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/derp/out/target/product/Dragon/signed-target-files.zip $path/derp/out/target/product/Dragon/DerpFest-$romname.zip
     cd out/target/product/Dragon
     cp -r DerpFest**.zip $path/roms
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/drg_derp.sh
+    chmod a+x drg_derp.sh
+    ./drg_derp.sh
+    cat **.json > $path/OTA-server/Derpfest/Dragon.json
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     Build successfully completed
@@ -156,6 +160,10 @@ L7()
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/derp/out/target/product/Onyx/signed-target-files.zip $path/derp/out/target/product/Onyx/DerpFest-$romname.zip
     cd out/target/product/Onyx
     cp -r DerpFest**.zip $path/roms
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/b2n_derp.sh
+    chmod a+x b2n_derp.sh
+    ./b2n_derp.sh
+    cat **.json > $path/OTA-server/Derpfest/Onyx.json
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     Build successfully completed
@@ -187,6 +195,10 @@ L8()
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/derp/out/target/product/Plate2/signed-target-files.zip $path/derp/out/target/product/Plate2/DerpFest-$romname.zip
     cd out/target/product/Plate2
     cp -r DerpFest**.zip $path/roms
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/pl2_derp.sh
+    chmod a+x pl2_derp.sh
+    ./pl2_derp.sh
+    cat **.json > $path/OTA-server/Derpfest/Plate2.json
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     Build successfully completed
@@ -219,6 +231,10 @@ L9()
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/derp/out/target/product/Crystal/signed-target-files.zip $path/derp/out/target/product/Crystal/DerpFest-$romname.zip
     cd out/target/product/Crystal
     cp -r DerpFest**.zip $path/roms
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/ctl_derp.sh
+    chmod a+x ctl_derp.sh
+    ./ctl_derp.sh
+    cat **.json > $path/OTA-server/Derpfest/Crystal.json
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     Build successfully completed
