@@ -1,18 +1,18 @@
 rm -r **.md5sum
 rm -r **.json
-md5sum PixelExperience**.zip > pixel.md5sum
+md5sum EvolutionX**.zip > evo.md5sum
 
-sourceforge=https://sourceforge.net/projects/ddv-sprout/files/PixelExperience
-filename=$(echo PixelExperience**.zip)
+sourceforge=https://sourceforge.net/projects/ctl-sprout/files/EvolutionX
+filename=$(echo EvolutionX**.zip)
 datetime=$(grep ro\.build\.date\.utc system/build.prop | cut -d= -f2)
 size=$(stat -c%s $filename)
 url=$sourceforge/$filename/download
 filehash=$(cat **.md5sum | cut -d' ' -f1)
 id=$(sha256sum $filename | awk '{ print $1 }');
 version=android-10.0
-path=/var/lib/jenkins/workspace/PixelExperience
+path=/var/lib/jenkins/workspace/Raghu
 whatsNew=$(cat $path/changelog.txt)
-notification=$(echo Sofware update - New PixelExperience build is up)
+notification=$(echo Sofware update - New Evolution-x update)
 
 echo { >> $filename.json
 echo \"version\":\"$version\", >> $filename.json

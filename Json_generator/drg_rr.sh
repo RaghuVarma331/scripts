@@ -1,9 +1,9 @@
 rm -r **.md5sum
 rm -r **.json
-md5sum DerpFest**.zip > derp.md5sum
+md5sum RROS**.zip > rr.md5sum
 
-sourceforge=https://sourceforge.net/projects/ctl-sprout/files/DerpFest
-filename=$(echo DerpFest**.zip)
+sourceforge=https://sourceforge.net/projects/drg-sprout/files/Resurrection-Remix
+filename=$(echo RROS**.zip)
 datetime=$(grep ro\.build\.date\.utc system/build.prop | cut -d= -f2)
 size=$(stat -c%s $filename)
 url=$sourceforge/$filename/download
@@ -12,7 +12,7 @@ id=$(sha256sum $filename | awk '{ print $1 }');
 version=android-10.0
 path=/var/lib/jenkins/workspace/Raghu
 whatsNew=$(cat $path/changelog.txt)
-notification=$(echo Sofware update - New DerpFest update)
+notification=$(echo Sofware update - New Resurrection-Remix update)
 
 echo { >> $filename.json
 echo \"version\":\"$version\", >> $filename.json
