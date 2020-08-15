@@ -131,7 +131,7 @@ S2()
    git commit -s -m "OTA-server: Build updates $(date)"
    git push -u -f origin android-10.0
    cd $path
-   rm -r web roms OTA-server
+   rm -r roms web fpatch OTA-server
 } &> /dev/null
 
 T1()
