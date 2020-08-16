@@ -6,14 +6,18 @@
 Telegram_Api_code=
 chat_id=
 
-# Havoc stuff
+# Download Links
 
-date=17-08-2020
-changelog=https://t.me/Havoc_OS/2494
 DRGL=
 B2NL=
 CTLL=
 PL2L=
+
+# Havoc Changelog
+
+HV=v3.8
+date=17-08-2020
+changelog=https://t.me/Havoc_OS/2494
 dchangelog="
 • initial build
 "
@@ -24,7 +28,7 @@ python telegram.py -t $Telegram_Api_code -c $chat_id  -M"
 
 *
 =============================
-     Havoc-OS v3.8 Official Update
+     Havoc-OS $HV Official Update
                       Android 10
 =============================
 *
@@ -48,7 +52,7 @@ python telegram.py -t $Telegram_Api_code -c $chat_id  -M"
 
 *
 =============================
-     Havoc-OS v3.8 Official Update
+     Havoc-OS $HV Official Update
                       Android 10
 =============================
 *
@@ -72,7 +76,7 @@ python telegram.py -t $Telegram_Api_code -c $chat_id  -M"
 
 *
 =============================
-     Havoc-OS v3.8 Official Update
+     Havoc-OS $HV Official Update
                       Android 10
 =============================
 *
@@ -96,7 +100,7 @@ python telegram.py -t $Telegram_Api_code -c $chat_id  -M"
 
 *
 =============================
-     Havoc-OS v3.8 Official Update
+     Havoc-OS $HV Official Update
                       Android 10
 =============================
 *
