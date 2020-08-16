@@ -54,6 +54,8 @@ $dchangelog
 Download Link: 
 • ROM (Vanilla): $DRGV
 • ROM (GApps): $DRGG
+
+XDA Thread Link: https://bit.ly/2E1kfeC
 *
 "
 
@@ -80,6 +82,8 @@ $dchangelog
 Download Link: 
 • ROM (Vanilla): $B2NV
 • ROM (GApps): $B2NG
+
+XDA Thread Link: https://bit.ly/3auKFRP
 *
 "
 
@@ -106,6 +110,8 @@ $dchangelog
 Download Link: 
 • ROM (Vanilla): $PL2V
 • ROM (GApps): $PL2G
+
+XDA Thread Link: https://bit.ly/2E0Prux
 *
 "
 
@@ -132,5 +138,7 @@ $dchangelog
 Download Link: 
 • ROM (Vanilla): $CTLV
 • ROM (GApps): $CTLG
+
+XDA Thread Link: https://bit.ly/2PZzjMd
 *
 "
