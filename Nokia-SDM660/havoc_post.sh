@@ -14,6 +14,9 @@ DRGL=
 B2NL=
 CTLL=
 PL2L=
+dchangelog="
+• initial build
+"
 
 
 wget https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
@@ -33,6 +36,9 @@ Device: Nokia 6.1 Plus (Dragon)
 Maintainer: @RaghuVarma
 
 Changelog: $changelog
+
+Device changelog:
+$dchangelog
 
 Download Link: $DRGL
 *
@@ -55,6 +61,9 @@ Maintainer: @RaghuVarma
 
 Changelog: $changelog
 
+Device changelog:
+$dchangelog
+
 Download Link: $B2NL
 *
 "
@@ -76,6 +85,9 @@ Maintainer: @RaghuVarma
 
 Changelog: $changelog
 
+Device changelog:
+$dchangelog
+
 Download Link: $PL2L
 *
 "
@@ -96,6 +108,9 @@ Device: Nokia 7.1 (Crystal)
 Maintainer: @RaghuVarma
 
 Changelog: $changelog
+
+Device changelog:
+$dchangelog
 
 Download Link: $CTLL
 *
