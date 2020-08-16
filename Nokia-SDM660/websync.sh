@@ -96,8 +96,9 @@ echo
 echo "###### Development is just for fun so please don't believe that my custom rom builds are equal to stock or better then stock. It's all up on your mindset and your interest !"
 echo
 echo "###### Do you like my work? Please Show your support by donating via PayPal or UPI ❤️"
-echo "###### Paypal: https://www.paypal.me/Raghu107"
-echo "###### Upi: Text me for getting transaction details @RaghuVarma"
+echo "###### Upi? Text me for upi details 🙂"
+echo "###### My Paypal email id - raghuvarma330@gmail.com"
+echo "###### My Telegram username - https://t.me/RaghuVarma"
 echo "###### Thank you 🙂"
 
 
