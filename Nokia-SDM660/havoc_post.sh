@@ -8,10 +8,17 @@ chat_id=
 
 # Download Links
 
-DRGL=
-B2NL=
-CTLL=
-PL2L=
+DRGV=
+DRGG=
+
+B2NV=
+B2NG=
+
+PL2V=
+PL2G=
+
+CTLV=
+CTLG=
 
 # Havoc Changelog
 
@@ -44,7 +51,9 @@ Changelog: $changelog
 Device changelog:
 $dchangelog
 
-Download Link: $DRGL
+Download Link: 
+• ROM (Vanilla): $DRGV
+• ROM (GApps): $DRGG
 *
 "
 
@@ -68,7 +77,9 @@ Changelog: $changelog
 Device changelog:
 $dchangelog
 
-Download Link: $B2NL
+Download Link: 
+• ROM (Vanilla): $B2NV
+• ROM (GApps): $B2NG
 *
 "
 
@@ -92,7 +103,9 @@ Changelog: $changelog
 Device changelog:
 $dchangelog
 
-Download Link: $PL2L
+Download Link: 
+• ROM (Vanilla): $PL2V
+• ROM (GApps): $PL2G
 *
 "
 
@@ -116,6 +129,8 @@ Changelog: $changelog
 Device changelog:
 $dchangelog
 
-Download Link: $CTLL
+Download Link: 
+• ROM (Vanilla): $CTLV
+• ROM (GApps): $CTLG
 *
 "
