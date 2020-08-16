@@ -26,6 +26,7 @@ S1()
     git clone https://$gitpassword@github.com/Nokia-SDM660/Nokia-SDM660.github.io -b master web
     git clone https://$gitpassword@github.com/Nokia-SDM660/automated_faceunlock_patch -b android-10.0 fpatch
     git clone https://$gitpassword@github.com/Nokia-SDM660/OTA-server -b android-10.0 OTA-server
+    wget https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/changelog.txt
 }
 
 L1()
@@ -131,7 +132,7 @@ S2()
    git commit -s -m "OTA-server: Build updates $(date)"
    git push -u -f origin android-10.0
    cd $path
-   rm -r roms web fpatch OTA-server
+   rm -r roms web fpatch OTA-server changelog.txt
 } &> /dev/null
 
 T1()
