@@ -368,6 +368,7 @@ UPLOAD()
     #pnx #nokia #twrp #update"   	
     
     cd $path
+    export GLOBIGNORE=roms
     rm -r *
     
 } &> /dev/null
