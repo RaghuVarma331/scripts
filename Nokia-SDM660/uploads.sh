@@ -6,6 +6,12 @@ hpassword=$(cat $path/cred** | grep hsf | cut -d "=" -f 2)
 
 
 
+# ssh host key
+
+mkdir -p ~/.ssh  &&  echo "Host *" > ~/.ssh/config && echo " StrictHostKeyChecking no" >> ~/.ssh/config
+echo "# Allow Jenkins" >> /etc/sudoers && echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
+
 # Derpfest
 
 sshpass -p $password rsync -avP -e ssh DerpFest**Dragon**.zip raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/DerpFest
