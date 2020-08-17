@@ -99,6 +99,9 @@ L6()
     $(date)
     
     👤 By: Raghu Varma"   
+    echo "----------------------------------------------------"
+    echo "Started building Havoc OS for 6.1 Plus"
+    echo "----------------------------------------------------"    
     cd $path/havoc
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Dragon.git -b android-10.0 device/nokia/Dragon
     export SELINUX_IGNORE_NEVERALLOWS=true
@@ -108,6 +111,12 @@ L6()
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/havoc/out/target/product/Dragon/signed-target-files.zip $path/havoc/out/target/product/Dragon/$romname.zip    
     cd out/target/product/Dragon
     cp -r Havoc-OS**.zip $path/roms
+    echo "----------------------------------------------------"
+    echo "Build successfully completed"
+    echo "----------------------------------------------------"
+    echo "----------------------------------------------------"
+    echo "Started building Havoc OS for Nokia 7 Plus"
+    echo "----------------------------------------------------"    
     cd $path/havoc
     rm -r device/nokia
     rm -r out/target/product/*
@@ -119,6 +128,12 @@ L6()
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/havoc/out/target/product/Onyx/signed-target-files.zip $path/havoc/out/target/product/Onyx/$romname.zip    
     cd out/target/product/Onyx
     cp -r Havoc-OS**.zip $path/roms
+    echo "----------------------------------------------------"
+    echo "Build successfully completed"
+    echo "----------------------------------------------------"
+    echo "----------------------------------------------------"
+    echo "Started building Havoc OS for Nokia 7.1"
+    echo "----------------------------------------------------"    
     cd $path/havoc
     rm -r device/nokia
     rm -r out/target/product/*
@@ -130,6 +145,12 @@ L6()
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/havoc/out/target/product/Crystal/signed-target-files.zip $path/havoc/out/target/product/Crystal/$romname.zip    
     cd out/target/product/Crystal
     cp -r Havoc-OS**.zip $path/roms
+    echo "----------------------------------------------------"
+    echo "Build successfully completed"
+    echo "----------------------------------------------------"
+    echo "----------------------------------------------------"
+    echo "Started building Havoc OS for Nokia 6.1"
+    echo "----------------------------------------------------"    
     cd $path/havoc    
     rm -r device/nokia
     rm -r out/target/product/*
@@ -141,6 +162,9 @@ L6()
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/havoc/out/target/product/Plate2/signed-target-files.zip $path/havoc/out/target/product/Plate2/$romname.zip        
     cd out/target/product/Plate2
     cp -r Havoc-OS**.zip $path/roms
+    echo "----------------------------------------------------"
+    echo "Build successfully completed"
+    echo "----------------------------------------------------"
     cd $path/havoc
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
@@ -158,6 +182,9 @@ L7()
     $(date)
     
     👤 By: Raghu Varma"
+    echo "-------------------------------------------------------"
+    echo "Started building Havoc OS for Nokia 6.1 Plus with GApps"
+    echo "-------------------------------------------------------"    
     cd $path/havoc
     rm -r device/nokia
     rm -r out/target/product/*
@@ -172,6 +199,12 @@ L7()
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/havoc/out/target/product/Dragon/signed-target-files.zip $path/havoc/out/target/product/Dragon/$romname.zip    
     cd out/target/product/Dragon
     cp -r Havoc-OS**.zip $path/roms   
+    echo "----------------------------------------------------"
+    echo "Build successfully completed"
+    echo "----------------------------------------------------"
+    echo "----------------------------------------------------"
+    echo "Started building Havoc OS for Nokia 7 Plus with GApps"
+    echo "----------------------------------------------------"    
     cd $path/havoc
     rm -r device/nokia
     rm -r out/target/product/*    
@@ -185,7 +218,13 @@ L7()
     ./build/tools/releasetools/sign_target_files_apks -o -d $path/keys $path/havoc/out/target/product/Onyx/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/havoc/out/target/product/Onyx/signed-target-files.zip
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/havoc/out/target/product/Onyx/signed-target-files.zip $path/havoc/out/target/product/Onyx/$romname.zip    
     cd out/target/product/Onyx
-    cp -r Havoc-OS**.zip $path/roms        
+    cp -r Havoc-OS**.zip $path/roms  
+    echo "----------------------------------------------------"
+    echo "Build successfully completed"
+    echo "----------------------------------------------------"
+    echo "----------------------------------------------------"
+    echo "Started building Havoc OS for Nokia 6.1 with GApps"
+    echo "----------------------------------------------------"    
     cd $path/havoc
     rm -r device/nokia
     rm -r out/target/product/*    
@@ -200,6 +239,12 @@ L7()
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/havoc/out/target/product/Plate2/signed-target-files.zip $path/havoc/out/target/product/Plate2/$romname.zip    
     cd out/target/product/Plate2
     cp -r Havoc-OS**.zip $path/roms    
+    echo "----------------------------------------------------"
+    echo "Build successfully completed"
+    echo "----------------------------------------------------"
+    echo "----------------------------------------------------"
+    echo "Started building Havoc OS for Nokia 7.1 with GApps"
+    echo "----------------------------------------------------"    
     cd $path/havoc
     rm -r device/nokia
     rm -r out/target/product/*    
@@ -213,7 +258,10 @@ L7()
     ./build/tools/releasetools/sign_target_files_apks -o -d $path/keys $path/havoc/out/target/product/Crystal/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/havoc/out/target/product/Crystal/signed-target-files.zip
     ./build/tools/releasetools/ota_from_target_files -k $path/keys/releasekey $path/havoc/out/target/product/Crystal/signed-target-files.zip $path/havoc/out/target/product/Crystal/$romname.zip    
     cd out/target/product/Crystal
-    cp -r Havoc-OS**.zip $path/roms     
+    cp -r Havoc-OS**.zip $path/roms   
+    echo "----------------------------------------------------"
+    echo "Build successfully completed"
+    echo "----------------------------------------------------"
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
     Build successfully completed
