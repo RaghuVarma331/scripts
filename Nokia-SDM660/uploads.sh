@@ -2,7 +2,7 @@
 
 path=/var/lib/jenkins/workspace/Raghu
 password=$(cat $path/cred** | grep sf | cut -d "=" -f 2)
-hpassword=$(cat $path/cred** | grep hsf | cut -d "=" -f 2)
+hpassword=$(cat $path/cred** | grep havoc | cut -d "=" -f 2)
 
 
 
