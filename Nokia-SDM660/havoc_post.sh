@@ -8,17 +8,17 @@ chat_id=
 
 # Download Links
 
-DRGV=https://bit.ly/34cj5YI
-DRGG=https://bit.ly/3aClzQZ
+DRGV=https://bit.ly/3ggDCNZ
+DRGG=https://bit.ly/2ErDwWp
 
-B2NV=https://bit.ly/34dRzKa
-B2NG=https://bit.ly/2YerXJv
+B2NV=https://bit.ly/2Eli3Pc
+B2NG=https://bit.ly/34kpfpF
 
-PL2V=https://bit.ly/2Q0lM7n
-PL2G=https://bit.ly/2YcpKhu
+PL2V=https://bit.ly/2CLYKhm
+PL2G=https://bit.ly/32bOYxP
 
-CTLV=https://bit.ly/313SafA
-CTLG=https://bit.ly/34ctDXM
+CTLV=https://bit.ly/34lAZIw
+CTLG=https://bit.ly/3giCF7V
 
 # Havoc Changelog
 
