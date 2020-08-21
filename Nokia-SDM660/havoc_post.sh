@@ -23,10 +23,29 @@ CTLG=https://bit.ly/34ctDXM
 # Havoc Changelog
 
 HV=v3.8
-date=17-08-2020
+date=21-08-2020
 changelog=https://t.me/Havoc_OS/2494
 dchangelog="
-• initial build
+• Build based on latest stable sources
+• Improved system stability
+• User interface enhancements
+• Google Security Patch 2020-08
+• Faceunlock support out of the box
+• Comes with BlackCaps kernel
+• Linux version 4.4.212
+• System blobs based on 4.15C
+• Vendor blobs based on 4.15C
+• Camera blobs based on 4.150
+• Updated fingerprint to August from coral
+• Redumped configurations from 4.15C/D dumps
+• Fixed low volume issues on 6+ (no issues for 7+ , 7.1 & 6.1)
+• Fixed usb tethering
+• Fixed network switch
+• Updated power profile from stock 4.15C (DRG/CTL/PL2) 4.15D (B2N)
+• Updated usb configuration props from stock
+• Updated CarrierConfig from motorola Payton (latest stock rom)
+• Safety net passed out of the box
+• All banking apps will work
 "
 
 
