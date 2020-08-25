@@ -80,7 +80,7 @@ L5()
     git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia.git -b android-10.0 vendor/nokia
     git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_camera.git -b android-10.0 vendor/nokia/camera
     git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_GoogleCamera -b android-10.0 vendor/nokia/GoogleCamera
-    git clone https://github.com/Nokia-SDM660/android_kernel_nokia_sdm660.git -b ten --depth=1 kernel/nokia/sdm660
+    git clone https://github.com/Nokia-SDM660/android_kernel_nokia_sdm660.git -b android-10.0-clang --depth=1 kernel/nokia/sdm660
     git clone https://github.com/Nokia-SDM660/android_external_bson.git -b lineage-17.1 external/bson
     git clone https://github.com/Nokia-SDM660/android_system_qcom.git -b lineage-17.1 system/qcom
     cd packages/apps/Settings/src/com/android/settings/system
