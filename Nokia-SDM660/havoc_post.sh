@@ -8,44 +8,31 @@ chat_id=
 
 # Download Links
 
-DRGV=https://bit.ly/3ggDCNZ
-DRGG=https://bit.ly/2ErDwWp
+DRGV=https://bit.ly/2Z1zQCz
+DRGG=https://bit.ly/3jpeJl7
 
-B2NV=https://bit.ly/2Eli3Pc
-B2NG=https://bit.ly/34kpfpF
+B2NV=https://bit.ly/2EPlMo4
+B2NG=https://bit.ly/2G913MV
 
-PL2V=https://bit.ly/2CLYKhm
-PL2G=https://bit.ly/32bOYxP
+PL2V=https://bit.ly/3lwVVCj
+PL2G=https://bit.ly/2G91gQd
 
-CTLV=https://bit.ly/34lAZIw
-CTLG=https://bit.ly/3giCF7V
+CTLV=https://bit.ly/31D2TxE
+CTLG=https://bit.ly/3b5wEdP
 
 # Havoc Changelog
 
 HV=v3.8
-date=21-08-2020
+date=29-08-2020
 changelog=https://t.me/Havoc_OS/2494
 dchangelog="
 • Build based on latest stable sources
 • Improved system stability
 • User interface enhancements
 • Google Security Patch 2020-08
-• Faceunlock support out of the box
-• Comes with BlackCaps kernel
-• Linux version 4.4.212
-• System blobs based on 4.15C
-• Vendor blobs based on 4.15C
-• Camera blobs based on 4.150
-• Updated fingerprint to August from coral
-• Redumped configurations from 4.15C/D dumps
-• Fixed low volume issues on 6+ (no issues for 7+ , 7.1 & 6.1)
-• Fixed usb tethering
-• Fixed network switch
-• Updated power profile from stock 4.15C (DRG/CTL/PL2) 4.15D (B2N)
-• Updated usb configuration props from stock
-• Updated CarrierConfig from motorola Payton (latest stock rom)
-• Safety net passed out of the box
-• All banking apps will work
+• Linux version 4.4.192
+• Compiled using clang-r353983c
+• Enabled Wifi Calling Support
 "
 
 
