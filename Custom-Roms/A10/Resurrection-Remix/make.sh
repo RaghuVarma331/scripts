@@ -70,6 +70,7 @@ L4()
     cd rr
     echo -ne '\n' | repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b Q --depth=1
     repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+    rm -r external/motorola/faceunlock
     rm -r packages/apps/Updater
     git clone https://github.com/Nokia-SDM660/Os_Updates.git -b android-10.0 packages/apps/Os_Updates
 }

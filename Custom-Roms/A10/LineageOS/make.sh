@@ -72,6 +72,7 @@ L4()
     repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/lineage/config/common.mk
     rm -r packages/apps/Updater
+    rm -r external/motorola/faceunlock
     git clone https://github.com/Nokia-SDM660/Os_Updates.git -b android-10.0 packages/apps/Os_Updates
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_external_motorola_faceunlock -b android-10.0 external/motorola/faceunlock
     cd $path/fpatch
