@@ -74,9 +74,6 @@ L4()
     rm -r packages/apps/Updates
     git clone https://github.com/Nokia-SDM660/Os_Updates.git -b android-10.0 packages/apps/Os_Updates
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_external_motorola_faceunlock -b android-10.0 external/motorola/faceunlock
-    cd $path/fpatch
-    chmod a+x *
-    ./PixelExperience.sh
 }
 
 L5()
