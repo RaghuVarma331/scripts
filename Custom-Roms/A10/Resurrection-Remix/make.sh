@@ -73,6 +73,7 @@ L4()
     rm -r external/motorola/faceunlock
     rm -r packages/apps/Updater
     git clone https://github.com/Nokia-SDM660/Os_Updates.git -b android-10.0 packages/apps/Os_Updates
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_external_motorola_faceunlock -b android-10.0 external/motorola/faceunlock
 }
 
 L5()
