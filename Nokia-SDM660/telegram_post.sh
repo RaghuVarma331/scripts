@@ -1,7 +1,7 @@
 #!/bin/bash
 
 path=/var/lib/jenkins/workspace/Raghu
-securitypatch=2020-08-05
+securitypatch=2020-09-05
 Telegram_Api_code=$(cat $path/cred** | grep api | cut -d "=" -f 2)
 chat_id=$(cat $path/cred** | grep id | cut -d "=" -f 2)
 RRV=Q-8.5.6

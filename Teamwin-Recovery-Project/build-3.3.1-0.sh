@@ -21,8 +21,8 @@ clear
 # Detail Versions
 
 path=/var/lib/jenkins/workspace/TWRP
-twrpsp='2020-08-05'
-securitypatch=2020-08-05
+twrpsp='2020-09-05'
+securitypatch=2020-09-05
 
 # credentials
 
