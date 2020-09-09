@@ -89,15 +89,15 @@ TWRP-Q-SOURCE()
     git clone https://github.com/RaghuVarma331/android_system_core.git -b android-9.0 system/core
     git clone https://github.com/RaghuVarma331/external_magisk-prebuilt.git -b master external/magisk-prebuilt
     git clone https://github.com/Nokia-SDM660/android_bootable_recovery.git -b android-9.0 bootable/recovery	
-    git clone https://github.com/Nokia-SDM660/android_device_nokia_DRG_sprout-TWRP.git -b android-10.0 device/nokia/DRG_sprout
-    git clone https://github.com/Nokia-SDM660/android_device_nokia_B2N_sprout-TWRP.git -b android-10.0 device/nokia/B2N_sprout
-    git clone https://github.com/Nokia-SDM660/android_device_nokia_CTL_sprout-TWRP.git -b android-10.0 device/nokia/CTL_sprout
-    git clone https://github.com/Nokia-SDM660/android_device_nokia_PL2_sprout-TWRP.git -b android-10.0 device/nokia/PL2_sprout
-    git clone https://github.com/Nokia-SDM660/android_device_nokia_PNX_sprout-TWRP.git -b android-10.0 device/nokia/PNX_sprout
+    git clone https://github.com/Nokia-SDM660/android_device_nokia_DRG_sprout-TWRP.git -b android-11.0 device/nokia/DRG_sprout
+    git clone https://github.com/Nokia-SDM660/android_device_nokia_B2N_sprout-TWRP.git -b android-11.0 device/nokia/B2N_sprout
+    git clone https://github.com/Nokia-SDM660/android_device_nokia_CTL_sprout-TWRP.git -b android-11.0 device/nokia/CTL_sprout
+    git clone https://github.com/Nokia-SDM660/android_device_nokia_PL2_sprout-TWRP.git -b android-11.0 device/nokia/PL2_sprout
+    git clone https://github.com/Nokia-SDM660/android_device_nokia_PNX_sprout-TWRP.git -b android-11.0 device/nokia/PNX_sprout
     sed -i "74i PLATFORM_SECURITY_PATCH := $twrpsp" device/nokia/PNX_sprout/BoardConfig.mk	
-    git clone https://github.com/Nokia-SDM660/android_device_nokia_DDV_sprout-TWRP.git -b android-10.0 device/nokia/DDV_sprout
+    git clone https://github.com/Nokia-SDM660/android_device_nokia_DDV_sprout-TWRP.git -b android-11.0 device/nokia/DDV_sprout
     sed -i "90i PLATFORM_SECURITY_PATCH := $twrpsp" device/nokia/DDV_sprout/BoardConfig.mk
-    git clone https://github.com/Nokia-SDM660/android_device_nokia_SLD_sprout-TWRP.git -b android-10.0 device/nokia/SLD_sprout
+    git clone https://github.com/Nokia-SDM660/android_device_nokia_SLD_sprout-TWRP.git -b android-11.0 device/nokia/SLD_sprout
     sed -i "90i PLATFORM_SECURITY_PATCH := $twrpsp" device/nokia/SLD_sprout/BoardConfig.mk    
     . build/envsetup.sh && lunch lineage_DRG_sprout-eng && make -j32 recoveryimage	
     . build/envsetup.sh && lunch lineage_B2N_sprout-eng && make -j32 recoveryimage
@@ -107,47 +107,47 @@ TWRP-Q-SOURCE()
     . build/envsetup.sh && lunch lineage_PL2_sprout-eng && make -j32 recoveryimage	
     . build/envsetup.sh && lunch lineage_PNX_sprout-eng && make -j32 recoveryimage  	
     cd out/target/product/DRG_sprout
-    mv recovery.img twrp-3.4.0-0-DRG_sprout-10.0-$(date +"%Y%m%d").img
-    cp -r twrp-3.4.0-0-DRG_sprout-10.0-$(date +"%Y%m%d").img $path/DRG_sprout
+    mv recovery.img twrp-3.4.0-0-DRG_sprout-11.0-$(date +"%Y%m%d").img
+    cp -r twrp-3.4.0-0-DRG_sprout-11.0-$(date +"%Y%m%d").img $path/DRG_sprout
     cd
     cd $path/twrp
     cd out/target/product/CTL_sprout
-    mv recovery.img twrp-3.4.0-0-CTL_sprout-10.0-$(date +"%Y%m%d").img
-    cp -r twrp-3.4.0-0-CTL_sprout-10.0-$(date +"%Y%m%d").img $path/CTL_sprout
+    mv recovery.img twrp-3.4.0-0-CTL_sprout-11.0-$(date +"%Y%m%d").img
+    cp -r twrp-3.4.0-0-CTL_sprout-11.0-$(date +"%Y%m%d").img $path/CTL_sprout
     cd
     cd $path/twrp    
     cd out/target/product/B2N_sprout
-    mv recovery.img twrp-3.4.0-0-B2N_sprout-OOB-10.0-$(date +"%Y%m%d").img
-    cp -r twrp-3.4.0-0-B2N_sprout-OOB-10.0-$(date +"%Y%m%d").img $path/B2N_sprout
+    mv recovery.img twrp-3.4.0-0-B2N_sprout-OOB-11.0-$(date +"%Y%m%d").img
+    cp -r twrp-3.4.0-0-B2N_sprout-OOB-11.0-$(date +"%Y%m%d").img $path/B2N_sprout
     cd
     cd $path/twrp	
     cd out/target/product/SLD_sprout
-    mv recovery.img twrp-3.4.0-0-SLD_sprout-10.0-$(date +"%Y%m%d").img
-    cp -r twrp-3.4.0-0-SLD_sprout-10.0-$(date +"%Y%m%d").img $path/SLD_sprout
+    mv recovery.img twrp-3.4.0-0-SLD_sprout-11.0-$(date +"%Y%m%d").img
+    cp -r twrp-3.4.0-0-SLD_sprout-11.0-$(date +"%Y%m%d").img $path/SLD_sprout
     cd
     cd $path/twrp	
     cd out/target/product/DDV_sprout
-    mv recovery.img twrp-3.4.0-0-DDV_sprout-10.0-$(date +"%Y%m%d").img
-    cp -r twrp-3.4.0-0-DDV_sprout-10.0-$(date +"%Y%m%d").img $path/DDV_sprout    
+    mv recovery.img twrp-3.4.0-0-DDV_sprout-11.0-$(date +"%Y%m%d").img
+    cp -r twrp-3.4.0-0-DDV_sprout-11.0-$(date +"%Y%m%d").img $path/DDV_sprout    
     cd
     cd $path/twrp	
     cd out/target/product/PNX_sprout
-    mv recovery.img twrp-3.4.0-0-PNX_sprout-10.0-$(date +"%Y%m%d").img
-    cp -r twrp-3.4.0-0-PNX_sprout-10.0-$(date +"%Y%m%d").img $path/PNX_sprout 
+    mv recovery.img twrp-3.4.0-0-PNX_sprout-11.0-$(date +"%Y%m%d").img
+    cp -r twrp-3.4.0-0-PNX_sprout-11.0-$(date +"%Y%m%d").img $path/PNX_sprout 
     cd
     cd $path/twrp	
     cd out/target/product/PL2_sprout
-    mv recovery.img twrp-3.4.0-0-PL2_sprout-10.0-$(date +"%Y%m%d").img
-    cp -r twrp-3.4.0-0-PL2_sprout-10.0-$(date +"%Y%m%d").img $path/PL2_sprout       	
+    mv recovery.img twrp-3.4.0-0-PL2_sprout-11.0-$(date +"%Y%m%d").img
+    cp -r twrp-3.4.0-0-PL2_sprout-11.0-$(date +"%Y%m%d").img $path/PL2_sprout       	
     cd
     cd $path/twrp
     rm -r device/nokia
     rm -r out
-    git clone https://github.com/Nokia-SDM660/android_device_nokia_B2N_sprout-TWRP.git -b android-10.0-NB device/nokia/B2N_sprout
+    git clone https://github.com/Nokia-SDM660/android_device_nokia_B2N_sprout-TWRP.git -b android-11.0-NB device/nokia/B2N_sprout
     . build/envsetup.sh && lunch lineage_B2N_sprout-eng && make -j32 recoveryimage	
     cd out/target/product/B2N_sprout
-    mv recovery.img twrp-3.4.0-0-B2N_sprout-POB-10.0-$(date +"%Y%m%d").img
-    cp -r twrp-3.4.0-0-B2N_sprout-POB-10.0-$(date +"%Y%m%d").img $path/B2N_sprout
+    mv recovery.img twrp-3.4.0-0-B2N_sprout-POB-11.0-$(date +"%Y%m%d").img
+    cp -r twrp-3.4.0-0-B2N_sprout-POB-11.0-$(date +"%Y%m%d").img $path/B2N_sprout
     cd
     cd $path  
 
@@ -159,10 +159,10 @@ TWRP-Q-INSTALLER()
     cd twrp
     rm -r out
     rm -r device/nokia
-    git clone https://github.com/Nokia-SDM660/android_device_nokia_DRG_sprout-TWRP.git -b android-10.0 device/nokia/DRG_sprout
-    git clone https://github.com/Nokia-SDM660/android_device_nokia_B2N_sprout-TWRP.git -b android-10.0 device/nokia/B2N_sprout	
-    git clone https://github.com/Nokia-SDM660/android_device_nokia_CTL_sprout-TWRP.git -b android-10.0 device/nokia/CTL_sprout
-    git clone https://github.com/Nokia-SDM660/android_device_nokia_PL2_sprout-TWRP.git -b android-10.0 device/nokia/PL2_sprout	
+    git clone https://github.com/Nokia-SDM660/android_device_nokia_DRG_sprout-TWRP.git -b android-11.0 device/nokia/DRG_sprout
+    git clone https://github.com/Nokia-SDM660/android_device_nokia_B2N_sprout-TWRP.git -b android-11.0 device/nokia/B2N_sprout	
+    git clone https://github.com/Nokia-SDM660/android_device_nokia_CTL_sprout-TWRP.git -b android-11.0 device/nokia/CTL_sprout
+    git clone https://github.com/Nokia-SDM660/android_device_nokia_PL2_sprout-TWRP.git -b android-11.0 device/nokia/PL2_sprout	
     sed -i "/ro.build.version.security_patch/d" build/tools/buildinfo.sh
     . build/envsetup.sh && lunch lineage_DRG_sprout-eng && make -j32 recoveryimage
     . build/envsetup.sh && lunch lineage_B2N_sprout-eng && make -j32 recoveryimage
@@ -173,8 +173,8 @@ TWRP-Q-INSTALLER()
     cp -r ramdisk-twrp.cpio $path/twrp/device/nokia/DRG_sprout/installer
     cd
     cd $path/twrp/device/nokia/DRG_sprout/installer
-    zip -r twrp-installer-3.4.0-0-DRG_sprout-10.0-$(date +"%Y%m%d").zip magiskboot  META-INF ramdisk-twrp.cpio
-    cp -r twrp-installer-3.4.0-0-DRG_sprout-10.0-$(date +"%Y%m%d").zip $path/DRG_sprout  
+    zip -r twrp-installer-3.4.0-0-DRG_sprout-11.0-$(date +"%Y%m%d").zip magiskboot  META-INF ramdisk-twrp.cpio
+    cp -r twrp-installer-3.4.0-0-DRG_sprout-11.0-$(date +"%Y%m%d").zip $path/DRG_sprout  
     cd
     cd $path/twrp
     cd out/target/product/CTL_sprout
@@ -182,8 +182,8 @@ TWRP-Q-INSTALLER()
     cp -r ramdisk-twrp.cpio $path/twrp/device/nokia/CTL_sprout/installer
     cd
     cd $path/twrp/device/nokia/CTL_sprout/installer
-    zip -r twrp-installer-3.4.0-0-CTL_sprout-10.0-$(date +"%Y%m%d").zip magiskboot  META-INF ramdisk-twrp.cpio
-    cp -r twrp-installer-3.4.0-0-CTL_sprout-10.0-$(date +"%Y%m%d").zip $path/CTL_sprout  
+    zip -r twrp-installer-3.4.0-0-CTL_sprout-11.0-$(date +"%Y%m%d").zip magiskboot  META-INF ramdisk-twrp.cpio
+    cp -r twrp-installer-3.4.0-0-CTL_sprout-11.0-$(date +"%Y%m%d").zip $path/CTL_sprout  
     cd
     cd $path/twrp
     cd out/target/product/PL2_sprout
@@ -191,8 +191,8 @@ TWRP-Q-INSTALLER()
     cp -r ramdisk-twrp.cpio $path/twrp/device/nokia/PL2_sprout/installer
     cd
     cd $path/twrp/device/nokia/PL2_sprout/installer
-    zip -r twrp-installer-3.4.0-0-PL2_sprout-10.0-$(date +"%Y%m%d").zip magiskboot  META-INF ramdisk-twrp.cpio
-    cp -r twrp-installer-3.4.0-0-PL2_sprout-10.0-$(date +"%Y%m%d").zip $path/PL2_sprout  	
+    zip -r twrp-installer-3.4.0-0-PL2_sprout-11.0-$(date +"%Y%m%d").zip magiskboot  META-INF ramdisk-twrp.cpio
+    cp -r twrp-installer-3.4.0-0-PL2_sprout-11.0-$(date +"%Y%m%d").zip $path/PL2_sprout  	
     cd
     cd $path/twrp    
     cd out/target/product/B2N_sprout
@@ -200,21 +200,21 @@ TWRP-Q-INSTALLER()
     cp -r ramdisk-twrp.cpio $path/twrp/device/nokia/B2N_sprout/installer
     cd
     cd $path/twrp/device/nokia/B2N_sprout/installer
-    zip -r twrp-installer-3.4.0-0-B2N_sprout-OOB-10.0-$(date +"%Y%m%d").zip magiskboot  META-INF ramdisk-twrp.cpio
-    cp -r twrp-installer-3.4.0-0-B2N_sprout-OOB-10.0-$(date +"%Y%m%d").zip $path/B2N_sprout  
+    zip -r twrp-installer-3.4.0-0-B2N_sprout-OOB-11.0-$(date +"%Y%m%d").zip magiskboot  META-INF ramdisk-twrp.cpio
+    cp -r twrp-installer-3.4.0-0-B2N_sprout-OOB-11.0-$(date +"%Y%m%d").zip $path/B2N_sprout  
     cd
     cd $path/twrp
     rm -r out
     rm -r device/nokia
-    git clone https://github.com/Nokia-SDM660/android_device_nokia_B2N_sprout-TWRP.git -b android-10.0-NB device/nokia/B2N_sprout	
+    git clone https://github.com/Nokia-SDM660/android_device_nokia_B2N_sprout-TWRP.git -b android-11.0-NB device/nokia/B2N_sprout	
     . build/envsetup.sh && lunch lineage_B2N_sprout-eng && make -j32 recoveryimage  
     cd out/target/product/B2N_sprout
     mv ramdisk-recovery.cpio ramdisk-twrp.cpio
     cp -r ramdisk-twrp.cpio $path/twrp/device/nokia/B2N_sprout/installer
     cd
     cd $path/twrp/device/nokia/B2N_sprout/installer
-    zip -r twrp-installer-3.4.0-0-B2N_sprout-POB-10.0-$(date +"%Y%m%d").zip magiskboot  META-INF ramdisk-twrp.cpio
-    cp -r twrp-installer-3.4.0-0-B2N_sprout-POB-10.0-$(date +"%Y%m%d").zip $path/B2N_sprout  
+    zip -r twrp-installer-3.4.0-0-B2N_sprout-POB-11.0-$(date +"%Y%m%d").zip magiskboot  META-INF ramdisk-twrp.cpio
+    cp -r twrp-installer-3.4.0-0-B2N_sprout-POB-11.0-$(date +"%Y%m%d").zip $path/B2N_sprout  
     cd
     cd $path    
 }
@@ -223,86 +223,86 @@ UPLOAD()
 {
     cd $path
     cd PNX_sprout
-    sshpass -p $password rsync -avP -e ssh twrp-3.4.0-0-PNX_sprout-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/pnx-sprout/TWRP/TEN
+    sshpass -p $password rsync -avP -e ssh twrp-3.4.0-0-PNX_sprout-11.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/pnx-sprout/TWRP/TWRP-R
 
     cd $path	
     cd PL2_sprout
-    sshpass -p $password rsync -avP -e ssh twrp-3.4.0-0-PL2_sprout-10.0* twrp-installer-3.4.0-0-PL2_sprout-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/TWRP/TEN
+    sshpass -p $password rsync -avP -e ssh twrp-3.4.0-0-PL2_sprout-11.0* twrp-installer-3.4.0-0-PL2_sprout-11.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/TWRP/TWRP-R
 
     cd $path
     cd CTL_sprout
-    sshpass -p $password rsync -avP -e ssh twrp-3.4.0-0-CTL_sprout-10.0* twrp-installer-3.4.0-0-CTL_sprout-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/TWRP/TEN
+    sshpass -p $password rsync -avP -e ssh twrp-3.4.0-0-CTL_sprout-11.0* twrp-installer-3.4.0-0-CTL_sprout-11.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/TWRP/TWRP-R
  
     cd $path 
     cd DRG_sprout
-    sshpass -p $password rsync -avP -e ssh twrp-3.4.0-0-DRG_sprout-10.0* twrp-installer-3.4.0-0-DRG_sprout-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/TWRP/TEN
+    sshpass -p $password rsync -avP -e ssh twrp-3.4.0-0-DRG_sprout-11.0* twrp-installer-3.4.0-0-DRG_sprout-11.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/drg-sprout/TWRP/TWRP-R
 
     cd $path
     cd B2N_sprout
-    sshpass -p $password rsync -avP -e ssh twrp-3.4.0-0-B2N_sprout-OOB-10.0* twrp-installer-3.4.0-0-B2N_sprout-OOB-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/TWRP-TEN/OOB
-    sshpass -p $password rsync -avP -e ssh twrp-3.4.0-0-B2N_sprout-POB-10.0* twrp-installer-3.4.0-0-B2N_sprout-POB-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/TWRP-TEN/POB
+    sshpass -p $password rsync -avP -e ssh twrp-3.4.0-0-B2N_sprout-OOB-11.0* twrp-installer-3.4.0-0-B2N_sprout-OOB-11.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/TWRP-R/OOB
+    sshpass -p $password rsync -avP -e ssh twrp-3.4.0-0-B2N_sprout-POB-11.0* twrp-installer-3.4.0-0-B2N_sprout-POB-11.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/b2n-sprout/TWRP-R/POB
 
     cd $path
     cd SLD_sprout 
-    sshpass -p $password rsync -avP -e ssh twrp-3.4.0-0-SLD_sprout-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/sld-sprout/TWRP/TEN/2020-07-05
+    sshpass -p $password rsync -avP -e ssh twrp-3.4.0-0-SLD_sprout-11.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/sld-sprout/TWRP/TWRP-R/2020-09-05
 
     cd $path
     cd DDV_sprout
-    sshpass -p $password rsync -avP -e ssh twrp-3.4.0-0-DDV_sprout-10.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/ddv-sprout/TWRP/TEN/2020-07-05
+    sshpass -p $password rsync -avP -e ssh twrp-3.4.0-0-DDV_sprout-11.0* raghuvarma331@frs.sourceforge.net:/home/frs/project/ddv-sprout/TWRP/TWRP-R/2020-09-05
 
     cd $path
 	
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
     *
-    New Android 10.0 Twrp-3.4.0-0 Build is up 
+    New Android 11.0 Twrp-3.4.0-0 Build is up 
     
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-6-1-plus/development/recovery-twrp-3-2-3-0-team-win-recovery-t3893909)
     📱Device: *Nokia 6.1 Plus*
     ⚡Build Version: *3.4.0-0*
-    ⚡Android Version: *10.0.0*
+    ⚡Android Version: *11.0*
     👤 By: *@RaghuVarma*
     #drg #nokia #twrp #update
     Follow:  @Nokia6plusofficial ✅"  
 
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
     *
-    New Android 10.0 Twrp-3.4.0-0 Build is up 
+    New Android 11.0 Twrp-3.4.0-0 Build is up 
     
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-1/development/twrp-3-2-3-0-team-win-recovery-project-t3935859)
     📱Device: *Nokia 7.1*
     ⚡Build Version: *3.4.0-0*
-    ⚡Android Version: *10.0.0*
+    ⚡Android Version: *11.0*
     👤 By: *@RaghuVarma*
     #ctl #nokia #twrp #update
     Follow: @nokia7161 ✅"          
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
     *
-    New Android 10.0 Twrp-3.4.0-0 Build is up 
+    New Android 11.0 Twrp-3.4.0-0 Build is up 
     
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/twrp-3-3-1-0-team-win-recovery-project-t3940223)
     📱Device: *Nokia 7 Plus (OOB)*
     ⚡Build Version: *3.4.0-0*
-    ⚡Android Version: *10.0.0*
+    ⚡Android Version: *11.0*
     👤 By: *@RaghuVarma*
     #b2n #nokia #twrp #update
     Follow:  @Nokia7plusOfficial ✅" 
     
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
     *
-    New Android 10.0 Twrp-3.4.0-0 Build is up 
+    New Android 11.0 Twrp-3.4.0-0 Build is up 
     
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-plus/development/twrp-3-3-1-0-team-win-recovery-project-t3940223)
     📱Device: *Nokia 7 Plus (POB)*
     ⚡Build Version: *3.4.0-0*
-    ⚡Android Version: *10.0.0*
+    ⚡Android Version: *11.0*
     👤 By: *@RaghuVarma*
     #b2n #nokia #twrp #update
     Follow:  @Nokia7plusOfficial ✅" 
@@ -310,14 +310,14 @@ UPLOAD()
 
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
     *
-    New Android 10.0 Twrp-3.4.0-0 Build is up 
+    New Android 11.0 Twrp-3.4.0-0 Build is up 
     
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-6-2/development/unofficial-twrp-3-3-1-0-team-win-t3999433)
     📱Device: *Nokia 6.2*
     ⚡Build Version: *3.4.0-0*
-    ⚡Android Version: *10.0.0*
+    ⚡Android Version: *11.0*
     ⚡Android Security Patch : *$twrpsp*
     👤 By: *@RaghuVarma*
     #sld #nokia #twrp #update
@@ -325,14 +325,14 @@ UPLOAD()
     
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
     *
-    New Android 10.0 Twrp-3.4.0-0 Build is up 
+    New Android 11.0 Twrp-3.4.0-0 Build is up 
     
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-7-2/development/unofficial-twrp-3-3-1-0-team-win-t3999325)
     📱Device: *Nokia 7.2*
     ⚡Build Version: *3.4.0-0*
-    ⚡Android Version: *10.0.0*
+    ⚡Android Version: *11.0*
     ⚡Android Security Patch : *$twrpsp*
     👤 By: *@RaghuVarma*
     #ddv #nokia #twrp #update
@@ -340,14 +340,14 @@ UPLOAD()
 	
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
     *
-    New Android 10.0 Twrp-3.4.0-0 Build is up 
+    New Android 11.0 Twrp-3.4.0-0 Build is up 
     
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-6-2018/development/unofficial-twrp-3-4-0-0-team-win-t4122949)
     📱Device: *Nokia 6.1*
     ⚡Build Version: *3.4.0-0*
-    ⚡Android Version: *10.0.0*
+    ⚡Android Version: *11.0*
     ⚡Android Security Patch : *$twrpsp*
     👤 By: *@RaghuVarma*
     #pl2 #nokia #twrp #update
@@ -355,14 +355,14 @@ UPLOAD()
 
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
     *
-    New Android 10.0 Twrp-3.4.0-0 Build is up 
+    New Android 11.0 Twrp-3.4.0-0 Build is up 
     
     $(date)*
     
     ⬇️ [Download](https://forum.xda-developers.com/nokia-8-1/development/unofficial-twrp-3-3-1-0-team-win-t4090773)
     📱Device: *Nokia 8.1*
     ⚡Build Version: *3.4.0-0*
-    ⚡Android Version: *10.0.0*
+    ⚡Android Version: *11.0*
     ⚡Android Security Patch : *$twrpsp*
     👤 By: *@RaghuVarma*
     #pnx #nokia #twrp #update"   	
@@ -394,4 +394,5 @@ UPLOAD
 echo "----------------------------------------------------"
 echo " builds successfully Uploaded" 
 echo "----------------------------------------------------" 
+
 
