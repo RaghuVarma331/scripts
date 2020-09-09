@@ -371,7 +371,7 @@ UPLOAD()
     export GLOBIGNORE=roms
     rm -r *
     
-} &> /dev/null
+}
 
 
 echo Setting up tools..!!
