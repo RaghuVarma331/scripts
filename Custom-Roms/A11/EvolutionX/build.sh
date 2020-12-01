@@ -91,6 +91,8 @@ L5()
     cd $path/evox
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch evolution_Dragon-userdebug && make -j$(nproc --all) bacon
+    cp -r out/target/product/*/EvolutionX**.zip $path
+    rm -r out
 }
 
 echo "----------------------------------------------------"

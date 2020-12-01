@@ -91,6 +91,8 @@ L5()
     cd $path/los
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch lineage_Dragon-userdebug && make -j$(nproc --all) bacon
+    cp -r out/target/product/*/lineage-18.0**.zip $path
+    rm -r out
 }
 
 echo "----------------------------------------------------"
