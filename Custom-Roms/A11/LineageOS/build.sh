@@ -61,7 +61,7 @@ L3()
     cd $path
     mkdir los
     cd los
-    echo -ne '\n' | repo init -u git://github.com/LineageOS/android.git -b lineage-18.0 --depth=1
+    echo -ne '\n' | repo init -u git://github.com/LineageOS/android.git -b lineage-18.1 --depth=1
     repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 }
 
@@ -74,8 +74,8 @@ L3A()
     rm -r system/qcom
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_qcom_sepolicy-legacy-um -b lineage-18.0 device/qcom/sepolicy-legacy-um
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_lineage_sepolicy -b lineage-18.0 device/lineage/sepolicy
-    git clone https://github.com/LineageOS/android_external_bson.git -b lineage-18.0 external/bson
-    git clone https://github.com/LineageOS/android_system_qcom.git -b lineage-18.0 system/qcom
+    git clone https://github.com/LineageOS/android_external_bson.git -b lineage-18.1 external/bson
+    git clone https://github.com/LineageOS/android_system_qcom.git -b lineage-18.1 system/qcom
 } &> /dev/null
 
 L4()
@@ -91,7 +91,7 @@ L5()
     cd $path/los
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch lineage_Dragon-userdebug && make -j$(nproc --all) bacon
-    cp -r out/target/product/*/lineage-18.0**.zip $path
+    cp -r out/target/product/*/lineage-18.1**.zip $path
     rm -r out
 }
 
@@ -116,7 +116,7 @@ echo "Downloading Device sources.."
 echo "----------------------------------------------------" 
 L4
 echo "----------------------------------------------------"
-echo "Started building Lineage OS 18.0 for Nokia 6.1 Plus."
+echo "Started building Lineage OS 18.1 for Nokia 6.1 Plus."
 echo "----------------------------------------------------" 
 L5
 echo "----------------------------------------------------"
