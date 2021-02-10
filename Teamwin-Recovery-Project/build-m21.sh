@@ -67,7 +67,7 @@ REPO()
 } &> /dev/null
 
 
-TWRP-Q-SOURCE()
+TWRP-R-SOURCE()
 {
     cd $path
     wget https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
@@ -77,7 +77,7 @@ TWRP-Q-SOURCE()
     cd twrp
     echo -ne '\n' | repo init -u git://github.com/RaghuVarma331/Twrp-Manifest.git -b android-10.0 --depth=1
     repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
-    git clone https://github.com/RaghuVarma331/android_device_samsung_m21-TWRP.git -b android-10.0 device/samsung/m21
+    git clone https://github.com/RaghuVarma331/android_device_samsung_m21-TWRP.git -b android-11.0 device/samsung/m21
     . build/envsetup.sh && lunch omni_m21-eng && make -j$(nproc --all) recoveryimage
     cd out/target/product/m21
     cp -r recovery.img $path/M21/bin
@@ -95,7 +95,7 @@ TWRP-Q-SOURCE()
     ⬇️ [Download](https://forum.xda-developers.com/galaxy-m21/development/unofficial-twrp-3-4-0-0-team-win-t4185397)
     📱Device: *Galaxy M21*
     ⚡Build Version: *3.4.0-0*
-    ⚡Android Version: *10.0*
+    ⚡Android Version: *11.0*
     👤 By: *@RaghuVarma*
     #M21 #twrp #update
     Follow: @SamsungM21Updates ✅
@@ -109,7 +109,7 @@ REPO
 echo "-----------------------------------------------------"
 echo "Started building TWRP-3.4.0-0 For M21                "
 echo "-----------------------------------------------------" 
-TWRP-Q-SOURCE
+TWRP-R-SOURCE
 echo "----------------------------------------------------"
 echo " builds successfully completed" 
 echo "----------------------------------------------------" 
