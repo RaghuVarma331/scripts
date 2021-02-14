@@ -18,57 +18,159 @@
 
 Telegram_Api_code=
 
-wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
-
-python telegram.py -t $Telegram_Api_code -c @Nokia6plusofficial -M "
+wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/bl.jpg
+wget https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
+python telegram.py -t $Telegram_Api_code -c @Nokia6plusofficial -P bl.jpg -C "
 *
-Bootloader unlocking support
+Bootloader unlocking service
 =======================
 
-Planning to unlock bootloader ?
 
-Let me know @RaghuVarma 🙂
+Officially Nokia never support bootloader unlocking but we do have multiple ways to unlock your handset.
 
-Thank you
+Well , bootloader unlocking service is a paid process forever.
+
+We will unlock your device using remote access via TeamViewer or anydesk or Awesun (according to customer choice) using our tools.
+
+
+Supported devices 
+===============
+
+• Nokia 6.1 Plus / X6
+• Nokia 7 Plus 
+• Nokia 8.1
+• Nokia 9 Pureview
+• Nokia 5.1 Plus / X5
+• Nokia 3.1 Plus
+• Nokia 8 Sirocco
+• Nokia 6.1
+• Nokia 7.1
+• Nokia 5.1
+• Nokia 3.1
+• Nokia 8
+• Nokia 7
+• Nokia 6
+• Nokia 5
+• Nokia 2
+
+Price 👇
+======
+
+• 450₹ (INR)
+• 8$ (USD)
+• 9$ (AUD)
+• 9€ (EURO)
+
+We accept PayPal , UPI , Gpay , Phonepe & Paytm.
+
+Contact @RaghuVarma for bootloader Unlock.
+
+Thank you 😊
+
+#Nokia #Bootloader #Unlock
+
+Follow:  @Nokia6plusofficial ✅*"  
+
+
+python telegram.py -t $Telegram_Api_code -c @Nokia7plusofficial -P bl.jpg -C "
 *
-"
-
-python telegram.py -t $Telegram_Api_code -c @Nokia7plusOfficial -M "
-*
-Bootloader unlocking support
+Bootloader unlocking service
 =======================
 
-Planning to unlock bootloader ?
 
-Let me know @RaghuVarma 🙂
+Officially Nokia never support bootloader unlocking but we do have multiple ways to unlock your handset.
 
-Thank you
+Well , bootloader unlocking service is a paid process forever.
+
+We will unlock your device using remote access via TeamViewer or anydesk or Awesun (according to customer choice) using our tools.
+
+
+Supported devices 
+===============
+
+• Nokia 6.1 Plus / X6
+• Nokia 7 Plus 
+• Nokia 8.1
+• Nokia 9 Pureview
+• Nokia 5.1 Plus / X5
+• Nokia 3.1 Plus
+• Nokia 8 Sirocco
+• Nokia 6.1
+• Nokia 7.1
+• Nokia 5.1
+• Nokia 3.1
+• Nokia 8
+• Nokia 7
+• Nokia 6
+• Nokia 5
+• Nokia 2
+
+Price 👇
+======
+
+• 450₹ (INR)
+• 8$ (USD)
+• 9$ (AUD)
+• 9€ (EURO)
+
+We accept PayPal , UPI , Gpay , Phonepe & Paytm.
+
+Contact @RaghuVarma for bootloader Unlock.
+
+Thank you 😊
+
+#Nokia #Bootloader #Unlock
+
+Follow:  @Nokia7plusofficial ✅*"  
+
+
+python telegram.py -t $Telegram_Api_code -c @nokia7161 -P bl.jpg -C "
 *
-"
-
-python telegram.py -t $Telegram_Api_code -c @Nokia7262 -M "
-*
-Bootloader unlocking support
+Bootloader unlocking service
 =======================
 
-Planning to unlock bootloader ?
 
-Let me know @RaghuVarma 🙂
+Officially Nokia never support bootloader unlocking but we do have multiple ways to unlock your handset.
 
-Thank you
-*
-"
+Well , bootloader unlocking service is a paid process forever.
 
-python telegram.py -t $Telegram_Api_code -c @nokia7161 -M "
-*
-Bootloader unlocking support
-=======================
+We will unlock your device using remote access via TeamViewer or anydesk or Awesun (according to customer choice) using our tools.
 
-Planning to unlock bootloader ?
 
-Let me know @RaghuVarma 🙂
+Supported devices 
+===============
 
-Thank you
-*
-"
+• Nokia 6.1 Plus / X6
+• Nokia 7 Plus 
+• Nokia 8.1
+• Nokia 9 Pureview
+• Nokia 5.1 Plus / X5
+• Nokia 3.1 Plus
+• Nokia 8 Sirocco
+• Nokia 6.1
+• Nokia 7.1
+• Nokia 5.1
+• Nokia 3.1
+• Nokia 8
+• Nokia 7
+• Nokia 6
+• Nokia 5
+• Nokia 2
 
+Price 👇
+======
+
+• 450₹ (INR)
+• 8$ (USD)
+• 9$ (AUD)
+• 9€ (EURO)
+
+We accept PayPal , UPI , Gpay , Phonepe & Paytm.
+
+Contact @RaghuVarma for bootloader Unlock.
+
+Thank you 😊
+
+#Nokia #Bootloader #Unlock
+
+Follow:  @nokia7161 ✅*"  
