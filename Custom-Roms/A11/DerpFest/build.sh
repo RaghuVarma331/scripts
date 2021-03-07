@@ -68,22 +68,23 @@ L3()
 L3A()
 {
     cd $path/derp
-    rm -r device/qcom/sepolicy-legacy-um
-    rm -r device/lineage/sepolicy
     rm -r external/bson
     rm -r system/qcom
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_qcom_sepolicy-legacy-um -b lineage-18.0 device/qcom/sepolicy-legacy-um
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_lineage_sepolicy -b lineage-18.0 device/lineage/sepolicy
-    git clone https://github.com/LineageOS/android_external_bson.git -b lineage-18.0 external/bson
-    git clone https://github.com/LineageOS/android_system_qcom.git -b lineage-18.0 system/qcom
+    git clone https://github.com/LineageOS/android_external_bson.git -b lineage-18.1 external/bson
+    git clone https://github.com/LineageOS/android_system_qcom.git -b lineage-18.1 system/qcom
 } &> /dev/null
 
 L4()
 {
     cd $path/derp
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Dragon.git -b android-11.0-PV device/nokia/Dragon
     git clone https://github.com/Nokia-SDM660/android_kernel_nokia_sdm660.git -b android-11.0-clang --depth=1 kernel/nokia/sdm660
-    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia.git -b android-11.0-PV vendor/nokia
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Dragon -b android-11.0 device/nokia/Dragon
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Onyx -b android-11.0 device/nokia/Onyx
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Crystal -b android-11.0 device/nokia/Crystal
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Plate2 -b android-11.0 device/nokia/Plate2
+    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia -b android-11.0 vendor/nokia
+    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_camera -b android-11.0 vendor/nokia/camera
+    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_hardware -b android-11.0 vendor/hardware
 } &> /dev/null
 
 L5()
@@ -91,6 +92,18 @@ L5()
     cd $path/derp
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch derp_Dragon-userdebug && mka derp -j$(nproc --all)
+    cp -r out/target/product/*/DerpFest**.zip $path
+    rm -r out
+    export SELINUX_IGNORE_NEVERALLOWS=true
+    . build/envsetup.sh && lunch derp_Onyx-userdebug && mka derp -j$(nproc --all)
+    cp -r out/target/product/*/DerpFest**.zip $path
+    rm -r out
+    export SELINUX_IGNORE_NEVERALLOWS=true
+    . build/envsetup.sh && lunch derp_Crystal-userdebug && mka derp -j$(nproc --all)
+    cp -r out/target/product/*/DerpFest**.zip $path
+    rm -r out
+    export SELINUX_IGNORE_NEVERALLOWS=true
+    . build/envsetup.sh && lunch derp_Plate2-userdebug && mka derp -j$(nproc --all)
     cp -r out/target/product/*/DerpFest**.zip $path
     rm -r out
 }
@@ -116,7 +129,7 @@ echo "Downloading Device sources.."
 echo "----------------------------------------------------" 
 L4
 echo "----------------------------------------------------"
-echo "Started building DerpFest for Nokia 6.1 Plus."
+echo "Started building DerpFest for DRG B2N CTL PL2."
 echo "----------------------------------------------------" 
 L5
 echo "----------------------------------------------------"
