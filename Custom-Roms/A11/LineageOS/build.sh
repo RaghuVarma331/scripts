@@ -82,8 +82,7 @@ L4()
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Onyx -b android-11.0 device/nokia/Onyx
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Crystal -b android-11.0 device/nokia/Crystal
     git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia -b android-11.0 vendor/nokia
-    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_camera -b android-11.0 vendor/nokia/camera
-    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_hardware -b android-11.0 vendor/hardware
+    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_GoogleCamera -b android-11.0 vendor/nokia/GoogleCamera
 } &> /dev/null
 
 L5()
