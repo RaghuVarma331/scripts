@@ -52,7 +52,7 @@ L2()
     cd $path
     mkdir bin
     PATH=$path/bin:$PATH
-    curl https://storage.googleapis.com/git-repo-downloads/repo-1 > $path/bin/repo
+    curl https://storage.googleapis.com/git-repo-downloads/repo > $path/bin/repo
     chmod a+x $path/bin/repo
 }
 
@@ -62,7 +62,7 @@ L3()
     mkdir pe
     cd pe
     echo -ne '\n' | repo init -u https://github.com/PixelExperience/manifest -b eleven --depth=1
-    repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+    repo sync
 }
 
 L3A()
