@@ -77,6 +77,8 @@ L3A()
 L4()
 {
     cd $path/los
+    rm -r packages/apps/Updater
+    git clone https://github.com/Nokia-SDM660/Os_Updates.git -b android-11.0 packages/apps/Os_Updates
     git clone https://github.com/Nokia-SDM660/android_kernel_nokia_sdm660.git -b android-11.0-clang --depth=1 kernel/nokia/sdm660
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Dragon -b android-11.0 device/nokia/Dragon
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Onyx -b android-11.0 device/nokia/Onyx
