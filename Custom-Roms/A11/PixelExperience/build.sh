@@ -78,7 +78,6 @@ L4()
 {
     cd $path/pe
     rm -r packages/apps/Updates
-    git clone https://github.com/Nokia-SDM660/Os_Updates.git -b android-11.0 packages/apps/Os_Updates
     git clone https://github.com/Nokia-SDM660/android_kernel_nokia_sdm660.git -b android-11.0-clang --depth=1 kernel/nokia/sdm660
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Dragon -b android-11.0 device/nokia/Dragon
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Onyx -b android-11.0 device/nokia/Onyx
@@ -91,18 +90,25 @@ L4()
 L5()
 {
     cd $path/pe
+    git clone https://$gitpassword@github.com/RaghuVarma331/proprietary_vendor_nokia_Os_Updates -b Dragon-Pixel vendor/nokia/Os_Updates &> /dev/null
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch aosp_Dragon-userdebug && make -j$(nproc --all) bacon
     cp -r out/target/product/*/PixelExperience**.zip $path
     rm -r out
+    rm -r vendor/nokia/Os_Updates
+    git clone https://$gitpassword@github.com/RaghuVarma331/proprietary_vendor_nokia_Os_Updates -b Onyx-Pixel vendor/nokia/Os_Updates &> /dev/null
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch aosp_Onyx-userdebug && make -j$(nproc --all) bacon
     cp -r out/target/product/*/PixelExperience**.zip $path
     rm -r out
+    rm -r vendor/nokia/Os_Updates
+    git clone https://$gitpassword@github.com/RaghuVarma331/proprietary_vendor_nokia_Os_Updates -b Crystal-Pixel vendor/nokia/Os_Updates &> /dev/null
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch aosp_Crystal-userdebug && make -j$(nproc --all) bacon
     cp -r out/target/product/*/PixelExperience**.zip $path
     rm -r out
+    rm -r vendor/nokia/Os_Updates
+    git clone https://$gitpassword@github.com/RaghuVarma331/proprietary_vendor_nokia_Os_Updates -b Plate2-Pixel vendor/nokia/Os_Updates &> /dev/null
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch aosp_Plate2-userdebug && make -j$(nproc --all) bacon
     cp -r out/target/product/*/PixelExperience**.zip $path

@@ -78,7 +78,6 @@ L4()
 {
     cd $path/derp
     rm -r packages/apps/Updater
-    git clone https://github.com/Nokia-SDM660/Os_Updates.git -b android-11.0 packages/apps/Os_Updates
     git clone https://github.com/Nokia-SDM660/android_kernel_nokia_sdm660.git -b android-11.0-clang --depth=1 kernel/nokia/sdm660
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Dragon -b android-11.0 device/nokia/Dragon
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Onyx -b android-11.0 device/nokia/Onyx
@@ -91,18 +90,25 @@ L4()
 L5()
 {
     cd $path/derp
+    git clone https://$gitpassword@github.com/RaghuVarma331/proprietary_vendor_nokia_Os_Updates -b Dragon-Derp vendor/nokia/Os_Updates &> /dev/null
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch derp_Dragon-userdebug && mka derp -j$(nproc --all)
     cp -r out/target/product/*/DerpFest**.zip $path
     rm -r out
+    rm -r vendor/nokia/Os_Updates
+    git clone https://$gitpassword@github.com/RaghuVarma331/proprietary_vendor_nokia_Os_Updates -b Onyx-Derp vendor/nokia/Os_Updates &> /dev/null
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch derp_Onyx-userdebug && mka derp -j$(nproc --all)
     cp -r out/target/product/*/DerpFest**.zip $path
     rm -r out
+    rm -r vendor/nokia/Os_Updates
+    git clone https://$gitpassword@github.com/RaghuVarma331/proprietary_vendor_nokia_Os_Updates -b Crystal-Derp vendor/nokia/Os_Updates &> /dev/null
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch derp_Crystal-userdebug && mka derp -j$(nproc --all)
     cp -r out/target/product/*/DerpFest**.zip $path
     rm -r out
+    rm -r vendor/nokia/Os_Updates
+    git clone https://$gitpassword@github.com/RaghuVarma331/proprietary_vendor_nokia_Os_Updates -b Plate2-Derp vendor/nokia/Os_Updates &> /dev/null
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch derp_Plate2-userdebug && mka derp -j$(nproc --all)
     cp -r out/target/product/*/DerpFest**.zip $path
