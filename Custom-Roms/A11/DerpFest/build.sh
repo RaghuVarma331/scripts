@@ -70,8 +70,10 @@ L3A()
     cd $path/derp
     rm -r external/bson
     rm -r system/qcom
+    rm -r frameworks/av
     git clone https://github.com/LineageOS/android_external_bson.git -b lineage-18.1 external/bson
     git clone https://github.com/LineageOS/android_system_qcom.git -b lineage-18.1 system/qcom
+    git clone https://github.com/PixelExperience/frameworks_av.git -b eleven frameworks/av
 } &> /dev/null
 
 L4()
