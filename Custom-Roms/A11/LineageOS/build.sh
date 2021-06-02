@@ -132,10 +132,21 @@ L6()
 L7()
 {
     cd $path/los
+    cd vendor/lineage/build/tasks
+    rm -r kernel.mk
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Makefiles/kernel/ddv-los.mk
+    mv ddv-los.mk kernel.mk
+    cd $path/los
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch lineage_Daredevil-userdebug && make -j$(nproc --all) bacon
     cp -r out/target/product/*/lineage-18.1**.zip $path
     rm -r out
+    cd $path/los
+    cd vendor/lineage/build/tasks
+    rm -r kernel.mk
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Makefiles/kernel/sld-los.mk
+    mv sld-los.mk kernel.mk
+    cd $path/los
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch lineage_Starlord-userdebug && make -j$(nproc --all) bacon
     cp -r out/target/product/*/lineage-18.1**.zip $path

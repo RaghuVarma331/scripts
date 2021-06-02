@@ -137,10 +137,21 @@ L6()
 L7()
 {
     cd $path/evox
+    cd vendor/evolution/build/tasks
+    rm -r kernel.mk
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Makefiles/kernel/ddv-evox.mk
+    mv ddv-evox.mk kernel.mk
+    cd $path/evox
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch evolution_Daredevil-userdebug && make -j$(nproc --all) bacon
     cp -r out/target/product/*/EvolutionX**.zip $path
     rm -r out
+    cd $path/evox
+    cd vendor/evolution/build/tasks
+    rm -r kernel.mk
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Makefiles/kernel/sld-evox.mk
+    mv sld-evox.mk kernel.mk
+    cd $path/evox
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch evolution_Starlord-userdebug && make -j$(nproc --all) bacon
     cp -r out/target/product/*/EvolutionX**.zip $path

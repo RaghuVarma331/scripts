@@ -137,10 +137,21 @@ L6()
 L7()
 {
     cd $path/pe
+    cd vendor/aosp/build/tasks
+    rm -r kernel.mk
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Makefiles/kernel/ddv-pe.mk
+    mv ddv-pe.mk kernel.mk
+    cd $path/pe
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch aosp_Daredevil-userdebug && make -j$(nproc --all) bacon
     cp -r out/target/product/*/PixelExperience**.zip $path
     rm -r out
+    cd $path/pe
+    cd vendor/aosp/build/tasks
+    rm -r kernel.mk
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Makefiles/kernel/sld-pe.mk
+    mv sld-pe.mk kernel.mk
+    cd $path/pe
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch aosp_Starlord-userdebug && make -j$(nproc --all) bacon
     cp -r out/target/product/*/PixelExperience**.zip $path

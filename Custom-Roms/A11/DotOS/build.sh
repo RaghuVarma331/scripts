@@ -140,10 +140,21 @@ L6()
 L7()
 {
     cd $path/dot
+    cd vendor/dot/build/tasks
+    rm -r kernel.mk
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Makefiles/kernel/ddv-dot.mk
+    mv ddv-dot.mk kernel.mk
+    cd $path/dot
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch dot_Daredevil-userdebug && make -j$(nproc --all) bacon
     cp -r out/target/product/*/dotOS**.zip $path
     rm -r out
+    cd $path/dot
+    cd vendor/dot/build/tasks
+    rm -r kernel.mk
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Makefiles/kernel/sld-dot.mk
+    mv sld-dot.mk kernel.mk
+    cd $path/dot
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch dot_Starlord-userdebug && make -j$(nproc --all) bacon
     cp -r out/target/product/*/dotOS**.zip $path

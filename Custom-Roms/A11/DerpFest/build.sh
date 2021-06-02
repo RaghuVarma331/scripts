@@ -139,10 +139,21 @@ L6()
 L7()
 {
     cd $path/derp
+    cd vendor/derp/build/tasks
+    rm -r kernel.mk
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Makefiles/kernel/ddv-derp.mk
+    mv ddv-derp.mk kernel.mk
+    cd $path/derp
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch derp_Daredevil-userdebug && mka derp -j$(nproc --all)
     cp -r out/target/product/*/DerpFest**.zip $path
     rm -r out
+    cd $path/derp
+    cd vendor/derp/build/tasks
+    rm -r kernel.mk
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Makefiles/kernel/sld-derp.mk
+    mv sld-derp.mk kernel.mk
+    cd $path/derp
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch derp_Starlord-userdebug && mka derp -j$(nproc --all)
     cp -r out/target/product/*/DerpFest**.zip $path
