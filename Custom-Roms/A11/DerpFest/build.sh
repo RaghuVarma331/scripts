@@ -63,6 +63,10 @@ L3()
     cd derp
     echo -ne '\n' | repo init -u https://github.com/DerpFest-11/manifest.git -b 11 --depth=1
     repo sync
+    sed -i "/ro.control_privapp_permissions=enforce/d" vendor/derp/config/common.mk
+    cd packages/apps/Settings/src/com/android/settings/system
+    rm -r SystemUpdatePreferenceController.java
+    wget https://github.com/LineageOS/android_packages_apps_Settings/raw/lineage-18.1/src/com/android/settings/system/SystemUpdatePreferenceController.java
 }
 
 L3A()
@@ -117,6 +121,35 @@ L5()
     rm -r out
 }
 
+L6()
+{
+    cd $path/derp
+    rm -r out
+    rm -r device/qcom/sepolicy-legacy-um
+    rm -r device/lineage/sepolicy
+    rm -r device/nokia
+    rm -r vendor/nokia
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_qcom_sepolicy-legacy-um -b lineage-18.0 device/qcom/sepolicy-legacy-um
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_lineage_sepolicy -b lineage-18.0 device/lineage/sepolicy
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Daredevil.git -b android-11.0-PV device/nokia/Daredevil
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Starlord.git -b android-11.0-PV device/nokia/Starlord
+    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia.git -b android-11.0-PV vendor/nokia
+} &> /dev/null
+
+L7()
+{
+    cd $path/derp
+    export SELINUX_IGNORE_NEVERALLOWS=true
+    . build/envsetup.sh && lunch derp_Daredevil-userdebug && mka derp -j$(nproc --all)
+    cp -r out/target/product/*/DerpFest**.zip $path
+    rm -r out
+    export SELINUX_IGNORE_NEVERALLOWS=true
+    . build/envsetup.sh && lunch derp_Starlord-userdebug && mka derp -j$(nproc --all)
+    cp -r out/target/product/*/DerpFest**.zip $path
+    rm -r out
+}
+
+
 echo "----------------------------------------------------"
 echo "Downloading tools.."
 echo "----------------------------------------------------" 
@@ -141,6 +174,17 @@ echo "----------------------------------------------------"
 echo "Started building DerpFest for DRG B2N CTL PL2."
 echo "----------------------------------------------------" 
 L5
+echo "----------------------------------------------------"
+echo "Successfully build completed.."
+echo "----------------------------------------------------" 
+echo "----------------------------------------------------"
+echo "Downloading Device sources.."
+echo "----------------------------------------------------" 
+L6
+echo "----------------------------------------------------"
+echo "Started building for DDV & SLD."
+echo "----------------------------------------------------" 
+L7
 echo "----------------------------------------------------"
 echo "Successfully build completed.."
 echo "----------------------------------------------------" 

@@ -63,6 +63,10 @@ L3()
     cd los
     echo -ne '\n' | repo init -u git://github.com/LineageOS/android.git -b lineage-18.1 --depth=1
     repo sync
+    sed -i "/ro.control_privapp_permissions=enforce/d" vendor/lineage/config/common.mk
+    cd packages/apps/Settings/src/com/android/settings/system
+    rm -r SystemUpdatePreferenceController.java
+    wget https://github.com/LineageOS/android_packages_apps_Settings/raw/lineage-18.1/src/com/android/settings/system/SystemUpdatePreferenceController.java
 }
 
 L3A()
@@ -110,6 +114,34 @@ L5()
     rm -r out
 }
 
+L6()
+{
+    cd $path/los
+    rm -r out
+    rm -r device/qcom/sepolicy-legacy-um
+    rm -r device/lineage/sepolicy
+    rm -r device/nokia
+    rm -r vendor/nokia
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_qcom_sepolicy-legacy-um -b lineage-18.0 device/qcom/sepolicy-legacy-um
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_lineage_sepolicy -b lineage-18.0 device/lineage/sepolicy
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Daredevil.git -b android-11.0-PV device/nokia/Daredevil
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Starlord.git -b android-11.0-PV device/nokia/Starlord
+    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia.git -b android-11.0-PV vendor/nokia
+} &> /dev/null
+
+L7()
+{
+    cd $path/los
+    export SELINUX_IGNORE_NEVERALLOWS=true
+    . build/envsetup.sh && lunch lineage_Daredevil-userdebug && make -j$(nproc --all) bacon
+    cp -r out/target/product/*/lineage-18.1**.zip $path
+    rm -r out
+    export SELINUX_IGNORE_NEVERALLOWS=true
+    . build/envsetup.sh && lunch lineage_Starlord-userdebug && make -j$(nproc --all) bacon
+    cp -r out/target/product/*/lineage-18.1**.zip $path
+    rm -r out
+}
+
 echo "----------------------------------------------------"
 echo "Downloading tools.."
 echo "----------------------------------------------------" 
@@ -134,6 +166,17 @@ echo "----------------------------------------------------"
 echo "Started building Lineage OS 18.1 for DRG B2N CTL.   "
 echo "----------------------------------------------------" 
 L5
+echo "----------------------------------------------------"
+echo "Successfully build completed.."
+echo "----------------------------------------------------" 
+echo "----------------------------------------------------"
+echo "Downloading Device sources.."
+echo "----------------------------------------------------" 
+L6
+echo "----------------------------------------------------"
+echo "Started building for DDV & SLD."
+echo "----------------------------------------------------" 
+L7
 echo "----------------------------------------------------"
 echo "Successfully build completed.."
 echo "----------------------------------------------------" 
