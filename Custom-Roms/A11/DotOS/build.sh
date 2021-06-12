@@ -77,7 +77,7 @@ L3A()
     rm -r frameworks/av
     git clone https://github.com/LineageOS/android_external_bson.git -b lineage-18.1 external/bson
     git clone https://github.com/LineageOS/android_system_qcom.git -b lineage-18.1 system/qcom
-    git clone https://github.com/PixelExperience/frameworks_av.git -b eleven frameworks/av
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_frameworks_av -b android-11.0 frameworks/av
 } &> /dev/null
 
 L4()
