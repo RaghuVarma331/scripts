@@ -96,25 +96,25 @@ L5()
     cd $path/evox
     git clone https://$gitpassword@github.com/RaghuVarma331/proprietary_vendor_nokia_Os_Updates -b Dragon-Evox vendor/nokia/Os_Updates &> /dev/null
     export SELINUX_IGNORE_NEVERALLOWS=true
-    . build/envsetup.sh && lunch evolution_Dragon-userdebug && make -j$(nproc --all) bacon
+    . build/envsetup.sh && lunch evolution_Dragon-userdebug && mka evolution
     cp -r out/target/product/*/evolution**.zip $path
     rm -r out
     rm -r vendor/nokia/Os_Updates
     git clone https://$gitpassword@github.com/RaghuVarma331/proprietary_vendor_nokia_Os_Updates -b Onyx-Evox vendor/nokia/Os_Updates &> /dev/null
     export SELINUX_IGNORE_NEVERALLOWS=true
-    . build/envsetup.sh && lunch evolution_Onyx-userdebug && make -j$(nproc --all) bacon
+    . build/envsetup.sh && lunch evolution_Onyx-userdebug && mka evolution
     cp -r out/target/product/*/evolution**.zip $path
     rm -r out
     rm -r vendor/nokia/Os_Updates
     git clone https://$gitpassword@github.com/RaghuVarma331/proprietary_vendor_nokia_Os_Updates -b Crystal-Evox vendor/nokia/Os_Updates &> /dev/null
     export SELINUX_IGNORE_NEVERALLOWS=true
-    . build/envsetup.sh && lunch evolution_Crystal-userdebug && make -j$(nproc --all) bacon
+    . build/envsetup.sh && lunch evolution_Crystal-userdebug && mka evolution
     cp -r out/target/product/*/evolution**.zip $path
     rm -r out
     rm -r vendor/nokia/Os_Updates
     git clone https://$gitpassword@github.com/RaghuVarma331/proprietary_vendor_nokia_Os_Updates -b Plate2-Evox vendor/nokia/Os_Updates &> /dev/null
     export SELINUX_IGNORE_NEVERALLOWS=true
-    . build/envsetup.sh && lunch evolution_Plate2-userdebug && make -j$(nproc --all) bacon
+    . build/envsetup.sh && lunch evolution_Plate2-userdebug && mka evolution
     cp -r out/target/product/*/evolution**.zip $path
     rm -r out
 }
@@ -143,7 +143,7 @@ L7()
     mv ddv-evox.mk kernel.mk
     cd $path/evox
     export SELINUX_IGNORE_NEVERALLOWS=true
-    . build/envsetup.sh && lunch evolution_Daredevil-userdebug && make -j$(nproc --all) bacon
+    . build/envsetup.sh && lunch evolution_Daredevil-userdebug && mka evolution
     cp -r out/target/product/*/evolution**.zip $path
     rm -r out
     cd $path/evox
@@ -153,7 +153,7 @@ L7()
     mv sld-evox.mk kernel.mk
     cd $path/evox
     export SELINUX_IGNORE_NEVERALLOWS=true
-    . build/envsetup.sh && lunch evolution_Starlord-userdebug && make -j$(nproc --all) bacon
+    . build/envsetup.sh && lunch evolution_Starlord-userdebug && mka evolution
     cp -r out/target/product/*/evolution**.zip $path
     rm -r out
 }
