@@ -65,6 +65,8 @@ L3()
     repo sync
     rm -r .repo
     rm -r device/evolution/sepolicy
+    cd vendor/gms/product/packages/apps
+    rm -r Drive GoogleCamera Maps YouTube YouTubeMusicPrebuilt
 }
 
 L4()
