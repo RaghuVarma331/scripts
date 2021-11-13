@@ -72,6 +72,7 @@ L3()
 L4()
 {
     cd $path/evox
+    rm -r packages/apps/Bluetooth
     rm -r device/qcom/sepolicy-legacy-um
     rm -r external/bson
     rm -r system/qcom
@@ -99,6 +100,7 @@ L4()
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_system_bt -b android-12.0 system/bt
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_system_netd -b android-12.0 system/netd
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_frameworks_av -b android-12.0 frameworks/av
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_packages_apps_Bluetooth -b android-12.0 packages/apps/Bluetooth
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_hardware_qcom_audio -b lineage-18.1-caf-msm8998 hardware/qcom-caf/msm8998/audio
 } &> /dev/null
 
