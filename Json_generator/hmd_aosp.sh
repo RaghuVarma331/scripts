@@ -1,3 +1,4 @@
+wget https://github.com/RaghuVarma331/scripts/raw/master/changelogs/changelog.txt
 ip=http://ip:3000
 rm -r **.md5sum
 rm -r **.json
