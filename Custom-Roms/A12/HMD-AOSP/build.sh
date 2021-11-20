@@ -64,6 +64,7 @@ L3()
     echo -ne '\n' | repo init -u https://$gitpassword@github.com/HMD-AOSP/android_manifest.git -b android-12.0 --depth=1
     repo sync
     rm -r .repo
+    git clone https://$gitlpassword@gitlab.com/GovernorOS/android_vendor_gms -b android-12.0 --depth=1 vendor/gms
 }
 
 L4()
@@ -132,7 +133,7 @@ echo "Downloading repo bin.."
 echo "----------------------------------------------------" 
 L2
 echo "----------------------------------------------------"
-echo "Downloading EvolutionX Source Code.."
+echo "Downloading HMD-AOSP Source Code.."
 echo "----------------------------------------------------" 
 L3
 echo "----------------------------------------------------"
