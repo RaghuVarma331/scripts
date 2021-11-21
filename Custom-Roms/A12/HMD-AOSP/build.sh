@@ -85,6 +85,12 @@ L5()
 {
     cd $path/aosp
     git clone https://$gitpassword@github.com/HMD-AOSP/proprietary_vendor_nokia_Os_Updates -b Dragon-HMD-AOSP vendor/nokia/Os_Updates &> /dev/null
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    
+    New HMD-AOSP for Nokia 6.1 Plus build started 
+    
+    $(date)
+    "
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch aosp_Dragon-userdebug && make -j$(nproc --all) target-files-package otatools
     sign_target_files_apks -o -d $path/keys $path/aosp/out/target/product/*/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/aosp/out/target/product/*/signed-target-files.zip
@@ -93,6 +99,12 @@ L5()
     rm -r out/target/product/*
     rm -r vendor/nokia/Os_Updates
     git clone https://$gitpassword@github.com/HMD-AOSP/proprietary_vendor_nokia_Os_Updates -b Onyx-HMD-AOSP vendor/nokia/Os_Updates &> /dev/null
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    
+    New HMD-AOSP for Nokia 7 Plus build started 
+    
+    $(date)
+    "
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch aosp_Onyx-userdebug && make -j$(nproc --all) target-files-package otatools
     sign_target_files_apks -o -d $path/keys $path/aosp/out/target/product/*/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/aosp/out/target/product/*/signed-target-files.zip
@@ -101,6 +113,12 @@ L5()
     rm -r out/target/product/*
     rm -r vendor/nokia/Os_Updates
     git clone https://$gitpassword@github.com/HMD-AOSP/proprietary_vendor_nokia_Os_Updates -b Crystal-HMD-AOSP vendor/nokia/Os_Updates &> /dev/null
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    
+    New HMD-AOSP for Nokia 7.1 build started 
+    
+    $(date)
+    "
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch aosp_Crystal-userdebug && make -j$(nproc --all) target-files-package otatools
     sign_target_files_apks -o -d $path/keys $path/aosp/out/target/product/*/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/aosp/out/target/product/*/signed-target-files.zip
@@ -109,6 +127,12 @@ L5()
     rm -r out/target/product/*
     rm -r vendor/nokia/Os_Updates
     git clone https://$gitpassword@github.com/HMD-AOSP/proprietary_vendor_nokia_Os_Updates -b Plate2-HMD-AOSP vendor/nokia/Os_Updates &> /dev/null
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    
+    New HMD-AOSP for Nokia 6.1 build started 
+    
+    $(date)
+    "
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch aosp_Plate2-userdebug && make -j$(nproc --all) target-files-package otatools
     sign_target_files_apks -o -d $path/keys $path/aosp/out/target/product/*/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/aosp/out/target/product/*/signed-target-files.zip
@@ -117,6 +141,12 @@ L5()
     rm -r out/target/product/*
     rm -r vendor/nokia/Os_Updates
     git clone https://$gitpassword@github.com/HMD-AOSP/proprietary_vendor_nokia_Os_Updates -b Daredevil-HMD-AOSP vendor/nokia/Os_Updates &> /dev/null
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    
+    New HMD-AOSP for Nokia 7.2 build started 
+    
+    $(date)
+    "
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch aosp_Daredevil-userdebug && make -j$(nproc --all) target-files-package otatools
     sign_target_files_apks -o -d $path/keys $path/aosp/out/target/product/*/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/aosp/out/target/product/*/signed-target-files.zip
@@ -125,6 +155,12 @@ L5()
     rm -r out/target/product/*
     rm -r vendor/nokia/Os_Updates
     git clone https://$gitpassword@github.com/HMD-AOSP/proprietary_vendor_nokia_Os_Updates -b Starlord-HMD-AOSP vendor/nokia/Os_Updates &> /dev/null
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    
+    New HMD-AOSP for Nokia 6.2 build started 
+    
+    $(date)
+    "
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch aosp_Starlord-userdebug && make -j$(nproc --all) target-files-package otatools
     sign_target_files_apks -o -d $path/keys $path/aosp/out/target/product/*/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/aosp/out/target/product/*/signed-target-files.zip
