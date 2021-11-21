@@ -93,8 +93,8 @@ L5()
     "
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch aosp_Dragon-userdebug && make -j$(nproc --all) target-files-package otatools
-    sign_target_files_apks -o -d $path/keys $path/aosp/out/target/product/*/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/aosp/out/target/product/*/signed-target-files.zip
-    ota_from_target_files -k $path/keys/releasekey $path/aosp/out/target/product/*/signed-target-files.zip $path/aosp/out/target/product/*/HMD-AOSP_Dragon-12.0-$(date +%m%d%H%M).zip
+    sign_target_files_apks -o -d $path/keys $path/aosp/out/target/product/Dragon/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/aosp/out/target/product/Dragon/signed-target-files.zip
+    ota_from_target_files -k $path/keys/releasekey $path/aosp/out/target/product/Dragon/signed-target-files.zip $path/aosp/out/target/product/Dragon/HMD-AOSP_Dragon-12.0-$(date +%m%d%H%M).zip
     cp -r out/target/product/*/HMD-AOSP**.zip $path
     rm -r out/target/product/*
     rm -r vendor/nokia/Os_Updates
@@ -107,8 +107,8 @@ L5()
     "
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch aosp_Onyx-userdebug && make -j$(nproc --all) target-files-package otatools
-    sign_target_files_apks -o -d $path/keys $path/aosp/out/target/product/*/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/aosp/out/target/product/*/signed-target-files.zip
-    ota_from_target_files -k $path/keys/releasekey $path/aosp/out/target/product/*/signed-target-files.zip $path/aosp/out/target/product/*/HMD-AOSP_Onyx-12.0-$(date +%m%d%H%M).zip
+    sign_target_files_apks -o -d $path/keys $path/aosp/out/target/product/Onyx/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/aosp/out/target/product/Onyx/signed-target-files.zip
+    ota_from_target_files -k $path/keys/releasekey $path/aosp/out/target/product/Onyx/signed-target-files.zip $path/aosp/out/target/product/Onyx/HMD-AOSP_Onyx-12.0-$(date +%m%d%H%M).zip
     cp -r out/target/product/*/HMD-AOSP**.zip $path
     rm -r out/target/product/*
     rm -r vendor/nokia/Os_Updates
@@ -121,8 +121,8 @@ L5()
     "
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch aosp_Crystal-userdebug && make -j$(nproc --all) target-files-package otatools
-    sign_target_files_apks -o -d $path/keys $path/aosp/out/target/product/*/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/aosp/out/target/product/*/signed-target-files.zip
-    ota_from_target_files -k $path/keys/releasekey $path/aosp/out/target/product/*/signed-target-files.zip $path/aosp/out/target/product/*/HMD-AOSP_Crystal-12.0-$(date +%m%d%H%M).zip
+    sign_target_files_apks -o -d $path/keys $path/aosp/out/target/product/Crystal/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/aosp/out/target/product/Crystal/signed-target-files.zip
+    ota_from_target_files -k $path/keys/releasekey $path/aosp/out/target/product/Crystal/signed-target-files.zip $path/aosp/out/target/product/Crystal/HMD-AOSP_Crystal-12.0-$(date +%m%d%H%M).zip
     cp -r out/target/product/*/HMD-AOSP**.zip $path
     rm -r out/target/product/*
     rm -r vendor/nokia/Os_Updates
@@ -135,8 +135,8 @@ L5()
     "
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch aosp_Plate2-userdebug && make -j$(nproc --all) target-files-package otatools
-    sign_target_files_apks -o -d $path/keys $path/aosp/out/target/product/*/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/aosp/out/target/product/*/signed-target-files.zip
-    ota_from_target_files -k $path/keys/releasekey $path/aosp/out/target/product/*/signed-target-files.zip $path/aosp/out/target/product/*/HMD-AOSP_Plate2-12.0-$(date +%m%d%H%M).zip
+    sign_target_files_apks -o -d $path/keys $path/aosp/out/target/product/Plate2/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/aosp/out/target/product/Plate2/signed-target-files.zip
+    ota_from_target_files -k $path/keys/releasekey $path/aosp/out/target/product/Plate2/signed-target-files.zip $path/aosp/out/target/product/Plate2/HMD-AOSP_Plate2-12.0-$(date +%m%d%H%M).zip
     cp -r out/target/product/*/HMD-AOSP**.zip $path
     rm -r out/target/product/*
     rm -r vendor/nokia/Os_Updates
@@ -149,8 +149,8 @@ L5()
     "
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch aosp_Daredevil-userdebug && make -j$(nproc --all) target-files-package otatools
-    sign_target_files_apks -o -d $path/keys $path/aosp/out/target/product/*/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/aosp/out/target/product/*/signed-target-files.zip
-    ota_from_target_files -k $path/keys/releasekey $path/aosp/out/target/product/*/signed-target-files.zip $path/aosp/out/target/product/*/HMD-AOSP_Daredevil-12.0-$(date +%m%d%H%M).zip
+    sign_target_files_apks -o -d $path/keys $path/aosp/out/target/product/Daredevil/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/aosp/out/target/product/Daredevil/signed-target-files.zip
+    ota_from_target_files -k $path/keys/releasekey $path/aosp/out/target/product/Daredevil/signed-target-files.zip $path/aosp/out/target/product/Daredevil/HMD-AOSP_Daredevil-12.0-$(date +%m%d%H%M).zip
     cp -r out/target/product/*/HMD-AOSP**.zip $path
     rm -r out/target/product/*
     rm -r vendor/nokia/Os_Updates
@@ -163,8 +163,8 @@ L5()
     "
     export SELINUX_IGNORE_NEVERALLOWS=true
     . build/envsetup.sh && lunch aosp_Starlord-userdebug && make -j$(nproc --all) target-files-package otatools
-    sign_target_files_apks -o -d $path/keys $path/aosp/out/target/product/*/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/aosp/out/target/product/*/signed-target-files.zip
-    ota_from_target_files -k $path/keys/releasekey $path/aosp/out/target/product/*/signed-target-files.zip $path/aosp/out/target/product/*/HMD-AOSP_Starlord-12.0-$(date +%m%d%H%M).zip
+    sign_target_files_apks -o -d $path/keys $path/aosp/out/target/product/Starlord/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/aosp/out/target/product/Starlord/signed-target-files.zip
+    ota_from_target_files -k $path/keys/releasekey $path/aosp/out/target/product/Starlord/signed-target-files.zip $path/aosp/out/target/product/Starlord/HMD-AOSP_Starlord-12.0-$(date +%m%d%H%M).zip
     cp -r out/target/product/*/HMD-AOSP**.zip $path
     rm -r out/target/product/*
     rm -r vendor/nokia/Os_Updates
