@@ -12,7 +12,8 @@ chat_id=
     🔥  New GovernorOS Build
     ==========================
     $(date)*
-    
+
+    🔓 [Bootloader Unlock](https://t.me/RaghuVarma)
     ⬇️ [Download Rom](https://nokia-sdm660.github.io/)
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 6.1 Plus*
@@ -27,7 +28,8 @@ chat_id=
     🔥  New GovernorOS Build
     ==========================
     $(date)*
-    
+
+    🔓 [Bootloader Unlock](https://t.me/RaghuVarma)
     ⬇️ [Download Rom](https://nokia-sdm660.github.io/)
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 7 Plus*
@@ -43,6 +45,7 @@ chat_id=
     ==========================
     $(date)*
     
+    🔓 [Bootloader Unlock](https://t.me/RaghuVarma)    
     ⬇️ [Download Rom](https://nokia-sdm660.github.io/)
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 7.1*
@@ -58,6 +61,7 @@ chat_id=
     ==========================
     $(date)*
     
+    🔓 [Bootloader Unlock](https://t.me/RaghuVarma)    
     ⬇️ [Download Rom](https://nokia-sdm660.github.io/)
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 6.1*
@@ -73,6 +77,7 @@ chat_id=
     ==========================
     $(date)*
     
+    🔓 [Bootloader Unlock](https://t.me/RaghuVarma)    
     ⬇️ [Download Rom](https://nokia-sdm660.github.io/)
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 7.2*
@@ -87,7 +92,8 @@ chat_id=
     🔥  New GovernorOS Build
     ==========================
     $(date)*
-    
+
+    🔓 [Bootloader Unlock](https://t.me/RaghuVarma)
     ⬇️ [Download Rom](https://nokia-sdm660.github.io/)
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 6.2*
