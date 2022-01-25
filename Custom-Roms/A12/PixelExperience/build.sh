@@ -168,6 +168,10 @@ L5()
 
 L6()
 {
+    cd $path
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Patches/pe12_sign_target_files_apks.py
+    cat pe12_sign_target_files_apks.py > $path/pe/build/tools/releasetools/sign_target_files_apks.py
+    cat pe12_sign_target_files_apks.py > $path/pe/build/tools/releasetools/sign_target_files_apks
     cd $path/pe
     rm -r device/nokia
     rm -r vendor/nokia
