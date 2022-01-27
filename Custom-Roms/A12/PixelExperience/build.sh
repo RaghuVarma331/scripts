@@ -79,8 +79,8 @@ L3A()
     rm -r system/netd
     rm -r system/bt
     rm -r frameworks/av
-    git clone https://github.com/LineageOS/android_external_bson.git -b lineage-19.0 external/bson
-    git clone https://github.com/LineageOS/android_system_qcom.git -b lineage-19.0 system/qcom
+    git clone https://github.com/LineageOS/android_external_bson.git -b lineage-18.1 external/bson
+    git clone https://github.com/LineageOS/android_system_qcom.git -b lineage-18.1 system/qcom
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_system_bpf -b android-12.0 system/bpf
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_system_netd -b android-12.0 system/netd
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_system_bt -b android-12.0-PE system/bt
