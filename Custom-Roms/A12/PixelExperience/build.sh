@@ -67,7 +67,7 @@ L3()
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/aosp/config/common.mk
     cd packages/apps/Settings/src/com/android/settings/system
     rm -r SystemUpdatePreferenceController.java
-    wget https://github.com/LineageOS/android_packages_apps_Settings/raw/lineage-19.0/src/com/android/settings/system/SystemUpdatePreferenceController.java
+    wget https://github.com/LineageOS/android_packages_apps_Settings/raw/lineage-19.0/src/com/android/settings/system/SystemUpdatePreferenceController.java &> /dev/null
 }
 
 L3A()
@@ -83,7 +83,7 @@ L3A()
     git clone https://github.com/LineageOS/android_system_qcom.git -b lineage-19.0 system/qcom
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_system_bpf -b android-12.0 system/bpf
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_system_netd -b android-12.0 system/netd
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_system_bt -b android-12.0 system/bt
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_system_bt -b android-12.0-PE system/bt
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_frameworks_av -b android-12.0 frameworks/av
     cd vendor/gapps/product/packages/apps
     rm -r Drive GoogleCamera Maps YouTube YouTubeMusicPrebuilt PrebuiltGmail
@@ -174,7 +174,7 @@ L5()
 L6()
 {
     cd $path
-    wget https://github.com/RaghuVarma331/scripts/raw/master/Patches/pe12_sign_target_files_apks.py
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Patches/pe12_sign_target_files_apks.py &> /dev/null
     cat pe12_sign_target_files_apks.py > $path/pe/build/tools/releasetools/sign_target_files_apks.py
     cat pe12_sign_target_files_apks.py > $path/pe/build/tools/releasetools/sign_target_files_apks
     cd $path/pe
@@ -239,6 +239,10 @@ echo "----------------------------------------------------"
 echo "Downloading Pixel-Experience Source Code.."
 echo "----------------------------------------------------" 
 L3
+echo "----------------------------------------------------"
+echo "Downloading Nokia Patches.."
+echo "----------------------------------------------------"
+L3A
 echo "----------------------------------------------------"
 echo "Downloading DRG B2N CTL PL2 Device sources.."
 echo "----------------------------------------------------" 
