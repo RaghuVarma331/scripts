@@ -86,7 +86,7 @@ L3A()
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_system_bt -b android-12.0-PE system/bt
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_frameworks_av -b android-12.0 frameworks/av
     cd vendor/gapps/product/packages/apps
-    rm -r Drive GoogleCamera Maps YouTube YouTubeMusicPrebuilt PrebuiltGmail
+    rm -r Drive GoogleCamera Maps YouTube YouTubeMusicPrebuilt PrebuiltGmail Photos
     cd ..
     cd privileged_apps
     rm -r PixelLiveWallpaperPrebuilt
