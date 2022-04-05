@@ -1,1 +1,2 @@
-- Initial Android 12L build\n- Based on android-12.1.0_r2\n- Google security patch 2022-03\n- Improved system stability\n- User interface enhancements\n- Vendor based on vndk-32\n- Google apps restricted to basic & based on Pixel 6 pro\n- Safety net pass by default\n- Updated to Pixel 6 Pro latest build fingerprint\n- Updated GoogleSans font from latest Pixel 6 pro firmware\n- Updated overlays from Latest Pixel 6 pro firmware\n- Ported Nexus launcher from Pixel 6 pro latest firmware\n- Material You officially implemented by Google\n- Build signed with private keys\n- BPF backport not implemented yet (which is no use for now)\n
+- Improved system stability\n- User interface enhancements\n- Google Security Patch 2022-04
+
