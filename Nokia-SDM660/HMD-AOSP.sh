@@ -17,7 +17,7 @@ chat_id=
     ⬇️ [Download Rom](https://nokia-sdm660.github.io/)
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 6.1 Plus*
-    ⚡Android Version: *12.0*
+    ⚡Android Version: *12 L*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #drg #nokia #gos #update
@@ -33,7 +33,7 @@ chat_id=
     ⬇️ [Download Rom](https://nokia-sdm660.github.io/)
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 7 Plus*
-    ⚡Android Version: *12.0*
+    ⚡Android Version: *12 L*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #b2n #nokia #gos #update
@@ -49,7 +49,7 @@ chat_id=
     ⬇️ [Download Rom](https://nokia-sdm660.github.io/)
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 7.1*
-    ⚡Android Version: *12.0*
+    ⚡Android Version: *12 L*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #ctl #nokia #gos #update
@@ -65,7 +65,7 @@ chat_id=
     ⬇️ [Download Rom](https://nokia-sdm660.github.io/)
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 6.1*
-    ⚡Android Version: *12.0*
+    ⚡Android Version: *12 L*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #pl2 #nokia #gos #update
@@ -81,7 +81,7 @@ chat_id=
     ⬇️ [Download Rom](https://nokia-sdm660.github.io/)
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 7.2*
-    ⚡Android Version: *12.0*
+    ⚡Android Version: *12 L*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #ddv #nokia #gos #update
@@ -97,7 +97,7 @@ chat_id=
     ⬇️ [Download Rom](https://nokia-sdm660.github.io/)
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 6.2*
-    ⚡Android Version: *12.0*
+    ⚡Android Version: *12 L*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #sld #nokia #gos #update

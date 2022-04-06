@@ -14,7 +14,7 @@ id=$(sha256sum $filename | awk '{ print $1 }');
 version=android-12.0
 path=$(pwd)
 whatsNew=$(cat $path/changelog.txt)
-notification=$(echo New Android 12.0 Update)
+notification=$(echo New Android 12.1.0 Update)
 echo { >> $filename.json
 echo \"version\":\"$version\", >> $filename.json
 echo \"filename\":\"$filename\", >> $filename.json
