@@ -59,7 +59,7 @@ L2()
 L3()
 {
     cd $path
-    git clone https://$gitpassword@github.com/HMD-AOSP/Private_keys -b android-12.0 keys
+    git clone https://$gitpassword@github.com/HMD-AOSP/Private_keys -b android-12.1.0 keys
     mkdir pe
     cd pe
     echo -ne '\n' | repo init -u https://github.com/PixelExperience/manifest -b twelve --depth=1
@@ -67,7 +67,7 @@ L3()
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/aosp/config/common.mk
     cd packages/apps/Settings/src/com/android/settings/system
     rm -r SystemUpdatePreferenceController.java
-    wget https://github.com/LineageOS/android_packages_apps_Settings/raw/lineage-19.0/src/com/android/settings/system/SystemUpdatePreferenceController.java &> /dev/null
+    wget https://github.com/LineageOS/android_packages_apps_Settings/raw/lineage-19.1/src/com/android/settings/system/SystemUpdatePreferenceController.java &> /dev/null
 }
 
 L3A()
@@ -79,30 +79,32 @@ L3A()
     rm -r system/netd
     rm -r system/bt
     rm -r frameworks/av
+    rm -r hardware/qcom-caf/wlan
     git clone https://github.com/LineageOS/android_external_bson.git -b lineage-18.1 external/bson
     git clone https://github.com/LineageOS/android_system_qcom.git -b lineage-18.1 system/qcom
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_system_bpf -b android-12.0 system/bpf
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_system_netd -b android-12.0 system/netd
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_system_bt -b android-12.0-PE system/bt
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_frameworks_av -b android-12.0 frameworks/av
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_system_bpf -b android-12.1.0 system/bpf
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_system_netd -b android-12.1.0 system/netd
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_system_bt -b android-12.1.0-PE system/bt
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_frameworks_av -b android-12.1.0 frameworks/av
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_hardware_qcom_wlan -b android-12.1.0 hardware/qcom-caf/wlan
     cd vendor/gapps/product/packages/apps
     rm -r Drive GoogleCamera Maps YouTube YouTubeMusicPrebuilt PrebuiltGmail Photos
     cd ..
     cd privileged_apps
-    rm -r PixelLiveWallpaperPrebuilt
+    rm -r PixelLiveWallpaperPrebuilt RecorderPrebuilt
 } &> /dev/null
 
 L4()
 {
     cd $path/pe
     rm -r packages/apps/Updates
-    git clone https://github.com/Nokia-SDM660/android_kernel_nokia_sdm660.git -b android-12.0-clang --depth=1 kernel/nokia/sdm660
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Dragon -b android-12.0 device/nokia/Dragon
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Onyx -b android-12.0 device/nokia/Onyx
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Crystal -b android-12.0 device/nokia/Crystal
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Plate2 -b android-12.0 device/nokia/Plate2
-    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia -b android-12.0 vendor/nokia
-    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_GoogleCamera -b android-12.0 vendor/nokia/GoogleCamera
+    git clone https://github.com/Nokia-SDM660/android_kernel_nokia_sdm660.git -b android-12.1.0-clang --depth=1 kernel/nokia/sdm660
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Dragon -b android-12.1.0 device/nokia/Dragon
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Onyx -b android-12.1.0 device/nokia/Onyx
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Crystal -b android-12.1.0 device/nokia/Crystal
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Plate2 -b android-12.1.0 device/nokia/Plate2
+    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia -b android-12.1.0 vendor/nokia
+    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_GoogleCamera -b android-12.1.0 vendor/nokia/GoogleCamera
 } &> /dev/null
 
 L5()
@@ -182,12 +184,12 @@ L6()
     rm -r vendor/nokia
     rm -r device/custom/sepolicy
     rm -r device/qcom/sepolicy-legacy-um
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Daredevil.git -b android-12.0-PV device/nokia/Daredevil
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Starlord.git -b android-12.0-PV device/nokia/Starlord
-    git clone https://$gitlpassword@gitlab.com/RaghuVarma331/proprietary_vendor_nokia.git -b android-12.0-PV --depth=1 vendor/nokia
-    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_GoogleCamera -b android-12.0 vendor/nokia/GoogleCamera
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_qcom_sepolicy-legacy-um -b android-12.0 device/qcom/sepolicy-legacy-um
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_lineage_sepolicy -b android-12.0 device/lineage/sepolicy
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Daredevil.git -b android-12.1.0-PV device/nokia/Daredevil
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Starlord.git -b android-12.1.0-PV device/nokia/Starlord
+    git clone https://$gitlpassword@gitlab.com/RaghuVarma331/proprietary_vendor_nokia.git -b android-12.1.0-PV --depth=1 vendor/nokia
+    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_GoogleCamera -b android-12.1.0 vendor/nokia/GoogleCamera
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_qcom_sepolicy-legacy-um -b android-12.1.0 device/qcom/sepolicy-legacy-um
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_lineage_sepolicy -b android-12.1.0 device/lineage/sepolicy
 }
 
 L7()

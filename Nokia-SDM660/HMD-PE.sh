@@ -1,7 +1,7 @@
 #!/bin/bash
 
 path=/root
-securitypatch=2022-01
+securitypatch=2022-04
 Telegram_Api_code=
 chat_id=
 
@@ -16,7 +16,7 @@ chat_id=
     ⬇️ [Download Rom](https://nokia-sdm660.github.io/)
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 6.1 Plus*
-    ⚡Android Version: *12.0*
+    ⚡Android Version: *12 L*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #drg #nokia #pe #update
@@ -31,7 +31,7 @@ chat_id=
     ⬇️ [Download Rom](https://nokia-sdm660.github.io/)
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 7 Plus*
-    ⚡Android Version: *12.0*
+    ⚡Android Version: *12 L*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #b2n #nokia #pe #update
@@ -46,7 +46,7 @@ chat_id=
     ⬇️ [Download Rom](https://nokia-sdm660.github.io/)
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 7.1*
-    ⚡Android Version: *12.0*
+    ⚡Android Version: *12 L*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #ctl #nokia #pe #update
@@ -61,7 +61,7 @@ chat_id=
     ⬇️ [Download Rom](https://nokia-sdm660.github.io/)
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 6.1*
-    ⚡Android Version: *12.0*
+    ⚡Android Version: *12 L*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #pl2 #nokia #pe #update
@@ -77,7 +77,7 @@ chat_id=
     ⬇️ [Download vbmeta](https://sourceforge.net/projects/sld-sprout/files/vbmeta/TEN/)         
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 7.2*
-    ⚡Android Version: *12.0*
+    ⚡Android Version: *12 L*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #ddv #nokia #pe #update
@@ -93,7 +93,7 @@ chat_id=
     ⬇️ [Download vbmeta](https://sourceforge.net/projects/sld-sprout/files/vbmeta/TEN/)    
     💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
     📱Device: *Nokia 6.2*
-    ⚡Android Version: *12.0*
+    ⚡Android Version: *12 L*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #sld #nokia #pe #update
