@@ -1,0 +1,13 @@
+stock rom link - https://rsdsecure-cloud.motorola.com/download/HANOIP_RETAIL_RRIS31.Q1-42-51-12-1_subsidy-DEFAULT_regulatory-DEFAULT_CFC.xml.zip?AWSAccessKeyId=AKIAXFS6EDQSAKP4UZGY&Expires=1650942672&Signature=kl%2Fhe%2B04e%2F%2BlAEK89WDXhg8LSok%3D
+
+• initial release 
+• built with prebuilt kernel , dtbo , dtb & vendor from stock
+• Google apps included
+• selinux enforced
+• safety net pass out of the box ( doesn't need any root etc )
+• shipped with retail build fingerprint
+• double tap to wake not working at the moment
+• no guarantee towards volte on few carrier support ( will do some work around in upcoming days )
+• Removed NFC for now.
+• Removed stock overlays from vendor. ( Will depend on source built overlays )
+• radio & ims blobs from latest stock
