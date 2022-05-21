@@ -1,0 +1,23 @@
+1. connect phone to computer
+2. enable developer options & usb debugging
+3. Open command prompt in platform tools latest. ( Don't use minimal adb tools )
+4. Type adb devices
+5. Type adb reboot bootloader
+6. Check your phone connected and triggered in fastboot mode or not using ( type fastboot devices )
+7. Download boot.img to sideload my builds.
+8. type fastboot flash boot boot.img
+9. type fastboot reboot recovery
+10. Select apply update
+11. Select adb sideload
+12. Type adb devices in command prompt
+13. Type adb sideload xyz.zip ( rom )
+14. Now it will stuck at 47%  and fail ( don't worry zip flashed with zero issues ) just avoid it. 
+15. select reboot to bootloader
+16. type fastboot devices
+17. type fastboot getvar current-slot
+18. Example if output says current active slot-a then change slot to b , if output says current active slot-b then change slot to a.
+19. type the below commands to change slot accordingly
+   change slot to A : type fastboot --set-active=a
+   change slot to B : type fastboot --set-active=b
+20. Type fastboot -w
+21. type fastboot reboot
