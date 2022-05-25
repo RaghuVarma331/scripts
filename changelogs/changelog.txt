@@ -1,2 +1,2 @@
-- Improved system stability\n- User interface enhancements\n- Google Security Patch 2022-04
+- Improved system stability\n- User interface enhancements\n- Google Security Patch 2022-05
 
