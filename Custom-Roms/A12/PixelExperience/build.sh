@@ -81,6 +81,30 @@ L3()
     rm -r PixelLiveWallpaperPrebuilt RecorderPrebuilt    
 }
 
+G60G40-A()
+{
+    cd $path/pe
+    git clone https://$gitpassword@github.com/RaghuVarma331/android_device_motorola_hanoip -b android-12.1-PV device/motorola/hanoip
+    git clone https://$gitpassword@github.com/RaghuVarma331/android_kernel_motorola_sm6150 -b android-12.1 kernel/motorola/sm6150 --depth=1
+    git clone https://$gitpassword@github.com/RaghuVarma331/kernel-headers -b android-12.1 kernel/motorola/kernel-headers
+    git clone https://$gitlpassword@gitlab.com/RaghuVarma331/proprietary_vendor_motorola -b android-12.1-PV vendor/motorola --depth=1
+}
+
+G60G40-B()
+{
+    cd $path/pe
+    export SELINUX_IGNORE_NEVERALLOWS=true
+    . build/envsetup.sh && lunch aosp_hanoip-userdebug && make -j$(nproc --all) target-files-package otatools
+    romname=$(cat $path/pe/out/target/product/hanoip/system/build.prop | grep org.pixelexperience.version.display | cut -d "=" -f 2)
+    sign_target_files_apks -o -d $path/keys $path/pe/out/target/product/hanoip/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/pe/out/target/product/hanoip/signed-target-files.zip
+    ota_from_target_files -k $path/keys/releasekey $path/pe/out/target/product/hanoip/signed-target-files.zip $path/pe/out/target/product/hanoip/$romname.zip
+    cp -r out/target/product/*/PixelExperience**.zip $path
+    rm -r out
+    rm -r device/moto*
+    rm -r vendor/moto*
+    rm -r kernel/moto*
+}
+
 L3A()
 {
     cd $path/pe
@@ -243,6 +267,14 @@ echo "----------------------------------------------------"
 echo "Downloading Pixel-Experience Source Code.."
 echo "----------------------------------------------------" 
 L3
+echo "----------------------------------------------------"
+echo "Downloading G60/G40 sources.."
+echo "----------------------------------------------------" 
+G60G40-A
+echo "----------------------------------------------------"
+echo "Started building for G60/G40.."
+echo "----------------------------------------------------" 
+G60G40-B
 echo "----------------------------------------------------"
 echo "Downloading Nokia Patches.."
 echo "----------------------------------------------------"
