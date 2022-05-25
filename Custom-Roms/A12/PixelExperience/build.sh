@@ -68,6 +68,17 @@ L3()
     cd packages/apps/Settings/src/com/android/settings/system
     rm -r SystemUpdatePreferenceController.java
     wget https://github.com/LineageOS/android_packages_apps_Settings/raw/lineage-19.1/src/com/android/settings/system/SystemUpdatePreferenceController.java &> /dev/null
+    cd $path
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Patches/pe12_sign_target_files_apks.py &> /dev/null
+    cat pe12_sign_target_files_apks.py > $path/pe/build/tools/releasetools/sign_target_files_apks.py
+    cat pe12_sign_target_files_apks.py > $path/pe/build/tools/releasetools/sign_target_files_apks
+    rm -r pe12_sign_target_files_apks.py
+    cd $path/pe
+    cd vendor/gapps/product/packages/apps
+    rm -r Drive GoogleCamera Maps YouTube YouTubeMusicPrebuilt PrebuiltGmail Photos
+    cd ..
+    cd privileged_apps
+    rm -r PixelLiveWallpaperPrebuilt RecorderPrebuilt    
 }
 
 L3A()
@@ -87,11 +98,6 @@ L3A()
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_system_bt -b android-12.1.0-PE system/bt
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_frameworks_av -b android-12.1.0 frameworks/av
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_hardware_qcom_wlan -b android-12.1.0 hardware/qcom-caf/wlan
-    cd vendor/gapps/product/packages/apps
-    rm -r Drive GoogleCamera Maps YouTube YouTubeMusicPrebuilt PrebuiltGmail Photos
-    cd ..
-    cd privileged_apps
-    rm -r PixelLiveWallpaperPrebuilt RecorderPrebuilt
 } &> /dev/null
 
 L4()
@@ -175,10 +181,6 @@ L5()
 
 L6()
 {
-    cd $path
-    wget https://github.com/RaghuVarma331/scripts/raw/master/Patches/pe12_sign_target_files_apks.py &> /dev/null
-    cat pe12_sign_target_files_apks.py > $path/pe/build/tools/releasetools/sign_target_files_apks.py
-    cat pe12_sign_target_files_apks.py > $path/pe/build/tools/releasetools/sign_target_files_apks
     cd $path/pe
     rm -r device/nokia
     rm -r vendor/nokia
