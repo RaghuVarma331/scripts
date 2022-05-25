@@ -1,5 +1,16 @@
 stock rom link - https://rsdsecure-cloud.motorola.com/download/HANOIP_RETAIL_RRIS31.Q1-42-51-12-1_subsidy-DEFAULT_regulatory-DEFAULT_CFC.xml.zip?AWSAccessKeyId=AKIAXFS6EDQSAKP4UZGY&Expires=1650942672&Signature=kl%2Fhe%2B04e%2F%2BlAEK89WDXhg8LSok%3D
 
+Build PixelExperience_hanoip-12.1-20220525-1448-UNOFFICIAL.zip
+==============================================================
+• Added swipe fingerprint for notifications under gestures settings
+• Added higer aspect ratio screen support
+• Added option to switch refresh rate from 60 HZ to 120 HZ ( Vice versa ) under display settings
+• Added option to select auto refresh rate under display settings
+• Fixed device wake-up while plug in to charge mode
+
+
+Build PixelExperience_hanoip-12.1-20220523-1203-UNOFFICIAL.zip
+==============================================================
 • Based on android-12.1.0_r5
 • Improved system stability
 • User interface enhancements
