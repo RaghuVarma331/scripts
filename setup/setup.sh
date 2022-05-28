@@ -32,3 +32,4 @@ cd $PROJECT_DIR/jenkins
 ./8.sh
 ./9.sh
 ./10.sh
+./11.sh
