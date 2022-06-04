@@ -93,7 +93,7 @@ G60G40-B()
     sign_target_files_apks -o -d $path/keys $path/los/out/target/product/hanoip/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/los/out/target/product/hanoip/signed-target-files.zip
     ota_from_target_files -k $path/keys/releasekey $path/los/out/target/product/hanoip/signed-target-files.zip $path/los/out/target/product/hanoip/lineage-$romname.zip
     cp -r out/target/product/*/lineage-19.1**.zip $path
-    rm -r out
+    rm -r out/target/product/*
     rm -r device/moto*
     rm -r vendor/moto*
     rm -r kernel/moto*
