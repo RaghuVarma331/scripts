@@ -67,6 +67,10 @@ L3()
     echo -ne '\n' | repo init -u https://github.com/LineageOS/android.git -b lineage-19.1 --depth=1
     repo sync
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/lineage/config/common.mk
+    cd system/core/init
+    rm -r property_service.cpp
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Patches/property_service.cpp &> /dev/null
+    cd $path/los
     rm -r packages/apps/Settings
     rm -r packages/apps/Updater
     git clone https://github.com/Motorola-SM6150/Os_Updates.git -b lineage-19.1 packages/apps/Os_Updates
