@@ -26,6 +26,7 @@ Telegram_Api_code=$(cat $path/cred** | grep api | cut -d "=" -f 2)
 chat_id=$(cat $path/cred** | grep id | cut -d "=" -f 2)
 gitpassword=$(cat $path/cred** | grep git | cut -d "=" -f 2)
 gitlpassword=$(cat $path/cred** | grep lab | cut -d "=" -f 2)
+SF=$(cat $path/cred** | grep sf | cut -d "=" -f 2)
 
 L1()
 {
@@ -105,6 +106,21 @@ G60G40-B()
     rm -r device/moto*
     rm -r vendor/moto*
     rm -r kernel/moto*
+}
+
+OTA-UPLOAD()
+{
+    cd $path
+    mkdir -p ~/.ssh  &&  echo "Host *" > ~/.ssh/config && echo " StrictHostKeyChecking no" >> ~/.ssh/config
+    echo "# Allow Jenkins" >> /etc/sudoers && echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+    sshpass -p $SF rsync -avP -e ssh PixelExperience**hanoip**.zip  raghuvarma331@frs.sourceforge.net:/home/frs/project/motorola-sm6150/G60/PixelExperience
+    git clone https://$gitpassword@github.com/Motorola-SM6150/OTA-server -b master OTA-server
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Json_generator/hanoip_pe.sh &> /dev/null
+    chmod a+x hanoip_pe.sh
+    ./hanoip_pe.sh &> /dev/null
+    cat ***.json > $path/OTA-server/PixelExperience/hanoip.json
+    cd $path/OTA-server
+    git add . && git commit -s -m "OTA-server: PixelExperience: build $(date)" && git push  -u -f origin master
 }
 
 L3A()
@@ -277,6 +293,10 @@ echo "----------------------------------------------------"
 echo "Started building for G60/G40.."
 echo "----------------------------------------------------" 
 G60G40-B
+echo "----------------------------------------------------"
+echo "Started uploading build and updating OTA for G60/G40"
+echo "----------------------------------------------------" 
+OTA-UPLOAD
 echo "----------------------------------------------------"
 echo "Downloading Nokia Patches.."
 echo "----------------------------------------------------"
