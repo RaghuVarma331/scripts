@@ -67,6 +67,8 @@ L3()
     repo sync
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/lineage/config/common.mk
     rm -r packages/apps/Settings
+    rm -r packages/apps/Updater
+    git clone https://github.com/Motorola-SM6150/Os_Updates.git -b lineage-19.1 packages/apps/Os_Updates
     git clone https://$gitpassword@github.com/RaghuVarma331/android_packages_apps_Settings.git -b lineage-19.1 packages/apps/Settings --depth=1
     cd $path
     wget https://github.com/RaghuVarma331/scripts/raw/master/Patches/pe12_sign_target_files_apks.py &> /dev/null

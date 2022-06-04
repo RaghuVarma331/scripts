@@ -65,6 +65,8 @@ L3()
     echo -ne '\n' | repo init -u https://github.com/PixelExperience/manifest -b twelve --depth=1
     repo sync
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/aosp/config/common.mk
+    rm -r packages/apps/Updates
+    git clone https://github.com/Motorola-SM6150/Os_Updates.git -b pe-12.1 packages/apps/Os_Updates
     cd packages/apps/Settings/src/com/android/settings/system
     rm -r SystemUpdatePreferenceController.java
     wget https://github.com/LineageOS/android_packages_apps_Settings/raw/lineage-19.1/src/com/android/settings/system/SystemUpdatePreferenceController.java &> /dev/null
@@ -127,7 +129,7 @@ L3A()
 L4()
 {
     cd $path/pe
-    rm -r packages/apps/Updates
+    rm -r packages/apps/Os_Updates
     git clone https://github.com/Nokia-SDM660/android_kernel_nokia_sdm660.git -b android-12.1.0-clang --depth=1 kernel/nokia/sdm660
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Dragon -b android-12.1.0 device/nokia/Dragon
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Onyx -b android-12.1.0 device/nokia/Onyx
