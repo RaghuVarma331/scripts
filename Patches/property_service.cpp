@@ -1251,6 +1251,82 @@ static void ProcessBootconfig() {
     });
 }
 
+static void SetSafetyNetProps() {
+     InitPropertySet("ro.boot.vbmeta.device_state", "locked");
+     InitPropertySet("ro.boot.verifiedbootstate", "green");
+     InitPropertySet("ro.boot.flash.locked", "1");
+     InitPropertySet("ro.boot.selinux", "enforcing");
+     InitPropertySet("ro.boot.veritymode", "enforcing");
+     InitPropertySet("ro.boot.warranty_bit", "0");
+     InitPropertySet("ro.warranty_bit", "0");
+     InitPropertySet("ro.debuggable", "0");
+     InitPropertySet("ro.secure", "1");
+     InitPropertySet("ro.bootimage.build.type", "user");
+     InitPropertySet("ro.build.type", "user");
+     InitPropertySet("ro.product.build.type", "user");
+     InitPropertySet("ro.system.build.type", "user");
+     InitPropertySet("ro.system_ext.build.type", "user");
+     InitPropertySet("ro.vendor.build.type", "user");
+     InitPropertySet("ro.bootimage.build.tags", "release-keys");
+     InitPropertySet("ro.build.keys", "release-keys");
+     InitPropertySet("ro.build.tags", "release-keys");
+     InitPropertySet("ro.product.build.tags", "release-keys");
+     InitPropertySet("ro.system.build.tags", "release-keys");
+     InitPropertySet("ro.system_ext.build.tags", "release-keys");
+     InitPropertySet("ro.vendor.build.tags", "release-keys");
+     InitPropertySet("ro.build.selinux", "0");
+     InitPropertySet("ro.bootimage.build.fingerprint", "google/raven/raven:12/SP2A.220505.002/8353555:user/release-keys");
+     InitPropertySet("ro.build.fingerprint", "google/raven/raven:12/SP2A.220505.002/8353555:user/release-keys");
+     InitPropertySet("ro.odm.build.fingerprint", "google/raven/raven:12/SP2A.220505.002/8353555:user/release-keys");
+     InitPropertySet("ro.product.build.fingerprint", "google/raven/raven:12/SP2A.220505.002/8353555:user/release-keys");
+     InitPropertySet("ro.system.build.fingerprint", "google/raven/raven:12/SP2A.220505.002/8353555:user/release-keys");
+     InitPropertySet("ro.system_ext.build.fingerprint", "google/raven/raven:12/SP2A.220505.002/8353555:user/release-keys");
+     InitPropertySet("ro.vendor.build.fingerprint", "google/raven/raven:12/SP2A.220505.002/8353555:user/release-keys");
+     InitPropertySet("ro.build.description", "raven-user 12 SP2A.220505.002 8353555 release-keys");
+     InitPropertySet("ro.vendor.build.description", "raven-user 12 SP2A.220505.002 8353555 release-keys");
+     InitPropertySet("ro.bootimage.build.id", "SP2A.220505.002");
+     InitPropertySet("ro.build.display.id", "SP2A.220505.002");
+     InitPropertySet("ro.build.id", "SP2A.220505.002");
+     InitPropertySet("ro.product.build.id", "SP2A.220505.002");
+     InitPropertySet("ro.system.build.id", "SP2A.220505.002");
+     InitPropertySet("ro.system_ext.build.id", "SP2A.220505.002");
+     InitPropertySet("ro.vendor.build.id", "SP2A.220505.002");
+     InitPropertySet("ro.build.version.security_patch", "2022-05-05");
+     InitPropertySet("ro.vendor.build.security_patch", "2022-05-05");
+     InitPropertySet("ro.product.bootimage.brand", "google");
+     InitPropertySet("ro.product.brand", "google");
+     InitPropertySet("ro.product.odm.brand", "google");
+     InitPropertySet("ro.product.product.brand", "google");
+     InitPropertySet("ro.product.system.brand", "google");
+     InitPropertySet("ro.product.system_ext.brand", "google");
+     InitPropertySet("ro.product.vendor.brand", "google");
+     InitPropertySet("ro.product.bootimage.model", "Pixel 6 Pro");
+     InitPropertySet("ro.product.model", "Pixel 6 Pro");
+     InitPropertySet("ro.product.odm.model", "Pixel 6 Pro");
+     InitPropertySet("ro.product.product.model", "Pixel 6 Pro");
+     InitPropertySet("ro.product.system.model", "Pixel 6 Pro");
+     InitPropertySet("ro.product.system_ext.model", "Pixel 6 Pro");
+     InitPropertySet("ro.product.vendor.model", "Pixel 6 Pro");
+     InitPropertySet("ro.product.bootimage.manufacturer", "Google");
+     InitPropertySet("ro.product.manufacturer", "Google");
+     InitPropertySet("ro.product.odm.manufacturer", "Google");
+     InitPropertySet("ro.product.product.manufacturer", "Google");
+     InitPropertySet("ro.product.system.manufacturer", "Google");
+     InitPropertySet("ro.product.system_ext.manufacturer", "Google");
+     InitPropertySet("ro.product.vendor.manufacturer", "Google");
+     InitPropertySet("ro.android.device", "raven");
+     InitPropertySet("ro.build.product", "raven");
+     InitPropertySet("ro.product.board", "raven");
+     InitPropertySet("ro.product.bootimage.device", "raven");
+     InitPropertySet("ro.product.device", "raven");
+     InitPropertySet("ro.product.odm.device", "raven");
+     InitPropertySet("ro.product.product.device", "raven");
+     InitPropertySet("ro.product.system.device", "raven");
+     InitPropertySet("ro.product.system_ext.device", "raven");
+     InitPropertySet("ro.product.vendor.device", "raven");
+     InitPropertySet("ro.vendor.product.device", "raven");
+}
+
 void PropertyInit() {
     selinux_callback cb;
     cb.func_audit = PropertyAuditCallback;
@@ -1264,6 +1340,12 @@ void PropertyInit() {
     if (!property_info_area.LoadDefaultPath()) {
         LOG(FATAL) << "Failed to load serialized property info file";
     }
+
+    // Report a valid verified boot chain to make Google SafetyNet integrity
+    // checks pass. This needs to be done before parsing the kernel cmdline as
+    // these properties are read-only and will be set to invalid values with
+    // androidboot cmdline arguments.
+    SetSafetyNetProps();
 
     // If arguments are passed both on the command line and in DT,
     // properties set in DT always have priority over the command-line ones.
