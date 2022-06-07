@@ -119,6 +119,8 @@ OTA-UPLOAD()
     cat ***.json > $path/OTA-server/LineageOS/hanoip.json
     cd $path/OTA-server
     git add . && git commit -s -m "OTA-server: LineageOS: build $(date)" && git push  -u -f origin master
+    cd $path
+    rm -r OTA-server hanoip_los.sh lineage-19.1***
 }
 
 

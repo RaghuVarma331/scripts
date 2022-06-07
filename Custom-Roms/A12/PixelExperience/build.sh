@@ -121,6 +121,8 @@ OTA-UPLOAD()
     cat ***.json > $path/OTA-server/PixelExperience/hanoip.json
     cd $path/OTA-server
     git add . && git commit -s -m "OTA-server: PixelExperience: build $(date)" && git push  -u -f origin master
+    cd $path
+    rm -r OTA-server hanoip_pe.sh PixelExperience**
 }
 
 L3A()
