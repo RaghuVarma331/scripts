@@ -65,6 +65,7 @@ L3()
     cd pe
     echo -ne '\n' | repo init -u https://github.com/PixelExperience/manifest -b twelve --depth=1
     repo sync
+    rm -r .repo
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/aosp/config/common.mk
     rm -r packages/apps/Updates
     git clone https://github.com/Motorola-SM6150/Os_Updates.git -b pe-12.1 packages/apps/Os_Updates

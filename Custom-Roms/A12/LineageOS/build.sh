@@ -66,6 +66,7 @@ L3()
     cd los
     echo -ne '\n' | repo init -u https://github.com/LineageOS/android.git -b lineage-19.1 --depth=1
     repo sync
+    rm -r .repo
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/lineage/config/common.mk
     cd system/core/init
     rm -r property_service.cpp
