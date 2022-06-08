@@ -60,7 +60,7 @@ L2()
 L3()
 {
     cd $path
-    git clone https://$gitpassword@github.com/HMD-AOSP/Private_keys -b android-12.1.0 keys
+    git clone https://$gitpassword@github.com/Motorola-SM6150/Private_keys -b android-12.1 keys
     mkdir pe
     cd pe
     echo -ne '\n' | repo init -u https://github.com/PixelExperience/manifest -b twelve --depth=1
@@ -88,9 +88,9 @@ L3()
 G60G40-A()
 {
     cd $path/pe
-    git clone https://$gitpassword@github.com/RaghuVarma331/android_device_motorola_hanoip -b android-12.1-PV device/motorola/hanoip
-    git clone https://$gitpassword@github.com/RaghuVarma331/android_kernel_motorola_sm6150 -b android-12.1 kernel/motorola/sm6150 --depth=1
-    git clone https://$gitpassword@github.com/RaghuVarma331/kernel-headers -b android-12.1 kernel/motorola/kernel-headers
+    git clone https://$gitpassword@github.com/Motorola-SM6150/android_device_motorola_hanoip -b android-12.1-PV device/motorola/hanoip
+    git clone https://$gitpassword@github.com/Motorola-SM6150/android_kernel_motorola_sm6150 -b android-12.1 kernel/motorola/sm6150 --depth=1
+    git clone https://$gitpassword@github.com/Motorola-SM6150/kernel-headers -b android-12.1 kernel/motorola/kernel-headers
     git clone https://$gitlpassword@gitlab.com/RaghuVarma331/proprietary_vendor_motorola -b android-12.1-PV vendor/motorola --depth=1
 }
 
@@ -123,11 +123,13 @@ OTA-UPLOAD()
     cd $path/OTA-server
     git add . && git commit -s -m "OTA-server: PixelExperience: build $(date)" && git push  -u -f origin master
     cd $path
-    rm -r OTA-server hanoip_pe.sh PixelExperience**
+    rm -r keys OTA-server hanoip_pe.sh PixelExperience**
 }
 
 L3A()
 {
+    cd $path
+    git clone https://$gitpassword@github.com/HMD-AOSP/Private_keys -b android-12.1.0 keys
     cd $path/pe
     rm -r external/bson
     rm -r system/qcom

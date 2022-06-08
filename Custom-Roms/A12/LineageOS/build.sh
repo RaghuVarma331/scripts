@@ -61,7 +61,7 @@ L2()
 L3()
 {
     cd $path
-    git clone https://$gitpassword@github.com/HMD-AOSP/Private_keys -b android-12.1.0 keys
+    git clone https://$gitpassword@github.com/Motorola-SM6150/Private_keys -b android-12.1 keys
     mkdir los
     cd los
     echo -ne '\n' | repo init -u https://github.com/LineageOS/android.git -b lineage-19.1 --depth=1
@@ -75,7 +75,7 @@ L3()
     rm -r packages/apps/Settings
     rm -r packages/apps/Updater
     git clone https://github.com/Motorola-SM6150/Os_Updates.git -b lineage-19.1 packages/apps/Os_Updates
-    git clone https://$gitpassword@github.com/RaghuVarma331/android_packages_apps_Settings.git -b lineage-19.1 packages/apps/Settings --depth=1
+    git clone https://$gitpassword@github.com/Motorola-SM6150/android_packages_apps_Settings.git -b lineage-19.1 packages/apps/Settings --depth=1
     cd $path
     wget https://github.com/RaghuVarma331/scripts/raw/master/Patches/pe12_sign_target_files_apks.py &> /dev/null
     cat pe12_sign_target_files_apks.py > $path/los/build/tools/releasetools/sign_target_files_apks.py
@@ -86,9 +86,9 @@ L3()
 G60G40-A()
 {
     cd $path/los
-    git clone https://$gitpassword@github.com/RaghuVarma331/android_device_motorola_hanoip -b android-12.1-PV device/motorola/hanoip
-    git clone https://$gitpassword@github.com/RaghuVarma331/android_kernel_motorola_sm6150 -b android-12.1 kernel/motorola/sm6150 --depth=1
-    git clone https://$gitpassword@github.com/RaghuVarma331/kernel-headers -b android-12.1 kernel/motorola/kernel-headers
+    git clone https://$gitpassword@github.com/Motorola-SM6150/android_device_motorola_hanoip -b android-12.1-PV device/motorola/hanoip
+    git clone https://$gitpassword@github.com/Motorola-SM6150/android_kernel_motorola_sm6150 -b android-12.1 kernel/motorola/sm6150 --depth=1
+    git clone https://$gitpassword@github.com/Motorola-SM6150/kernel-headers -b android-12.1 kernel/motorola/kernel-headers
     git clone https://$gitlpassword@gitlab.com/RaghuVarma331/proprietary_vendor_motorola -b android-12.1-PV vendor/motorola --depth=1
 }
 
