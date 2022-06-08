@@ -68,6 +68,8 @@ L3()
     repo sync
     rm -r .repo
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/lineage/config/common.mk
+    rm -r device/lineage/sepolicy
+    git clone https://$gitpassword@github.com/Motorola-SM6150/android_device_lineage_sepolicy -b lineage-19.1 device/lineage/sepolicy
     cd system/core/init
     rm -r property_service.cpp
     wget https://github.com/RaghuVarma331/scripts/raw/master/Patches/property_service.cpp &> /dev/null
