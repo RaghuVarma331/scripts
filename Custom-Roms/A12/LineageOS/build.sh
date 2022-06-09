@@ -126,6 +126,17 @@ OTA-UPLOAD()
     rm -r OTA-server hanoip_los.sh lineage-19.1***
 }
 
+CLEAN()
+{
+    echo "----------------------------------------------------"
+    echo "Started cleaning workspace.."
+    echo "----------------------------------------------------" 
+    cd $path
+    rm -r bin  keys  los
+    echo "----------------------------------------------------"
+    echo "Successfully cleaned.."
+    echo "----------------------------------------------------" 
+}
 
 echo "----------------------------------------------------"
 echo "Downloading tools.."
@@ -157,3 +168,4 @@ OTA-UPLOAD
 echo "----------------------------------------------------"
 echo "Successfully completed.."
 echo "----------------------------------------------------" 
+#CLEAN
