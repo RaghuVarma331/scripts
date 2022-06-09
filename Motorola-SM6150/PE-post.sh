@@ -13,7 +13,7 @@ python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
 
     New PixelExperience Build
     ================*
-    ⬇️ [Download Recovery](https://sourceforge.net/projects/motorola-sm6150/files/G60/Recovery)
+    ⬇️ [Download TWRP](https://forum.xda-developers.com/t/unofficial-twrp-3-6-2-11-0-team-win-recovery-project-moto-g60-g40.4453417/)
     ⬇️ [Download Rom](https://forum.xda-developers.com/t/rom-12-hanoip-pixelexperience-aosp-g60-g40.4449285/)
     💬 [Build changelog](https://github.com/RaghuVarma331/scripts/raw/master/Motorola-SM6150/PE-changelog.txt)
     💬 [Installation procedure](https://github.com/RaghuVarma331/scripts/raw/master/Motorola-SM6150/Installation.txt)
