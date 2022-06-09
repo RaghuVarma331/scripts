@@ -1,10 +1,22 @@
 stock rom link - https://rsdsecure-cloud.motorola.com/download/HANOIP_RETAIL_RRIS31.Q1-42-51-12-1_subsidy-DEFAULT_regulatory-DEFAULT_CFC.xml.zip?AWSAccessKeyId=AKIAXFS6EDQSAKP4UZGY&Expires=1650942672&Signature=kl%2Fhe%2B04e%2F%2BlAEK89WDXhg8LSok%3D
 
-Build lineage-19.1-20220527-UNOFFICIAL-hanoip.zip
-=================================================
-• Based on android-12.1.0_r5
-• Improved system stability
-• User interface enhancements
-• Google security patch 2022-05
-• Built with prebuilt kernel , dtbo , dtb & vendor from stock
-• Selinux enforced
+Note - installation procedure changed to TWRP now. please read the main thread installation guide before proceeding. 
+
+Moreover please flash the recommended MindtheGApps package from my downloads page.
+
+• added OTA ( over the air ) support
+
+• device code identification changed from hanoip to raven
+( this change won't be reflected on the rom but it will show the impact for safety net pass without root from the minute you boot the rom )
+
+• device name identification changed from Moto G60 to Pixel 6 pro ( this change won't be reflected on the rom but it will show the impact for safety net pass without root from the minute you boot the rom )
+
+• build signed with new private keys specially generated for Moto G60/G40 Projects. this will reflect for security reasons and on top of it OTA update verification as well.
+
+• fixed slot switch while flashing rom from recovery mode.
+
+• initiated stock retail build fingerprint 
+
+• extended reserved space for every partition to 800 MB ( this helps for flashing Google apps seperately )
+
+• fixed flashing GApps zip from TWRP.

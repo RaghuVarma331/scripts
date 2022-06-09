@@ -1,29 +1,13 @@
 stock rom link - https://rsdsecure-cloud.motorola.com/download/HANOIP_RETAIL_RRIS31.Q1-42-51-12-1_subsidy-DEFAULT_regulatory-DEFAULT_CFC.xml.zip?AWSAccessKeyId=AKIAXFS6EDQSAKP4UZGY&Expires=1650942672&Signature=kl%2Fhe%2B04e%2F%2BlAEK89WDXhg8LSok%3D
 
-Build PixelExperience_hanoip-12.1-20220525-1448-UNOFFICIAL.zip
-==============================================================
-• Added swipe fingerprint for notifications under gestures settings
-• Added higer aspect ratio screen support
-• Added option to switch refresh rate from 60 HZ to 120 HZ ( Vice versa ) under display settings
-• Added option to select auto refresh rate under display settings
-• Fixed device wake-up while plug in to charge mode
+Note - installation procedure changed to TWRP now. please read the main thread installation guide before proceeding. 
 
+• added OTA ( over the air ) support
 
-Build PixelExperience_hanoip-12.1-20220523-1203-UNOFFICIAL.zip
-==============================================================
-• Based on android-12.1.0_r5
-• Improved system stability
-• User interface enhancements
-• Google security patch 2022-05
-• Built with prebuilt kernel , dtbo , dtb & vendor from stock
-• Google apps included
-• Selinux enforced
-• Safety net pass out of the box
-• Radio & ims blobs from latest stock
-• Fixed volte 
-• Added call recording support
-• Updated overlays from stock
-• Carrier config from 9.1.r1-07700
-• Updated build fingerprint to Pixel 6 pro
-• Fixed Bluetooth audio
-• Fixed headphone/microphone jack detection
+• build signed with new private keys specially generated for Moto G60/G40 Projects. this will reflect for security reasons and on top of it OTA update verification as well.
+
+• fixed slot switch while flashing rom from recovery mode.
+
+• initiated stock retail build fingerprint 
+
+• extended reserved space for every partition to 250 MB
