@@ -89,8 +89,7 @@ G60G40-A()
 {
     cd $path/pe
     git clone https://$gitpassword@github.com/Motorola-SM6150/android_device_motorola_hanoip -b android-12.1-PV device/motorola/hanoip
-    git clone https://$gitpassword@github.com/Motorola-SM6150/android_kernel_motorola_sm6150 -b android-12.1 kernel/motorola/sm6150 --depth=1
-    git clone https://$gitpassword@github.com/Motorola-SM6150/kernel-headers -b android-12.1 kernel/motorola/kernel-headers
+    git clone https://github.com/Motorola-SM6150/android_kernel_motorola_sm6150.git -b android-12.1 kernel/motorola/sm6150 --depth=1
     git clone https://$gitlpassword@gitlab.com/RaghuVarma331/proprietary_vendor_motorola -b android-12.1-PV vendor/motorola --depth=1
 }
 
