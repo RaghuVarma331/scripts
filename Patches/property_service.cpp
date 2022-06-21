@@ -1293,38 +1293,6 @@ static void SetSafetyNetProps() {
      InitPropertySet("ro.vendor.build.id", "SP2A.220505.002");
      InitPropertySet("ro.build.version.security_patch", "2022-05-05");
      InitPropertySet("ro.vendor.build.security_patch", "2022-05-05");
-     InitPropertySet("ro.product.bootimage.brand", "google");
-     InitPropertySet("ro.product.brand", "google");
-     InitPropertySet("ro.product.odm.brand", "google");
-     InitPropertySet("ro.product.product.brand", "google");
-     InitPropertySet("ro.product.system.brand", "google");
-     InitPropertySet("ro.product.system_ext.brand", "google");
-     InitPropertySet("ro.product.vendor.brand", "google");
-     InitPropertySet("ro.product.bootimage.model", "Pixel 6 Pro");
-     InitPropertySet("ro.product.model", "Pixel 6 Pro");
-     InitPropertySet("ro.product.odm.model", "Pixel 6 Pro");
-     InitPropertySet("ro.product.product.model", "Pixel 6 Pro");
-     InitPropertySet("ro.product.system.model", "Pixel 6 Pro");
-     InitPropertySet("ro.product.system_ext.model", "Pixel 6 Pro");
-     InitPropertySet("ro.product.vendor.model", "Pixel 6 Pro");
-     InitPropertySet("ro.product.bootimage.manufacturer", "Google");
-     InitPropertySet("ro.product.manufacturer", "Google");
-     InitPropertySet("ro.product.odm.manufacturer", "Google");
-     InitPropertySet("ro.product.product.manufacturer", "Google");
-     InitPropertySet("ro.product.system.manufacturer", "Google");
-     InitPropertySet("ro.product.system_ext.manufacturer", "Google");
-     InitPropertySet("ro.product.vendor.manufacturer", "Google");
-     InitPropertySet("ro.android.device", "raven");
-     InitPropertySet("ro.build.product", "raven");
-     InitPropertySet("ro.product.board", "raven");
-     InitPropertySet("ro.product.bootimage.device", "raven");
-     InitPropertySet("ro.product.device", "raven");
-     InitPropertySet("ro.product.odm.device", "raven");
-     InitPropertySet("ro.product.product.device", "raven");
-     InitPropertySet("ro.product.system.device", "raven");
-     InitPropertySet("ro.product.system_ext.device", "raven");
-     InitPropertySet("ro.product.vendor.device", "raven");
-     InitPropertySet("ro.vendor.product.device", "raven");
 }
 
 void PropertyInit() {
