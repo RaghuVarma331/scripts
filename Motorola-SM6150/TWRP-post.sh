@@ -2,7 +2,7 @@
 
 Telegram_Api_code=
 chat_id=
-version=3.6.2-11.0
+version=3.6.2-12.1
 
 
     wget https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py

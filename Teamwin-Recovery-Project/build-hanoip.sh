@@ -27,7 +27,7 @@ chat_id=$(cat $path/cred** | grep id | cut -d "=" -f 2)
 gitpassword=$(cat $path/cred** | grep git | cut -d "=" -f 2)
 SF=$(cat $path/cred** | grep sf | cut -d "=" -f 2)
 TV=3.6.2_
-AV=11-0
+AV=12.1-0
 
 # D_T_Y
 CUSTOM_DATE_YEAR="$(date -u +%Y)"
@@ -52,7 +52,7 @@ L3()
     mkdir release
     mkdir twrp
     cd twrp
-    echo -ne '\n' | repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11 --depth=1
+    echo -ne '\n' | repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1 --depth=1
     repo sync
     rm -r .repo
 }
@@ -60,7 +60,7 @@ L3()
 G60G40-A()
 {
     cd $path/twrp
-    git clone https://github.com/RaghuVarma331/android_device_motorola_hanoip-TWRP.git -b android-11.0 device/motorola/hanoip
+    git clone https://github.com/RaghuVarma331/android_device_motorola_hanoip-TWRP.git -b android-12.1 device/motorola/hanoip
 }
 
 G60G40-B()
