@@ -130,33 +130,28 @@ L3A()
     cd $path
     git clone https://$gitpassword@github.com/HMD-AOSP/Private_keys -b android-12.1.0 keys
     cd $path/pe
-    rm -r external/bson
-    rm -r system/qcom
     rm -r system/bpf
     rm -r system/netd
     rm -r system/bt
     rm -r frameworks/av
-    rm -r hardware/qcom-caf/wlan
-    git clone https://github.com/LineageOS/android_external_bson.git -b lineage-18.1 external/bson
-    git clone https://github.com/LineageOS/android_system_qcom.git -b lineage-18.1 system/qcom
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_system_bpf -b android-12.1.0 system/bpf
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_system_netd -b android-12.1.0 system/netd
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_system_bt -b android-12.1.0-PE system/bt
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_frameworks_av -b android-12.1.0 frameworks/av
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_hardware_qcom_wlan -b android-12.1.0 hardware/qcom-caf/wlan
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_system_bpf -b android-12.1 system/bpf
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_system_netd -b android-12.1 system/netd
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_system_bt -b android-12.1-PE system/bt
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_frameworks_av -b android-12.1-PE frameworks/av
 } &> /dev/null
 
 L4()
 {
     cd $path/pe
     rm -r packages/apps/Os_Updates
-    git clone https://github.com/Nokia-SDM660/android_kernel_nokia_sdm660.git -b android-12.1.0-clang --depth=1 kernel/nokia/sdm660
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Dragon -b android-12.1.0 device/nokia/Dragon
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Onyx -b android-12.1.0 device/nokia/Onyx
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Crystal -b android-12.1.0 device/nokia/Crystal
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Plate2 -b android-12.1.0 device/nokia/Plate2
-    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia -b android-12.1.0 vendor/nokia
-    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_GoogleCamera -b android-12.1.0 vendor/nokia/GoogleCamera
+    git clone https://github.com/Nokia-SDM660/android_kernel_nokia_sdm660.git -b android-12.1-clang --depth=1 kernel/nokia/sdm660
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Dragon -b android-12.1-PV device/nokia/Dragon
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Onyx -b android-12.1-PV device/nokia/Onyx
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Crystal -b android-12.1-PV device/nokia/Crystal
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Plate2 -b android-12.1-PV device/nokia/Plate2
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Daredevil.git -b android-12.1-PV device/nokia/Daredevil
+    git clone https://$gitlpassword@gitlab.com/RaghuVarma331/proprietary_vendor_nokia.git -b android-12.1-PV --depth=1 vendor/nokia
+    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_GoogleCamera -b android-12.1 vendor/nokia/GoogleCamera
 } &> /dev/null
 
 L5()
@@ -222,27 +217,6 @@ L5()
     cp -r out/target/product/*/PixelExperience**.zip $path
     rm -r out/target/product/*
     rm -r vendor/nokia/Os_Updates
-}
-
-
-L6()
-{
-    cd $path/pe
-    rm -r device/nokia
-    rm -r vendor/nokia
-    rm -r device/custom/sepolicy
-    rm -r device/qcom/sepolicy-legacy-um
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Daredevil.git -b android-12.1.0-PV device/nokia/Daredevil
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Starlord.git -b android-12.1.0-PV device/nokia/Starlord
-    git clone https://$gitlpassword@gitlab.com/RaghuVarma331/proprietary_vendor_nokia.git -b android-12.1.0-PV --depth=1 vendor/nokia
-    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_GoogleCamera -b android-12.1.0 vendor/nokia/GoogleCamera
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_qcom_sepolicy-legacy-um -b android-12.1.0 device/qcom/sepolicy-legacy-um
-    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_lineage_sepolicy -b android-12.1.0 device/lineage/sepolicy
-}
-
-L7()
-{
-    cd $path/pe
     git clone https://$gitpassword@github.com/HMD-AOSP/proprietary_vendor_nokia_Os_Updates -b Daredevil-HMD-AOSP vendor/nokia/Os_Updates &> /dev/null
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     
@@ -255,21 +229,6 @@ L7()
     romname=$(cat $path/pe/out/target/product/Daredevil/system/build.prop | grep org.pixelexperience.version.display | cut -d "=" -f 2)
     sign_target_files_apks -o -d $path/keys $path/pe/out/target/product/Daredevil/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/pe/out/target/product/Daredevil/signed-target-files.zip
     ota_from_target_files -k $path/keys/releasekey $path/pe/out/target/product/Daredevil/signed-target-files.zip $path/pe/out/target/product/Daredevil/$romname.zip
-    cp -r out/target/product/*/PixelExperience**.zip $path
-    rm -r out/target/product/*
-    rm -r vendor/nokia/Os_Updates
-    git clone https://$gitpassword@github.com/HMD-AOSP/proprietary_vendor_nokia_Os_Updates -b Starlord-HMD-AOSP vendor/nokia/Os_Updates &> /dev/null
-    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
-    
-    New Pixel-Experience for Nokia 6.2 build started 
-    
-    $(date)
-    "
-    export SELINUX_IGNORE_NEVERALLOWS=true
-    . build/envsetup.sh && lunch aosp_Starlord-userdebug && make -j$(nproc --all) target-files-package otatools
-    romname=$(cat $path/pe/out/target/product/Starlord/system/build.prop | grep org.pixelexperience.version.display | cut -d "=" -f 2)
-    sign_target_files_apks -o -d $path/keys $path/pe/out/target/product/Starlord/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/pe/out/target/product/Starlord/signed-target-files.zip
-    ota_from_target_files -k $path/keys/releasekey $path/pe/out/target/product/Starlord/signed-target-files.zip $path/pe/out/target/product/Starlord/$romname.zip
     cp -r out/target/product/*/PixelExperience**.zip $path
     rm -r out/target/product/*
     rm -r vendor/nokia/Os_Updates
@@ -316,21 +275,13 @@ echo "Downloading Nokia Patches.."
 echo "----------------------------------------------------"
 L3A
 echo "----------------------------------------------------"
-echo "Downloading DRG B2N CTL PL2 Device sources.."
+echo "Downloading DRG, B2N, CTL, PL2 & DDV Device sources."
 echo "----------------------------------------------------" 
 L4
 echo "----------------------------------------------------"
-echo "Started building for DRG B2N CTL PL2.."
+echo "Started building for DRG, B2N, CTL, PL2 & DDV"
 echo "----------------------------------------------------" 
 L5
-echo "----------------------------------------------------"
-echo "Downloading DDV SLD Device sources.."
-echo "----------------------------------------------------" 
-L6
-echo "----------------------------------------------------"
-echo "Started building for DDV SLD.."
-echo "----------------------------------------------------" 
-L7
 echo "----------------------------------------------------"
 echo "Successfully build completed.."
 echo "----------------------------------------------------" 
