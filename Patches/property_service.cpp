@@ -1275,24 +1275,24 @@ static void SetSafetyNetProps() {
      InitPropertySet("ro.system_ext.build.tags", "release-keys");
      InitPropertySet("ro.vendor.build.tags", "release-keys");
      InitPropertySet("ro.build.selinux", "0");
-     InitPropertySet("ro.bootimage.build.fingerprint", "google/raven/raven:12/SQ3A.220605.009.B1/8650216:user/release-keys");
-     InitPropertySet("ro.build.fingerprint", "google/raven/raven:12/SQ3A.220605.009.B1/8650216:user/release-keys");
-     InitPropertySet("ro.odm.build.fingerprint", "google/raven/raven:12/SQ3A.220605.009.B1/8650216:user/release-keys");
-     InitPropertySet("ro.product.build.fingerprint", "google/raven/raven:12/SQ3A.220605.009.B1/8650216:user/release-keys");
-     InitPropertySet("ro.system.build.fingerprint", "google/raven/raven:12/SQ3A.220605.009.B1/8650216:user/release-keys");
-     InitPropertySet("ro.system_ext.build.fingerprint", "google/raven/raven:12/SQ3A.220605.009.B1/8650216:user/release-keys");
-     InitPropertySet("ro.vendor.build.fingerprint", "google/raven/raven:12/SQ3A.220605.009.B1/8650216:user/release-keys");
-     InitPropertySet("ro.build.description", "raven-user 12 SQ3A.220605.009.B1 8650216 release-keys");
-     InitPropertySet("ro.vendor.build.description", "raven-user 12 SQ3A.220605.009.B1 8650216 release-keys");
-     InitPropertySet("ro.bootimage.build.id", "SQ3A.220605.009.B1");
-     InitPropertySet("ro.build.display.id", "SQ3A.220605.009.B1");
-     InitPropertySet("ro.build.id", "SQ3A.220605.009.B1");
-     InitPropertySet("ro.product.build.id", "SQ3A.220605.009.B1");
-     InitPropertySet("ro.system.build.id", "SQ3A.220605.009.B1");
-     InitPropertySet("ro.system_ext.build.id", "SQ3A.220605.009.B1");
-     InitPropertySet("ro.vendor.build.id", "SQ3A.220605.009.B1");
-     InitPropertySet("ro.build.version.security_patch", "2022-06-05");
-     InitPropertySet("ro.vendor.build.security_patch", "2022-06-05");
+     InitPropertySet("ro.bootimage.build.fingerprint", "google/raven/raven:12/SQ3A.220705.003.A1/8672226:user/release-keys");
+     InitPropertySet("ro.build.fingerprint", "google/raven/raven:12/SQ3A.220705.003.A1/8672226:user/release-keys");
+     InitPropertySet("ro.odm.build.fingerprint", "google/raven/raven:12/SQ3A.220705.003.A1/8672226:user/release-keys");
+     InitPropertySet("ro.product.build.fingerprint", "google/raven/raven:12/SQ3A.220705.003.A1/8672226:user/release-keys");
+     InitPropertySet("ro.system.build.fingerprint", "google/raven/raven:12/SQ3A.220705.003.A1/8672226:user/release-keys");
+     InitPropertySet("ro.system_ext.build.fingerprint", "google/raven/raven:12/SQ3A.220705.003.A1/8672226:user/release-keys");
+     InitPropertySet("ro.vendor.build.fingerprint", "google/raven/raven:12/SQ3A.220705.003.A1/8672226:user/release-keys");
+     InitPropertySet("ro.build.description", "raven-user 12 SQ3A.220705.003.A1 8672226 release-keys");
+     InitPropertySet("ro.vendor.build.description", "raven-user 12 SQ3A.220705.003.A1 8672226 release-keys");
+     InitPropertySet("ro.bootimage.build.id", "SQ3A.220705.003.A1");
+     InitPropertySet("ro.build.display.id", "SQ3A.220705.003.A1");
+     InitPropertySet("ro.build.id", "SQ3A.220705.003.A1");
+     InitPropertySet("ro.product.build.id", "SQ3A.220705.003.A1");
+     InitPropertySet("ro.system.build.id", "SQ3A.220705.003.A1");
+     InitPropertySet("ro.system_ext.build.id", "SQ3A.220705.003.A1");
+     InitPropertySet("ro.vendor.build.id", "SQ3A.220705.003.A1");
+     InitPropertySet("ro.build.version.security_patch", "2022-07-05");
+     InitPropertySet("ro.vendor.build.security_patch", "2022-07-05");
 }
 
 void PropertyInit() {
