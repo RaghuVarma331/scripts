@@ -73,6 +73,7 @@
 #include "subcontext.h"
 #include "system/core/init/property_service.pb.h"
 #include "util.h"
+#include "vendor_init.h"
 
 using namespace std::literals;
 
@@ -1132,6 +1133,9 @@ void PropertyLoadBootDefaults() {
         }
     }
 
+    // Update with vendor-specific property runtime overrides
+    vendor_load_properties();
+
     property_initialize_ro_product_props();
     property_initialize_build_id();
     property_derive_build_fingerprint();
@@ -1444,5 +1448,4 @@ void StartPropertyService(int* epoll_socket) {
 
 }  // namespace init
 }  // namespace android
-
 
