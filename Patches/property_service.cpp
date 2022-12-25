@@ -1310,24 +1310,24 @@ static void SetSafetyNetProps() {
      InitPropertySet("ro.system_ext.build.tags", "release-keys");
      InitPropertySet("ro.vendor.build.tags", "release-keys");
      InitPropertySet("ro.build.selinux", "0");
-     InitPropertySet("ro.bootimage.build.fingerprint", "google/raven/raven:13/TP1A.221005.002/9012097:user/release-keys");
-     InitPropertySet("ro.build.fingerprint", "google/raven/raven:13/TP1A.221005.002/9012097:user/release-keys");
-     InitPropertySet("ro.odm.build.fingerprint", "google/raven/raven:13/TP1A.221005.002/9012097:user/release-keys");
-     InitPropertySet("ro.product.build.fingerprint", "google/raven/raven:13/TP1A.221005.002/9012097:user/release-keys");
-     InitPropertySet("ro.system.build.fingerprint", "google/raven/raven:13/TP1A.221005.002/9012097:user/release-keys");
-     InitPropertySet("ro.system_ext.build.fingerprint", "google/raven/raven:13/TP1A.221005.002/9012097:user/release-keys");
-     InitPropertySet("ro.vendor.build.fingerprint", "google/raven/raven:13/TP1A.221005.002/9012097:user/release-keys");
-     InitPropertySet("ro.build.description", "raven-user 13 TP1A.221005.002 9012097 release-keys");
-     InitPropertySet("ro.vendor.build.description", "raven-user 13 TP1A.221005.002 9012097 release-keys");
-     InitPropertySet("ro.bootimage.build.id", "TP1A.221005.002");
-     InitPropertySet("ro.build.display.id", "TP1A.221005.002");
-     InitPropertySet("ro.build.id", "TP1A.221005.002");
-     InitPropertySet("ro.product.build.id", "TP1A.221005.002");
-     InitPropertySet("ro.system.build.id", "TP1A.221005.002");
-     InitPropertySet("ro.system_ext.build.id", "TP1A.221005.002");
-     InitPropertySet("ro.vendor.build.id", "TP1A.221005.002");
-     InitPropertySet("ro.build.version.security_patch", "2022-10-05");
-     InitPropertySet("ro.vendor.build.security_patch", "2022-10-05");
+     InitPropertySet("ro.bootimage.build.fingerprint", "google/cheetah/cheetah:13/TQ1A.221205.011/9244662:user/release-keys");
+     InitPropertySet("ro.build.fingerprint", "google/cheetah/cheetah:13/TQ1A.221205.011/9244662:user/release-keys");
+     InitPropertySet("ro.odm.build.fingerprint", "google/cheetah/cheetah:13/TQ1A.221205.011/9244662:user/release-keys");
+     InitPropertySet("ro.product.build.fingerprint", "google/cheetah/cheetah:13/TQ1A.221205.011/9244662:user/release-keys");
+     InitPropertySet("ro.system.build.fingerprint", "google/cheetah/cheetah:13/TQ1A.221205.011/9244662:user/release-keys");
+     InitPropertySet("ro.system_ext.build.fingerprint", "google/cheetah/cheetah:13/TQ1A.221205.011/9244662:user/release-keys");
+     InitPropertySet("ro.vendor.build.fingerprint", "google/cheetah/cheetah:13/TQ1A.221205.011/9244662:user/release-keys");
+     InitPropertySet("ro.build.description", "cheetah-user 13 TQ1A.221205.011 9244662 release-keys");
+     InitPropertySet("ro.vendor.build.description", "cheetah-user 13 TQ1A.221205.011 9244662 release-keys");
+     InitPropertySet("ro.bootimage.build.id", "TQ1A.221205.011");
+     InitPropertySet("ro.build.display.id", "TQ1A.221205.011");
+     InitPropertySet("ro.build.id", "TQ1A.221205.011");
+     InitPropertySet("ro.product.build.id", "TQ1A.221205.011");
+     InitPropertySet("ro.system.build.id", "TQ1A.221205.011");
+     InitPropertySet("ro.system_ext.build.id", "TQ1A.221205.011");
+     InitPropertySet("ro.vendor.build.id", "TQ1A.221205.011");
+     InitPropertySet("ro.build.version.security_patch", "2022-12-05");
+     InitPropertySet("ro.vendor.build.security_patch", "2022-12-05");
 }
 
 void PropertyInit() {
