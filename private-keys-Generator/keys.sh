@@ -65,3 +65,8 @@ openssl genrsa -3 -out temp.pem 2048
 openssl req -new -x509 -key temp.pem -out networkstack.x509.pem -days 10000 -subj "/C=$C/ST=$ST/L=$L View/O=Android/OU=Android/CN=Android/emailAddress=$emailAddress"
 openssl pkcs8 -in temp.pem -topk8 -outform DER -out networkstack.pk8 -nocrypt
 shred --remove temp.pem
+
+openssl genrsa -3 -out temp.pem 2048
+openssl req -new -x509 -key temp.pem -out sdk_sandbox.x509.pem -days 10000 -subj "/C=$C/ST=$ST/L=$L View/O=Android/OU=Android/CN=Android/emailAddress=$emailAddress"
+openssl pkcs8 -in temp.pem -topk8 -outform DER -out sdk_sandbox.pk8 -nocrypt
+shred --remove temp.pem
