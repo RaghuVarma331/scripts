@@ -21,10 +21,10 @@
 C=IN
 
 # state
-ST=Telangana
+ST=AndhraPradesh
 
 # Location
-L=Hyderabad
+L=Guntur
 
 # Your Email
 emailAddress=
