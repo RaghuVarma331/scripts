@@ -1,0 +1,28 @@
+Installation guide for Nokia 6.1 Plus , Nokia 7 Plus , Nokia 7.1 & Nokia 6.1
+=============================================================================
+
+1. Make sure your phone bootloader is unlocked
+2. Connect your phone to computer
+3. Enable developer options by tapping build number 7 times
+4. Enable usb debugging
+5. Download adb platform tools ( don't use minimal adb)
+6. Open command prompt & type adb devices
+7. Type adb reboot bootloader
+8. Type fastboot devices
+9. Download Nokia repartition tool and select [3.5G S 1G V] button.( It will automatically resize your system & vendor partitions and directly boot in to universal twrp. )
+10. Type adb reboot bootloader
+11. Download my latest twrp builds from twrp official website or from my webpage
+12. type fastboot devices 
+13. Type fastboot boot twrp-xyz.img
+14. Your phone should boot in to latest twrp build and select swipe to allow modifications
+15. Select advance
+16. Select adb sideload
+17. Type adb sideload rom-xyz.zip
+18. adb reboot system
+
+
+Download links
+==============
+* My webpage - https://nokia-sdm660.github.io
+* adb platform tools - https://developer.android.com/studio/releases/platform-tools
+* Nokia repartition tool - https://sourceforge.net/projects/drg-sprout/files/Nokia-Repartition-Tool/Nokia-Repartition-Tool.zip/download
