@@ -71,7 +71,7 @@ L3()
     mkdir aosp
     cd aosp
     echo -ne '\n' | repo init -u https://$gitpassword@github.com/HMD-AOSP/android_manifest.git -b android-12.1.0 --git-lfs --depth=1
-    repo sync
+    repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
     rm -r .repo
     git clone https://$gitlpassword@gitlab.com/RaghuVarma331/proprietary_vendor_gapps -b android-12.1.0 vendor/gapps --depth=1
 }

@@ -62,7 +62,7 @@ L3()
     mkdir dot
     cd dot
     echo -ne '\n' | repo init -u git://github.com/DotOS/manifest.git -b dot11 --git-lfs --depth=1
-    repo sync
+    repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/dot/config/common.mk
     cd packages/apps/Settings/src/com/android/settings/system
     rm -r SystemUpdatePreferenceController.java

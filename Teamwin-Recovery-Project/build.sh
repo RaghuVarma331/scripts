@@ -53,7 +53,7 @@ L3()
     mkdir twrp
     cd twrp
     echo -ne '\n' | repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1 --git-lfs --depth=1
-    repo sync
+    repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
     rm -r .repo
 }
 

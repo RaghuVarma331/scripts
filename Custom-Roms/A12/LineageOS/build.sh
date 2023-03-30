@@ -65,7 +65,7 @@ L3()
     mkdir los
     cd los
     echo -ne '\n' | repo init -u https://github.com/LineageOS/android.git -b lineage-19.1 --git-lfs --depth=1
-    repo sync
+    repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
     rm -r .repo
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/lineage/config/common.mk
     rm -r device/lineage/sepolicy

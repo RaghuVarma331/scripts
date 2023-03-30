@@ -34,7 +34,7 @@
     *  mkdir los
     *  cd los
     *  echo -ne '\n' | repo init -u git://github.com/LineageOS/android.git -b lineage-17.1 --depth=1
-    *  repo sync -c --no-tags --no-clone-bundle -f --force-sync -j16 
+    *  repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
     *  clone your device tree , kernel source & vendor
     *  export path=/var/lib/jenkins/workspace/Raghu #(this is my path)
     *  export device=Dragon #(this is my phone code)    

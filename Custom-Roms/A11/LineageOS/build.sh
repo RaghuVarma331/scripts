@@ -62,7 +62,7 @@ L3()
     mkdir los
     cd los
     echo -ne '\n' | repo init -u git://github.com/LineageOS/android.git -b lineage-18.1 --git-lfs --depth=1
-    repo sync
+    repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/lineage/config/common.mk
     cd packages/apps/Settings/src/com/android/settings/system
     rm -r SystemUpdatePreferenceController.java

@@ -62,7 +62,7 @@ L3()
     mkdir evox
     cd evox
     echo -ne '\n' | repo init -u https://github.com/Evolution-X/manifest.git -b elle --git-lfs --depth=1
-    repo sync
+    repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/evolution/config/common.mk
     cd packages/apps/Settings/src/com/android/settings/system
     rm -r SystemUpdatePreferenceController.java

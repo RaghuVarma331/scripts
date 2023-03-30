@@ -62,7 +62,7 @@ L3()
     mkdir pe
     cd pe
     echo -ne '\n' | repo init -u https://github.com/PixelExperience/manifest -b eleven --git-lfs --depth=1
-    repo sync
+    repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/aosp/config/common.mk
     cd packages/apps/Settings/src/com/android/settings/system
     rm -r SystemUpdatePreferenceController.java
