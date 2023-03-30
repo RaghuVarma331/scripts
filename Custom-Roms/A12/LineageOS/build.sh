@@ -68,6 +68,16 @@ L3()
     repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
     rm -r .repo
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/lineage/config/common.mk
+    rm -r external/chromium-webview/prebuilt
+    git clone https://github.com/LineageOS/android_external_chromium-webview_prebuilt_arm -b main external/chromium-webview/prebuilt/arm
+    git clone https://github.com/LineageOS/android_external_chromium-webview_prebuilt_arm64 -b main external/chromium-webview/prebuilt/arm64
+    git clone https://github.com/LineageOS/android_external_chromium-webview_prebuilt_x86 -b main external/chromium-webview/prebuilt/x86
+    git clone https://github.com/LineageOS/android_external_chromium-webview_prebuilt_x86_64 -b main external/chromium-webview/prebuilt/x86_64
+    cd $path/los/external/chromium-webview/prebuilt/arm  && git lfs pull
+    cd $path/los/external/chromium-webview/prebuilt/arm64  && git lfs pull
+    cd $path/los/external/chromium-webview/prebuilt/x86  && git lfs pull
+    cd $path/los/external/chromium-webview/prebuilt/x86_64  && git lfs pull
+    cd $path/los
     rm -r device/lineage/sepolicy
     git clone https://$gitpassword@github.com/Motorola-SM6150/android_device_lineage_sepolicy -b lineage-19.1 device/lineage/sepolicy
     cd system/core/init

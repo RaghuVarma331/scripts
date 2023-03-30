@@ -64,6 +64,16 @@ L3()
     echo -ne '\n' | repo init -u git://github.com/LineageOS/android.git -b lineage-18.1 --git-lfs --depth=1
     repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/lineage/config/common.mk
+    rm -r external/chromium-webview/prebuilt
+    git clone https://github.com/LineageOS/android_external_chromium-webview_prebuilt_arm -b main external/chromium-webview/prebuilt/arm
+    git clone https://github.com/LineageOS/android_external_chromium-webview_prebuilt_arm64 -b main external/chromium-webview/prebuilt/arm64
+    git clone https://github.com/LineageOS/android_external_chromium-webview_prebuilt_x86 -b main external/chromium-webview/prebuilt/x86
+    git clone https://github.com/LineageOS/android_external_chromium-webview_prebuilt_x86_64 -b main external/chromium-webview/prebuilt/x86_64
+    cd $path/los/external/chromium-webview/prebuilt/arm  && git lfs pull
+    cd $path/los/external/chromium-webview/prebuilt/arm64  && git lfs pull
+    cd $path/los/external/chromium-webview/prebuilt/x86  && git lfs pull
+    cd $path/los/external/chromium-webview/prebuilt/x86_64  && git lfs pull
+    cd $path/los
     cd packages/apps/Settings/src/com/android/settings/system
     rm -r SystemUpdatePreferenceController.java
     wget https://github.com/LineageOS/android_packages_apps_Settings/raw/lineage-18.1/src/com/android/settings/system/SystemUpdatePreferenceController.java
