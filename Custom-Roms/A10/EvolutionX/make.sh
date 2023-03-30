@@ -69,7 +69,7 @@ L4()
     cd $path
     mkdir pe
     cd pe
-    echo -ne '\n' | repo init -u https://github.com/Evolution-X/manifest -b ten --depth=1
+    echo -ne '\n' | repo init -u https://github.com/Evolution-X/manifest -b ten --git-lfs --depth=1
     repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/aosp/config/common.mk
     rm -r packages/apps/Updates

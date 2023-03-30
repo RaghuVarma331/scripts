@@ -52,7 +52,7 @@ L3()
     mkdir release
     mkdir twrp
     cd twrp
-    echo -ne '\n' | repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1 --depth=1
+    echo -ne '\n' | repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1 --git-lfs --depth=1
     repo sync
     rm -r .repo
 }

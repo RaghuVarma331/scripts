@@ -70,7 +70,7 @@ L3()
     git clone https://$gitpassword@github.com/HMD-AOSP/Private_keys -b android-13.0 keys
     mkdir aosp
     cd aosp
-    echo -ne '\n' | repo init -u https://$gitpassword@github.com/HMD-AOSP/android_manifest.git -b android-13.0-PV --depth=1
+    echo -ne '\n' | repo init -u https://$gitpassword@github.com/HMD-AOSP/android_manifest.git -b android-13.0-PV --git-lfs --depth=1
     repo sync
     rm -r .repo
     git clone https://$gitlpassword@gitlab.com/RaghuVarma331/proprietary_vendor_gapps -b android-13.0-PIXEL vendor/gapps --depth=1

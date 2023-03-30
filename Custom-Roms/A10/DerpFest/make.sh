@@ -68,7 +68,7 @@ L4()
     cd $path
     mkdir derp
     cd derp
-    echo -ne '\n' | repo init -u git://github.com/DerpLab/platform_manifest.git -b ten --depth=1
+    echo -ne '\n' | repo init -u git://github.com/DerpLab/platform_manifest.git -b ten --git-lfs --depth=1
     repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
     rm -r packages/apps/PixelLiveWallpaper
     rm -r packages/apps/OpenDelta

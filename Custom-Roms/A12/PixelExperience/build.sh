@@ -63,7 +63,7 @@ L3()
     git clone https://$gitpassword@github.com/Motorola-SM6150/Private_keys -b android-12.1 keys
     mkdir pe
     cd pe
-    echo -ne '\n' | repo init -u https://github.com/PixelExperience/manifest -b twelve --depth=1
+    echo -ne '\n' | repo init -u https://github.com/PixelExperience/manifest -b twelve --git-lfs --depth=1
     repo sync
     rm -r .repo
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/aosp/config/common.mk

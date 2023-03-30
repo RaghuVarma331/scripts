@@ -61,7 +61,7 @@ L3()
     cd $path
     mkdir pe
     cd pe
-    echo -ne '\n' | repo init -u https://github.com/PixelExperience/manifest -b eleven --depth=1
+    echo -ne '\n' | repo init -u https://github.com/PixelExperience/manifest -b eleven --git-lfs --depth=1
     repo sync
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/aosp/config/common.mk
     cd packages/apps/Settings/src/com/android/settings/system

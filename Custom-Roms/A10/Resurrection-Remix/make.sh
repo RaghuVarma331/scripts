@@ -68,7 +68,7 @@ L4()
     cd $path
     mkdir rr
     cd rr
-    echo -ne '\n' | repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b Q --depth=1
+    echo -ne '\n' | repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b Q --git-lfs --depth=1
     repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
     rm -r external/motorola/faceunlock
     rm -r packages/apps/Updater

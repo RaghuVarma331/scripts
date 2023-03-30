@@ -68,7 +68,7 @@ L4()
     cd $path
     mkdir havoc
     cd havoc
-    echo -ne '\n' | repo init -u https://github.com/Havoc-OS/android_manifest.git -b ten --depth=1
+    echo -ne '\n' | repo init -u https://github.com/Havoc-OS/android_manifest.git -b ten --git-lfs --depth=1
     repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
     rm -r external/motorola/faceunlock
     git clone https://$gitpassword@github.com/Havoc-OS/android_external_motorola_faceunlock -b ten external/motorola/faceunlock

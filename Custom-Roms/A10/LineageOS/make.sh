@@ -68,7 +68,7 @@ L4()
     cd $path
     mkdir los
     cd los
-    echo -ne '\n' | repo init -u git://github.com/LineageOS/android.git -b lineage-17.1 --depth=1
+    echo -ne '\n' | repo init -u git://github.com/LineageOS/android.git -b lineage-17.1 --git-lfs --depth=1
     repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/lineage/config/common.mk
     rm -r packages/apps/Updater

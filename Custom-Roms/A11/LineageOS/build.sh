@@ -61,7 +61,7 @@ L3()
     cd $path
     mkdir los
     cd los
-    echo -ne '\n' | repo init -u git://github.com/LineageOS/android.git -b lineage-18.1 --depth=1
+    echo -ne '\n' | repo init -u git://github.com/LineageOS/android.git -b lineage-18.1 --git-lfs --depth=1
     repo sync
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/lineage/config/common.mk
     cd packages/apps/Settings/src/com/android/settings/system

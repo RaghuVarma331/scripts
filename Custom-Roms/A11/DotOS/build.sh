@@ -61,7 +61,7 @@ L3()
     cd $path
     mkdir dot
     cd dot
-    echo -ne '\n' | repo init -u git://github.com/DotOS/manifest.git -b dot11 --depth=1
+    echo -ne '\n' | repo init -u git://github.com/DotOS/manifest.git -b dot11 --git-lfs --depth=1
     repo sync
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/dot/config/common.mk
     cd packages/apps/Settings/src/com/android/settings/system

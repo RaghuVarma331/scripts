@@ -64,7 +64,7 @@ L3()
     git clone https://$gitpassword@github.com/Motorola-SM6150/Private_keys -b android-12.1 keys
     mkdir los
     cd los
-    echo -ne '\n' | repo init -u https://github.com/LineageOS/android.git -b lineage-19.1 --depth=1
+    echo -ne '\n' | repo init -u https://github.com/LineageOS/android.git -b lineage-19.1 --git-lfs --depth=1
     repo sync
     rm -r .repo
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/lineage/config/common.mk
