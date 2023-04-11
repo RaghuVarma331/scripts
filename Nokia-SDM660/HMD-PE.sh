@@ -1,7 +1,7 @@
 #!/bin/bash
 
 path=/root
-securitypatch=2022-04
+securitypatch=2023-03
 Telegram_Api_code=
 chat_id=
 
@@ -9,14 +9,14 @@ chat_id=
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/pixel.jpg
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
     *
-    🔥 New Pixel-Experience Build 
-    ==========================
+    🔥 New PixelExperience_Plus Build 
+    ================================
     $(date)*
     🔓 [Bootloader Unlock](https://t.me/RaghuVarma)
     ⬇️ [Download Rom](https://nokia-sdm660.github.io/)
-    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
+    💬 [Installation procedure](https://github.com/RaghuVarma331/scripts/raw/master/Nokia-SDM660/FIH.txt)
     📱Device: *Nokia 6.1 Plus*
-    ⚡Android Version: *12 L*
+    ⚡Android Version: *13*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #drg #nokia #pe #update
@@ -24,14 +24,14 @@ chat_id=
 
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
     *
-    🔥 New Pixel-Experience Build 
-    ==========================
+    🔥 New PixelExperience_Plus Build 
+    ================================
     $(date)*
     🔓 [Bootloader Unlock](https://t.me/RaghuVarma)
     ⬇️ [Download Rom](https://nokia-sdm660.github.io/)
-    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
+    💬 [Installation procedure](https://github.com/RaghuVarma331/scripts/raw/master/Nokia-SDM660/FIH.txt)
     📱Device: *Nokia 7 Plus*
-    ⚡Android Version: *12 L*
+    ⚡Android Version: *13*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #b2n #nokia #pe #update
@@ -39,14 +39,14 @@ chat_id=
 
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
     *
-    🔥 New Pixel-Experience Build 
-    ==========================
+    🔥 New PixelExperience_Plus Build 
+    ================================
     $(date)*
     🔓 [Bootloader Unlock](https://t.me/RaghuVarma)
     ⬇️ [Download Rom](https://nokia-sdm660.github.io/)
-    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
+    💬 [Installation procedure](https://github.com/RaghuVarma331/scripts/raw/master/Nokia-SDM660/FIH.txt)
     📱Device: *Nokia 7.1*
-    ⚡Android Version: *12 L*
+    ⚡Android Version: *13*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #ctl #nokia #pe #update
@@ -54,14 +54,14 @@ chat_id=
 
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
     *
-    🔥 New Pixel-Experience Build 
-    ==========================
+    🔥 New PixelExperience_Plus Build 
+    ================================
     $(date)*
     🔓 [Bootloader Unlock](https://t.me/RaghuVarma)
     ⬇️ [Download Rom](https://nokia-sdm660.github.io/)
-    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
+    💬 [Installation procedure](https://github.com/RaghuVarma331/scripts/raw/master/Nokia-SDM660/FIH.txt)
     📱Device: *Nokia 6.1*
-    ⚡Android Version: *12 L*
+    ⚡Android Version: *13*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #pl2 #nokia #pe #update
@@ -69,32 +69,15 @@ chat_id=
 
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
     *
-    🔥 New Pixel-Experience Build 
-    ==========================
+    🔥 New PixelExperience_Plus Build 
+    ================================
     $(date)*
     🔓 [Bootloader Unlock](https://t.me/RaghuVarma)
-    ⬇️ [Download Rom](https://nokia-sdm660.github.io/)
-    ⬇️ [Download vbmeta](https://sourceforge.net/projects/sld-sprout/files/vbmeta/TEN/)         
-    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
+    ⬇️ [Download Rom](https://nokia-sdm660.github.io/)      
+    💬 [Installation procedure](https://github.com/RaghuVarma331/scripts/raw/master/Nokia-SDM660/LC.txt)
     📱Device: *Nokia 7.2*
-    ⚡Android Version: *12 L*
+    ⚡Android Version: *13*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #ddv #nokia #pe #update
-    Follow:  @Nokia7262 ✅"  
-
-    python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
-    *
-    🔥 New Pixel-Experience Build 
-    ==========================
-    $(date)*
-    🔓 [Bootloader Unlock](https://t.me/RaghuVarma)
-    ⬇️ [Download Rom](https://nokia-sdm660.github.io/)
-    ⬇️ [Download vbmeta](https://sourceforge.net/projects/sld-sprout/files/vbmeta/TEN/)    
-    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
-    📱Device: *Nokia 6.2*
-    ⚡Android Version: *12 L*
-    ⚡Security Patch : *$securitypatch*
-    👤 By: *@RaghuVarma*
-    #sld #nokia #pe #update
-    Follow:  @Nokia7262 ✅"  
+    Follow:  @Nokia7262 ✅" 
