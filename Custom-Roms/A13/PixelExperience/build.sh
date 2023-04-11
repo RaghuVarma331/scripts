@@ -88,7 +88,6 @@ L5()
     git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_Crystal -b android-13.0 vendor/nokia/Crystal --depth=1
     git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_Plate2 -b android-13.0 vendor/nokia/Plate2 --depth=1
     git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_Daredevil -b android-13.0 vendor/nokia/Daredevil --depth=1
-    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_Avenger -b android-13.0 vendor/nokia/Avenger --depth=1
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_kernel_nokia_LC-SDM660.git -b android-13.0-GCC --depth=1 kernel/nokia/sdm660
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
     New Pixel-Experience Plus for Nokia 7.2 build started
@@ -149,6 +148,8 @@ L5()
     rm -r out/target/product/*
     rm -r kernel/nokia/sdm660
     rm -r bootable/recovery
+    rm -r vendor/nokia
+    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_Avenger -b android-13.0 vendor/nokia --depth=1
     git clone https://$gitpassword@github.com/RaghuVarma331/android_bootable_recovery.git -b thirteen bootable/recovery --depth=1
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_kernel_nokia_FIH-MSM8998.git -b android-13.0-GCC --depth=1 kernel/nokia/msm8998
     curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
