@@ -312,6 +312,19 @@ POST()
     #ddv #nokia #twrp #update
     Follow:  @Nokia7262 ✅"
 
+    python telegram.py -t $Telegram_Api_code -c @Nokia8Sirocco -P twrp.jpg -C "
+    *
+    New TWRP-$TV$AV build
+
+    $(date)*
+
+    ⬇️ [Download TWRP](https://nokia-sdm660.github.io/)
+    📱Device: *Nokia 8 Sirocco*
+    ⚡Build Version: *$TV$AV*
+    👤 By: *@RaghuVarma*
+    #a1n #nokia #twrp #update
+    Follow:  @Nokia8Sirocco ✅"
+
     python telegram.py -t $Telegram_Api_code -c @MotoG60G40  -P twrp.jpg -C "
     *
     New TWRP-$TV$AV build

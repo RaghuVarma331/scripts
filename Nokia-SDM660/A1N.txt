@@ -1,0 +1,25 @@
+Installation guide for Nokia 8 Sirocco
+================================
+
+1. Make sure your phone bootloader is unlocked
+2. Connect your phone to computer
+3. Enable developer options by tapping build number 7 times
+4. Enable usb debugging
+5. Download adb platform tools ( don't use minimal adb)
+6. Open command prompt & type "adb devices"
+7. Type "adb reboot bootloader"
+8. Type "fastboot devices"
+9. Download my latest twrp builds from my webpage
+10. type "fastboot -w"
+11. Type "fastboot flash boot twrp-xyz.img && fastboot reboot"
+12. Your phone should boot in to latest twrp build and select swipe to allow modifications
+13. Select advance
+14. Select adb sideload && swipe it
+15. Type "adb sideload rom-xyz.zip"
+16. Type "adb reboot system"
+
+
+Download links
+==============
+* My webpage - https://nokia-sdm660.github.io
+* adb platform tools - https://developer.android.com/studio/releases/platform-tools

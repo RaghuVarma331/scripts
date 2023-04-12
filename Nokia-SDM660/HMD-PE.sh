@@ -81,3 +81,18 @@ chat_id=
     👤 By: *@RaghuVarma*
     #ddv #nokia #pe #update
     Follow:  @Nokia7262 ✅" 
+
+    python telegram.py -t $Telegram_Api_code -c $chat_id  -P pixel.jpg -C "
+    *
+    🔥 New PixelExperience_Plus Build 
+    ================================
+    $(date)*
+    🔓 [Bootloader Unlock](https://t.me/RaghuVarma)
+    ⬇️ [Download Rom](https://nokia-sdm660.github.io/)      
+    💬 [Installation procedure](https://github.com/RaghuVarma331/scripts/raw/master/Nokia-SDM660/A1N.txt)
+    📱Device: *Nokia 8 Sirocco*
+    ⚡Android Version: *13*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *@RaghuVarma*
+    #a1n #nokia #pe #update
+    Follow:  @Nokia8Sirocco ✅" 
