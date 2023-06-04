@@ -22,26 +22,12 @@ path=/var/lib/jenkins/workspace/LineageOS
 
 # credentials
 
-Telegram_Api_code=$(cat $path/cred** | grep api | cut -d "=" -f 2)
-chat_id=$(cat $path/cred** | grep id | cut -d "=" -f 2)
-gitpassword=$(cat $path/cred** | grep git | cut -d "=" -f 2)
-gitlpassword=$(cat $path/cred** | grep lab | cut -d "=" -f 2)
-SF=$(cat $path/cred** | grep sf | cut -d "=" -f 2)
+Telegram_Api_code=
+chat_id=
+gitpassword=
 
 L1()
 {
-        sudo apt-get update
-        echo -ne '\n' | sudo apt-get upgrade
-        echo -ne '\n' | sudo apt-get install git ccache schedtool lzop bison gperf build-essential zip curl zlib1g-dev g++-multilib python-networkx libxml2-utils bzip2 libbz2-dev libghc-bzlib-dev squashfs-tools pngcrush liblz4-tool optipng libc6-dev-i386 gcc-multilib libssl-dev gnupg flex lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev xsltproc unzip python-pip python-dev libffi-dev libxml2-dev libxslt1-dev libjpeg8-dev openjdk-8-jdk imagemagick device-tree-compiler mailutils-mh expect python3-requests python-requests android-tools-fsutils sshpass
-        sudo swapon --show
-        sudo fallocate -l 20G /swapfile
-        ls -lh /swapfile
-        sudo chmod 600 /swapfile
-        sudo mkswap /swapfile
-        sudo swapon /swapfile
-        sudo swapon --show
-        sudo cp /etc/fstab /etc/fstab.bak
-        echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 	git config --global user.email "raghuvarma331@gmail.com"
 	git config --global user.name "RaghuVarma331"
 	mkdir -p ~/.ssh  &&  echo "Host *" > ~/.ssh/config && echo " StrictHostKeyChecking no" >> ~/.ssh/config
@@ -56,7 +42,6 @@ L2()
     curl https://storage.googleapis.com/git-repo-downloads/repo > $path/bin/repo
     chmod a+x $path/bin/repo
 }
-
 
 L3()
 {
@@ -80,82 +65,141 @@ L3()
     cd $path/los
     cd system/core/init
     rm -r property_service.cpp
+    rm -r service.h
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Patches/service.h &> /dev/null
     wget https://github.com/RaghuVarma331/scripts/raw/master/Patches/property_service.cpp &> /dev/null
-    cd $path
-    wget https://github.com/RaghuVarma331/scripts/raw/master/Patches/13_sign_target_files_apks.py &> /dev/null
-    cat 13_sign_target_files_apks.py > $path/los/build/tools/releasetools/sign_target_files_apks.py
-    cat 13_sign_target_files_apks.py > $path/los/build/tools/releasetools/sign_target_files_apks
-    rm -r 13_sign_target_files_apks.py
 }
 
-G60G40-A()
+L4()
 {
     cd $path/los
-    git clone https://$gitpassword@github.com/Motorola-SM6150/android_device_motorola_hanoip -b android-13.0-PV device/motorola/hanoip
-    git clone https://github.com/Motorola-SM6150/android_kernel_motorola_sm6150.git -b android-13.0 kernel/motorola/sm6150 --depth=1
-    git clone https://$gitlpassword@gitlab.com/RaghuVarma331/proprietary_vendor_motorola -b android-13.0-PV vendor/motorola --depth=1
-}
-
-G60G40-B()
-{
-    cd $path/los
-    export SELINUX_IGNORE_NEVERALLOWS=true
+    git clone https://$gitpassword@github.com/Motorola-SM6150/android_device_motorola_hanoip -b android-13.0 --depth=1 device/motorola/hanoip
+    git clone https://$gitpassword@github.com/Motorola-SM6150/proprietary_vendor_motorola_hanoip -b android-13.0 --depth=1 vendor/motorola/hanoip
+    git clone https://$gitpassword@github.com/Motorola-SM6150/android_kernel_motorola_sm6150 -b android-13.0 --depth=1 kernel/motorola/sm6150
     . build/envsetup.sh && lunch lineage_hanoip-userdebug && make -j$(nproc --all) target-files-package otatools
     romname=$(cat $path/los/out/target/product/hanoip/system/build.prop | grep ro.lineage.version | cut -d "=" -f 2)
     sign_target_files_apks -o -d $path/keys $path/los/out/target/product/hanoip/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/los/out/target/product/hanoip/signed-target-files.zip
     ota_from_target_files -k $path/keys/releasekey $path/los/out/target/product/hanoip/signed-target-files.zip $path/los/out/target/product/hanoip/lineage-$romname.zip
     cp -r out/target/product/*/lineage-20.0**.zip $path
     rm -r out/target/product/*
+    rm -r device/moto*
+    rm -r kernel/moto*
+    rm -r vendor/moto*
+    rm -r vendor/lineage
 }
 
-OTA-UPLOAD()
+L5()
 {
-    cd $path
-    mkdir -p ~/.ssh  &&  echo "Host *" > ~/.ssh/config && echo " StrictHostKeyChecking no" >> ~/.ssh/config
-    echo "# Allow Jenkins" >> /etc/sudoers && echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
-    sshpass -p $SF rsync -avP -e ssh lineage-20.0**hanoip**.zip  raghuvarma331@frs.sourceforge.net:/home/frs/project/motorola-sm6150/G60/LineageOS
-}
+    cd $path/los
+    git clone https://github.com/RaghuVarma331/vendor_lineage.git -b lineage-20.0 vendor/lineage --depth=1
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Dragon -b android-13.0 device/nokia/Dragon --depth=1
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Onyx -b android-13.0 device/nokia/Onyx --depth=1
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Crystal -b android-13.0 device/nokia/Crystal --depth=1
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Plate2 -b android-13.0 device/nokia/Plate2 --depth=1
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Daredevil -b android-13.0 device/nokia/Daredevil --depth=1
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Avenger -b android-13.0 device/nokia/Avenger --depth=1
+    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_Dragon -b android-13.0 vendor/nokia/Dragon --depth=1
+    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_Onyx -b android-13.0 vendor/nokia/Onyx --depth=1
+    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_Crystal -b android-13.0 vendor/nokia/Crystal --depth=1
+    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_Plate2 -b android-13.0 vendor/nokia/Plate2 --depth=1
+    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_Daredevil -b android-13.0 vendor/nokia/Daredevil --depth=1
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_kernel_nokia_LC-SDM660.git -b android-13.0-GCC --depth=1 kernel/nokia/sdm660
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    New LineageOS 20.0 for Nokia 7.2 build started
 
-CLEAN()
-{
-    echo "----------------------------------------------------"
-    echo "Started cleaning workspace.."
-    echo "----------------------------------------------------" 
-    cd $path
-    rm -r bin  keys  los
-    echo "----------------------------------------------------"
-    echo "Successfully cleaned.."
-    echo "----------------------------------------------------" 
+    $(date)
+    "
+    . build/envsetup.sh && lunch lineage_Daredevil-userdebug && make -j$(nproc --all) target-files-package otatools
+    romname=$(cat $path/los/out/target/product/Daredevil/system/build.prop | grep ro.lineage.version | cut -d "=" -f 2)
+    sign_target_files_apks -o -d $path/keys $path/los/out/target/product/Daredevil/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/los/out/target/product/Daredevil/signed-target-files.zip
+    ota_from_target_files -k $path/keys/releasekey $path/los/out/target/product/Daredevil/signed-target-files.zip $path/los/out/target/product/Daredevil/lineage-$romname.zip
+    cp -r out/target/product/*/lineage-20.0**.zip $path
+    rm -r out/target/product/*
+    rm -r kernel/nokia/sdm660
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_kernel_nokia_sdm660.git -b android-13.0-GCC --depth=1 kernel/nokia/sdm660
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    New LineageOS 20.0 for Nokia 6.1 Plus build started
+
+    $(date)
+    "
+    . build/envsetup.sh && lunch lineage_Dragon-userdebug && make -j$(nproc --all) target-files-package otatools
+    romname=$(cat $path/los/out/target/product/Dragon/system/build.prop | grep ro.lineage.version | cut -d "=" -f 2)
+    sign_target_files_apks -o -d $path/keys $path/los/out/target/product/Dragon/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/los/out/target/product/Dragon/signed-target-files.zip
+    ota_from_target_files -k $path/keys/releasekey $path/los/out/target/product/Dragon/signed-target-files.zip $path/los/out/target/product/Dragon/lineage-$romname.zip
+    cp -r out/target/product/*/lineage-20.0**.zip $path
+    rm -r out/target/product/*
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    New LineageOS 20.0 for Nokia 7 Plus build started
+
+    $(date)
+    "
+    . build/envsetup.sh && lunch lineage_Onyx-userdebug && make -j$(nproc --all) target-files-package otatools
+    romname=$(cat $path/los/out/target/product/Onyx/system/build.prop | grep ro.lineage.version | cut -d "=" -f 2)
+    sign_target_files_apks -o -d $path/keys $path/los/out/target/product/Onyx/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/los/out/target/product/Onyx/signed-target-files.zip
+    ota_from_target_files -k $path/keys/releasekey $path/los/out/target/product/Onyx/signed-target-files.zip $path/los/out/target/product/Onyx/lineage-$romname.zip
+    cp -r out/target/product/*/lineage-20.0**.zip $path
+    rm -r out/target/product/*
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    New LineageOS 20.0 for Nokia 7.1 build started
+
+    $(date)
+    "
+    . build/envsetup.sh && lunch lineage_Crystal-userdebug && make -j$(nproc --all) target-files-package otatools
+    romname=$(cat $path/los/out/target/product/Crystal/system/build.prop | grep ro.lineage.version | cut -d "=" -f 2)
+    sign_target_files_apks -o -d $path/keys $path/los/out/target/product/Crystal/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/los/out/target/product/Crystal/signed-target-files.zip
+    ota_from_target_files -k $path/keys/releasekey $path/los/out/target/product/Crystal/signed-target-files.zip $path/los/out/target/product/Crystal/lineage-$romname.zip
+    cp -r out/target/product/*/lineage-20.0**.zip $path
+    rm -r out/target/product/*
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    New LineageOS 20.0 for Nokia 6.1 build started
+
+    $(date)
+    "
+    . build/envsetup.sh && lunch lineage_Plate2-userdebug && make -j$(nproc --all) target-files-package otatools
+    romname=$(cat $path/los/out/target/product/Plate2/system/build.prop | grep ro.lineage.version | cut -d "=" -f 2)
+    sign_target_files_apks -o -d $path/keys $path/los/out/target/product/Plate2/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/los/out/target/product/Plate2/signed-target-files.zip
+    ota_from_target_files -k $path/keys/releasekey $path/los/out/target/product/Plate2/signed-target-files.zip $path/los/out/target/product/Plate2/lineage-$romname.zip
+    cp -r out/target/product/*/lineage-20.0**.zip $path
+    rm -r out/target/product/*
+    rm -r kernel/nokia/sdm660
+    rm -r bootable/recovery
+    rm -r vendor/nokia
+    git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia_Avenger -b android-13.0 vendor/nokia --depth=1
+    git clone https://$gitpassword@github.com/RaghuVarma331/android_bootable_recovery.git -b lineage-20.0 bootable/recovery --depth=1
+    git clone https://$gitpassword@github.com/Nokia-SDM660/android_kernel_nokia_FIH-MSM8998.git -b android-13.0-GCC --depth=1 kernel/nokia/msm8998
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    New LineageOS 20.0 for Nokia 8 Sirocco build started
+
+    $(date)
+    "
+    . build/envsetup.sh && lunch lineage_Avenger-userdebug && make -j$(nproc --all) target-files-package otatools
+    romname=$(cat $path/los/out/target/product/Avenger/system/build.prop | grep ro.lineage.version | cut -d "=" -f 2)
+    sign_target_files_apks -o -d $path/keys $path/los/out/target/product/Avenger/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/los/out/target/product/Avenger/signed-target-files.zip
+    ota_from_target_files -k $path/keys/releasekey $path/los/out/target/product/Avenger/signed-target-files.zip $path/los/out/target/product/Avenger/lineage-$romname.zip
+    cp -r out/target/product/*/lineage-20.0**.zip $path
+    rm -r out/target/product/*
+    rm -r device/nokia
+    rm -r vendor/nokia
+    rm -r kernel/nokia
 }
 
 echo "----------------------------------------------------"
-echo "Downloading tools.."
-echo "----------------------------------------------------" 
+echo "Initialising setup.."
+echo "----------------------------------------------------"
 L1
 echo "----------------------------------------------------"
-echo "Downloading repo bin.."
-echo "----------------------------------------------------" 
+echo "Setting up repo launcher.."
+echo "----------------------------------------------------"
 L2
 echo "----------------------------------------------------"
-echo "Downloading Lineage OS Source Code.."
-echo "----------------------------------------------------" 
+echo "Downloading LineageOS 20.0 source code.."
+echo "----------------------------------------------------"
 L3
 echo "----------------------------------------------------"
-echo "Downloading G60/G40 sources.."
-echo "----------------------------------------------------" 
-G60G40-A
+echo "Building LineageOS 20.0 for Moto G60/G40F.."
 echo "----------------------------------------------------"
-echo "Started building for G60/G40.."
-echo "----------------------------------------------------" 
-G60G40-B
+L4
 echo "----------------------------------------------------"
-echo "Successfully build completed.."
-echo "----------------------------------------------------" 
+echo "Building LineageOS 20.0 for Nokia Devices.."
 echo "----------------------------------------------------"
-echo "Started uploading build and updating OTA for G60/G40"
-echo "----------------------------------------------------" 
-OTA-UPLOAD
-echo "----------------------------------------------------"
-echo "Successfully completed.."
-echo "----------------------------------------------------" 
-#CLEAN
+L5
