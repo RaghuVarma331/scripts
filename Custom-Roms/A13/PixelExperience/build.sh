@@ -53,6 +53,10 @@ L3()
     repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
     rm -r .repo
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/aosp/config/common.mk
+    cd $path/pe
+    cd system/core/init
+    rm -r service.h
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Patches/service.h &> /dev/null
 }
 
 L4()
