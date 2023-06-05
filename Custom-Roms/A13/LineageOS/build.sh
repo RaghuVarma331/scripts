@@ -51,7 +51,6 @@ L3()
     cd los
     echo -ne '\n' | repo init -u https://github.com/LineageOS/android.git -b lineage-20.0 --git-lfs --depth=1
     repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
-    rm -r .repo
     sed -i "/ro.control_privapp_permissions=enforce/d" vendor/lineage/config/common.mk
     rm -r external/chromium-webview/prebuilt
     git clone https://github.com/LineageOS/android_external_chromium-webview_prebuilt_arm -b main external/chromium-webview/prebuilt/arm
