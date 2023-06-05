@@ -91,6 +91,10 @@ L4()
 L5()
 {
     cd $path/los
+    cd build/core
+    rm -r product.mk
+    wget https://github.com/RaghuVarma331/scripts/raw/master/Patches/product.mk &> /dev/null
+    cd $path/los
     git clone https://github.com/RaghuVarma331/vendor_lineage.git -b lineage-20.0 vendor/lineage --depth=1
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Dragon -b android-13.0 device/nokia/Dragon --depth=1
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Onyx -b android-13.0 device/nokia/Onyx --depth=1
