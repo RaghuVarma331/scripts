@@ -1,26 +1,22 @@
 #!/bin/bash
 
 path=/root
-securitypatch=2021-11
+securitypatch=2023-05
 Telegram_Api_code=
 chat_id=
-
 
     wget  https://github.com/RaghuVarma331/scripts/raw/master/pythonscripts/telegram.py
     wget https://github.com/RaghuVarma331/custom_roms_banners/raw/master/lineage.jpg
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
     *
-    🔥 New LineageOS 19.0 Build
-    ==========================
+    🔥 New LineageOS 20.0 Build 
+    ===========================
     $(date)*
-
-    🔓 [Bootloader Unlock](https://t.me/RaghuVarma)    
-    ⬇️ [Download Rom](https://forum.xda-developers.com/t/rom-12-0-dragon-lineageos-19-0-unofficial.3985367/)
-    ⬇️ [Download GApps](https://sourceforge.net/projects/drg-sprout/files/GAPPS/)    
-    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
+    🔓 [Bootloader Unlock](https://t.me/RaghuVarma)
+    ⬇️ [Download Rom](https://nokia-sdm660.github.io/)
+    💬 [Installation procedure](https://github.com/RaghuVarma331/scripts/raw/master/Nokia-SDM660/FIH.txt)
     📱Device: *Nokia 6.1 Plus*
-    ⚡Build Version: *19.0* 
-    ⚡Android Version: *12.0*
+    ⚡Android Version: *13*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #drg #nokia #los #update
@@ -28,77 +24,75 @@ chat_id=
 
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
     *
-    🔥 New LineageOS 19.0 Build
-    ==========================    
+    🔥 New LineageOS 20.0 Build 
+    ===========================
     $(date)*
-    
     🔓 [Bootloader Unlock](https://t.me/RaghuVarma)
-    ⬇️ [Download ROM](https://forum.xda-developers.com/t/rom-12-0-onyx-lineageos-19-0-unofficial.3993445/)
-    ⬇️ [Download GApps](https://sourceforge.net/projects/drg-sprout/files/GAPPS/)       
-    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
+    ⬇️ [Download Rom](https://nokia-sdm660.github.io/)
+    💬 [Installation procedure](https://github.com/RaghuVarma331/scripts/raw/master/Nokia-SDM660/FIH.txt)
     📱Device: *Nokia 7 Plus*
-    ⚡Build Version: *19.0* 
-    ⚡Android Version: *12.0*
+    ⚡Android Version: *13*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #b2n #nokia #los #update
-    Follow: @Nokia7plusOfficial ✅"  
+    Follow:  @Nokia7plusofficial ✅"  
 
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
     *
-    🔥 New LineageOS 19.0 Build
-    ==========================    
+    🔥 New LineageOS 20.0 Build 
+    ===========================
     $(date)*
-
-    🔓 [Bootloader Unlock](https://t.me/RaghuVarma)    
-    ⬇️ [Download ROM](https://forum.xda-developers.com/t/rom-12-0-crystal-lineageos-19-0-unofficial.4019915/)
-    ⬇️ [Download GApps](https://sourceforge.net/projects/drg-sprout/files/GAPPS/)   
-    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
+    🔓 [Bootloader Unlock](https://t.me/RaghuVarma)
+    ⬇️ [Download Rom](https://nokia-sdm660.github.io/)
+    💬 [Installation procedure](https://github.com/RaghuVarma331/scripts/raw/master/Nokia-SDM660/FIH.txt)
     📱Device: *Nokia 7.1*
-    ⚡Build Version: *19.0* 
-    ⚡Android Version: *12.0*
+    ⚡Android Version: *13*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #ctl #nokia #los #update
-    Follow: @nokia7161 ✅"  
+    Follow:  @nokia7161 ✅"  
 
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
     *
-    🔥 New LineageOS 19.0 Build
-    ==========================    
+    🔥 New LineageOS 20.0 Build 
+    ===========================
     $(date)*
+    🔓 [Bootloader Unlock](https://t.me/RaghuVarma)
+    ⬇️ [Download Rom](https://nokia-sdm660.github.io/)
+    💬 [Installation procedure](https://github.com/RaghuVarma331/scripts/raw/master/Nokia-SDM660/FIH.txt)
+    📱Device: *Nokia 6.1*
+    ⚡Android Version: *13*
+    ⚡Security Patch : *$securitypatch*
+    👤 By: *@RaghuVarma*
+    #pl2 #nokia #los #update
+    Follow:  @nokia7161 ✅"  
 
-    🔓 [Bootloader Unlock](https://t.me/RaghuVarma)    
-    ⬇️ [Download ROM](https://forum.xda-developers.com/t/rom-12-0-daredevil-lineageos-19-0-unofficial.4001281/)
-    ⬇️ [Download GApps](https://sourceforge.net/projects/drg-sprout/files/GAPPS/)       
-    ⬇️ [Download vbmeta](https://sourceforge.net/projects/sld-sprout/files/vbmeta/TEN/)         
-    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)    
+    python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
+    *
+    🔥 New LineageOS 20.0 Build 
+    ===========================
+    $(date)*
+    🔓 [Bootloader Unlock](https://t.me/RaghuVarma)
+    ⬇️ [Download Rom](https://nokia-sdm660.github.io/)      
+    💬 [Installation procedure](https://github.com/RaghuVarma331/scripts/raw/master/Nokia-SDM660/LC.txt)
     📱Device: *Nokia 7.2*
-    ⚡Build Version: *19.0* 
-    ⚡Android Version: *12.0*
+    ⚡Android Version: *13*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
     #ddv #nokia #los #update
-    Follow: @Nokia7262 ✅"  
+    Follow:  @Nokia7262 ✅" 
 
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P lineage.jpg -C "
     *
-    🔥 New LineageOS 19.0 Build
-    ==========================    
+    🔥 New LineageOS 20.0 Build 
+    ===========================
     $(date)*
-
-    🔓 [Bootloader Unlock](https://t.me/RaghuVarma)    
-    ⬇️ [Download ROM](https://forum.xda-developers.com/t/rom-12-0-starlord-lineageos-19-0-unofficial.4001273/)
-    ⬇️ [Download GApps](https://sourceforge.net/projects/drg-sprout/files/GAPPS/)       
-    ⬇️ [Download vbmeta](https://sourceforge.net/projects/sld-sprout/files/vbmeta/TEN/)     
-    💬 [Installation procedure](https://github.com/RaghuVarma331/changelogs/raw/master/crossdevelopment/abcrins.txt)
-    📱Device: *Nokia 6.2*
-    ⚡Build Version: *19.0* 
-    ⚡Android Version: *12.0*
+    🔓 [Bootloader Unlock](https://t.me/RaghuVarma)
+    ⬇️ [Download Rom](https://nokia-sdm660.github.io/)      
+    💬 [Installation procedure](https://github.com/RaghuVarma331/scripts/raw/master/Nokia-SDM660/A1N.txt)
+    📱Device: *Nokia 8 Sirocco*
+    ⚡Android Version: *13*
     ⚡Security Patch : *$securitypatch*
     👤 By: *@RaghuVarma*
-    #sld #nokia #los #update
-    Follow: @Nokia7262 ✅"  
-
-
-
+    #a1n #nokia #los #update
+    Follow:  @Nokia8Sirocco ✅" 
