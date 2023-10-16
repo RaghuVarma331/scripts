@@ -66,6 +66,7 @@ SOURCE()
     git clone https://github.com/Nokia-SDM660/android_device_nokia_CTL_sprout-TWRP.git -b android-12.1 device/nokia/CTL_sprout
     git clone https://github.com/Nokia-SDM660/android_device_nokia_PL2_sprout-TWRP.git -b android-12.1 device/nokia/PL2_sprout
     git clone https://github.com/Nokia-SDM660/android_device_nokia_DDV_sprout-TWRP.git -b android-12.1 device/nokia/DDV_sprout
+    git clone https://github.com/Nokia-SDM660/android_device_nokia_A1N_sprout-TWRP.git -b android-12.1 device/nokia/A1N_sprout
 }
 
 BUILD()
@@ -160,6 +161,21 @@ BUILD()
     rm -r ***.zip ramdisk-twrp.cpio &> /dev/null
     cd $path/twrp
     rm -r out/target/product/*
+    cd $path/twrp/device/nokia/A1N_sprout/installer
+    rm -r ***.zip ramdisk-twrp.cpio &> /dev/null
+    cd $path/twrp
+    . build/envsetup.sh && lunch twrp_A1N_sprout-eng && make -j$(nproc --all) bootimage
+    cd out/target/product/*
+    mv boot.img twrp-$TV$AV-A1N_sprout-$CUSTOM_BUILD_DATE.img
+    cp -r twrp****.img $path/release
+    mv ***.cpio ramdisk-twrp.cpio
+    cp -r ramdisk-twrp.cpio $path/twrp/device/nokia/A1N_sprout/installer
+    cd $path/twrp/device/nokia/A1N_sprout/installer
+    zip -r twrp-installer-$TV$AV-A1N_sprout-$CUSTOM_BUILD_DATE.zip magiskboot  META-INF ramdisk-twrp.cpio
+    cp -r twrp****.zip $path/release
+    rm -r ***.zip ramdisk-twrp.cpio &> /dev/null
+    cd $path/twrp
+    rm -r out/target/product/*
 }
 
 TWRP-UPLOAD()
@@ -173,6 +189,7 @@ TWRP-UPLOAD()
     sshpass -p $SF rsync -avP -e ssh ***CTL_sprout** raghuvarma331@frs.sourceforge.net:/home/frs/project/ctl-sprout/TWRP
     sshpass -p $SF rsync -avP -e ssh ***PL2_sprout** raghuvarma331@frs.sourceforge.net:/home/frs/project/pl2-sprout/TWRP
     sshpass -p $SF rsync -avP -e ssh ***DDV_sprout** raghuvarma331@frs.sourceforge.net:/home/frs/project/ddv-sprout/TWRP
+    sshpass -p $SF rsync -avP -e ssh ***A1N_sprout** raghuvarma331@frs.sourceforge.net:/home/frs/project/a1n-sprout/TWRP
 }
 
 POST()
@@ -234,72 +251,6 @@ POST()
     Follow:  @nokia7161 ✅"
 
     python telegram.py -t $Telegram_Api_code -c $chat_id  -P twrp.jpg -C "
-    *
-    New TWRP-$TV$AV build
-
-    $(date)*
-
-    ⬇️ [Download TWRP](https://nokia-sdm660.github.io/)
-    📱Device: *Nokia 7.2*
-    ⚡Build Version: *$TV$AV*
-    👤 By: *@RaghuVarma*
-    #ddv #nokia #twrp #update
-    Follow:  @Nokia7262 ✅"
-
-
-    python telegram.py -t $Telegram_Api_code -c @Nokia6plusofficial  -P twrp.jpg -C "
-    *
-    New TWRP-$TV$AV build
-
-    $(date)*
-
-    ⬇️ [Download TWRP](https://nokia-sdm660.github.io/)
-    📱Device: *Nokia 6.1 Plus*
-    ⚡Build Version: *$TV$AV*
-    👤 By: *@RaghuVarma*
-    #drg #nokia #twrp #update
-    Follow:  @Nokia6plusofficial ✅"
-
-    python telegram.py -t $Telegram_Api_code -c @Nokia7plusofficial  -P twrp.jpg -C "
-    *
-    New TWRP-$TV$AV build
-
-    $(date)*
-
-    ⬇️ [Download TWRP](https://nokia-sdm660.github.io/)
-    📱Device: *Nokia 7 Plus*
-    ⚡Build Version: *$TV$AV*
-    👤 By: *@RaghuVarma*
-    #b2n #nokia #twrp #update
-    Follow:  @Nokia7plusofficial ✅"
-
-    python telegram.py -t $Telegram_Api_code -c @nokia7161  -P twrp.jpg -C "
-    *
-    New TWRP-$TV$AV build
-
-    $(date)*
-
-    ⬇️ [Download TWRP](https://nokia-sdm660.github.io/)
-    📱Device: *Nokia 7.1*
-    ⚡Build Version: *$TV$AV*
-    👤 By: *@RaghuVarma*
-    #ctl #nokia #twrp #update
-    Follow:  @nokia7161 ✅"
-
-    python telegram.py -t $Telegram_Api_code -c @nokia7161  -P twrp.jpg -C "
-    *
-    New TWRP-$TV$AV build
-
-    $(date)*
-
-    ⬇️ [Download TWRP](https://nokia-sdm660.github.io/)
-    📱Device: *Nokia 6.1*
-    ⚡Build Version: *$TV$AV*
-    👤 By: *@RaghuVarma*
-    #pl2 #nokia #twrp #update
-    Follow:  @nokia7161 ✅"
-
-    python telegram.py -t $Telegram_Api_code -c @Nokia7262  -P twrp.jpg -C "
     *
     New TWRP-$TV$AV build
 
