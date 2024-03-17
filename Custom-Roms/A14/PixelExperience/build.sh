@@ -22,6 +22,8 @@ path=/var/lib/jenkins/workspace/PixelExperience
 
 # credentials
 
+Telegram_Api_code=
+chat_id=
 gitpassword=
 gitlpassword=
 
@@ -77,6 +79,11 @@ NOKIA()
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Avenger -b android-14.0 device/nokia/Avenger
     git clone https://$gitpassword@github.com/Nokia-SDM660/proprietary_vendor_nokia -b android-14.0 vendor/nokia
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_kernel_nokia_LC-SDM660.git -b android-14.0-GCC --depth=1 kernel/nokia/sdm660
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    New Pixel-Experience for Nokia 7.2 (TA-1193) build started
+
+    $(date)
+    "
     . build/envsetup.sh && lunch aosp_Daredevil-userdebug && make -j$(nproc --all) target-files-package otatools
     romname=$(cat $path/pe/out/target/product/Daredevil/system/build.prop | grep org.pixelexperience.version.display | cut -d "=" -f 2)
     sign_target_files_apks -o -d $path/keys $path/pe/out/target/product/Daredevil/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/pe/out/target/product/Daredevil/signed-target-files.zip
@@ -85,24 +92,44 @@ NOKIA()
     rm -r out/target/product/*
     rm -r kernel/nokia/sdm660
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_kernel_nokia_sdm660.git -b android-14.0-GCC --depth=1 kernel/nokia/sdm660
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    New Pixel-Experience for Nokia 6.1 Plus build started
+
+    $(date)
+    "
     . build/envsetup.sh && lunch aosp_Dragon-userdebug && make -j$(nproc --all) target-files-package otatools
     romname=$(cat $path/pe/out/target/product/Dragon/system/build.prop | grep org.pixelexperience.version.display | cut -d "=" -f 2)
     sign_target_files_apks -o -d $path/keys $path/pe/out/target/product/Dragon/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/pe/out/target/product/Dragon/signed-target-files.zip
     ota_from_target_files -k $path/keys/releasekey $path/pe/out/target/product/Dragon/signed-target-files.zip $path/pe/out/target/product/Dragon/$romname.zip
     cp -r out/target/product/*/PixelExperience**.zip $path
     rm -r out/target/product/*
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    New Pixel-Experience for Nokia 7 Plus build started
+
+    $(date)
+    "
     . build/envsetup.sh && lunch aosp_Onyx-userdebug && make -j$(nproc --all) target-files-package otatools
     romname=$(cat $path/pe/out/target/product/Onyx/system/build.prop | grep org.pixelexperience.version.display | cut -d "=" -f 2)
     sign_target_files_apks -o -d $path/keys $path/pe/out/target/product/Onyx/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/pe/out/target/product/Onyx/signed-target-files.zip
     ota_from_target_files -k $path/keys/releasekey $path/pe/out/target/product/Onyx/signed-target-files.zip $path/pe/out/target/product/Onyx/$romname.zip
     cp -r out/target/product/*/PixelExperience**.zip $path
     rm -r out/target/product/*
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    New Pixel-Experience for Nokia 7.1 build started
+
+    $(date)
+    "
     . build/envsetup.sh && lunch aosp_Crystal-userdebug && make -j$(nproc --all) target-files-package otatools
     romname=$(cat $path/pe/out/target/product/Crystal/system/build.prop | grep org.pixelexperience.version.display | cut -d "=" -f 2)
     sign_target_files_apks -o -d $path/keys $path/pe/out/target/product/Crystal/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/pe/out/target/product/Crystal/signed-target-files.zip
     ota_from_target_files -k $path/keys/releasekey $path/pe/out/target/product/Crystal/signed-target-files.zip $path/pe/out/target/product/Crystal/$romname.zip
     cp -r out/target/product/*/PixelExperience**.zip $path
     rm -r out/target/product/*
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    New Pixel-Experience for Nokia 6.1 build started
+
+    $(date)
+    "
     . build/envsetup.sh && lunch aosp_Plate2-userdebug && make -j$(nproc --all) target-files-package otatools
     romname=$(cat $path/pe/out/target/product/Plate2/system/build.prop | grep org.pixelexperience.version.display | cut -d "=" -f 2)
     sign_target_files_apks -o -d $path/keys $path/pe/out/target/product/Plate2/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/pe/out/target/product/Plate2/signed-target-files.zip
@@ -113,6 +140,11 @@ NOKIA()
     rm -r bootable/recovery
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_bootable_recovery.git -b fourteen bootable/recovery --depth=1
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_kernel_nokia_FIH-MSM8998.git -b android-14.0-GCC --depth=1 kernel/nokia/msm8998
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    New Pixel-Experience for Nokia 8 Sirocco build started
+
+    $(date)
+    "
     . build/envsetup.sh && lunch aosp_Avenger-userdebug && make -j$(nproc --all) target-files-package otatools
     romname=$(cat $path/pe/out/target/product/Avenger/system/build.prop | grep org.pixelexperience.version.display | cut -d "=" -f 2)
     sign_target_files_apks -o -d $path/keys $path/pe/out/target/product/Avenger/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/pe/out/target/product/Avenger/signed-target-files.zip
@@ -121,6 +153,11 @@ NOKIA()
     rm -r out/target/product/*
     rm -r device/nokia
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Avenger -b android-14.0-NVB2 device/nokia/Avenger
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    New Pixel-Experience for Nokia 8 Sirocco build started
+
+    $(date)
+    "
     . build/envsetup.sh && lunch aosp_Avenger-userdebug && make -j$(nproc --all) target-files-package otatools
     romname=$(cat $path/pe/out/target/product/Avenger/system/build.prop | grep org.pixelexperience.version.display | cut -d "=" -f 2)
     sign_target_files_apks -o -d $path/keys $path/pe/out/target/product/Avenger/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/pe/out/target/product/Avenger/signed-target-files.zip
@@ -133,6 +170,11 @@ NOKIA()
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_device_nokia_Daredevil-OLD -b android-14.0-PV device/nokia/Daredevil
     git clone https://$gitpassword@github.com/Nokia-SDM660/android_kernel_nokia_LC-SDM660.git -b android-14.0-GCC --depth=1 kernel/nokia/sdm660
     git clone https://$gitlpassword@gitlab.com/RaghuVarma331/proprietary_vendor_nokia.git -b android-14.0-PV --depth=1 vendor/nokia
+    curl -s -X POST https://api.telegram.org/bot$Telegram_Api_code/sendMessage -d chat_id=$chat_id -d text="
+    New Pixel-Experience for Nokia 7.2 (TA-1196) build started
+
+    $(date)
+    "
     . build/envsetup.sh && lunch aosp_Daredevil-userdebug && make -j$(nproc --all) target-files-package otatools
     romname=$(cat $path/pe/out/target/product/Daredevil/system/build.prop | grep org.pixelexperience.version.display | cut -d "=" -f 2)
     sign_target_files_apks -o -d $path/keys $path/pe/out/target/product/Daredevil/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $path/pe/out/target/product/Daredevil/signed-target-files.zip
